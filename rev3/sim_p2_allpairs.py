@@ -16,7 +16,8 @@ marginal rate is exact. True Delta = p_X - p_Y. No missing outcomes on this grid
 
 Grid: Y acceptance 0.90 / 0.99 / 1.00; Delta 0 and -0.05 (X = Y + Delta); sd 0 / 1.5; 5 repeats;
 cases 6 / 12 / 30 / 60. Fixed seed; deterministic for fixed --reps.
-Writes <out>/sim_p2_allpairs.csv and <out>/sim_p2_allpairs_tables.md.
+Writes <out>/sim_p2_allpairs<tag>.csv and <out>/sim_p2_allpairs<tag>_tables.md.
+High within-case correlation scenario: --sds 3 5 --tag _highcorr (latent ICC sd^2 / (sd^2 + pi^2/3) = 0.73, 0.88).
 """
 import argparse
 import csv
@@ -85,9 +86,12 @@ def main():
     ap.add_argument("--reps", type=int, default=20000)
     ap.add_argument("--workers", type=int, default=os.cpu_count())
     ap.add_argument("--out", default="sim_out")
+    ap.add_argument("--sds", type=float, nargs="+", default=list(SDS),
+                    help="case logit random-effect SDs (high within-case correlation: e.g. 3 5)")
+    ap.add_argument("--tag", default="", help="suffix for output file names")
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
-    points = [(pe, d, sd, n) for pe in ACCEPT for d in DELTAS for sd in SDS for n in CASES]
+    points = [(pe, d, sd, n) for pe in ACCEPT for d in DELTAS for sd in a.sds for n in CASES]
     t0 = time.time()
     with Pool(a.workers) as pool:
         res = sorted(pool.map(task, [(p, a.reps) for p in points], chunksize=1))
@@ -100,7 +104,7 @@ def main():
                          "method": k, "R": R, "lower_noncov": lm / R, "lower_noncov_mcse": se,
                          "upper_noncov": um / R, "two_sided_cov": cov / R, "mean_width": w / R, "zero_width": z0 / R,
                          "lower_ok": lm / R <= LIMIT})
-    with open(os.path.join(a.out, "sim_p2_allpairs.csv"), "w", newline="") as f:
+    with open(os.path.join(a.out, f"sim_p2_allpairs{a.tag}.csv"), "w", newline="") as f:
         wr = csv.DictWriter(f, fieldnames=list(rows[0]))
         wr.writeheader()
         wr.writerows(rows)
@@ -111,7 +115,7 @@ def main():
            "| p_E | Δ | sd | cases | all-pairs Tango-c-cc | case t | index-paired Tango-c-cc |", "|---|---|---|---|---|---|---|"]
     for pe in ACCEPT:
         for d in DELTAS:
-            for sd in SDS:
+            for sd in a.sds:
                 for n in CASES:
                     cells = []
                     for k in METHODS:
@@ -129,7 +133,7 @@ def main():
         tag = lambda r: f"p_E {r['p_E']}, Δ {r['delta']:+}, sd {r['sd']}, K {r['cases']}"
         out.append(f"| {k} | {pct(worst['lower_noncov'])} ({tag(worst)}) | {pct(low['two_sided_cov'])} ({tag(low)}) | "
                    f"{sum(not r['lower_ok'] for r in rk)} / {len(rk)} | {pct(max(r['zero_width'] for r in rk))} |")
-    with open(os.path.join(a.out, "sim_p2_allpairs_tables.md"), "w") as f:
+    with open(os.path.join(a.out, f"sim_p2_allpairs{a.tag}_tables.md"), "w") as f:
         f.write("\n".join(out) + "\n")
     print("\n".join(out))
 
