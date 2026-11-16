@@ -214,6 +214,35 @@ class TestRunner(unittest.TestCase):
         self.assertEqual(len(res), 40)
         self.assertEqual(len({x["key"] for x in res}), 40)  # no duplicate counted observation
 
+    def test_complete_last_record_without_newline_resumes_cleanly(self):
+        holder = {}
+
+        def stop_at_10(n, b):
+            if n == 10:
+                holder["r"]._halt("crash")
+        t1 = Fake(stop_at_10)
+        r = Runner(self.d, cfg(), man(self.keys), t1)
+        holder["r"] = r
+        r.run([two_stage(k) for k in self.keys], plan(self.keys))
+        p = os.path.join(self.d, "journal.jsonl")
+        raw = open(p, "rb").read()
+        open(p, "wb").write(raw.rstrip(b"\n"))  # crash right before the newline of a complete record
+        done_before = {x["key"] for x in results(self.d)}
+        t2 = Fake()
+        _, s = self.go(t2, resume=True)
+        self.assertTrue(s["complete"])
+        with open(p) as f:
+            for line in f:
+                json.loads(line)  # every line independently parseable
+        res = results(self.d)
+        self.assertEqual(len({x["key"] for x in res}), len(res))
+        self.assertEqual(t1.n + t2.n, 40)  # completed requests never resent
+        sent_after = {b["messages"][-1]["content"] for b in t2.bodies}
+        self.assertTrue(done_before)
+        st = status(self.d)
+        self.assertEqual(st["unique_stage_results"], 40)
+        self.assertGreaterEqual(st["network_attempts"], 40)
+
     def test_corrupt_record_in_middle_of_journal_refuses_resume(self):
         self.go(Fake(), keys=["a"])
         p = os.path.join(self.d, "journal.jsonl")
