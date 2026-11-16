@@ -5,7 +5,7 @@ import tempfile
 import threading
 import unittest
 
-from llmrun import Halt, Runner, dry_transport_for, status, validate_config
+from llmrun import Halt, Limiter, Runner, dry_transport_for, status, validate_config
 
 
 def cfg(**kw):
@@ -192,6 +192,65 @@ class TestRunner(unittest.TestCase):
         _, s2 = self.go(Fake(), resume=True)
         self.assertTrue(s2["complete"])
         self.assertEqual(len(results(self.d)), 40)
+
+    def test_timeout_keeps_reservation_as_spent_during_the_run(self):
+        def t(n, b):
+            if n == 1:
+                raise TimeoutError("read timed out")
+        _, s = self.go(Fake(t), keys=["a"], c=cfg(max_retries=3))
+        self.assertTrue(s["complete"])
+        self.assertGreater(s["unsettled_billing_usd"], 0)
+        self.assertAlmostEqual(s["spent_usd"], round(2 * 0.001 + s["unsettled_billing_usd"], 6))
+        self.assertAlmostEqual(status(self.d)["spent_usd"], s["spent_usd"])  # in-run == on-disk accounting
+
+    def test_damaged_envelope_keeps_status_and_is_billing_unknown(self):
+        _, s = self.go(Fake(lambda n, b: (200, {"_malformed_envelope": True}) if n == 1 else None),
+                       keys=["a"], c=cfg(max_retries=3))
+        with open(os.path.join(self.d, "journal.jsonl")) as f:
+            errs = [json.loads(x) for x in f if '"attempt_error"' in x]
+        self.assertEqual((errs[0]["http_status"], errs[0]["billed_unknown"]), (200, True))
+        self.assertGreater(s["unsettled_billing_usd"], 0)
+
+    def test_errors_never_grow_capacity_and_sustained_errors_halve_it(self):
+        lim = Limiter(8, 16)
+        for _ in range(3):
+            lim.active += 1
+            lim.release("error")
+        self.assertEqual(lim.limit, 8)
+        lim.active += 1
+        lim.release("error")
+        self.assertEqual(lim.limit, 4)
+        for _ in range(2):
+            lim.active += 1
+            lim.release("ok")
+        self.assertEqual(lim.limit, 5)
+
+    def test_429_from_two_models_halves_every_model(self):
+        c = cfg()
+        c["models"]["B"] = dict(c["models"]["A"], slug="lab/b")
+        r = Runner(self.d, c, man(["a"]), Fake())
+        for lim in r.limiters.values():
+            lim.limit = 8
+        r._account_429("A")
+        self.assertEqual([l.limit for l in r.limiters.values()], [8, 8])
+        r._account_429("B")
+        self.assertEqual([l.limit for l in r.limiters.values()], [4, 4])
+        r.close()
+
+    def test_nothing_dispatched_after_stop_and_in_flight_reported(self):
+        holder = {}
+
+        def stop_first(n, b):
+            if n == 1:
+                holder["r"]._halt("test")
+        t = Fake(stop_first)
+        one = cfg(models={"A": dict(cfg()["models"]["A"], concurrency_start=1, concurrency_max=1)})
+        r = Runner(self.d, one, man(self.keys), t)
+        holder["r"] = r
+        s = r.run([two_stage(k) for k in self.keys], plan(self.keys))
+        self.assertEqual(t.n, 1)
+        self.assertEqual(s["stop_info"]["reason"], "test")
+        self.assertEqual(s["stop_info"]["in_flight"], 1)
 
     def test_unsettled_intent_counts_as_spent_on_resume(self):
         r = Runner(self.d, cfg(), man(["a"]), Fake())

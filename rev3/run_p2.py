@@ -88,7 +88,8 @@ def main():
     manifest = {"experiment": "P2 scope-of-trust", "stimuli_sha256": stim_sha, "repeats": a.repeats,
                 "models": models, "planned_keys": sorted(k for k, _, _ in planned)}
     runner = Runner(a.run_dir, cfg, manifest, dry_transport_for(cfg) if a.dry_run else None, resume=a.resume)
-    print(f"{len(tasks)} calls planned; worst case ${runner.worst_case_usd(planned):.2f}; cap ${cfg['spend_cap_usd']}")
+    print(f"{len(tasks)} calls planned; bound for one billed attempt per call ${runner.worst_case_usd(planned):.2f} "
+          f"(billed-unknown retries extra, guarded by the cap); cap ${cfg['spend_cap_usd']}")
     summary = runner.run(tasks, planned)
     n, missing = export(a.run_dir, models, stimuli, a.repeats)
     print(json.dumps(summary, indent=1, sort_keys=True))

@@ -12,13 +12,22 @@ Contract
 - Transient errors (429, 5xx, timeouts, connection) are retried with backoff. If retries run out the task
   is aborted, NOT journaled, and runs again on resume. halt_transient_aborts aborts halt the run, as does a
   terminal-failure rate above halt_error_rate over the last 50 results (once 20 exist).
-- Concurrency per model starts at concurrency_start: halved on a 429, +25% after limit/2 straight
-  successes, capped at concurrency_max.
+- Concurrency per model starts at concurrency_start (set it to the maximum: start high, back off): halved
+  on a 429 and after 4 infrastructure errors in a row (timeout, connection, 5xx, damaged envelope); grows
+  +25% only after limit/2 straight definitive responses, capped at concurrency_max. A 429 from two or more
+  models within 10 s is treated as the shared account limit and halves every model. Once stopping, a
+  request waiting for a slot is never dispatched; calls already in flight finish (stop_info in the summary
+  records how many and their reserved worst case).
 - Spend: budget must never truncate a design (that is what made the shutdown study's cells uneven).
   run() refuses to start unless spend_cap_usd covers spent + the worst case of every remaining planned
-  call. Each call writes an intent with a worst-case reservation and settles to the billed cost after;
-  an HTTP error response (never billed) voids its intent; on resume, unsettled intents count as spent.
-  The in-run cap check is a runaway-fault guard only.
+  call, ONE billed attempt each (input bounded by UTF-8 bytes + template overhead, output by max_tokens).
+  Each attempt writes an intent with that reservation and settles to the billed cost after. An HTTP error
+  response (never billed) voids its intent. An attempt whose billing is unknown (timeout, dropped
+  connection, damaged envelope, provider error inside a 200) is counted as spent at its reservation
+  immediately and stays so on resume. Retries of billed-unknown attempts are not in the pre-flight bound:
+  the in-run cap check halts the run if they accumulate (runaway guard), and the summary reports them.
+  Resume guarantees no duplicate COUNTED observation; an ambiguous network failure can still cause a
+  duplicate BILLED attempt, since the API offers no idempotency key.
 - Order: tasks are shuffled with the config seed (execution order randomized within each model).
 - Routing (per "Not Pinning Your OpenRouter Provider Might Invalidate Your Research", LessWrong 2026):
   endpoint pinned by tag, quantization pinned, allow_fallbacks=false, require_parameters=true,
@@ -88,8 +97,8 @@ def http_transport(url, body, timeout):
             raw = r.read()
             try:
                 return r.status, json.loads(raw), r.headers.get("Retry-After")
-            except ValueError:  # truncated/garbled body: infrastructure, retry
-                return 502, {"error": "malformed response body"}, None
+            except ValueError:  # damaged API envelope (not model JSON): retry, billing unresolved
+                return r.status, {"_malformed_envelope": True, "raw_prefix": raw[:200].decode("utf-8", "replace")}, None
     except urllib.error.HTTPError as e:
         try:
             payload = json.loads(e.read())
@@ -111,8 +120,8 @@ def dry_transport_for(cfg):
 
 class Limiter:
     def __init__(self, start, cap):
-        self.limit, self.cap, self.active, self.streak = start, cap, 0, 0
-        self.cv = threading.Condition()
+        self.limit, self.cap, self.active, self.streak, self.errors = start, cap, 0, 0, 0
+        self.cv = threading.Condition(threading.RLock())
 
     def acquire(self):
         with self.cv:
@@ -120,15 +129,33 @@ class Limiter:
                 self.cv.wait()
             self.active += 1
 
-    def release(self, throttled=False):
+    def release(self, outcome):
+        """outcome: "ok" (a definitive HTTP response), "throttled" (429) or "error" (timeout, connection, 5xx,
+        damaged envelope). Capacity grows only after real successes; 429 halves it; 4 errors in a row halve it."""
         with self.cv:
             self.active -= 1
-            if throttled:
-                self.limit, self.streak = max(1, self.limit // 2), 0
-            else:
-                self.streak += 1  # fast ramp: +25% after limit/2 straight successes (max throughput)
+            if outcome == "ok":
+                self.errors = 0
+                self.streak += 1  # +25% after limit/2 straight successes, up to cap
                 if self.streak >= max(1, self.limit // 2) and self.limit < self.cap:
                     self.limit, self.streak = min(self.cap, self.limit + max(1, self.limit // 4)), 0
+            elif outcome == "throttled":
+                self.halve()
+            else:
+                self.streak, self.errors = 0, self.errors + 1
+                if self.errors >= 4:
+                    self.halve()
+            self.cv.notify_all()
+
+    def cancel(self):
+        """Give back a slot that was never used for a request (no effect on the limit)."""
+        with self.cv:
+            self.active -= 1
+            self.cv.notify_all()
+
+    def halve(self):
+        with self.cv:
+            self.limit, self.streak, self.errors = max(1, self.limit // 2), 0, 0
             self.cv.notify_all()
 
 
@@ -155,7 +182,7 @@ class Runner:
         self.lock = threading.Lock()
         self.stop = threading.Event()
         self.done, self.spent, self.reserved, self.aborts, self.recent = {}, 0.0, 0.0, 0, []
-        self.paused, self.planned = False, []
+        self.paused, self.planned, self.unsettled, self.stop_info, self.last429 = False, [], 0.0, None, {}
         self.limiters = {n: Limiter(m["concurrency_start"], m["concurrency_max"]) for n, m in cfg["models"].items()}
         os.makedirs(run_dir, exist_ok=True)
         self._lock_dir()
@@ -233,8 +260,29 @@ class Runner:
 
     def _reserve(self, model, body):
         m = self.cfg["models"][model]
-        tokens_in = len(json.dumps(body["messages"])) / 2  # deliberately high: real ratio is ~4 chars/token
+        # Upper bound: a byte-level BPE token covers >= 1 UTF-8 byte, plus 64 template tokens per message/tool.
+        tokens_in = (len(json.dumps(body["messages"], ensure_ascii=False).encode()) + len(json.dumps(body.get("tools") or []).encode())
+                     + 64 * (len(body["messages"]) + len(body.get("tools") or [])))
         return (tokens_in * m["price_in_per_m"] + m["params"]["max_tokens"] * m["price_out_per_m"]) / 1e6
+
+    def _halt(self, reason):
+        """Set the stop flag once and record what was in flight then (those calls still finish and may bill)."""
+        if not self.stop.is_set():
+            self.stop_info = {"reason": reason, "in_flight": sum(l.active for l in self.limiters.values()),
+                              "in_flight_reserved_usd": round(self.reserved, 6), "t": time.time()}
+        self.stop.set()
+
+    def _account_429(self, model):
+        """A 429 from two or more models within 10 s is treated as the shared account limit: halve every model."""
+        now = time.time()
+        with self.lock:
+            self.last429[model] = now
+            shared = sum(now - t < 10 for t in self.last429.values()) >= 2
+            if shared:
+                self.last429.clear()
+        if shared:
+            for lim in self.limiters.values():
+                lim.halve()
 
     def _result(self, key, model, status, iid=None, **kw):
         rec = dict(type="result", key=key, model=model, status=status, iid=iid, t=time.time(), **kw)
@@ -245,7 +293,7 @@ class Runner:
             if status != "skipped":
                 self.recent = (self.recent + [status == "failed"])[-50:]
                 if len(self.recent) >= 20 and sum(self.recent) / len(self.recent) > self.cfg["halt_error_rate"]:
-                    self.stop.set()
+                    self._halt("terminal-failure rate above halt_error_rate")
         return rec
 
     def call(self, key, model, messages, tools=None):
@@ -253,7 +301,7 @@ class Runner:
             return self.done[key]
         if os.path.exists(self.pausefile):
             self.paused = True
-            self.stop.set()
+            self._halt("PAUSE file")
         if self.stop.is_set():
             raise Halt("stopping")
         body = self._body(model, messages, tools)
@@ -263,29 +311,45 @@ class Runner:
             reserve, iid = self._reserve(model, body), f"{key}#{attempt}#{time.time_ns()}"
             with self.lock:
                 if self.spent + self.reserved + reserve > self.cfg["spend_cap_usd"]:
-                    self.stop.set()
+                    self._halt("spend cap reached (runaway guard)")
                     raise Halt("spend cap reached")
                 self.reserved += reserve
                 self._write({"type": "intent", "iid": iid, "key": key, "reserve_usd": reserve, "t": time.time()})
             lim.acquire()
-            status = None
+            if self.stop.is_set():  # re-check after waiting for a slot: nothing is dispatched once stopping
+                with self.lock:
+                    self._write({"type": "void", "iid": iid, "key": key, "t": time.time(), "why": "not sent"})
+                    self.reserved -= reserve
+                lim.cancel()
+                raise Halt("stopping")
+            status, outcome, billed_unknown = None, "error", True
             try:
                 status, resp, retry_after = self.transport(self.cfg["endpoint"], body, self.cfg["timeout_s"])
                 if status in ACCOUNT:
+                    billed_unknown, outcome = False, "ok"
                     with self.lock:
                         self._write({"type": "void", "iid": iid, "key": key, "t": time.time()})
-                        self.stop.set()
+                        self._halt(f"HTTP {status}")
                     raise Halt(f"HTTP {status} (auth/credit): run halted with nothing journaled; fix, then --resume")
                 if status in TRANSIENT:
+                    billed_unknown = False  # an HTTP error response is not billed
+                    outcome = "throttled" if status == 429 else "error"
                     raise Transient(f"HTTP {status}", retry_after)
+                if resp.get("_malformed_envelope"):
+                    raise Transient(f"HTTP {status} with a damaged response envelope")  # generation may have billed
                 if status == 200 and (resp.get("error") or not resp.get("choices")
                                       or (resp["choices"][0] or {}).get("finish_reason") == "error"):
-                    raise Transient("provider error inside HTTP 200 body")  # upstream failure, not a model answer
+                    raise Transient("provider error inside HTTP 200 body")  # may have billed partially
+                outcome, billed_unknown = "ok", False
                 return self._settle(key, model, iid, req_sha, status, resp)
             except (Transient, TimeoutError, ConnectionError, OSError) as e:
-                billed_unknown = status is None  # no HTTP response: the provider may have billed
                 with self.lock:
-                    if not billed_unknown:
+                    self._write({"type": "attempt_error", "iid": iid, "key": key, "http_status": status,
+                                 "error": str(e)[:300], "billed_unknown": billed_unknown, "t": time.time()})
+                    if billed_unknown:
+                        self.unsettled += reserve  # stays counted as spent now, exactly as on resume
+                        self.spent += reserve
+                    else:
                         self._write({"type": "void", "iid": iid, "key": key, "t": time.time()})
                 if attempt == self.cfg["max_retries"] or self.stop.is_set():
                     raise Transient(str(e), billed_unknown=billed_unknown) from e
@@ -293,7 +357,9 @@ class Runner:
                 wait = float(ra) if ra and str(ra).replace(".", "", 1).isdigit() else 2 ** attempt
                 time.sleep(min(60.0, wait) * self.backoff * (0.5 + random.random()))
             finally:
-                lim.release(throttled=status == 429)
+                lim.release(outcome)
+                if outcome == "throttled":
+                    self._account_429(model)
                 with self.lock:
                     self.reserved -= reserve
 
@@ -371,7 +437,7 @@ class Runner:
                     state["aborted"] += 1
                     self.aborts += 1
                     if self.aborts >= self.cfg["halt_transient_aborts"]:
-                        self.stop.set()
+                        self._halt("too many tasks aborted on transient errors")
             except Halt:
                 pass
 
@@ -398,7 +464,7 @@ class Runner:
             for fu in futures:
                 fu.result()
         except KeyboardInterrupt:
-            self.stop.set()
+            self._halt("Ctrl-C")
             ex.shutdown(wait=True, cancel_futures=True)
             raise
         finally:
@@ -415,7 +481,8 @@ class Runner:
             by[r["model"]][r["status"]] += 1
         s = dict(state, tasks=n, not_run=n - state["finished"] - state["aborted"], halted=self.stop.is_set(),
                  paused=getattr(self, "paused", False), complete=state["finished"] == n,
-                 spent_usd=round(self.spent, 6), journal_by_model=by,
+                 spent_usd=round(self.spent, 6), unsettled_billing_usd=round(self.unsettled, 6),
+                 stop_info=self.stop_info, journal_by_model=by,
                  calls_pending=sum(k not in self.done for k, _, _ in self.planned),
                  remaining_worst_case_usd=round(self.worst_case_usd(self.planned), 6))
         with self.lock:
