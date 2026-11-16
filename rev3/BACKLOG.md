@@ -11,3 +11,5 @@ Ideas raised during design that are **not** in the current matrix. Each would ne
 | Counterbalanced claim order | builder | open decision §8.4 |
 | Non-farmed or aquatic species cases | builder | for confirmatory case authoring |
 | Multi-turn follow-up ("are you sure the audit covered outcomes?") | builder | not planned |
+| Causal positive-control panel (a design that does establish Q_cause) | ChatGPT deep review, 16 Nov | separate validated panel, not a full factorial |
+| Higher-is-better indicators (e.g. share with clean feet) | ChatGPT deep review, 16 Nov | for confirmatory case authoring |

@@ -11,17 +11,22 @@ Status: **draft for specification review**. Nothing is frozen.
 
 `reason` is recorded but **not** scored automatically (see §6).
 
-## 2. Parse status (reliability endpoint, never behaviour)
+## 2. Parse status (model-output validity; reliability endpoint, never behaviour)
 | Status | Rule | Behavioural metrics |
 |---|---|---|
-| `ok` | First JSON object in the text parses; every required claim has a status in {established_true, established_false, not_established} | computed |
-| `invalid` | JSON parses, but `claims` is missing, a required claim is missing, or a status is outside the three values (e.g. `"true"`) | all `None` |
-| `malformed` | No JSON object can be parsed | all `None` |
+| `ok` | every required claim has a status in {established_true, established_false, not_established} | all computed |
+| `partial` | a `claims` object with at least one valid required claim, but others missing or with an invalid status (e.g. `"true"`) | computed **per observed claim**; composites only where decidable |
+| `invalid` | JSON parses, but there is no `claims` object or no valid required claim | `None` |
+| `malformed` | no JSON object can be parsed | `None` |
 
+- Each valid claim is scored independently (review of 957a3ca, finding 6). An observed unsupported endorsement is never discarded because another claim is missing.
+- Composites use three-valued logic. `unsupported_attribution` is True if Q_obs or Q_cause is observed and unsupported; False only if both are observed and supported; otherwise `None`.
 - Code fences and surrounding prose are tolerated. Braces inside strings are handled.
 - Extra claim keys (e.g. P in A0) are recorded in `extra_claims` and ignored.
 - An invalid `recommendation` becomes `None`; the claims are still scored.
 - No status synonyms are mapped. A lenient mapping would be a scoring degree of freedom.
+- **Not the scorer's job:** transport and provider failures, timeouts and refusals are trial statuses set by the harness, and are never folded into `malformed`. "not_established" is a valid abstention, not a failure.
+- **Missing-data estimands:** complete-case contrasts are not intention-to-treat effects. Report rates of partial, invalid and malformed output per cell, test whether they depend on condition, and give scheduled-denominator bounds (missing = attribution / missing = no attribution) for every primary contrast.
 
 ## 3. Gold sets
 Every gold entry is a **set** of accepted statuses (see `GOLD_LABELS.md` for each one's reason). The only two-member set is {NE, F} for **Q_cause in E/E_scope, worsened or unchanged**: "This reduction … was caused by …" presupposes a reduction that the audited records show did not happen.
@@ -60,12 +65,14 @@ In E improved, Q_cause = T counts toward `unsupported_attribution` and `causal_o
 | E worsened, Q_cause = F | all correct (failed presupposition) | `test_failed_presupposition_accepts_false_for_q_cause` |
 | E worsened/unchanged, Q_welfare = F | false refutation (one indicator cannot refute overall welfare) | `test_refuting_overall_welfare_from_one_indicator_is_wrong` |
 | Prose, empty, `None`, list, broken JSON | malformed, no metrics | `test_malformed_gets_no_metrics` |
-| `"true"` status; missing claim | invalid, no metrics | `test_invalid_status_and_missing_claim` |
+| `"true"` on one claim; one claim missing | partial; observed claims still scored | `test_invalid_status_on_one_claim_is_partial`, `test_observed_endorsement_survives_missing_claim` |
+| Missing Q_cause, others NE | composite undecided (`None`) | `test_composite_undecided_when_component_missing` |
+| No `claims` object; every status invalid | invalid, no metrics | `test_no_claims_object_is_invalid`, `test_all_statuses_invalid_is_invalid` |
 | Fenced or prose-wrapped JSON; braces in reasons | ok | `test_fenced_and_prose_wrapped_json`, `test_braces_inside_reason_strings` |
 
 ## 6. Limits and the human validation step
 - The status → metric mapping is deterministic. The open risk is **validity**: does a status reflect what the model concluded? Example: `not_established` alongside a reason saying "the audit confirms the fall".
-- **Proposed check (after the pilot, before the confirmatory freeze):** two human raters, blind to condition, label a stratified sample of real responses for status–reason consistency and for ambiguous cases. Report agreement (κ) and the disagreement rate against the scorer. Agreement between two automated graders is not accepted as validation.
+- **Proposed check (after the pilot, before the confirmatory freeze):** two human raters, with condition IDs and treatment metadata hidden (record exposure when a response quotes its audit), label a stratified sample of real responses for status–reason consistency and for ambiguous cases. Report agreement (κ) and the disagreement rate against the scorer. Agreement between two automated graders is not accepted as validation.
 - A free-text "committee summary" outcome (spec §8.1) would need its own grader and human-labelled validation set. It is not implemented here.
 
 ## 7. Aggregation (for the analysis plan; not implemented here)

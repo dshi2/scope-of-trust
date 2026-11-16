@@ -9,7 +9,14 @@ This document consolidates revision 2 (`docs/PROTOCOLS_v1.md`) with every accept
 ## 1. Question and claim boundary
 Holding the substantive dossier fixed, does a **truthful** audit of one welfare claim (a housing practice, P) make an agent report that **different, unchecked** claims were established? The unchecked claims are an observed outcome change (Q_obs), overall welfare improvement (Q_welfare) and causal improvement (Q_cause). Does stating the audit's coverage reduce this, *and* does it preserve correct acceptance when an outcome really was audited?
 
-The defensible claim if the result is positive: "Holding information fixed, verifying P changes unsupported attribution of verification to outcome claims; communicating coverage changes that effect." There is no claim about internal mechanism. B > D1 means the effect depends on *what* was verified; topic-sensitive authority remains possible (ledger P2).
+The defensible claim if the result is positive: "Holding supplier assertions fixed, a truthful audit of P changes unsupported attribution of verification to outcome claims; communicating coverage changes that effect." Supplier information is fixed; verification information is what varies. There is no claim about internal mechanism.
+- B > A and B > D1: content-dependent unsupported attribution in this task. B > D1 does not separate on-topic authority from inference (ledger P2).
+- B ≈ D1 > A: a broader verification/record effect, not a unique mechanism.
+- C reduces errors *and* E_scope meets the margin: a useful disclosure intervention. C reducing all acceptance is caution, not selective improvement.
+
+**Contribution sentence.** Existing work shows that status loss, authority cues and scope disclosure influence model judgments (Silence Is Endorsement 2609.20211; Authority Bias 2609.37616; Who Verifies the Tools? 2610.32110). With supplier assertions held fixed, we test whether truthful verification of a narrow practice changes unsupported outcome attribution, whether that depends on the checked topic, and whether scope disclosure reduces errors while keeping justified acceptance. C − B alone overlaps substantially with Who Verifies the Tools?; the main contribution rests on B − A and B − D1.
+
+**Related data.** The WelfareFacts dataset (huggingface.co/datasets/Maryamp/welfare-facts) has source-grounded numerical welfare facts, so not every welfare dataset tests values or attitudes. It has no audit-scope manipulation. No claim to be the first welfare-assurance dataset is made.
 
 **Scope disclosure vs. coaching.** Coverage information deliberately supplied in C, C′ and E_scope *is* the intervention. Scope rules supplied to every condition would be a confound. Revision 3 removes the second and keeps the first.
 
@@ -103,6 +110,8 @@ Q_obs is about the **recorded share** (diff row 14). That is why audited, comple
   - **P2** B − D1
   - **P3** C − B
   - **P4** noninferiority of E_scope vs E in correct acceptance (improved), with margin δ (open, §8.2). A nonsignificant difference is *not* evidence of preservation.
+    - **Method must be valid at the boundary.** An ordinary bootstrap of all-zero paired differences gives a zero-width interval, which is false certainty. Candidates are a score-type interval for paired proportions (Tango 1998), cluster-adjusted for repeats within case (Obuchowski 1998), or an exact or Bayesian beta-binomial alternative. The choice is made by simulated coverage near 0 and 1, with discordant pairs, model heterogeneity and missingness (§9). A fallback is prespecified if a mixed-effects fit separates.
+    - Perfect observed acceptance in both arms is **not** automatically uninformative. With enough independent cases, it bounds the rate of missed acceptance.
 - **Validity checks** (must pass before any contrast is interpreted):
   - **V1** correct acceptance in E improved
   - **V2** correct refutation in E worsened and unchanged
@@ -124,6 +133,8 @@ Q_obs is about the **recorded share** (diff row 14). That is why audited, comple
   - no period-scope or population-scope condition
   - three species only
   - one author
+  - every indicator is "lower is better"
+  - no case where causal improvement *is* established, so Q_cause results describe causal over-attribution only, not general causal discrimination. A validated causal positive-control panel would be a separate, smaller study (`BACKLOG.md`)
 - Generalisation is limited to the case population actually sampled. Sharing a template does not by itself make cases statistically dependent, but it limits what can be generalised. Confirmatory cases will be written by a different author in several independently designed record formats, stored outside this repo, and validated against a fixed rubric.
 - `DESIGN_MATRIX_dev.csv` records, per row: case, template family, species, practice, indicator, issuer, condition, direction, context, role, model, repeat, phase, turn count, tools and stimulus hash.
 
@@ -149,6 +160,12 @@ Q_obs is about the **recorded share** (diff row 14). That is why audited, comple
 
 Pilot data are never pooled with confirmatory data.
 
+## 9a. Validation roles and blinding
+- **Domain expert** (welfare scientist or certification auditor): checks what each record establishes, plus indicator definitions, assessment ages, denominators and thresholds.
+- **Practitioner** (procurement or assurance analyst): checks whether the dossier, the decision and the error matter in a real workflow. Users are *candidate* users until then.
+- **Human reason checks** (SCORING_SPEC §6): raters see the response with condition IDs and treatment metadata hidden. A response that quotes its audit cannot be perfectly blinded, so record that exposure instead of claiming blinding.
+- **Gold labels** are condition-based rules. Agreement between the rules and the hand table (same author) is a consistency check, not independent semantic validation. The expert checks each rendered case against its gold.
+
 ## 10. Review milestones
 | # | Milestone | Reviewer | Status |
 |---|---|---|---|
@@ -173,3 +190,11 @@ Large confirmatory runs are on **hold**.
 | ChatGPT (957a3ca) M5 | Structured task may scaffold scope reading | Kept as primary; naturalistic validation required before transfer claims (§8.1) | this commit |
 | ChatGPT (957a3ca) M6 | Variable filler is a treatment cue | Fixed identical notes, no padding (§8.3) | 551afd5 |
 | ChatGPT (957a3ca) | 5-point margin implies hundreds of independent cases | Simulation of the paired design required before the pilot (§9) | this commit |
+| ChatGPT deep review (957a3ca) 1 | Q_welfare accepted "false" | Already fixed: gold NE only; probe now flags false refutation | 551afd5 |
+| ChatGPT deep review (957a3ca) 2 | Audit dates vs. claimed periods | Already fixed: closed 2024/2025 windows, audits in 2026, chronology tests | 551afd5 |
+| ChatGPT deep review (957a3ca) 3 | Sample records treated as population certainty; "permanent access" to straw | Q_obs on the recorded share (551afd5). Straw claim narrowed to "filled rack at every daily check" with complete check sheets | 551afd5, 2cb0429 |
+| ChatGPT deep review (957a3ca) 4 | C′ had one more filing note than C | Already fixed by identical filler; new test checks C and C′ differ only in coverage layout with equivalent facts | 551afd5, 2cb0429 |
+| ChatGPT deep review (957a3ca) 5 | Bootstrap invalid at the boundary; "100% is uninformative" wrong | P4 method requirements and correction in §6; coverage simulation in §9 | this commit |
+| ChatGPT deep review (957a3ca) 6 | One missing claim discarded an observed endorsement | Claim-level scoring (`partial`), three-valued composites, reviewer probe as a test | 2cb0429 |
+| ChatGPT deep review (957a3ca) 7 | Coverage, blinding and causal-positive bounds | §7 gaps, §9a validation roles and blinding, causal panel in backlog | this commit |
+| ChatGPT deep review (957a3ca) novelty | "Holding information fixed" too broad; Who Verifies the Tools? overlap with C − B | Claim reworded; contribution sentence and related data added (§1) | this commit |
