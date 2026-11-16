@@ -13,9 +13,13 @@ The defensible claim if the result is positive: "Holding supplier assertions fix
 - B > A and B > D1: content-dependent unsupported attribution in this task. B > D1 does not separate on-topic authority from inference (ledger P2).
 - B ≈ D1 > A: a broader verification/record effect, not a unique mechanism.
 - C reduces errors *and* E_scope meets the margin: a useful disclosure intervention. C reducing all acceptance is caution, not selective improvement.
-- B ≈ A within ±SESOI: truthful practice audits do not produce meaningful outcome-verification spillover in this task. This is a valid and reportable result, provided V1–V3 pass, since the instrument must be shown to detect accepted and refuted outcomes.
+- B ≈ A within ±SESOI: truthful practice audits do not produce meaningful outcome-verification spillover in this task. This is a valid, reportable result, bounded to this task, case population and set of models, and to the effects the interval excludes. V1–V3 must pass, but they show only that the instrument registers *obvious* audited outcomes. They do not demonstrate sensitivity to a smaller spillover, and the claim says so. Partial sensitivity evidence: S2 (P spillover to the sister site in D2) and X2 (the unscoped stamp). This is not generalized to welfare-assurance workflows at large.
 
-**Interpreting each primary contrast (fixed before data).** Report "no meaningful effect" only if the 95% interval lies entirely inside ±SESOI (§9 step 1). If the interval crosses SESOI, the result is "inconclusive", never "no effect". The precision target is set so that both outcomes are informative. Every prespecified outcome is reported, including those against the hypotheses. Items and cases are chosen to tell explanations apart, never to raise error rates.
+**Interpreting each primary contrast (fixed before data).** Report "no meaningful effect" only if the 95% interval lies entirely inside ±SESOI (§9 step 1). If the interval crosses SESOI, the result is "inconclusive", never "no effect". The precision target is set so that both outcomes are informative. **Two distinct inferences:**
+  - B − A absence is a two-sided equivalence (|B − A| < SESOI, with SESOI set from scientific meaning).
+  - P4 is a one-sided noninferiority on correct acceptance, with its own margin δ (§8.2).
+
+  They answer different questions and are never interchanged. A joint absence claim across P1–P3 needs simultaneous intervals under the multiplicity rule. A wide interval is inconclusive even when the point estimate is near zero. Every prespecified outcome is reported, including those against the hypotheses. Items and cases are chosen to tell explanations apart, never to raise error rates.
 
 **Contribution sentence.** Existing work shows that status loss, authority cues and scope disclosure influence model judgments (Silence Is Endorsement 2609.20211; Authority Bias 2609.37616; Who Verifies the Tools? 2610.32110). With supplier assertions held fixed, we test whether truthful verification of a narrow practice changes unsupported outcome attribution, whether that depends on the checked topic, and whether scope disclosure reduces errors while keeping justified acceptance. C − B alone overlaps substantially with Who Verifies the Tools?; the main contribution rests on B − A and B − D1.
 
@@ -235,3 +239,4 @@ Large confirmatory runs are on **hold**.
 | C | External validity; expert and naturalistic validation as prerequisites | Claim gates table (§9b) | this commit |
 | ChatGPT check (6e67eca) | δ rule ignored base rates (π_u = .1, B = .1, π_s = .9, L = .05 is a net loss) | δ = (π_u/π_s)·B/r; worked example; earlier rule withdrawn (§8.2) | this commit |
 | PI standard (16 Nov) | Informative nulls; report all prespecified outcomes | Equivalence-based null rule; null outcome added to the interpretation list (§1) |
+| ChatGPT (7bf0e8e) | Positive controls do not show sensitivity to subtle spillover; keep P4 NI separate from B − A equivalence; joint claims | Claim bounded and limitation stated; the two inferences separated; simultaneous intervals for joint absence (§1) | this commit |
