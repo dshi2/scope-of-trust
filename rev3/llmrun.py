@@ -386,7 +386,7 @@ class Runner:
                                       or (resp["choices"][0] or {}).get("finish_reason") == "error"):
                     raise Transient("provider error inside HTTP 200 body")  # may have billed partially
                 outcome, billed_unknown = "ok", False
-                return self._settle(key, model, iid, req_sha, status, resp)
+                return self._settle(key, model, iid, req_sha, status, resp, body)
             except (Transient, TimeoutError, ConnectionError, OSError) as e:
                 with self.lock:
                     self._write({"type": "attempt_error", "iid": iid, "key": key, "http_status": status,
@@ -408,7 +408,7 @@ class Runner:
                 with self.lock:
                     self.reserved -= reserve
 
-    def _settle(self, key, model, iid, req_sha, status, resp):
+    def _settle(self, key, model, iid, req_sha, status, resp, body=None):
         m = self.cfg["models"][model]
         usage = resp.get("usage") or {}
         cost, unresolved = usage.get("cost"), False
@@ -416,7 +416,10 @@ class Runner:
             cost = (usage["prompt_tokens"] * m["price_in_per_m"] + usage["completion_tokens"] * m["price_out_per_m"]) / 1e6
         if cost is None:  # no billing evidence: recorded as unknown (None), never as $0
             unresolved = True
-        common = dict(iid=iid, request_sha256=req_sha, http_status=status, response=resp, usage=usage,
+        sent = {k: v for k, v in (body or {}).items() if k not in ("messages", "tools")}  # exact settings sent
+        if body and body.get("tools"):
+            sent["tools"] = [t["function"]["name"] for t in body["tools"]]
+        common = dict(iid=iid, request_sha256=req_sha, request_params=sent, http_status=status, response=resp, usage=usage,
                       cost_usd=cost, billing_unresolved=unresolved,
                       served_provider=resp.get("provider"), served_model=resp.get("model"))
         if status != 200 or not resp.get("choices"):
@@ -425,7 +428,9 @@ class Runner:
             return self._result(key, model, "failed", error="served provider/model differs from pin", **common)
         ch = resp["choices"][0]
         msg = ch.get("message") or {}
+        reasoning = msg.get("reasoning") or msg.get("reasoning_content") or msg.get("reasoning_details")
         return self._result(key, model, "ok", text=msg.get("content") or "", tool_calls=msg.get("tool_calls"),
+                            reasoning_returned=bool(reasoning),
                             message=msg, truncated=ch.get("finish_reason") == "length", **common)
 
     def skip(self, key, model, reason):

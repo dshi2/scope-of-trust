@@ -296,6 +296,10 @@ class TestRunner(unittest.TestCase):
         self.assertEqual(t.bodies[0]["provider"], {"order": ["host/fp8"], "allow_fallbacks": False,
                                                    "require_parameters": True, "quantizations": ["fp8"],
                                                    "data_collection": "deny"})
+        rec = results(self.d)[0]
+        self.assertEqual(rec["request_params"]["temperature"], 1.0)  # exact settings journaled with the result
+        self.assertEqual(rec["request_params"]["provider"]["order"], ["host/fp8"])
+        self.assertFalse(rec["reasoning_returned"])
 
     def test_live_needs_flag_and_config_is_strict(self):
         with self.assertRaises(Halt):
