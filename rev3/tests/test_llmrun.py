@@ -170,7 +170,28 @@ class TestRunner(unittest.TestCase):
             r.run([two_stage(k) for k in self.keys], plan(self.keys))
         self.assertEqual(results(self.d), [])  # nothing sent: never a partial design
 
+    def test_transient_blip_is_repassed_automatically_without_resume(self):
+        # first 3 attempts fail (max_retries=2 -> one task aborts), the automatic re-pass then completes it
+        _, s = self.go(Fake(lambda n, b: (503, {"error": "blip"}) if n <= 3 else None), keys=["a"],
+                       c=cfg(max_retries=2, halt_transient_aborts=10,
+                             models={"A": dict(cfg()["models"]["A"], concurrency_start=1, concurrency_max=1)}))
+        self.assertTrue(s["complete"])
+        self.assertEqual(s["aborted"], 0)
+        self.assertEqual(len(results(self.d)), 2)
+
+    def test_journal_write_failure_halts(self):
+        r = Runner(self.d, cfg(), man(["a"]), Fake())
+        r.f.close()
+        r.f = open(os.devnull, "r")  # writes now raise OSError, like a full disk
+        with self.assertRaises(Halt):
+            r._write({"type": "x"})
+        self.assertTrue(r.stop.is_set())
+        r.f = open(os.devnull, "w")
+        r.close()
+
     def test_outage_aborts_without_journaling_then_resume_completes(self):
+        Runner.repasses = 0
+        self.addCleanup(setattr, Runner, "repasses", 2)
         _, s = self.go(Fake(lambda n, b: (503, {"error": "down"})))
         self.assertTrue(s["halted"])
         self.assertEqual(results(self.d), [])
