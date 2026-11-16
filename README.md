@@ -57,6 +57,14 @@ The four evaluated models were **gpt-oss-120b, DeepSeek-V3.2, Qwen3-235B-A22B-In
 
 ## Reproduce and inspect
 
+**Check the published aggregate headline numbers (no API calls):**
+
+```bash
+python3 verify_results.py
+```
+
+This checks committed analysis outputs against the README's headline values. It does **not** rescore unpublished response journals or independently validate the statistical method.
+
 **No API key is needed for offline tests and to read the published results.** From a cloned repository:
 
 ```bash
