@@ -189,6 +189,48 @@ class TestRunner(unittest.TestCase):
         r.f = open(os.devnull, "w")
         r.close()
 
+    def test_disk_full_mid_run_halts_then_resume_completes_without_duplicates(self):
+        holder = {"n": 0}
+        r = Runner(self.d, cfg(), man(self.keys), Fake())
+        real = r._write
+
+        def flaky(rec):  # the 25th journal write hits "disk full" halfway through the line
+            holder["n"] += 1
+            if holder["n"] == 25:
+                r.f.write(json.dumps(rec)[:15])
+                r.f.flush()
+                r.journal_broken = True  # what _write sets on a real OSError
+                r.stop.set()
+                raise Halt("journal write failed ([Errno 28] No space left on device)")
+            if getattr(r, "journal_broken", False):
+                raise Halt("journal unavailable")
+            return real(rec)
+        r._write = flaky
+        s1 = r.run([two_stage(k) for k in self.keys], plan(self.keys))
+        self.assertFalse(s1["complete"])
+        _, s2 = self.go(Fake(), resume=True)  # torn last line repaired, run continues
+        self.assertTrue(s2["complete"])
+        res = results(self.d)
+        self.assertEqual(len(res), 40)
+        self.assertEqual(len({x["key"] for x in res}), 40)  # no duplicate counted observation
+
+    def test_corrupt_record_in_middle_of_journal_refuses_resume(self):
+        self.go(Fake(), keys=["a"])
+        p = os.path.join(self.d, "journal.jsonl")
+        lines = open(p).read().splitlines()
+        lines[2] = lines[2][:10]
+        open(p, "w").write("\n".join(lines) + "\n")
+        with self.assertRaises(Halt):
+            Runner(self.d, cfg(), man(["a"]), Fake(), resume=True)
+
+    def test_repass_never_reruns_terminal_failures(self):
+        t = Fake(lambda n, b: (400, {"error": "bad"}) if b["messages"][-1]["content"] == "k0" else None)
+        _, s = self.go(t, c=cfg(halt_error_rate=1.0))
+        res = {x["key"]: x for x in results(self.d)}
+        self.assertEqual(res["k0|t1"]["status"], "failed")
+        self.assertEqual(sum(1 for b in t.bodies if b["messages"][-1]["content"] == "k0"), 1)
+        self.assertTrue(s["complete"])
+
     def test_outage_aborts_without_journaling_then_resume_completes(self):
         Runner.repasses = 0
         self.addCleanup(setattr, Runner, "repasses", 2)

@@ -70,6 +70,29 @@ class Halt(Exception):
     pass
 
 
+def load_journal(path, repair=False):
+    """Journal records. A torn final line (process or disk failed mid-write) is dropped, and with repair=True the
+    file is truncated back to the last complete record so appends stay valid. A bad line anywhere else halts."""
+    with open(path, "rb") as f:
+        raw = f.read()
+    lines, recs, good_end = raw.split(b"\n"), [], 0
+    for i, ln in enumerate(lines):
+        if not ln.strip():
+            good_end += len(ln) + 1
+            continue
+        try:
+            recs.append(json.loads(ln))
+            good_end += len(ln) + 1
+        except ValueError:
+            if i < len(lines) - 1 and any(x.strip() for x in lines[i + 1:]):
+                raise Halt(f"journal {path} has a corrupt record at line {i + 1}; inspect before resuming")
+            if repair:
+                with open(path, "r+b") as f:
+                    f.truncate(min(good_end, len(raw)))
+            break
+    return recs
+
+
 class Deferred(Exception):
     """A shared stage this task depends on was aborted by the task that owned it; this task runs on resume."""
 
@@ -229,8 +252,7 @@ class Runner:
     def _open(self):
         intents, fresh = {}, not os.path.exists(self.path) or os.path.getsize(self.path) == 0
         if not fresh:
-            with open(self.path) as f:
-                lines = [json.loads(x) for x in f if x.strip()]
+            lines = load_journal(self.path, repair=True)
             h = lines[0]
             if h.get("type") != "header" or h["config_sha256"] != self.hash or h.get("manifest_sha256") != self.mhash:
                 self.close()
@@ -254,11 +276,14 @@ class Runner:
                          "manifest_sha256": self.mhash, "t": time.time()})
 
     def _write(self, rec):
+        if getattr(self, "journal_broken", False):  # after one failed write nothing else is appended
+            raise Halt("journal unavailable after a failed write; free disk space, then --resume")
         try:
             self.f.write(json.dumps(rec, sort_keys=True) + "\n")
             self.f.flush()
             os.fsync(self.f.fileno())
         except OSError as e:  # disk full / IO error: halt; must never be mistaken for a network error
+            self.journal_broken = True
             self.stop.set()
             raise Halt(f"journal write failed ({e}); free disk space, then --resume") from e
 
@@ -571,7 +596,10 @@ class Runner:
                  stop_info=self.stop_info, journal_by_model=by,
                  calls_pending=sum(p[0] not in self.done for p in self.planned))
         with self.lock:
-            self._write({"type": "session", "event": "end", "summary": s, "t": time.time()})
+            try:
+                self._write({"type": "session", "event": "end", "summary": s, "t": time.time()})
+            except Halt:
+                pass  # journal unavailable (disk full): summary.json below still records the state
         with open(os.path.join(self.dir, "summary.json"), "w") as f:
             json.dump(s, f, indent=1, sort_keys=True)
         return s
@@ -580,8 +608,7 @@ class Runner:
 def status(run_dir):
     """Read-only progress report (safe while a run is active): per-model journal counts, calls pending,
     spend, and the session history (start / resume / end). Pause a run with: touch <run_dir>/PAUSE."""
-    with open(os.path.join(run_dir, "journal.jsonl")) as f:
-        lines = [json.loads(x) for x in f if x.strip()]
+    lines = load_journal(os.path.join(run_dir, "journal.jsonl"))
     with open(os.path.join(run_dir, "manifest.json")) as f:
         planned = json.load(f)["planned_keys"]
     done, intents, spent, sessions = {}, {}, 0.0, []
