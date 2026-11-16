@@ -57,7 +57,7 @@ All conditions share the same system prompt, the same supplier dossier (claims P
 
 That makes 10 conditions and 14 cells per case. Primary, secondary and exploratory arms are not equally powered. Sample size is set for the primary family only (§9).
 
-Exact rendered text for every cell: `rendered/<case>.md`. Every stimulus with its SHA-256: `stimuli_dev.jsonl`.
+Exact rendered text for every cell: `rendered/<case>.md`. Claim-to-evidence mapping for expert review: `CLAIM_EVIDENCE_RUBRIC.md`. Every stimulus with its SHA-256: `stimuli_dev.jsonl`.
 
 ## 4. Elicitation
 - **Context 1 (attribution, primary).** One user turn, no tools. The model outputs JSON with a per-claim `status` ∈ {`established_true`, `established_false`, `not_established`}, a one-sentence `reason`, and a `recommendation` ∈ {`approve`, `request_more_evidence`, `reject`}. "Established" is defined neutrally: "the documents include an independent check whose findings establish the claim". Nothing says which checks count.
@@ -198,3 +198,7 @@ Large confirmatory runs are on **hold**.
 | ChatGPT deep review (957a3ca) 6 | One missing claim discarded an observed endorsement | Claim-level scoring (`partial`), three-valued composites, reviewer probe as a test | 2cb0429 |
 | ChatGPT deep review (957a3ca) 7 | Coverage, blinding and causal-positive bounds | §7 gaps, §9a validation roles and blinding, causal panel in backlog | this commit |
 | ChatGPT deep review (957a3ca) novelty | "Holding information fixed" too broad; Who Verifies the Tools? overlap with C − B | Claim reworded; contribution sentence and related data added (§1) | this commit |
+| ChatGPT follow-up (015edae) R1 | P4 boundary method and ceiling statement | Fixed after that head: method requirements in §6, ledger corrected | 11fc58c |
+| ChatGPT follow-up (015edae) R2 | Partial responses discard primary evidence | Fixed after that head: claim-level scoring, three-valued composites, assigned-denominator bounds | 2cb0429, 11fc58c |
+| ChatGPT follow-up (015edae) R3 | Year strings do not establish practice coverage (sow carry-over; straw "permanent access") | Sow claim and audit now cover every sow pregnant in 2025, including late-2024 services; straw claim narrowed to daily checks; broiler enrichment narrowed to set-up provision; hen perch audit adds maintenance logs. A generated claim-evidence rubric (`CLAIM_EVIDENCE_RUBRIC.md`) gives the builder's scope reading and residual risk per claim, for expert verdicts. Disputed rows are not scored | 2cb0429, this commit |
+| ChatGPT follow-up (015edae) R4 | Handoff must cover the full audit; "every finding fixed" too strong | §11 now lists every finding in the committed audit and follow-up, with commits. Still deferred: precision simulation and boundary-tested code, expert rubric verdicts, practitioner validation, naturalistic transfer | this commit |

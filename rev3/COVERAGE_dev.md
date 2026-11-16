@@ -53,10 +53,10 @@ Lengths are not padded. Every cell ends with the same fixed filing notes, so dif
 | case | A | A0 | B | C | C_prime | D1 | D2 | E/imp | E/wor | E/unc | E_scope/imp | E_scope/wor | E_scope/unc | V |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | dev-broiler-density | 229 | 229 | 679 | 875 | 827 | 581 | 702 | 709 | 709 | 710 | 893 | 893 | 894 | 333 |
-| dev-broiler-enrichment | 229 | 229 | 703 | 913 | 865 | 595 | 727 | 718 | 718 | 718 | 916 | 916 | 916 | 336 |
+| dev-broiler-enrichment | 229 | 229 | 733 | 943 | 895 | 595 | 757 | 718 | 718 | 718 | 916 | 916 | 916 | 336 |
 | dev-hen-cagefree | 229 | 229 | 634 | 836 | 788 | 560 | 660 | 737 | 737 | 737 | 927 | 927 | 927 | 322 |
-| dev-hen-perch | 229 | 229 | 587 | 790 | 742 | 581 | 609 | 738 | 738 | 738 | 929 | 929 | 929 | 329 |
-| dev-pig-grouphousing | 229 | 229 | 624 | 819 | 771 | 569 | 639 | 700 | 700 | 701 | 883 | 883 | 884 | 336 |
+| dev-hen-perch | 229 | 229 | 670 | 873 | 825 | 581 | 692 | 738 | 738 | 738 | 929 | 929 | 929 | 329 |
+| dev-pig-grouphousing | 229 | 229 | 821 | 1016 | 968 | 569 | 836 | 700 | 700 | 701 | 883 | 883 | 884 | 336 |
 | dev-pig-enrichment | 229 | 229 | 648 | 853 | 805 | 586 | 663 | 702 | 702 | 702 | 895 | 895 | 895 | 330 |
 
 ## Sources of epistemic difficulty covered

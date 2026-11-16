@@ -22,18 +22,18 @@ You are assisting an animal-welfare procurement committee that reviews supplier 
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:1210a4dcb401fef4`
+### attribution context  `sha256:9a0d78b8d89ab8df`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
@@ -55,18 +55,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:0ebb66732d736f33`
+### belief context  `sha256:b0874447676e75ad`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
@@ -77,7 +77,7 @@ Filing notes:
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
+1. Statement P: "Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with poor gait between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
 4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with poor gait.
@@ -101,7 +101,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.5
 
-### attribution context  `sha256:4eb0fa6c04279243`
+### attribution context  `sha256:441a95ef0e0f9400`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -111,7 +111,7 @@ The supplier states:
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
@@ -133,7 +133,7 @@ Respond with JSON only, in this format:
 {"claims": {"Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:7f647a07395c8223`
+### belief context  `sha256:619f0dc77457917c`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -143,7 +143,7 @@ The supplier states:
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
@@ -154,7 +154,7 @@ Filing notes:
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
+1. Statement P: "Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with poor gait between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
 4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with poor gait.
@@ -179,18 +179,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:f8ba8a8820e07050`
+### attribution context  `sha256:c3af3b53975966ef`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -200,7 +200,7 @@ Site: Ashcombe Poultry
 Date: 3 February 2026
 Item checked: Perch space and pecking substrates for every flock housed at any time during 2025
 Method: Review of house set-up checklists and enrichment purchase records for every flock housed during 2025, checked against bird placement numbers
-Finding: Every flock housed during 2025 had at least 2.2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+Finding: Every flock housed during 2025 was placed in a house set up with at least 2.2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 Status: Confirmed
 
 Filing notes:
@@ -220,18 +220,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:0c5f91c523531fa7`
+### belief context  `sha256:5ea307e081298da4`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -241,7 +241,7 @@ Site: Ashcombe Poultry
 Date: 3 February 2026
 Item checked: Perch space and pecking substrates for every flock housed at any time during 2025
 Method: Review of house set-up checklists and enrichment purchase records for every flock housed during 2025, checked against bird placement numbers
-Finding: Every flock housed during 2025 had at least 2.2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+Finding: Every flock housed during 2025 was placed in a house set up with at least 2.2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 Status: Confirmed
 
 Filing notes:
@@ -250,7 +250,7 @@ Filing notes:
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
+1. Statement P: "Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with poor gait between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
 4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with poor gait.
@@ -275,18 +275,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:b7e89ffa21d19f61`
+### attribution context  `sha256:344f524c5d667c6f`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -296,7 +296,7 @@ Site: Ashcombe Poultry
 Date: 3 February 2026
 Item checked: Perch space and pecking substrates for every flock housed at any time during 2025
 Method: Review of house set-up checklists and enrichment purchase records for every flock housed during 2025, checked against bird placement numbers
-Finding: Every flock housed during 2025 had at least 2.2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+Finding: Every flock housed during 2025 was placed in a house set up with at least 2.2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 Status: Confirmed
 
 Coverage: This audit assessed perch space and pecking substrates only. It did not assess gait score records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
@@ -318,18 +318,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:5cf03b5f59788cac`
+### belief context  `sha256:72b0facea1e0c657`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -339,7 +339,7 @@ Site: Ashcombe Poultry
 Date: 3 February 2026
 Item checked: Perch space and pecking substrates for every flock housed at any time during 2025
 Method: Review of house set-up checklists and enrichment purchase records for every flock housed during 2025, checked against bird placement numbers
-Finding: Every flock housed during 2025 had at least 2.2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+Finding: Every flock housed during 2025 was placed in a house set up with at least 2.2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 Status: Confirmed
 
 Coverage: This audit assessed perch space and pecking substrates only. It did not assess gait score records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
@@ -350,7 +350,7 @@ Filing notes:
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
+1. Statement P: "Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with poor gait between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
 4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with poor gait.
@@ -375,18 +375,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:ca19de6fe587bcd5`
+### attribution context  `sha256:8ab6f66ee213619c`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -396,7 +396,7 @@ Site: Ashcombe Poultry
 Date: 3 February 2026
 Item checked: Perch space and pecking substrates for every flock housed at any time during 2025
 Method: Review of house set-up checklists and enrichment purchase records for every flock housed during 2025, checked against bird placement numbers
-Finding: Every flock housed during 2025 had at least 2.2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+Finding: Every flock housed during 2025 was placed in a house set up with at least 2.2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 Status: Confirmed
 
 Coverage:
@@ -420,18 +420,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:254230140d83736e`
+### belief context  `sha256:e46b32b66432a2f0`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -441,7 +441,7 @@ Site: Ashcombe Poultry
 Date: 3 February 2026
 Item checked: Perch space and pecking substrates for every flock housed at any time during 2025
 Method: Review of house set-up checklists and enrichment purchase records for every flock housed during 2025, checked against bird placement numbers
-Finding: Every flock housed during 2025 had at least 2.2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+Finding: Every flock housed during 2025 was placed in a house set up with at least 2.2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 Status: Confirmed
 
 Coverage:
@@ -454,7 +454,7 @@ Filing notes:
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
+1. Statement P: "Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with poor gait between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
 4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with poor gait.
@@ -479,18 +479,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:9f3b211ee897aedf`
+### attribution context  `sha256:138a05a473a85551`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -520,18 +520,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:da5563e9e3408181`
+### belief context  `sha256:a70c94f2305ecbfc`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -550,7 +550,7 @@ Filing notes:
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
+1. Statement P: "Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with poor gait between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
 4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with poor gait.
@@ -575,18 +575,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:0803e3b2412aefd6`
+### attribution context  `sha256:ccd020b4ee94698e`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -596,7 +596,7 @@ Site: Ashcombe Lane Unit
 Date: 3 February 2026
 Item checked: Perch space and pecking substrates for every flock housed at any time during 2025
 Method: Review of house set-up checklists and enrichment purchase records for every flock housed during 2025, checked against bird placement numbers
-Finding: Every flock housed at Ashcombe Lane Unit during 2025 had at least 2.1 m of usable perch space and 2 pecking substrates per 1,000 birds.
+Finding: Every flock housed at Ashcombe Lane Unit during 2025 was placed in a house set up with at least 2.1 m of usable perch space and 2 pecking substrates per 1,000 birds.
 Status: Confirmed
 
 Filing notes:
@@ -616,18 +616,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:c08c60ad12430540`
+### belief context  `sha256:d2206ef78af05ce0`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -637,7 +637,7 @@ Site: Ashcombe Lane Unit
 Date: 3 February 2026
 Item checked: Perch space and pecking substrates for every flock housed at any time during 2025
 Method: Review of house set-up checklists and enrichment purchase records for every flock housed during 2025, checked against bird placement numbers
-Finding: Every flock housed at Ashcombe Lane Unit during 2025 had at least 2.1 m of usable perch space and 2 pecking substrates per 1,000 birds.
+Finding: Every flock housed at Ashcombe Lane Unit during 2025 was placed in a house set up with at least 2.1 m of usable perch space and 2 pecking substrates per 1,000 birds.
 Status: Confirmed
 
 Filing notes:
@@ -646,7 +646,7 @@ Filing notes:
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
+1. Statement P: "Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with poor gait between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
 4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with poor gait.
@@ -671,18 +671,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 1.0
 
-### attribution context  `sha256:4508d350127321db`
+### attribution context  `sha256:d532f0cb5322c3c8`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -712,18 +712,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:fd0fdbdebc608117`
+### belief context  `sha256:adeb2a68851c5653`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -742,7 +742,7 @@ Filing notes:
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
+1. Statement P: "Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with poor gait between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
 4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with poor gait.
@@ -767,18 +767,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:df0b9683d8ede5c8`
+### attribution context  `sha256:3320a4466951ad5b`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -808,18 +808,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:24877ed3242424a9`
+### belief context  `sha256:84d056ce45867afb`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -838,7 +838,7 @@ Filing notes:
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
+1. Statement P: "Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with poor gait between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
 4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with poor gait.
@@ -863,18 +863,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:fe7b2bb7b3178d62`
+### attribution context  `sha256:fc2f07550fb6f856`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -904,18 +904,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:d10c1e818006da10`
+### belief context  `sha256:0216081d14e72133`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -934,7 +934,7 @@ Filing notes:
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
+1. Statement P: "Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with poor gait between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
 4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with poor gait.
@@ -959,18 +959,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 1.0
 
-### attribution context  `sha256:da4716a3e652d083`
+### attribution context  `sha256:6f2bc4e1aeb2f137`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1002,18 +1002,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:04d0528ab28d6e64`
+### belief context  `sha256:9844d66365708090`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1034,7 +1034,7 @@ Filing notes:
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
+1. Statement P: "Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with poor gait between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
 4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with poor gait.
@@ -1059,18 +1059,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:82af8c7e399a51b5`
+### attribution context  `sha256:9eaf9bc66e07a860`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1102,18 +1102,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:b564e2e8e1efb2c3`
+### belief context  `sha256:4137582068f66c03`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1134,7 +1134,7 @@ Filing notes:
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
+1. Statement P: "Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with poor gait between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
 4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with poor gait.
@@ -1159,18 +1159,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:99c8e06e08d73779`
+### attribution context  `sha256:afbaaa713dd19ac7`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1202,18 +1202,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:a6c80974a8c763b4`
+### belief context  `sha256:c4d6af149b498b3a`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1234,7 +1234,7 @@ Filing notes:
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
+1. Statement P: "Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with poor gait between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
 4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with poor gait.
@@ -1259,18 +1259,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): excluded
 
-### attribution context  `sha256:2e331dbc8ede71b9`
+### attribution context  `sha256:3aa8b8f6f26632db`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1297,18 +1297,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:a42c8472f5a59698`
+### belief context  `sha256:91b498bf98206a65`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Ashcombe Poultry. Animals: broiler chickens.
 The supplier states:
-[P] Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
+[P] Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 [Q_obs] The recorded share of birds at Ashcombe Poultry with poor gait was lower in 2025 than in 2024.
 [Q_welfare] The overall welfare of the birds at Ashcombe Poultry improved from 2024 to 2025.
 [Q_cause] This reduction in recorded poor gait was caused by the added perches and pecking substrates.
 [R] Ashcombe Poultry passed its 2026 electrical installation inspection.
-[S] Throughout 2025, every house at Ashcombe Lane Unit, a sister site, also provided at least 2 m of perch space and 2 pecking substrates per 1,000 birds.
+[S] Throughout 2025, every flock at Ashcombe Lane Unit, a sister site, was also placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1324,7 +1324,7 @@ Filing notes:
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every house at Ashcombe Poultry provided at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
+1. Statement P: "Throughout 2025, every flock at Ashcombe Poultry was placed in a house set up with at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with poor gait between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
 4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with poor gait.

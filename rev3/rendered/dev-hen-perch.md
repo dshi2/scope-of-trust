@@ -179,7 +179,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:a3435f3c80fd8baf`
+### attribution context  `sha256:9582a2b858a3e3f6`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -199,8 +199,8 @@ Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
 Item checked: Perch length per hen for every flock kept during 2025
-Method: Review of 2025 house specifications, perch installation records and hen placement numbers for every flock
-Finding: Every flock kept during 2025 had at least 16.2 cm of perch per hen.
+Method: Review of 2025 house specifications, perch installation and maintenance logs, and hen placement numbers for every flock
+Finding: Every flock kept during 2025 had at least 16.2 cm of perch per hen at placement; maintenance logs recorded no perch removal during 2025.
 Status: Confirmed
 
 Filing notes:
@@ -220,7 +220,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:25b504628a820f5f`
+### belief context  `sha256:44f8ad5733aaacdc`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -240,8 +240,8 @@ Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
 Item checked: Perch length per hen for every flock kept during 2025
-Method: Review of 2025 house specifications, perch installation records and hen placement numbers for every flock
-Finding: Every flock kept during 2025 had at least 16.2 cm of perch per hen.
+Method: Review of 2025 house specifications, perch installation and maintenance logs, and hen placement numbers for every flock
+Finding: Every flock kept during 2025 had at least 16.2 cm of perch per hen at placement; maintenance logs recorded no perch removal during 2025.
 Status: Confirmed
 
 Filing notes:
@@ -275,7 +275,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:63bd4283d686d6bb`
+### attribution context  `sha256:f55566c536a557aa`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -295,8 +295,8 @@ Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
 Item checked: Perch length per hen for every flock kept during 2025
-Method: Review of 2025 house specifications, perch installation records and hen placement numbers for every flock
-Finding: Every flock kept during 2025 had at least 16.2 cm of perch per hen.
+Method: Review of 2025 house specifications, perch installation and maintenance logs, and hen placement numbers for every flock
+Finding: Every flock kept during 2025 had at least 16.2 cm of perch per hen at placement; maintenance logs recorded no perch removal during 2025.
 Status: Confirmed
 
 Coverage: This audit assessed perch length per hen only. It did not assess plumage condition records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
@@ -318,7 +318,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:4eb10e02efb5f1e1`
+### belief context  `sha256:5f089ffe8908939a`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -338,8 +338,8 @@ Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
 Item checked: Perch length per hen for every flock kept during 2025
-Method: Review of 2025 house specifications, perch installation records and hen placement numbers for every flock
-Finding: Every flock kept during 2025 had at least 16.2 cm of perch per hen.
+Method: Review of 2025 house specifications, perch installation and maintenance logs, and hen placement numbers for every flock
+Finding: Every flock kept during 2025 had at least 16.2 cm of perch per hen at placement; maintenance logs recorded no perch removal during 2025.
 Status: Confirmed
 
 Coverage: This audit assessed perch length per hen only. It did not assess plumage condition records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
@@ -375,7 +375,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:41f1c517d34636a3`
+### attribution context  `sha256:6df7aa3c34d9aa31`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -395,8 +395,8 @@ Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
 Item checked: Perch length per hen for every flock kept during 2025
-Method: Review of 2025 house specifications, perch installation records and hen placement numbers for every flock
-Finding: Every flock kept during 2025 had at least 16.2 cm of perch per hen.
+Method: Review of 2025 house specifications, perch installation and maintenance logs, and hen placement numbers for every flock
+Finding: Every flock kept during 2025 had at least 16.2 cm of perch per hen at placement; maintenance logs recorded no perch removal during 2025.
 Status: Confirmed
 
 Coverage:
@@ -420,7 +420,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:001c99cc45e6d980`
+### belief context  `sha256:a0ea3a509ebfbd77`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -440,8 +440,8 @@ Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
 Item checked: Perch length per hen for every flock kept during 2025
-Method: Review of 2025 house specifications, perch installation records and hen placement numbers for every flock
-Finding: Every flock kept during 2025 had at least 16.2 cm of perch per hen.
+Method: Review of 2025 house specifications, perch installation and maintenance logs, and hen placement numbers for every flock
+Finding: Every flock kept during 2025 had at least 16.2 cm of perch per hen at placement; maintenance logs recorded no perch removal during 2025.
 Status: Confirmed
 
 Coverage:
@@ -575,7 +575,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:cb1ef385a325a549`
+### attribution context  `sha256:2f74bd4103150c89`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -595,8 +595,8 @@ Audit reference: KVA-2026-0958
 Site: Coldharbour Ridge
 Date: 8 May 2026
 Item checked: Perch length per hen for every flock kept during 2025
-Method: Review of 2025 house specifications, perch installation records and hen placement numbers for every flock
-Finding: Every flock kept at Coldharbour Ridge during 2025 had at least 15.4 cm of perch per hen.
+Method: Review of 2025 house specifications, perch installation and maintenance logs, and hen placement numbers for every flock
+Finding: Every flock kept at Coldharbour Ridge during 2025 had at least 15.4 cm of perch per hen at placement; maintenance logs recorded no perch removal during 2025.
 Status: Confirmed
 
 Filing notes:
@@ -616,7 +616,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:d99247745e354a6b`
+### belief context  `sha256:b94a26cc61a3dc3d`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -636,8 +636,8 @@ Audit reference: KVA-2026-0958
 Site: Coldharbour Ridge
 Date: 8 May 2026
 Item checked: Perch length per hen for every flock kept during 2025
-Method: Review of 2025 house specifications, perch installation records and hen placement numbers for every flock
-Finding: Every flock kept at Coldharbour Ridge during 2025 had at least 15.4 cm of perch per hen.
+Method: Review of 2025 house specifications, perch installation and maintenance logs, and hen placement numbers for every flock
+Finding: Every flock kept at Coldharbour Ridge during 2025 had at least 15.4 cm of perch per hen at placement; maintenance logs recorded no perch removal during 2025.
 Status: Confirmed
 
 Filing notes:
