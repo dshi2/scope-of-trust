@@ -7,7 +7,8 @@ Start with `REVISION_3_SPEC.md`, then `AUDIT_REQUEST.md`.
 | `REVISION_3_SPEC.md` | Authoritative rev-3 specification, the diff from rev 2, and open decisions |
 | `rendered/` | Exact model-visible messages for every case × cell × context, with gold labels |
 | `GOLD_LABELS.md` | Gold labels with reasons, derived from evidence profiles |
-| `CLAIM_EVIDENCE_RUBRIC.md` | Claim-evidence mapping with residual risks, for expert verdicts |
+| `CLAIM_EVIDENCE_RUBRIC.md` | Claim-evidence mapping with residual risks (generated) |
+| `EXPERT_VERDICTS.csv` | Expert verdicts keyed by rubric row id; human-owned, never written by `generate.py` |
 | `REVIEW_RESPONSE_2026-11-16.md` | Item-by-item response to the independent review |
 | `CONTRAST_LEDGER.csv` | Every contrast: intended difference, held fixed, remaining confounds |
 | `SCORING_SPEC.md` | Parse rules, metrics, adversarial examples |

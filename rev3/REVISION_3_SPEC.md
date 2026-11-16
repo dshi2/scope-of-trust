@@ -57,7 +57,7 @@ All conditions share the same system prompt, the same supplier dossier (claims P
 
 That makes 10 conditions and 14 cells per case. Primary, secondary and exploratory arms are not equally powered. Sample size is set for the primary family only (§9).
 
-Rendered cases (A and A0 in full, other cells as their Section 2 audit records, with gold): `rendered/<case>.md`. Claim-to-evidence mapping for expert review: `CLAIM_EVIDENCE_RUBRIC.md`. Every stimulus with its SHA-256: `stimuli_dev.jsonl`.
+Rendered cases (A and A0 in full, other cells as their Section 2 audit records, with gold): `rendered/<case>.md`. Claim-to-evidence mapping for expert review: `CLAIM_EVIDENCE_RUBRIC.md` (generated); verdicts in `EXPERT_VERDICTS.csv` (human-owned, never regenerated). Every stimulus with its SHA-256: `stimuli_dev.jsonl`.
 
 ## 4. Elicitation
 - **Context 1 (attribution, primary).** One user turn, no tools. The model outputs JSON with a per-claim `status` ∈ {`established_true`, `established_false`, `not_established`}, a one-sentence `reason`, and a `recommendation` ∈ {`approve`, `request_more_evidence`, `reject`}. "Established" is defined neutrally: "the documents include an independent check whose findings establish the claim". Nothing says which checks count.
@@ -185,7 +185,7 @@ Pilot data are never pooled with confirmatory data.
 ## 9b. Claim gates (prerequisites, not aspirations)
 | Claim | Requires |
 |---|---|
-| Any confirmatory result | Expert verdicts on every row of `CLAIM_EVIDENCE_RUBRIC.md` (records, sampling methods, findings realistic); confirmatory cases by a different author, in several record formats, outside this repo |
+| Any confirmatory result | Expert verdicts in `EXPERT_VERDICTS.csv` for every row of `CLAIM_EVIDENCE_RUBRIC.md` (records, sampling methods, findings realistic); confirmatory cases by a different author, in several record formats, outside this repo |
 | Results "for welfare assurance" beyond the sampled cases | The confirmatory case population above. The six dev cases (one template family, one author) support development only |
 | Recorded-share semantics (Q_obs gold 1/0) | Holds *conditional on* the stipulated records being accurate. The expert confirms the records and methods are plausible |
 | Real-world or deployment transfer | Naturalistic committee-summary context and one naturalistic test family, validated (§8.1) |
