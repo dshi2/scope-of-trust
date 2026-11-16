@@ -31,16 +31,30 @@ def _key(r):
     return tuple(r[k] for k in KEY)
 
 
-def audit_planned(rows, expected_cells=DECLARED_CELLS, expected_models=None, expected_repeats=None):
-    """Every item x expected cell x model x repeat appears exactly once; nothing else appears."""
+def audit_planned(rows, expected_cells=DECLARED_CELLS, expected_models=None, expected_repeats=None,
+                  *, expected_items=None):
+    """Audit against independently declared, nonempty item/model/repeat sets.
+
+    Never derive those sets from the matrix being audited: that hides whole missing groups.
+    This checks matrix structure, not scientific validity or live-run readiness.
+    """
     issues = []
+    for name, values in (("items", expected_items), ("models", expected_models),
+                         ("repeats", expected_repeats), ("cells", expected_cells)):
+        if not values:
+            issues.append(f"expected {name} must be independently declared and nonempty")
+    required = KEY + FIXED + ("stimulus_sha256",)
+    if any(any(k not in r or r[k] in (None, "") for k in required) for r in rows):
+        issues.append("planned row missing required values")
+    if issues:
+        return {"ok": False, "issues": issues}
     keys = Counter(map(_key, rows))
     dup = [k for k, n in keys.items() if n > 1]
     if dup:
         issues.append(f"duplicate trial keys: {dup[:3]}")
-    items = sorted({r["item_id"] for r in rows})
-    models = sorted(expected_models or {r["model"] for r in rows})
-    repeats = sorted(expected_repeats or {r["repeat"] for r in rows})
+    items = sorted(expected_items)
+    models = sorted(expected_models)
+    repeats = sorted(expected_repeats)
     expected = {(i, c, d, x, m, rp) for i in items for (c, d, x) in expected_cells for m in models for rp in repeats}
     missing, extra = expected - set(keys), set(keys) - expected
     if missing:
@@ -60,19 +74,42 @@ def audit_planned(rows, expected_cells=DECLARED_CELLS, expected_models=None, exp
             "n_models": len(models), "n_repeats": len(repeats)}
 
 
-def reconcile(planned, observed, max_attempts):
-    """observed rows: KEY fields + status + attempts (int >= 1), optionally stimulus_sha256.
+def _attempt_count(value):
+    """Accept positive integers and canonical CSV decimal strings, never floats or booleans."""
+    if type(value) is int and value > 0:
+        return value
+    if isinstance(value, str) and value.isascii() and value.isdecimal() and not value.startswith("0"):
+        return int(value)
+    return None
+
+
+def reconcile(planned, observed, max_attempts, *, terminal_statuses):
+    """observed rows: KEY fields + terminal status + attempts + stimulus_sha256.
 
     valid_log: nothing outside the matrix, no duplicate records, attempts well formed and within the
-    limit, stimuli as planned. fully_observed: every scheduled trial has a terminal record.
+    limit, stimuli as planned. fully_observed: every scheduled trial has a declared terminal record.
     ok = valid_log and fully_observed.
+
+    The caller supplies the frozen execution-status vocabulary (not grader parse statuses), and
+    must separately pass audit_planned. This does not validate model settings or manifest identity.
     """
+    if type(max_attempts) is not int or max_attempts < 1:
+        raise ValueError("max_attempts must be a positive integer")
+    if (not terminal_statuses or isinstance(terminal_statuses, str)
+            or any(not isinstance(s, str) or not s.strip() for s in terminal_statuses)):
+        raise ValueError("terminal_statuses must be a nonempty collection of status names")
+    if not planned or any(any(k not in r or r[k] in (None, "")
+                             for k in KEY + ("stimulus_sha256",)) for r in planned):
+        raise ValueError("planned matrix must be nonempty and contain trial keys and hashes")
     plan = {_key(r): r for r in planned}
+    if len(plan) != len(planned):
+        raise ValueError("planned matrix contains duplicate trial keys")
     obs = defaultdict(list)
     log_issues = []
     for r in observed:
-        if any(k not in r for k in KEY + ("status", "attempts")):
-            log_issues.append(f"record missing required fields: {sorted(set(KEY + ('status', 'attempts')) - set(r))}")
+        required = KEY + ("status", "attempts", "stimulus_sha256")
+        if any(k not in r for k in required):
+            log_issues.append(f"record missing required fields: {sorted(set(required) - set(r))}")
             continue
         obs[_key(r)].append(r)
     outside = [k for k in obs if k not in plan]
@@ -83,28 +120,29 @@ def reconcile(planned, observed, max_attempts):
         log_issues.append(f"{len(repeated)} trials logged more than once")
 
     def bad_attempts(r):
-        try:
-            return not 1 <= int(r["attempts"]) <= max_attempts
-        except (TypeError, ValueError):
-            return True
+        count = _attempt_count(r["attempts"])
+        return count is None or count > max_attempts
     bad = [k for k, v in obs.items() if any(bad_attempts(r) for r in v)]
     if bad:
         log_issues.append(f"{len(bad)} trials with malformed or over-limit attempt counts")
     drift = [k for k, v in obs.items() if k in plan and any(
-        r.get("stimulus_sha256") not in (None, plan[k]["stimulus_sha256"]) for r in v)]
+        r["stimulus_sha256"] != plan[k]["stimulus_sha256"] for r in v)]
     if drift:
         log_issues.append(f"{len(drift)} trials ran a stimulus other than the planned one")
-    missing = [k for k in plan if k not in obs]
+    nonterminal = [k for k, v in obs.items() if any(r["status"] not in terminal_statuses for r in v)]
+    if nonterminal:
+        log_issues.append(f"{len(nonterminal)} trials with undeclared or nonterminal statuses")
+    missing = [k for k in plan if k not in obs or k in nonterminal]
     by_cell = defaultdict(Counter)
     retries = defaultdict(int)
     for k, v in obs.items():
-        if k in plan and k not in bad:
+        if k in plan and k not in bad and k not in nonterminal:
             cell = (plan[k]["model"],) + tuple(plan[k][c] for c in CELL)
             for r in v:
                 by_cell[cell][r["status"]] += 1
                 retries[(plan[k]["model"], plan[k]["condition"])] += int(r["attempts"]) - 1
     valid, full = not log_issues, not missing
-    issues = log_issues + ([f"{len(missing)} scheduled trials have no record"] if missing else [])
+    issues = log_issues + ([f"{len(missing)} scheduled trials have no declared terminal record"] if missing else [])
     return {"ok": valid and full, "valid_log": valid, "fully_observed": full, "issues": issues,
             "missing": len(missing), "missing_keys": missing[:20],
             "status_by_model_cell": {c: dict(s) for c, s in by_cell.items()},
