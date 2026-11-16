@@ -7,7 +7,7 @@
 ## Reproduce
 ```bash
 cd rev3
-python3 -m unittest discover -s tests -t .     # expect 61 tests, OK
+python3 -m unittest discover -s tests -t .     # expect 69 tests, OK
 python3 generate.py && git diff --exit-code    # derived files must be unchanged
 ```
 Python 3.9+ standard library only. No network, no model calls.
