@@ -20,3 +20,26 @@ Start with `REVISION_3_SPEC.md`, then `AUDIT_REQUEST.md`.
 | `tests/` | Leakage, gold, scorer and freshness tests |
 
 All cases are synthetic and pending expert review. No model has been run.
+
+## Matrix audit contract
+
+`audit_planned` requires nonempty `expected_items`, `expected_models` and
+`expected_repeats` declared independently of the matrix it checks. For development,
+the case registry supplies item IDs and model/repeat are explicitly `TBD`.
+Confirmatory callers must use the frozen eligibility list, pinned models and repeats.
+An empty matrix or a wholly missing item, model or repeat must fail.
+
+`reconcile` requires `terminal_statuses` from the frozen execution specification,
+a positive integer `max_attempts`, and a stimulus hash on every observed record.
+Attempts accept positive integers or canonical decimal CSV strings. Provider errors
+can be terminal records; they are not successful model responses. Grader parse
+statuses are a separate field. `fully_observed` means all planned trials have a
+declared terminal record; `valid_log` also checks duplicates, attempts and hashes.
+Neither flag alone establishes that the data are suitable for primary analysis.
+
+Both audits must pass their applicable gates. These helpers do not enforce dispatch,
+verify full run-manifest/model-setting identity, authorize live execution, validate
+sample size, or replace the prespecified missing-data analysis. No production caller
+is connected to them yet. The development matrix remains an engineering fixture.
+
+From `rev3`, run `python3 -m unittest discover -s tests -q`.
