@@ -178,6 +178,13 @@ class TestRunner(unittest.TestCase):
         self.assertTrue(s2["complete"])
         self.assertEqual(len(results(self.d)), 40)
 
+    def test_provider_error_inside_200_is_retried_not_recorded(self):
+        bad = {"provider": "Host", "model": "lab/a", "error": {"message": "upstream"}, "choices": []}
+        _, s = self.go(Fake(lambda n, b: (200, dict(bad, model=b["model"])) if n <= 2 else None),
+                       keys=["a"], c=cfg(max_retries=4))
+        self.assertTrue(s["complete"])
+        self.assertTrue(all(x["status"] == "ok" for x in results(self.d)))
+
     def test_out_of_credit_halts_without_recording_failures(self):
         _, s = self.go(Fake(lambda n, b: (402, {"error": "insufficient credits"}) if n > 6 else None))
         self.assertTrue(s["halted"])

@@ -85,7 +85,11 @@ def http_transport(url, body, timeout):
                                  headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"})
     try:
         with urllib.request.urlopen(req, timeout=timeout) as r:
-            return r.status, json.loads(r.read()), r.headers.get("Retry-After")
+            raw = r.read()
+            try:
+                return r.status, json.loads(raw), r.headers.get("Retry-After")
+            except ValueError:  # truncated/garbled body: infrastructure, retry
+                return 502, {"error": "malformed response body"}, None
     except urllib.error.HTTPError as e:
         try:
             payload = json.loads(e.read())
@@ -274,6 +278,9 @@ class Runner:
                     raise Halt(f"HTTP {status} (auth/credit): run halted with nothing journaled; fix, then --resume")
                 if status in TRANSIENT:
                     raise Transient(f"HTTP {status}", retry_after)
+                if status == 200 and (resp.get("error") or not resp.get("choices")
+                                      or (resp["choices"][0] or {}).get("finish_reason") == "error"):
+                    raise Transient("provider error inside HTTP 200 body")  # upstream failure, not a model answer
                 return self._settle(key, model, iid, req_sha, status, resp)
             except (Transient, TimeoutError, ConnectionError, OSError) as e:
                 billed_unknown = status is None  # no HTTP response: the provider may have billed
@@ -318,6 +325,18 @@ class Runner:
         """Worst-case cost of every planned call not yet journaled. planned: [(full_key, model, messages)],
         one entry per call the frozen design can make (P1: include every possible lookup continuation)."""
         return sum(self._reserve(m, self._body(m, msgs, None)) for k, m, msgs in planned if k not in self.done)
+
+    @staticmethod
+    def _raise_fd_limit(need):
+        """Sockets are file descriptors; macOS shells default to 256, far below 4 x 256 in flight."""
+        try:
+            import resource
+            soft, hard = resource.getrlimit(resource.RLIMIT_NOFILE)
+            want = need if hard == resource.RLIM_INFINITY else min(need, hard)
+            if soft != resource.RLIM_INFINITY and soft < want:
+                resource.setrlimit(resource.RLIMIT_NOFILE, (want, hard))
+        except (ImportError, ValueError, OSError):
+            pass
 
     def run(self, tasks, planned):
         """tasks: iterable of (task_key, model, fn); planned: see worst_case_usd. Writes summary.json.
@@ -371,7 +390,9 @@ class Runner:
                       + (" | STOPPING" if self.stop.is_set() else ""), file=sys.stderr, flush=True)
         if self.progress_every:
             threading.Thread(target=ticker, daemon=True).start()
-        ex = ThreadPoolExecutor(max_workers=sum(m["concurrency_max"] for m in self.cfg["models"].values()))
+        workers = sum(m["concurrency_max"] for m in self.cfg["models"].values())
+        self._raise_fd_limit(4 * workers + 256)
+        ex = ThreadPoolExecutor(max_workers=workers)
         try:
             futures = [ex.submit(one, t) for t in tasks]
             for fu in futures:

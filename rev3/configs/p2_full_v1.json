@@ -24,7 +24,7 @@
    },
    "price_in_per_m": 0.04,
    "price_out_per_m": 0.17,
-   "concurrency_start": 64,
+   "concurrency_start": 256,
    "concurrency_max": 256
   },
   "deepseek-v3.2": {
@@ -39,7 +39,7 @@
    },
    "price_in_per_m": 0.26,
    "price_out_per_m": 0.38,
-   "concurrency_start": 64,
+   "concurrency_start": 256,
    "concurrency_max": 256
   },
   "qwen3-235b-a22b-2507": {
@@ -54,7 +54,7 @@
    },
    "price_in_per_m": 0.09,
    "price_out_per_m": 0.55,
-   "concurrency_start": 64,
+   "concurrency_start": 256,
    "concurrency_max": 256
   },
   "kimi-k2-0905": {
@@ -69,7 +69,7 @@
    },
    "price_in_per_m": 0.6,
    "price_out_per_m": 2.5,
-   "concurrency_start": 64,
+   "concurrency_start": 256,
    "concurrency_max": 256
   }
  }
