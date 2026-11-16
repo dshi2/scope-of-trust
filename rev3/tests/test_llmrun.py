@@ -252,6 +252,18 @@ class TestRunner(unittest.TestCase):
         self.assertEqual(s["stop_info"]["reason"], "test")
         self.assertEqual(s["stop_info"]["in_flight"], 1)
 
+    def test_no_cap_runs_full_design(self):
+        _, s = self.go(Fake(), c=cfg(spend_cap_usd=None))
+        self.assertTrue(s["complete"])
+
+    def test_missing_usage_is_unknown_cost_not_zero(self):
+        t = Fake(lambda n, b: (200, {"provider": "Host", "model": b["model"],
+                                     "choices": [{"finish_reason": "stop", "message": {"content": "x"}}]}))
+        _, s = self.go(t, keys=["a"])
+        res = results(self.d)
+        self.assertTrue(all(r["cost_usd"] is None and r["billing_unresolved"] for r in res))
+        self.assertEqual(s["results_without_billing"], 2)
+
     def test_unsettled_intent_counts_as_spent_on_resume(self):
         r = Runner(self.d, cfg(), man(["a"]), Fake())
         r._write({"type": "intent", "iid": "z#0#1", "key": "a|t1", "reserve_usd": 0.25})
