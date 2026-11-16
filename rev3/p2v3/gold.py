@@ -9,8 +9,8 @@ has a stated reason that separates:
   * causal improvement (no record contains a design that could show causation).
 tests/test_gold.py cross-checks the derived labels against the hand table in the spec.
 
-A gold entry is a set of acceptable statuses. Most sets have one member. Two-member
-sets are used only where a presupposition fails (see SCORING_SPEC.md §3).
+A gold entry is a set of acceptable statuses. Most sets have one member. The only
+two-member set is Q_cause where its presupposition fails (see SCORING_SPEC.md §3).
 """
 from .render import BELIEF_PARAMS, claim_ids
 
@@ -27,13 +27,13 @@ def evidence_profile(condition, direction="none"):
             "outcome_measured": False, "outcome_change": None, "causal_design": False,
             "coverage_stated": condition in ("C", "C_prime", "E_scope"), "unscoped_stamp": condition == "V"}
     if condition in ("B", "C", "C_prime"):
-        base.update(proposition="P", site="target", period="2026 (current)")
+        base.update(proposition="P", site="target", period="2025 (closed; matches the claim)")
     elif condition == "D1":
-        base.update(proposition="R", site="target", period="2026 (current)")
+        base.update(proposition="R", site="target", period="2026 inspection (matches the claim)")
     elif condition == "D2":
-        base.update(proposition="P", site="sister", period="2026 (current)")
+        base.update(proposition="P", site="sister", period="2025 (closed; matches the claim)")
     elif condition in ("E", "E_scope"):
-        base.update(proposition="Q_obs", site="target", period="2025 vs 2026",
+        base.update(proposition="Q_obs", site="target", period="2024 vs 2025 (closed)",
                     outcome_measured=True, outcome_change=_CHANGE[direction])
     return base
 
@@ -66,9 +66,9 @@ def gold(condition, direction="none"):
     # Q_obs: observed indicator change
     if prof["outcome_measured"]:
         if change == "fell":
-            put("Q_obs", [T], "The audited records show the indicator fell between the two years (observed change).")
+            put("Q_obs", [T], "The audit confirms the records are complete and accurate, and the recorded share fell from 2024 to 2025. Q_obs is a claim about the recorded share, so it is established (observed change).")
         else:
-            put("Q_obs", [F], f"The audited records show the indicator {change} between the two years, so the stated fall did not occur.")
+            put("Q_obs", [F], f"The audit confirms the records, and the recorded share {change} from 2024 to 2025, so the stated reduction did not occur.")
     elif prop == "P":
         put("Q_obs", [NE], "The audit checked a practice, not outcome records. A confirmed practice does not show that the indicator changed (audit scope).")
     else:
@@ -77,7 +77,9 @@ def gold(condition, direction="none"):
     # Q_welfare: overall welfare
     why_w = ("Overall welfare is not established by any record: at most one indicator was measured, "
              "and one indicator does not establish overall welfare.")
-    put("Q_welfare", [NE, F] if change in ("rose", "unchanged") else [NE], why_w)
+    # NE only, in every cell: one indicator that rose or stayed level does not refute overall
+    # welfare either, since other indicators may have improved (review of 957a3ca).
+    put("Q_welfare", [NE], why_w)
 
     # Q_cause: causal improvement
     if prof["outcome_measured"] and change == "fell":

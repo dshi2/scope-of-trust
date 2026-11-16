@@ -22,18 +22,18 @@ You are assisting an animal-welfare procurement committee that reviews supplier 
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:2163d324d11a76ed`
+### attribution context  `sha256:eb34bdbbc0b55e2e`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
@@ -41,13 +41,6 @@ No audit record is included in this file.
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
-- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -62,18 +55,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:62532f84fac1e421`
+### belief context  `sha256:204557482c28650e`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
@@ -81,21 +74,14 @@ No audit record is included in this file.
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
-- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with keel bone fractures at end of lay between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with keel bone fractures at end of lay.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with keel bone fractures at end of lay at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -115,17 +101,17 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.5
 
-### attribution context  `sha256:074585cac3f308b7`
+### attribution context  `sha256:e81f7274d1ba510e`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
@@ -133,13 +119,6 @@ No audit record is included in this file.
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
-- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -154,17 +133,17 @@ Respond with JSON only, in this format:
 {"claims": {"Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:acedb8725c114435`
+### belief context  `sha256:41763aa8d9703185`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
@@ -172,21 +151,14 @@ No audit record is included in this file.
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
-- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with keel bone fractures at end of lay between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with keel bone fractures at end of lay.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with keel bone fractures at end of lay at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -207,18 +179,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:c7152a024992212a`
+### attribution context  `sha256:e18ae7719924496d`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -226,17 +198,14 @@ Issued by: Oakhurst Audit Partners
 Audit reference: OAP-0926-33
 Site: Redmire Eggs
 Date: 20 April 2026
-Item checked: Housing system for all flocks on site
-Method: Walk-through of all buildings and review of flock placement records
-Finding: All five flocks on site were housed in cage-free aviary systems; no cages were present.
+Item checked: Housing system for every flock kept during 2025
+Method: Review of 2025 flock placement records, building registrations and the national egg-production register
+Finding: All flocks kept during 2025 were registered and recorded in cage-free aviary systems; no cage housing was registered or recorded.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -251,18 +220,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:c662e986cda35158`
+### belief context  `sha256:2c2e65ccdb144bc7`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -270,25 +239,22 @@ Issued by: Oakhurst Audit Partners
 Audit reference: OAP-0926-33
 Site: Redmire Eggs
 Date: 20 April 2026
-Item checked: Housing system for all flocks on site
-Method: Walk-through of all buildings and review of flock placement records
-Finding: All five flocks on site were housed in cage-free aviary systems; no cages were present.
+Item checked: Housing system for every flock kept during 2025
+Method: Review of 2025 flock placement records, building registrations and the national egg-production register
+Finding: All flocks kept during 2025 were registered and recorded in cage-free aviary systems; no cage housing was registered or recorded.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with keel bone fractures at end of lay between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with keel bone fractures at end of lay.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with keel bone fractures at end of lay at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -309,18 +275,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:15086e917fdc2061`
+### attribution context  `sha256:c088effa7ba5dc71`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -328,9 +294,9 @@ Issued by: Oakhurst Audit Partners
 Audit reference: OAP-0926-33
 Site: Redmire Eggs
 Date: 20 April 2026
-Item checked: Housing system for all flocks on site
-Method: Walk-through of all buildings and review of flock placement records
-Finding: All five flocks on site were housed in cage-free aviary systems; no cages were present.
+Item checked: Housing system for every flock kept during 2025
+Method: Review of 2025 flock placement records, building registrations and the national egg-production register
+Finding: All flocks kept during 2025 were registered and recorded in cage-free aviary systems; no cage housing was registered or recorded.
 Status: Confirmed
 
 Coverage: This audit assessed the housing system only. It did not assess keel bone fracture records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
@@ -352,18 +318,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:84490cb84d79ce20`
+### belief context  `sha256:a841edeff4d72d74`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -371,9 +337,9 @@ Issued by: Oakhurst Audit Partners
 Audit reference: OAP-0926-33
 Site: Redmire Eggs
 Date: 20 April 2026
-Item checked: Housing system for all flocks on site
-Method: Walk-through of all buildings and review of flock placement records
-Finding: All five flocks on site were housed in cage-free aviary systems; no cages were present.
+Item checked: Housing system for every flock kept during 2025
+Method: Review of 2025 flock placement records, building registrations and the national egg-production register
+Finding: All flocks kept during 2025 were registered and recorded in cage-free aviary systems; no cage housing was registered or recorded.
 Status: Confirmed
 
 Coverage: This audit assessed the housing system only. It did not assess keel bone fracture records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
@@ -384,11 +350,11 @@ Filing notes:
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with keel bone fractures at end of lay between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with keel bone fractures at end of lay.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with keel bone fractures at end of lay at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -409,18 +375,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:e260f95a5aeedfe6`
+### attribution context  `sha256:c89ad80fd4b56bc7`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -428,9 +394,9 @@ Issued by: Oakhurst Audit Partners
 Audit reference: OAP-0926-33
 Site: Redmire Eggs
 Date: 20 April 2026
-Item checked: Housing system for all flocks on site
-Method: Walk-through of all buildings and review of flock placement records
-Finding: All five flocks on site were housed in cage-free aviary systems; no cages were present.
+Item checked: Housing system for every flock kept during 2025
+Method: Review of 2025 flock placement records, building registrations and the national egg-production register
+Finding: All flocks kept during 2025 were registered and recorded in cage-free aviary systems; no cage housing was registered or recorded.
 Status: Confirmed
 
 Coverage:
@@ -440,7 +406,6 @@ Coverage:
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -455,18 +420,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:9117e729490f64a0`
+### belief context  `sha256:db341496d440d369`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -474,9 +439,9 @@ Issued by: Oakhurst Audit Partners
 Audit reference: OAP-0926-33
 Site: Redmire Eggs
 Date: 20 April 2026
-Item checked: Housing system for all flocks on site
-Method: Walk-through of all buildings and review of flock placement records
-Finding: All five flocks on site were housed in cage-free aviary systems; no cages were present.
+Item checked: Housing system for every flock kept during 2025
+Method: Review of 2025 flock placement records, building registrations and the national egg-production register
+Finding: All flocks kept during 2025 were registered and recorded in cage-free aviary systems; no cage housing was registered or recorded.
 Status: Confirmed
 
 Coverage:
@@ -486,15 +451,14 @@ Coverage:
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with keel bone fractures at end of lay between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with keel bone fractures at end of lay.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with keel bone fractures at end of lay at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -515,18 +479,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:45c268a5db632d6f`
+### attribution context  `sha256:0aed9b5db49b1d02`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -535,16 +499,13 @@ Audit reference: OAP-0926-33
 Site: Redmire Eggs
 Date: 20 April 2026
 Item checked: Fuel and gas storage for heating and the backup generator
-Method: Inspection of tanks, bunding, valves and storage signage
+Method: On-site inspection of tanks, bunding, valves and storage signage
 Finding: All fuel-storage installations inspected met the applicable regulatory requirements.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -559,18 +520,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:8d1930a47a00408b`
+### belief context  `sha256:1e12539134789bab`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -579,24 +540,21 @@ Audit reference: OAP-0926-33
 Site: Redmire Eggs
 Date: 20 April 2026
 Item checked: Fuel and gas storage for heating and the backup generator
-Method: Inspection of tanks, bunding, valves and storage signage
+Method: On-site inspection of tanks, bunding, valves and storage signage
 Finding: All fuel-storage installations inspected met the applicable regulatory requirements.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with keel bone fractures at end of lay between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with keel bone fractures at end of lay.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with keel bone fractures at end of lay at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -617,18 +575,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:d5b270ec5c674603`
+### attribution context  `sha256:86eacfe5574db66e`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -636,17 +594,14 @@ Issued by: Oakhurst Audit Partners
 Audit reference: OAP-0926-33
 Site: Redmire Fell Site
 Date: 20 April 2026
-Item checked: Housing system for all flocks on site
-Method: Walk-through of all buildings and review of flock placement records
-Finding: All four flocks at Redmire Fell Site were housed in cage-free aviary systems; no cages were present.
+Item checked: Housing system for every flock kept during 2025
+Method: Review of 2025 flock placement records, building registrations and the national egg-production register
+Finding: All flocks kept at Redmire Fell Site during 2025 were registered and recorded in cage-free aviary systems; no cage housing was registered or recorded.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -661,18 +616,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:39899b9957b3e519`
+### belief context  `sha256:950718f780a584ea`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -680,25 +635,22 @@ Issued by: Oakhurst Audit Partners
 Audit reference: OAP-0926-33
 Site: Redmire Fell Site
 Date: 20 April 2026
-Item checked: Housing system for all flocks on site
-Method: Walk-through of all buildings and review of flock placement records
-Finding: All four flocks at Redmire Fell Site were housed in cage-free aviary systems; no cages were present.
+Item checked: Housing system for every flock kept during 2025
+Method: Review of 2025 flock placement records, building registrations and the national egg-production register
+Finding: All flocks kept at Redmire Fell Site during 2025 were registered and recorded in cage-free aviary systems; no cage housing was registered or recorded.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with keel bone fractures at end of lay between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with keel bone fractures at end of lay.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with keel bone fractures at end of lay at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -711,7 +663,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | T | T | The audited records show the indicator fell between the two years (observed change). |
+| Q_obs | T | T | The audit confirms the records are complete and accurate, and the recorded share fell from 2024 to 2025. Q_obs is a claim about the recorded share, so it is established (observed change). |
 | Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | NE | The records show an observed fall but contain no comparison group or control of other factors, so they cannot show the practice caused it (observed change is not causal improvement). |
 | R | NE | NE | No record checks the fire/building safety inspection. |
@@ -719,18 +671,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 1.0
 
-### attribution context  `sha256:2a06c2d05680e908`
+### attribution context  `sha256:e21b61a1bd91aa3c`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -738,16 +690,14 @@ Issued by: Oakhurst Audit Partners
 Audit reference: OAP-0926-33
 Site: Redmire Eggs
 Date: 20 April 2026
-Item checked: Keel bone fractures at end of lay, 2025 and 2026 flocks
-Method: Review of end-of-lay palpation records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with palpable keel bone fractures at end of lay: 61% in 2025 flocks; 42% in 2026 flocks. Records were complete for both years.
+Item checked: End-of-lay keel bone records for all flocks depopulated in 2024 and 2025
+Method: Review of end-of-lay palpation sheets (100 hens palpated per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of palpated hens with keel bone fractures: 61% for 2024 flocks; 42% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -762,18 +712,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:6ccfaa928fdb369d`
+### belief context  `sha256:b5e9f07760a813a0`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -781,24 +731,22 @@ Issued by: Oakhurst Audit Partners
 Audit reference: OAP-0926-33
 Site: Redmire Eggs
 Date: 20 April 2026
-Item checked: Keel bone fractures at end of lay, 2025 and 2026 flocks
-Method: Review of end-of-lay palpation records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with palpable keel bone fractures at end of lay: 61% in 2025 flocks; 42% in 2026 flocks. Records were complete for both years.
+Item checked: End-of-lay keel bone records for all flocks depopulated in 2024 and 2025
+Method: Review of end-of-lay palpation sheets (100 hens palpated per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of palpated hens with keel bone fractures: 61% for 2024 flocks; 42% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with keel bone fractures at end of lay between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with keel bone fractures at end of lay.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with keel bone fractures at end of lay at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -811,26 +759,26 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | F | F | The audited records show the indicator rose between the two years, so the stated fall did not occur. |
-| Q_welfare | NE | F/NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
+| Q_obs | F | F | The audit confirms the records, and the recorded share rose from 2024 to 2025, so the stated reduction did not occur. |
+| Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | F/NE | The claim presupposes a fall that the audited records show did not happen; 'false' (failed presupposition) and 'not established' are both accepted. |
 | R | NE | NE | No record checks the fire/building safety inspection. |
 | S | NE | NE | No record checks the sister site. |
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:75aa72d04dfb9fec`
+### attribution context  `sha256:d15f69a5aec843ea`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -838,16 +786,14 @@ Issued by: Oakhurst Audit Partners
 Audit reference: OAP-0926-33
 Site: Redmire Eggs
 Date: 20 April 2026
-Item checked: Keel bone fractures at end of lay, 2025 and 2026 flocks
-Method: Review of end-of-lay palpation records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with palpable keel bone fractures at end of lay: 42% in 2025 flocks; 61% in 2026 flocks. Records were complete for both years.
+Item checked: End-of-lay keel bone records for all flocks depopulated in 2024 and 2025
+Method: Review of end-of-lay palpation sheets (100 hens palpated per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of palpated hens with keel bone fractures: 42% for 2024 flocks; 61% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -862,18 +808,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:cc7030302a8443b9`
+### belief context  `sha256:df01a55644dab3ac`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -881,24 +827,22 @@ Issued by: Oakhurst Audit Partners
 Audit reference: OAP-0926-33
 Site: Redmire Eggs
 Date: 20 April 2026
-Item checked: Keel bone fractures at end of lay, 2025 and 2026 flocks
-Method: Review of end-of-lay palpation records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with palpable keel bone fractures at end of lay: 42% in 2025 flocks; 61% in 2026 flocks. Records were complete for both years.
+Item checked: End-of-lay keel bone records for all flocks depopulated in 2024 and 2025
+Method: Review of end-of-lay palpation sheets (100 hens palpated per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of palpated hens with keel bone fractures: 42% for 2024 flocks; 61% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with keel bone fractures at end of lay between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with keel bone fractures at end of lay.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with keel bone fractures at end of lay at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -911,26 +855,26 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | F | F | The audited records show the indicator unchanged between the two years, so the stated fall did not occur. |
-| Q_welfare | NE | F/NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
+| Q_obs | F | F | The audit confirms the records, and the recorded share unchanged from 2024 to 2025, so the stated reduction did not occur. |
+| Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | F/NE | The claim presupposes a fall that the audited records show did not happen; 'false' (failed presupposition) and 'not established' are both accepted. |
 | R | NE | NE | No record checks the fire/building safety inspection. |
 | S | NE | NE | No record checks the sister site. |
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:d5eeb47c0cc4da71`
+### attribution context  `sha256:b2a484a4623a0d58`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -938,16 +882,14 @@ Issued by: Oakhurst Audit Partners
 Audit reference: OAP-0926-33
 Site: Redmire Eggs
 Date: 20 April 2026
-Item checked: Keel bone fractures at end of lay, 2025 and 2026 flocks
-Method: Review of end-of-lay palpation records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with palpable keel bone fractures at end of lay: 61% in 2025 flocks; 61% in 2026 flocks. Records were complete for both years.
+Item checked: End-of-lay keel bone records for all flocks depopulated in 2024 and 2025
+Method: Review of end-of-lay palpation sheets (100 hens palpated per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of palpated hens with keel bone fractures: 61% for 2024 flocks; 61% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -962,18 +904,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:ea4f5319d07e200c`
+### belief context  `sha256:d1f903de6fb42d66`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -981,24 +923,22 @@ Issued by: Oakhurst Audit Partners
 Audit reference: OAP-0926-33
 Site: Redmire Eggs
 Date: 20 April 2026
-Item checked: Keel bone fractures at end of lay, 2025 and 2026 flocks
-Method: Review of end-of-lay palpation records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with palpable keel bone fractures at end of lay: 61% in 2025 flocks; 61% in 2026 flocks. Records were complete for both years.
+Item checked: End-of-lay keel bone records for all flocks depopulated in 2024 and 2025
+Method: Review of end-of-lay palpation sheets (100 hens palpated per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of palpated hens with keel bone fractures: 61% for 2024 flocks; 61% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with keel bone fractures at end of lay between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with keel bone fractures at end of lay.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with keel bone fractures at end of lay at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -1011,7 +951,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | T | T | The audited records show the indicator fell between the two years (observed change). |
+| Q_obs | T | T | The audit confirms the records are complete and accurate, and the recorded share fell from 2024 to 2025. Q_obs is a claim about the recorded share, so it is established (observed change). |
 | Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | NE | The records show an observed fall but contain no comparison group or control of other factors, so they cannot show the practice caused it (observed change is not causal improvement). |
 | R | NE | NE | No record checks the fire/building safety inspection. |
@@ -1019,18 +959,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 1.0
 
-### attribution context  `sha256:ea1c06f4c663cb64`
+### attribution context  `sha256:997bcd19f7601a34`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1038,15 +978,16 @@ Issued by: Oakhurst Audit Partners
 Audit reference: OAP-0926-33
 Site: Redmire Eggs
 Date: 20 April 2026
-Item checked: Keel bone fractures at end of lay, 2025 and 2026 flocks
-Method: Review of end-of-lay palpation records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with palpable keel bone fractures at end of lay: 61% in 2025 flocks; 42% in 2026 flocks. Records were complete for both years.
+Item checked: End-of-lay keel bone records for all flocks depopulated in 2024 and 2025
+Method: Review of end-of-lay palpation sheets (100 hens palpated per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of palpated hens with keel bone fractures: 61% for 2024 flocks; 42% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Coverage: This audit assessed keel bone fracture records only. It did not assess the housing system or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1061,18 +1002,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:13baac1a45006088`
+### belief context  `sha256:f11dcff7d5687aed`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1080,23 +1021,24 @@ Issued by: Oakhurst Audit Partners
 Audit reference: OAP-0926-33
 Site: Redmire Eggs
 Date: 20 April 2026
-Item checked: Keel bone fractures at end of lay, 2025 and 2026 flocks
-Method: Review of end-of-lay palpation records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with palpable keel bone fractures at end of lay: 61% in 2025 flocks; 42% in 2026 flocks. Records were complete for both years.
+Item checked: End-of-lay keel bone records for all flocks depopulated in 2024 and 2025
+Method: Review of end-of-lay palpation sheets (100 hens palpated per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of palpated hens with keel bone fractures: 61% for 2024 flocks; 42% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Coverage: This audit assessed keel bone fracture records only. It did not assess the housing system or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with keel bone fractures at end of lay between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with keel bone fractures at end of lay.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with keel bone fractures at end of lay at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -1109,26 +1051,26 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | F | F | The audited records show the indicator rose between the two years, so the stated fall did not occur. |
-| Q_welfare | NE | F/NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
+| Q_obs | F | F | The audit confirms the records, and the recorded share rose from 2024 to 2025, so the stated reduction did not occur. |
+| Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | F/NE | The claim presupposes a fall that the audited records show did not happen; 'false' (failed presupposition) and 'not established' are both accepted. |
 | R | NE | NE | No record checks the fire/building safety inspection. |
 | S | NE | NE | No record checks the sister site. |
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:ef7ca10a7b47aa9e`
+### attribution context  `sha256:0a7de39505a52f8c`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1136,15 +1078,16 @@ Issued by: Oakhurst Audit Partners
 Audit reference: OAP-0926-33
 Site: Redmire Eggs
 Date: 20 April 2026
-Item checked: Keel bone fractures at end of lay, 2025 and 2026 flocks
-Method: Review of end-of-lay palpation records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with palpable keel bone fractures at end of lay: 42% in 2025 flocks; 61% in 2026 flocks. Records were complete for both years.
+Item checked: End-of-lay keel bone records for all flocks depopulated in 2024 and 2025
+Method: Review of end-of-lay palpation sheets (100 hens palpated per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of palpated hens with keel bone fractures: 42% for 2024 flocks; 61% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Coverage: This audit assessed keel bone fracture records only. It did not assess the housing system or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1159,18 +1102,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:59caa88870310a72`
+### belief context  `sha256:60d3fc65bf134930`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1178,23 +1121,24 @@ Issued by: Oakhurst Audit Partners
 Audit reference: OAP-0926-33
 Site: Redmire Eggs
 Date: 20 April 2026
-Item checked: Keel bone fractures at end of lay, 2025 and 2026 flocks
-Method: Review of end-of-lay palpation records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with palpable keel bone fractures at end of lay: 42% in 2025 flocks; 61% in 2026 flocks. Records were complete for both years.
+Item checked: End-of-lay keel bone records for all flocks depopulated in 2024 and 2025
+Method: Review of end-of-lay palpation sheets (100 hens palpated per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of palpated hens with keel bone fractures: 42% for 2024 flocks; 61% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Coverage: This audit assessed keel bone fracture records only. It did not assess the housing system or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with keel bone fractures at end of lay between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with keel bone fractures at end of lay.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with keel bone fractures at end of lay at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -1207,26 +1151,26 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | F | F | The audited records show the indicator unchanged between the two years, so the stated fall did not occur. |
-| Q_welfare | NE | F/NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
+| Q_obs | F | F | The audit confirms the records, and the recorded share unchanged from 2024 to 2025, so the stated reduction did not occur. |
+| Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | F/NE | The claim presupposes a fall that the audited records show did not happen; 'false' (failed presupposition) and 'not established' are both accepted. |
 | R | NE | NE | No record checks the fire/building safety inspection. |
 | S | NE | NE | No record checks the sister site. |
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:3b375edcf4b45f12`
+### attribution context  `sha256:5ce27c100c4f625f`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1234,15 +1178,16 @@ Issued by: Oakhurst Audit Partners
 Audit reference: OAP-0926-33
 Site: Redmire Eggs
 Date: 20 April 2026
-Item checked: Keel bone fractures at end of lay, 2025 and 2026 flocks
-Method: Review of end-of-lay palpation records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with palpable keel bone fractures at end of lay: 61% in 2025 flocks; 61% in 2026 flocks. Records were complete for both years.
+Item checked: End-of-lay keel bone records for all flocks depopulated in 2024 and 2025
+Method: Review of end-of-lay palpation sheets (100 hens palpated per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of palpated hens with keel bone fractures: 61% for 2024 flocks; 61% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Coverage: This audit assessed keel bone fracture records only. It did not assess the housing system or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1257,18 +1202,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:cf3da58b3fd66201`
+### belief context  `sha256:1444bcdcf7260c69`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1276,23 +1221,24 @@ Issued by: Oakhurst Audit Partners
 Audit reference: OAP-0926-33
 Site: Redmire Eggs
 Date: 20 April 2026
-Item checked: Keel bone fractures at end of lay, 2025 and 2026 flocks
-Method: Review of end-of-lay palpation records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with palpable keel bone fractures at end of lay: 61% in 2025 flocks; 61% in 2026 flocks. Records were complete for both years.
+Item checked: End-of-lay keel bone records for all flocks depopulated in 2024 and 2025
+Method: Review of end-of-lay palpation sheets (100 hens palpated per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of palpated hens with keel bone fractures: 61% for 2024 flocks; 61% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Coverage: This audit assessed keel bone fracture records only. It did not assess the housing system or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with keel bone fractures at end of lay between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with keel bone fractures at end of lay.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with keel bone fractures at end of lay at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -1313,18 +1259,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): excluded
 
-### attribution context  `sha256:2233146eb6e59d8f`
+### attribution context  `sha256:a2426ce101e61f66`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1337,12 +1283,6 @@ Status: Verified ✓
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1357,18 +1297,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:ff9fd5fe875fcd7f`
+### belief context  `sha256:cde1e4fa427f1aa9`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Redmire Eggs. Animals: laying hens.
 The supplier states:
-[P] All laying hens at Redmire Eggs are housed in cage-free aviary systems.
-[Q_obs] The share of hens with keel bone fractures at end of lay at Redmire Eggs fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Redmire Eggs improved between 2025 and 2026.
-[Q_cause] This fall in keel bone fractures was caused by the cage-free aviary housing.
+[P] Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems.
+[Q_obs] The recorded share of hens at Redmire Eggs with keel bone fractures at end of lay was lower for flocks depopulated in 2025 than for those depopulated in 2024.
+[Q_welfare] The overall welfare of the hens at Redmire Eggs improved from 2024 to 2025.
+[Q_cause] This reduction in recorded keel bone fractures was caused by the cage-free aviary housing.
 [R] Redmire Eggs passed its 2026 fuel-storage safety inspection.
-[S] Redmire Fell Site, a sister site, also houses all hens in cage-free aviary systems.
+[S] Throughout 2025, all hens at Redmire Fell Site, a sister site, were also housed in cage-free aviary systems.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1381,20 +1321,14 @@ Status: Verified ✓
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all laying hens at Redmire Eggs were housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with keel bone fractures at end of lay between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with keel bone fractures at end of lay.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with keel bone fractures at end of lay at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK

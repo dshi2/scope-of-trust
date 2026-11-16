@@ -22,18 +22,18 @@ You are assisting an animal-welfare procurement committee that reviews supplier 
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:b5f8eb3861a634e0`
+### attribution context  `sha256:bc1ffb68b52a4c38`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
@@ -41,13 +41,6 @@ No audit record is included in this file.
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
-- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -62,18 +55,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:c3266a93845afc4d`
+### belief context  `sha256:e6ffb9c3cceb6087`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
@@ -81,21 +74,14 @@ No audit record is included in this file.
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
-- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with footpad lesions.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of birds with footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -115,17 +101,17 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.5
 
-### attribution context  `sha256:5d717a51a7a1ce9c`
+### attribution context  `sha256:03e9842f19d1c6d0`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
@@ -133,13 +119,6 @@ No audit record is included in this file.
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
-- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -154,17 +133,17 @@ Respond with JSON only, in this format:
 {"claims": {"Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:2494bd43b3ee6afb`
+### belief context  `sha256:ccbab83291485965`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
@@ -172,21 +151,14 @@ No audit record is included in this file.
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
-- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with footpad lesions.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of birds with footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -207,18 +179,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:f5a0484bc68e7f0d`
+### attribution context  `sha256:92058cb68eef68cf`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -226,17 +198,14 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0412
 Site: Hollin Brook Farm
 Date: 12 March 2026
-Item checked: Stocking density in all six houses
-Method: Review of placement and weight records for January–February 2026 and on-site check weighing
-Finding: Maximum stocking density recorded was 29.1 kg/m², within the 30 kg/m² limit.
+Item checked: Stocking density of every flock housed at any time during 2025
+Method: Review of placement, mortality and slaughter-weight records for every flock housed during 2025, checked against feed and delivery invoices
+Finding: The highest stocking density recorded for any flock housed during 2025 was 29.1 kg/m², within the 30 kg/m² limit.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -251,18 +220,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:db99e551f4079bda`
+### belief context  `sha256:5658d5dedf4bb38a`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -270,25 +239,22 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0412
 Site: Hollin Brook Farm
 Date: 12 March 2026
-Item checked: Stocking density in all six houses
-Method: Review of placement and weight records for January–February 2026 and on-site check weighing
-Finding: Maximum stocking density recorded was 29.1 kg/m², within the 30 kg/m² limit.
+Item checked: Stocking density of every flock housed at any time during 2025
+Method: Review of placement, mortality and slaughter-weight records for every flock housed during 2025, checked against feed and delivery invoices
+Finding: The highest stocking density recorded for any flock housed during 2025 was 29.1 kg/m², within the 30 kg/m² limit.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with footpad lesions.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of birds with footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -309,18 +275,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:b6ac863c7e7fb2d5`
+### attribution context  `sha256:81982d0105a2d7ff`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -328,9 +294,9 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0412
 Site: Hollin Brook Farm
 Date: 12 March 2026
-Item checked: Stocking density in all six houses
-Method: Review of placement and weight records for January–February 2026 and on-site check weighing
-Finding: Maximum stocking density recorded was 29.1 kg/m², within the 30 kg/m² limit.
+Item checked: Stocking density of every flock housed at any time during 2025
+Method: Review of placement, mortality and slaughter-weight records for every flock housed during 2025, checked against feed and delivery invoices
+Finding: The highest stocking density recorded for any flock housed during 2025 was 29.1 kg/m², within the 30 kg/m² limit.
 Status: Confirmed
 
 Coverage: This audit assessed stocking density only. It did not assess footpad lesion records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
@@ -352,18 +318,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:5f52815a01d00f3c`
+### belief context  `sha256:5f6242706ace0a1b`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -371,9 +337,9 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0412
 Site: Hollin Brook Farm
 Date: 12 March 2026
-Item checked: Stocking density in all six houses
-Method: Review of placement and weight records for January–February 2026 and on-site check weighing
-Finding: Maximum stocking density recorded was 29.1 kg/m², within the 30 kg/m² limit.
+Item checked: Stocking density of every flock housed at any time during 2025
+Method: Review of placement, mortality and slaughter-weight records for every flock housed during 2025, checked against feed and delivery invoices
+Finding: The highest stocking density recorded for any flock housed during 2025 was 29.1 kg/m², within the 30 kg/m² limit.
 Status: Confirmed
 
 Coverage: This audit assessed stocking density only. It did not assess footpad lesion records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
@@ -384,11 +350,11 @@ Filing notes:
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with footpad lesions.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of birds with footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -409,18 +375,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:0b9f0222c8bb6fb4`
+### attribution context  `sha256:6ea61a786438f34f`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -428,9 +394,9 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0412
 Site: Hollin Brook Farm
 Date: 12 March 2026
-Item checked: Stocking density in all six houses
-Method: Review of placement and weight records for January–February 2026 and on-site check weighing
-Finding: Maximum stocking density recorded was 29.1 kg/m², within the 30 kg/m² limit.
+Item checked: Stocking density of every flock housed at any time during 2025
+Method: Review of placement, mortality and slaughter-weight records for every flock housed during 2025, checked against feed and delivery invoices
+Finding: The highest stocking density recorded for any flock housed during 2025 was 29.1 kg/m², within the 30 kg/m² limit.
 Status: Confirmed
 
 Coverage:
@@ -440,7 +406,6 @@ Coverage:
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -455,18 +420,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:86375ca893284842`
+### belief context  `sha256:490fad4aaec22f68`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -474,9 +439,9 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0412
 Site: Hollin Brook Farm
 Date: 12 March 2026
-Item checked: Stocking density in all six houses
-Method: Review of placement and weight records for January–February 2026 and on-site check weighing
-Finding: Maximum stocking density recorded was 29.1 kg/m², within the 30 kg/m² limit.
+Item checked: Stocking density of every flock housed at any time during 2025
+Method: Review of placement, mortality and slaughter-weight records for every flock housed during 2025, checked against feed and delivery invoices
+Finding: The highest stocking density recorded for any flock housed during 2025 was 29.1 kg/m², within the 30 kg/m² limit.
 Status: Confirmed
 
 Coverage:
@@ -486,15 +451,14 @@ Coverage:
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with footpad lesions.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of birds with footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -515,18 +479,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:c074ca340099f05a`
+### attribution context  `sha256:753319effe6e5b08`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -535,15 +499,13 @@ Audit reference: KVA-2026-0412
 Site: Hollin Brook Farm
 Date: 12 March 2026
 Item checked: Fire-safety systems in all six houses and the feed store
-Method: Inspection of alarms, extinguishers, emergency exits and electrical panels
+Method: On-site inspection of alarms, extinguishers, emergency exits and electrical panels
 Finding: All fire-safety systems inspected met the applicable regulatory requirements.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -558,18 +520,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:b51a762ec037964c`
+### belief context  `sha256:1272b4bbf7ae977a`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -578,23 +540,21 @@ Audit reference: KVA-2026-0412
 Site: Hollin Brook Farm
 Date: 12 March 2026
 Item checked: Fire-safety systems in all six houses and the feed store
-Method: Inspection of alarms, extinguishers, emergency exits and electrical panels
+Method: On-site inspection of alarms, extinguishers, emergency exits and electrical panels
 Finding: All fire-safety systems inspected met the applicable regulatory requirements.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with footpad lesions.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of birds with footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -615,18 +575,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:23a10c9293755f48`
+### attribution context  `sha256:bd39d4f67d0b9a69`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -634,16 +594,14 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0412
 Site: Hollin Brook North
 Date: 12 March 2026
-Item checked: Stocking density in all six houses
-Method: Review of placement and weight records for January–February 2026 and on-site check weighing
-Finding: Maximum stocking density recorded at Hollin Brook North was 28.7 kg/m², within the 30 kg/m² limit.
+Item checked: Stocking density of every flock housed at any time during 2025
+Method: Review of placement, mortality and slaughter-weight records for every flock housed during 2025, checked against feed and delivery invoices
+Finding: The highest stocking density recorded for any flock housed at Hollin Brook North during 2025 was 28.7 kg/m², within the 30 kg/m² limit.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -658,18 +616,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:b694e2fdde2f0486`
+### belief context  `sha256:870f0c5fc0a5ee50`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -677,24 +635,22 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0412
 Site: Hollin Brook North
 Date: 12 March 2026
-Item checked: Stocking density in all six houses
-Method: Review of placement and weight records for January–February 2026 and on-site check weighing
-Finding: Maximum stocking density recorded at Hollin Brook North was 28.7 kg/m², within the 30 kg/m² limit.
+Item checked: Stocking density of every flock housed at any time during 2025
+Method: Review of placement, mortality and slaughter-weight records for every flock housed during 2025, checked against feed and delivery invoices
+Finding: The highest stocking density recorded for any flock housed at Hollin Brook North during 2025 was 28.7 kg/m², within the 30 kg/m² limit.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with footpad lesions.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of birds with footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -707,7 +663,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | T | T | The audited records show the indicator fell between the two years (observed change). |
+| Q_obs | T | T | The audit confirms the records are complete and accurate, and the recorded share fell from 2024 to 2025. Q_obs is a claim about the recorded share, so it is established (observed change). |
 | Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | NE | The records show an observed fall but contain no comparison group or control of other factors, so they cannot show the practice caused it (observed change is not causal improvement). |
 | R | NE | NE | No record checks the fire/building safety inspection. |
@@ -715,18 +671,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 1.0
 
-### attribution context  `sha256:9b95caff6b69415d`
+### attribution context  `sha256:e2c3f24ef6fe34c0`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -734,16 +690,14 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0412
 Site: Hollin Brook Farm
 Date: 12 March 2026
-Item checked: Footpad lesion prevalence at slaughter, 2025 and 2026 production years
-Method: Review of processing-plant footpad scoring records for all flocks in both years
-Finding: Birds with footpad lesions (score 1–2): 18.0% of birds in 2025; 9.4% of birds in 2026. Records were complete for both years.
+Item checked: Footpad lesion records for all flocks slaughtered in 2024 and 2025
+Method: Review of processing-plant footpad scoring reports for every flock in both years, checked against the plant's own records
+Finding: Recorded share of birds with footpad lesions (score 1–2): 18.0% in 2024; 9.4% in 2025. Records were complete and matched the plant's records for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -758,18 +712,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:9c21aa8c0e2882f8`
+### belief context  `sha256:889d0156516c9749`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -777,24 +731,22 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0412
 Site: Hollin Brook Farm
 Date: 12 March 2026
-Item checked: Footpad lesion prevalence at slaughter, 2025 and 2026 production years
-Method: Review of processing-plant footpad scoring records for all flocks in both years
-Finding: Birds with footpad lesions (score 1–2): 18.0% of birds in 2025; 9.4% of birds in 2026. Records were complete for both years.
+Item checked: Footpad lesion records for all flocks slaughtered in 2024 and 2025
+Method: Review of processing-plant footpad scoring reports for every flock in both years, checked against the plant's own records
+Finding: Recorded share of birds with footpad lesions (score 1–2): 18.0% in 2024; 9.4% in 2025. Records were complete and matched the plant's records for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with footpad lesions.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of birds with footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -807,26 +759,26 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | F | F | The audited records show the indicator rose between the two years, so the stated fall did not occur. |
-| Q_welfare | NE | F/NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
+| Q_obs | F | F | The audit confirms the records, and the recorded share rose from 2024 to 2025, so the stated reduction did not occur. |
+| Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | F/NE | The claim presupposes a fall that the audited records show did not happen; 'false' (failed presupposition) and 'not established' are both accepted. |
 | R | NE | NE | No record checks the fire/building safety inspection. |
 | S | NE | NE | No record checks the sister site. |
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:7713d51a6094de07`
+### attribution context  `sha256:c268db6d42f1d2fb`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -834,16 +786,14 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0412
 Site: Hollin Brook Farm
 Date: 12 March 2026
-Item checked: Footpad lesion prevalence at slaughter, 2025 and 2026 production years
-Method: Review of processing-plant footpad scoring records for all flocks in both years
-Finding: Birds with footpad lesions (score 1–2): 9.4% of birds in 2025; 18.0% of birds in 2026. Records were complete for both years.
+Item checked: Footpad lesion records for all flocks slaughtered in 2024 and 2025
+Method: Review of processing-plant footpad scoring reports for every flock in both years, checked against the plant's own records
+Finding: Recorded share of birds with footpad lesions (score 1–2): 9.4% in 2024; 18.0% in 2025. Records were complete and matched the plant's records for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -858,18 +808,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:529c19ebf3d6b7e0`
+### belief context  `sha256:bccd1f5a40e60c25`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -877,24 +827,22 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0412
 Site: Hollin Brook Farm
 Date: 12 March 2026
-Item checked: Footpad lesion prevalence at slaughter, 2025 and 2026 production years
-Method: Review of processing-plant footpad scoring records for all flocks in both years
-Finding: Birds with footpad lesions (score 1–2): 9.4% of birds in 2025; 18.0% of birds in 2026. Records were complete for both years.
+Item checked: Footpad lesion records for all flocks slaughtered in 2024 and 2025
+Method: Review of processing-plant footpad scoring reports for every flock in both years, checked against the plant's own records
+Finding: Recorded share of birds with footpad lesions (score 1–2): 9.4% in 2024; 18.0% in 2025. Records were complete and matched the plant's records for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with footpad lesions.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of birds with footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -907,26 +855,26 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | F | F | The audited records show the indicator unchanged between the two years, so the stated fall did not occur. |
-| Q_welfare | NE | F/NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
+| Q_obs | F | F | The audit confirms the records, and the recorded share unchanged from 2024 to 2025, so the stated reduction did not occur. |
+| Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | F/NE | The claim presupposes a fall that the audited records show did not happen; 'false' (failed presupposition) and 'not established' are both accepted. |
 | R | NE | NE | No record checks the fire/building safety inspection. |
 | S | NE | NE | No record checks the sister site. |
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:308f18e007a0d99e`
+### attribution context  `sha256:f69613224a464e11`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -934,16 +882,14 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0412
 Site: Hollin Brook Farm
 Date: 12 March 2026
-Item checked: Footpad lesion prevalence at slaughter, 2025 and 2026 production years
-Method: Review of processing-plant footpad scoring records for all flocks in both years
-Finding: Birds with footpad lesions (score 1–2): 18.0% of birds in 2025; 18.0% of birds in 2026. Records were complete for both years.
+Item checked: Footpad lesion records for all flocks slaughtered in 2024 and 2025
+Method: Review of processing-plant footpad scoring reports for every flock in both years, checked against the plant's own records
+Finding: Recorded share of birds with footpad lesions (score 1–2): 18.0% in 2024; 18.0% in 2025. Records were complete and matched the plant's records for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -958,18 +904,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:de5093c823e4da68`
+### belief context  `sha256:0296ed09e819f353`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -977,24 +923,22 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0412
 Site: Hollin Brook Farm
 Date: 12 March 2026
-Item checked: Footpad lesion prevalence at slaughter, 2025 and 2026 production years
-Method: Review of processing-plant footpad scoring records for all flocks in both years
-Finding: Birds with footpad lesions (score 1–2): 18.0% of birds in 2025; 18.0% of birds in 2026. Records were complete for both years.
+Item checked: Footpad lesion records for all flocks slaughtered in 2024 and 2025
+Method: Review of processing-plant footpad scoring reports for every flock in both years, checked against the plant's own records
+Finding: Recorded share of birds with footpad lesions (score 1–2): 18.0% in 2024; 18.0% in 2025. Records were complete and matched the plant's records for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with footpad lesions.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of birds with footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -1007,7 +951,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | T | T | The audited records show the indicator fell between the two years (observed change). |
+| Q_obs | T | T | The audit confirms the records are complete and accurate, and the recorded share fell from 2024 to 2025. Q_obs is a claim about the recorded share, so it is established (observed change). |
 | Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | NE | The records show an observed fall but contain no comparison group or control of other factors, so they cannot show the practice caused it (observed change is not causal improvement). |
 | R | NE | NE | No record checks the fire/building safety inspection. |
@@ -1015,18 +959,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 1.0
 
-### attribution context  `sha256:bc4a2c2dea320cc5`
+### attribution context  `sha256:3238a99efc70e6ac`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1034,15 +978,16 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0412
 Site: Hollin Brook Farm
 Date: 12 March 2026
-Item checked: Footpad lesion prevalence at slaughter, 2025 and 2026 production years
-Method: Review of processing-plant footpad scoring records for all flocks in both years
-Finding: Birds with footpad lesions (score 1–2): 18.0% of birds in 2025; 9.4% of birds in 2026. Records were complete for both years.
+Item checked: Footpad lesion records for all flocks slaughtered in 2024 and 2025
+Method: Review of processing-plant footpad scoring reports for every flock in both years, checked against the plant's own records
+Finding: Recorded share of birds with footpad lesions (score 1–2): 18.0% in 2024; 9.4% in 2025. Records were complete and matched the plant's records for both years.
 Status: Confirmed
 
 Coverage: This audit assessed footpad lesion records only. It did not assess stocking density or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1057,18 +1002,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:c8ecd2d2186d5d64`
+### belief context  `sha256:e0f856164a4d6cfc`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1076,23 +1021,24 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0412
 Site: Hollin Brook Farm
 Date: 12 March 2026
-Item checked: Footpad lesion prevalence at slaughter, 2025 and 2026 production years
-Method: Review of processing-plant footpad scoring records for all flocks in both years
-Finding: Birds with footpad lesions (score 1–2): 18.0% of birds in 2025; 9.4% of birds in 2026. Records were complete for both years.
+Item checked: Footpad lesion records for all flocks slaughtered in 2024 and 2025
+Method: Review of processing-plant footpad scoring reports for every flock in both years, checked against the plant's own records
+Finding: Recorded share of birds with footpad lesions (score 1–2): 18.0% in 2024; 9.4% in 2025. Records were complete and matched the plant's records for both years.
 Status: Confirmed
 
 Coverage: This audit assessed footpad lesion records only. It did not assess stocking density or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with footpad lesions.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of birds with footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -1105,26 +1051,26 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | F | F | The audited records show the indicator rose between the two years, so the stated fall did not occur. |
-| Q_welfare | NE | F/NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
+| Q_obs | F | F | The audit confirms the records, and the recorded share rose from 2024 to 2025, so the stated reduction did not occur. |
+| Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | F/NE | The claim presupposes a fall that the audited records show did not happen; 'false' (failed presupposition) and 'not established' are both accepted. |
 | R | NE | NE | No record checks the fire/building safety inspection. |
 | S | NE | NE | No record checks the sister site. |
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:4733c254cb38b925`
+### attribution context  `sha256:bfabff0b267e6f56`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1132,15 +1078,16 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0412
 Site: Hollin Brook Farm
 Date: 12 March 2026
-Item checked: Footpad lesion prevalence at slaughter, 2025 and 2026 production years
-Method: Review of processing-plant footpad scoring records for all flocks in both years
-Finding: Birds with footpad lesions (score 1–2): 9.4% of birds in 2025; 18.0% of birds in 2026. Records were complete for both years.
+Item checked: Footpad lesion records for all flocks slaughtered in 2024 and 2025
+Method: Review of processing-plant footpad scoring reports for every flock in both years, checked against the plant's own records
+Finding: Recorded share of birds with footpad lesions (score 1–2): 9.4% in 2024; 18.0% in 2025. Records were complete and matched the plant's records for both years.
 Status: Confirmed
 
 Coverage: This audit assessed footpad lesion records only. It did not assess stocking density or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1155,18 +1102,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:ca736843b3b0245e`
+### belief context  `sha256:4a057f824c536ae6`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1174,23 +1121,24 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0412
 Site: Hollin Brook Farm
 Date: 12 March 2026
-Item checked: Footpad lesion prevalence at slaughter, 2025 and 2026 production years
-Method: Review of processing-plant footpad scoring records for all flocks in both years
-Finding: Birds with footpad lesions (score 1–2): 9.4% of birds in 2025; 18.0% of birds in 2026. Records were complete for both years.
+Item checked: Footpad lesion records for all flocks slaughtered in 2024 and 2025
+Method: Review of processing-plant footpad scoring reports for every flock in both years, checked against the plant's own records
+Finding: Recorded share of birds with footpad lesions (score 1–2): 9.4% in 2024; 18.0% in 2025. Records were complete and matched the plant's records for both years.
 Status: Confirmed
 
 Coverage: This audit assessed footpad lesion records only. It did not assess stocking density or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with footpad lesions.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of birds with footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -1203,26 +1151,26 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | F | F | The audited records show the indicator unchanged between the two years, so the stated fall did not occur. |
-| Q_welfare | NE | F/NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
+| Q_obs | F | F | The audit confirms the records, and the recorded share unchanged from 2024 to 2025, so the stated reduction did not occur. |
+| Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | F/NE | The claim presupposes a fall that the audited records show did not happen; 'false' (failed presupposition) and 'not established' are both accepted. |
 | R | NE | NE | No record checks the fire/building safety inspection. |
 | S | NE | NE | No record checks the sister site. |
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:2837db4a8586383d`
+### attribution context  `sha256:a13446a0717bb71d`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1230,15 +1178,16 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0412
 Site: Hollin Brook Farm
 Date: 12 March 2026
-Item checked: Footpad lesion prevalence at slaughter, 2025 and 2026 production years
-Method: Review of processing-plant footpad scoring records for all flocks in both years
-Finding: Birds with footpad lesions (score 1–2): 18.0% of birds in 2025; 18.0% of birds in 2026. Records were complete for both years.
+Item checked: Footpad lesion records for all flocks slaughtered in 2024 and 2025
+Method: Review of processing-plant footpad scoring reports for every flock in both years, checked against the plant's own records
+Finding: Recorded share of birds with footpad lesions (score 1–2): 18.0% in 2024; 18.0% in 2025. Records were complete and matched the plant's records for both years.
 Status: Confirmed
 
 Coverage: This audit assessed footpad lesion records only. It did not assess stocking density or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1253,18 +1202,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:7336caacf2088ac3`
+### belief context  `sha256:a78e6afbdcb49533`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1272,23 +1221,24 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0412
 Site: Hollin Brook Farm
 Date: 12 March 2026
-Item checked: Footpad lesion prevalence at slaughter, 2025 and 2026 production years
-Method: Review of processing-plant footpad scoring records for all flocks in both years
-Finding: Birds with footpad lesions (score 1–2): 18.0% of birds in 2025; 18.0% of birds in 2026. Records were complete for both years.
+Item checked: Footpad lesion records for all flocks slaughtered in 2024 and 2025
+Method: Review of processing-plant footpad scoring reports for every flock in both years, checked against the plant's own records
+Finding: Recorded share of birds with footpad lesions (score 1–2): 18.0% in 2024; 18.0% in 2025. Records were complete and matched the plant's records for both years.
 Status: Confirmed
 
 Coverage: This audit assessed footpad lesion records only. It did not assess stocking density or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with footpad lesions.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of birds with footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -1309,18 +1259,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): excluded
 
-### attribution context  `sha256:b6b2771795738bd8`
+### attribution context  `sha256:873af9a7c039ac9e`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1333,12 +1283,6 @@ Status: Verified ✓
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1353,18 +1297,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:29de5196f86942a1`
+### belief context  `sha256:6b552e05f774b869`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Hollin Brook Farm. Animals: broiler chickens.
 The supplier states:
-[P] All houses at Hollin Brook Farm are stocked at no more than 30 kg/m².
-[Q_obs] Footpad lesion prevalence among birds at Hollin Brook Farm fell between the 2025 and 2026 production years.
-[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved between 2025 and 2026.
-[Q_cause] This fall in footpad lesions was caused by the lower stocking density.
+[P] Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m².
+[Q_obs] The recorded share of birds from Hollin Brook Farm with footpad lesions was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the birds at Hollin Brook Farm improved from 2024 to 2025.
+[Q_cause] This reduction in recorded footpad lesions was caused by the lower stocking density.
 [R] Hollin Brook Farm passed its 2026 fire-safety inspection.
-[S] Hollin Brook North, a sister site, is also stocked at no more than 30 kg/m².
+[S] Throughout 2025, every flock at Hollin Brook North, a sister site, was also stocked at no more than 30 kg/m².
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1377,20 +1321,14 @@ Status: Verified ✓
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every flock at Hollin Brook Farm was stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of birds with footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of birds with footpad lesions.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of birds with footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK

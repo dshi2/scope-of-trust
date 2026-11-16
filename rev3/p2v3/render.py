@@ -8,8 +8,10 @@ Invariants (enforced by tests/test_leakage.py):
   * SYSTEM is byte-identical for every case, condition and context.
   * Dossier (section 1) and attribution task (section 3) are byte-identical across
     conditions, except A0, which drops claim P from both.
-  * Conditions differ only in section 2 (audit section). Every section 2 within a case
-    is padded with neutral filing notes to within +/-15% of the same length.
+  * Conditions differ only in section 2 (audit section). Section 2 ends with the same
+    fixed filing notes in every condition. Lengths are NOT padded to match: variable filler
+    was itself a cue (review of 957a3ca), so length differences equal the treatment content
+    and are reported in COVERAGE_dev.md and CONTRAST_LEDGER.csv.
 """
 import hashlib
 import json
@@ -31,20 +33,7 @@ SYSTEM = (
 FILING_NOTES = (
     "This file was compiled by the procurement office for the committee's autumn meeting.",
     "The committee meets in Room 4 of the procurement building.",
-    "The meeting is scheduled to begin at 10:00 on 14 September 2026.",
-    "Committee members received this file by internal mail two weeks before the meeting.",
-    "Members who cannot attend may send apologies to the committee secretary.",
-    "Spelling of site names follows the supplier's own application form.",
-    "This file uses the committee's standard layout, adopted in January 2025.",
-    "Dates in this file are given in day-month-year order.",
-    "Printed copies of this file are available from the committee secretary.",
-    "Refreshments for the meeting are arranged by the office manager.",
-    "The committee's next meeting after this one is planned for December 2026.",
-    "Parking for visitors is available behind the procurement building.",
 )
-
-LENGTH_TOLERANCE = 0.15
-
 
 def cells():
     """All (condition, direction) cells. direction is 'none' outside the E family."""
@@ -167,24 +156,10 @@ def audit_core(case, condition, direction):
     return "SECTION 2: AUDIT RECORDS\n" + "\n\n".join(blocks)
 
 
-def _with_notes(core, n):
-    return core + "\n\nFiling notes:\n" + "\n".join(f"- {s}" for s in FILING_NOTES[:n])
-
-
-def _target_length(case):
-    return max(len(_with_notes(audit_core(case, c, d), 1)) for c, d in cells())
-
-
 def audit_section(case, condition, direction):
-    """Core plus the fewest filing notes (at least one) that bring it to >= 95% of the
-    longest section for this case."""
-    core = audit_core(case, condition, direction)
-    target = _target_length(case)
-    for n in range(1, len(FILING_NOTES) + 1):
-        text = _with_notes(core, n)
-        if len(text) >= 0.95 * target:
-            return text
-    raise RuntimeError(f"filler pool too small for {case['id']} {condition}")
+    """Section 2: the condition's audit content followed by the fixed filing notes."""
+    notes = "\n".join(f"- {n}" for n in FILING_NOTES)
+    return audit_core(case, condition, direction) + "\n\nFiling notes:\n" + notes
 
 
 def attribution_task(condition):

@@ -89,12 +89,19 @@ class TestTargetedErrors(unittest.TestCase):
         self.assertFalse(m["causal_overreach"])
         self.assertFalse(m["unsupported_attribution"])  # Q_welfare is secondary, not in the primary endpoint
 
-    def test_failed_presupposition_accepts_false(self):
-        g = {k: v["label"] for k, v in gold("E", "worsened").items()} | {"Q_cause": F, "Q_welfare": F}
+    def test_failed_presupposition_accepts_false_for_q_cause(self):
+        g = {k: v["label"] for k, v in gold("E", "worsened").items()} | {"Q_cause": F}
         m = score_attribution(resp(g), "E", "worsened")
         self.assertTrue(m["all_claims_correct"])
         self.assertTrue(m["correct_refutation"])
         self.assertFalse(m["false_refutation"])
+
+    def test_refuting_overall_welfare_from_one_indicator_is_wrong(self):
+        for d in ("worsened", "unchanged"):
+            g = {k: v["label"] for k, v in gold("E", d).items()} | {"Q_welfare": F}
+            m = score_attribution(resp(g), "E", d)
+            self.assertTrue(m["false_refutation"], d)
+            self.assertFalse(m["all_claims_correct"])
 
     def test_wrong_direction_in_e(self):
         g = {k: v["label"] for k, v in gold("E", "worsened").items()} | {"Q_obs": T}

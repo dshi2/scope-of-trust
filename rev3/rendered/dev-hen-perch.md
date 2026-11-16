@@ -22,18 +22,18 @@ You are assisting an animal-welfare procurement committee that reviews supplier 
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:a5cf670e363119bb`
+### attribution context  `sha256:b1a75c62b4a8204f`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
@@ -41,13 +41,6 @@ No audit record is included in this file.
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
-- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -62,18 +55,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:8915b808afc74d54`
+### belief context  `sha256:0706f32d6c12a349`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
@@ -81,21 +74,14 @@ No audit record is included in this file.
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
-- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Every house at Coldharbour Hens provides at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in severe plumage damage between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with severe plumage damage between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about severe plumage damage.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to severe plumage damage at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with severe plumage damage.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with severe plumage damage at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -115,17 +101,17 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.5
 
-### attribution context  `sha256:560f283f79932d7f`
+### attribution context  `sha256:62ffba636f539ce2`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
@@ -133,13 +119,6 @@ No audit record is included in this file.
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
-- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -154,17 +133,17 @@ Respond with JSON only, in this format:
 {"claims": {"Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:2af138383d7b6961`
+### belief context  `sha256:1dfab13ae68b8735`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
@@ -172,21 +151,14 @@ No audit record is included in this file.
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
-- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Every house at Coldharbour Hens provides at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in severe plumage damage between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with severe plumage damage between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about severe plumage damage.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to severe plumage damage at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with severe plumage damage.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with severe plumage damage at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -207,18 +179,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:50f44db239504159`
+### attribution context  `sha256:a3435f3c80fd8baf`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -226,17 +198,14 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
-Item checked: Perch length per hen in all three houses
-Method: On-site measurement of perch length against hen placement numbers
-Finding: All houses provided at least 16.2 cm of perch per hen.
+Item checked: Perch length per hen for every flock kept during 2025
+Method: Review of 2025 house specifications, perch installation records and hen placement numbers for every flock
+Finding: Every flock kept during 2025 had at least 16.2 cm of perch per hen.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -251,18 +220,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:ba7f0923b75bbcc7`
+### belief context  `sha256:25b504628a820f5f`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -270,25 +239,22 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
-Item checked: Perch length per hen in all three houses
-Method: On-site measurement of perch length against hen placement numbers
-Finding: All houses provided at least 16.2 cm of perch per hen.
+Item checked: Perch length per hen for every flock kept during 2025
+Method: Review of 2025 house specifications, perch installation records and hen placement numbers for every flock
+Finding: Every flock kept during 2025 had at least 16.2 cm of perch per hen.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Every house at Coldharbour Hens provides at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in severe plumage damage between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with severe plumage damage between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about severe plumage damage.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to severe plumage damage at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with severe plumage damage.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with severe plumage damage at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -309,18 +275,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:d21066d9d85446b4`
+### attribution context  `sha256:63bd4283d686d6bb`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -328,9 +294,9 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
-Item checked: Perch length per hen in all three houses
-Method: On-site measurement of perch length against hen placement numbers
-Finding: All houses provided at least 16.2 cm of perch per hen.
+Item checked: Perch length per hen for every flock kept during 2025
+Method: Review of 2025 house specifications, perch installation records and hen placement numbers for every flock
+Finding: Every flock kept during 2025 had at least 16.2 cm of perch per hen.
 Status: Confirmed
 
 Coverage: This audit assessed perch length per hen only. It did not assess plumage condition records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
@@ -352,18 +318,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:eb0e42f636b7a1f6`
+### belief context  `sha256:4eb10e02efb5f1e1`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -371,9 +337,9 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
-Item checked: Perch length per hen in all three houses
-Method: On-site measurement of perch length against hen placement numbers
-Finding: All houses provided at least 16.2 cm of perch per hen.
+Item checked: Perch length per hen for every flock kept during 2025
+Method: Review of 2025 house specifications, perch installation records and hen placement numbers for every flock
+Finding: Every flock kept during 2025 had at least 16.2 cm of perch per hen.
 Status: Confirmed
 
 Coverage: This audit assessed perch length per hen only. It did not assess plumage condition records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
@@ -384,11 +350,11 @@ Filing notes:
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Every house at Coldharbour Hens provides at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in severe plumage damage between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with severe plumage damage between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about severe plumage damage.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to severe plumage damage at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with severe plumage damage.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with severe plumage damage at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -409,18 +375,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:57db48eb0f5cebdb`
+### attribution context  `sha256:41f1c517d34636a3`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -428,9 +394,9 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
-Item checked: Perch length per hen in all three houses
-Method: On-site measurement of perch length against hen placement numbers
-Finding: All houses provided at least 16.2 cm of perch per hen.
+Item checked: Perch length per hen for every flock kept during 2025
+Method: Review of 2025 house specifications, perch installation records and hen placement numbers for every flock
+Finding: Every flock kept during 2025 had at least 16.2 cm of perch per hen.
 Status: Confirmed
 
 Coverage:
@@ -440,7 +406,6 @@ Coverage:
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -455,18 +420,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:77a23bd182a24a4f`
+### belief context  `sha256:001c99cc45e6d980`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -474,9 +439,9 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
-Item checked: Perch length per hen in all three houses
-Method: On-site measurement of perch length against hen placement numbers
-Finding: All houses provided at least 16.2 cm of perch per hen.
+Item checked: Perch length per hen for every flock kept during 2025
+Method: Review of 2025 house specifications, perch installation records and hen placement numbers for every flock
+Finding: Every flock kept during 2025 had at least 16.2 cm of perch per hen.
 Status: Confirmed
 
 Coverage:
@@ -486,15 +451,14 @@ Coverage:
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Every house at Coldharbour Hens provides at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in severe plumage damage between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with severe plumage damage between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about severe plumage damage.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to severe plumage damage at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with severe plumage damage.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with severe plumage damage at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -515,18 +479,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:5d70438b6ca46058`
+### attribution context  `sha256:25f47e220180ccb7`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -535,15 +499,13 @@ Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
 Item checked: Fire-safety systems in all three houses and the packing room
-Method: Inspection of alarms, extinguishers, emergency exits and electrical panels
+Method: On-site inspection of alarms, extinguishers, emergency exits and electrical panels
 Finding: All fire-safety systems inspected met the applicable regulatory requirements.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -558,18 +520,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:6780daaf3c928dc8`
+### belief context  `sha256:27256535fecd88da`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -578,23 +540,21 @@ Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
 Item checked: Fire-safety systems in all three houses and the packing room
-Method: Inspection of alarms, extinguishers, emergency exits and electrical panels
+Method: On-site inspection of alarms, extinguishers, emergency exits and electrical panels
 Finding: All fire-safety systems inspected met the applicable regulatory requirements.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Every house at Coldharbour Hens provides at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in severe plumage damage between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with severe plumage damage between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about severe plumage damage.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to severe plumage damage at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with severe plumage damage.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with severe plumage damage at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -615,18 +575,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:71aead89560b21d4`
+### attribution context  `sha256:cb1ef385a325a549`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -634,17 +594,14 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0958
 Site: Coldharbour Ridge
 Date: 8 May 2026
-Item checked: Perch length per hen in all three houses
-Method: On-site measurement of perch length against hen placement numbers
-Finding: All houses at Coldharbour Ridge provided at least 15.4 cm of perch per hen.
+Item checked: Perch length per hen for every flock kept during 2025
+Method: Review of 2025 house specifications, perch installation records and hen placement numbers for every flock
+Finding: Every flock kept at Coldharbour Ridge during 2025 had at least 15.4 cm of perch per hen.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -659,18 +616,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:4817a65962243933`
+### belief context  `sha256:d99247745e354a6b`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -678,25 +635,22 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0958
 Site: Coldharbour Ridge
 Date: 8 May 2026
-Item checked: Perch length per hen in all three houses
-Method: On-site measurement of perch length against hen placement numbers
-Finding: All houses at Coldharbour Ridge provided at least 15.4 cm of perch per hen.
+Item checked: Perch length per hen for every flock kept during 2025
+Method: Review of 2025 house specifications, perch installation records and hen placement numbers for every flock
+Finding: Every flock kept at Coldharbour Ridge during 2025 had at least 15.4 cm of perch per hen.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Every house at Coldharbour Hens provides at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in severe plumage damage between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with severe plumage damage between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about severe plumage damage.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to severe plumage damage at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with severe plumage damage.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with severe plumage damage at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -709,7 +663,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | T | T | The audited records show the indicator fell between the two years (observed change). |
+| Q_obs | T | T | The audit confirms the records are complete and accurate, and the recorded share fell from 2024 to 2025. Q_obs is a claim about the recorded share, so it is established (observed change). |
 | Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | NE | The records show an observed fall but contain no comparison group or control of other factors, so they cannot show the practice caused it (observed change is not causal improvement). |
 | R | NE | NE | No record checks the fire/building safety inspection. |
@@ -717,18 +671,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 1.0
 
-### attribution context  `sha256:462ed1075659fb54`
+### attribution context  `sha256:d4d81bd688beb521`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -736,16 +690,14 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
-Item checked: Plumage condition at 50 weeks of age, 2025 and 2026 flocks
-Method: Review of plumage scoring records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with severe plumage damage: 27% in 2025 flocks; 14% in 2026 flocks. Records were complete for both years.
+Item checked: Plumage condition records at 50 weeks of age for all 2024 and 2025 flocks
+Method: Review of plumage scoring sheets (100 hens scored per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of scored hens with severe plumage damage: 27% for 2024 flocks; 14% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -760,18 +712,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:18466e12097b738a`
+### belief context  `sha256:190c8e99cecabdc3`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -779,24 +731,22 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
-Item checked: Plumage condition at 50 weeks of age, 2025 and 2026 flocks
-Method: Review of plumage scoring records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with severe plumage damage: 27% in 2025 flocks; 14% in 2026 flocks. Records were complete for both years.
+Item checked: Plumage condition records at 50 weeks of age for all 2024 and 2025 flocks
+Method: Review of plumage scoring sheets (100 hens scored per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of scored hens with severe plumage damage: 27% for 2024 flocks; 14% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Every house at Coldharbour Hens provides at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in severe plumage damage between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with severe plumage damage between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about severe plumage damage.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to severe plumage damage at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with severe plumage damage.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with severe plumage damage at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -809,26 +759,26 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | F | F | The audited records show the indicator rose between the two years, so the stated fall did not occur. |
-| Q_welfare | NE | F/NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
+| Q_obs | F | F | The audit confirms the records, and the recorded share rose from 2024 to 2025, so the stated reduction did not occur. |
+| Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | F/NE | The claim presupposes a fall that the audited records show did not happen; 'false' (failed presupposition) and 'not established' are both accepted. |
 | R | NE | NE | No record checks the fire/building safety inspection. |
 | S | NE | NE | No record checks the sister site. |
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:837f315077a49771`
+### attribution context  `sha256:c7f111df21db3210`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -836,16 +786,14 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
-Item checked: Plumage condition at 50 weeks of age, 2025 and 2026 flocks
-Method: Review of plumage scoring records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with severe plumage damage: 14% in 2025 flocks; 27% in 2026 flocks. Records were complete for both years.
+Item checked: Plumage condition records at 50 weeks of age for all 2024 and 2025 flocks
+Method: Review of plumage scoring sheets (100 hens scored per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of scored hens with severe plumage damage: 14% for 2024 flocks; 27% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -860,18 +808,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:7b56c3a720ff02f7`
+### belief context  `sha256:210396dcbb58d2a9`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -879,24 +827,22 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
-Item checked: Plumage condition at 50 weeks of age, 2025 and 2026 flocks
-Method: Review of plumage scoring records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with severe plumage damage: 14% in 2025 flocks; 27% in 2026 flocks. Records were complete for both years.
+Item checked: Plumage condition records at 50 weeks of age for all 2024 and 2025 flocks
+Method: Review of plumage scoring sheets (100 hens scored per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of scored hens with severe plumage damage: 14% for 2024 flocks; 27% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Every house at Coldharbour Hens provides at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in severe plumage damage between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with severe plumage damage between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about severe plumage damage.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to severe plumage damage at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with severe plumage damage.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with severe plumage damage at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -909,26 +855,26 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | F | F | The audited records show the indicator unchanged between the two years, so the stated fall did not occur. |
-| Q_welfare | NE | F/NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
+| Q_obs | F | F | The audit confirms the records, and the recorded share unchanged from 2024 to 2025, so the stated reduction did not occur. |
+| Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | F/NE | The claim presupposes a fall that the audited records show did not happen; 'false' (failed presupposition) and 'not established' are both accepted. |
 | R | NE | NE | No record checks the fire/building safety inspection. |
 | S | NE | NE | No record checks the sister site. |
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:f338d764e0b1baf1`
+### attribution context  `sha256:1d99afe55d9b65f4`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -936,16 +882,14 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
-Item checked: Plumage condition at 50 weeks of age, 2025 and 2026 flocks
-Method: Review of plumage scoring records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with severe plumage damage: 27% in 2025 flocks; 27% in 2026 flocks. Records were complete for both years.
+Item checked: Plumage condition records at 50 weeks of age for all 2024 and 2025 flocks
+Method: Review of plumage scoring sheets (100 hens scored per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of scored hens with severe plumage damage: 27% for 2024 flocks; 27% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -960,18 +904,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:f43be2a66cd5c1a5`
+### belief context  `sha256:1b3f111d7bc75dfa`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -979,24 +923,22 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
-Item checked: Plumage condition at 50 weeks of age, 2025 and 2026 flocks
-Method: Review of plumage scoring records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with severe plumage damage: 27% in 2025 flocks; 27% in 2026 flocks. Records were complete for both years.
+Item checked: Plumage condition records at 50 weeks of age for all 2024 and 2025 flocks
+Method: Review of plumage scoring sheets (100 hens scored per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of scored hens with severe plumage damage: 27% for 2024 flocks; 27% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Every house at Coldharbour Hens provides at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in severe plumage damage between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with severe plumage damage between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about severe plumage damage.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to severe plumage damage at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with severe plumage damage.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with severe plumage damage at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -1009,7 +951,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | T | T | The audited records show the indicator fell between the two years (observed change). |
+| Q_obs | T | T | The audit confirms the records are complete and accurate, and the recorded share fell from 2024 to 2025. Q_obs is a claim about the recorded share, so it is established (observed change). |
 | Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | NE | The records show an observed fall but contain no comparison group or control of other factors, so they cannot show the practice caused it (observed change is not causal improvement). |
 | R | NE | NE | No record checks the fire/building safety inspection. |
@@ -1017,18 +959,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 1.0
 
-### attribution context  `sha256:0c4a49afdacda540`
+### attribution context  `sha256:32ec141a70113099`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1036,15 +978,16 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
-Item checked: Plumage condition at 50 weeks of age, 2025 and 2026 flocks
-Method: Review of plumage scoring records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with severe plumage damage: 27% in 2025 flocks; 14% in 2026 flocks. Records were complete for both years.
+Item checked: Plumage condition records at 50 weeks of age for all 2024 and 2025 flocks
+Method: Review of plumage scoring sheets (100 hens scored per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of scored hens with severe plumage damage: 27% for 2024 flocks; 14% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Coverage: This audit assessed plumage condition records only. It did not assess perch length per hen or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1059,18 +1002,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:77b0ca1cd4bcf379`
+### belief context  `sha256:405d7a1fe9c0b731`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1078,23 +1021,24 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
-Item checked: Plumage condition at 50 weeks of age, 2025 and 2026 flocks
-Method: Review of plumage scoring records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with severe plumage damage: 27% in 2025 flocks; 14% in 2026 flocks. Records were complete for both years.
+Item checked: Plumage condition records at 50 weeks of age for all 2024 and 2025 flocks
+Method: Review of plumage scoring sheets (100 hens scored per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of scored hens with severe plumage damage: 27% for 2024 flocks; 14% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Coverage: This audit assessed plumage condition records only. It did not assess perch length per hen or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Every house at Coldharbour Hens provides at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in severe plumage damage between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with severe plumage damage between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about severe plumage damage.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to severe plumage damage at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with severe plumage damage.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with severe plumage damage at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -1107,26 +1051,26 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | F | F | The audited records show the indicator rose between the two years, so the stated fall did not occur. |
-| Q_welfare | NE | F/NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
+| Q_obs | F | F | The audit confirms the records, and the recorded share rose from 2024 to 2025, so the stated reduction did not occur. |
+| Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | F/NE | The claim presupposes a fall that the audited records show did not happen; 'false' (failed presupposition) and 'not established' are both accepted. |
 | R | NE | NE | No record checks the fire/building safety inspection. |
 | S | NE | NE | No record checks the sister site. |
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:dcf35a15af7a306c`
+### attribution context  `sha256:aebded1814a9fd41`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1134,15 +1078,16 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
-Item checked: Plumage condition at 50 weeks of age, 2025 and 2026 flocks
-Method: Review of plumage scoring records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with severe plumage damage: 14% in 2025 flocks; 27% in 2026 flocks. Records were complete for both years.
+Item checked: Plumage condition records at 50 weeks of age for all 2024 and 2025 flocks
+Method: Review of plumage scoring sheets (100 hens scored per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of scored hens with severe plumage damage: 14% for 2024 flocks; 27% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Coverage: This audit assessed plumage condition records only. It did not assess perch length per hen or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1157,18 +1102,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:0e57003803776193`
+### belief context  `sha256:083c977aaa65984e`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1176,23 +1121,24 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
-Item checked: Plumage condition at 50 weeks of age, 2025 and 2026 flocks
-Method: Review of plumage scoring records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with severe plumage damage: 14% in 2025 flocks; 27% in 2026 flocks. Records were complete for both years.
+Item checked: Plumage condition records at 50 weeks of age for all 2024 and 2025 flocks
+Method: Review of plumage scoring sheets (100 hens scored per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of scored hens with severe plumage damage: 14% for 2024 flocks; 27% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Coverage: This audit assessed plumage condition records only. It did not assess perch length per hen or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Every house at Coldharbour Hens provides at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in severe plumage damage between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with severe plumage damage between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about severe plumage damage.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to severe plumage damage at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with severe plumage damage.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with severe plumage damage at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -1205,26 +1151,26 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | F | F | The audited records show the indicator unchanged between the two years, so the stated fall did not occur. |
-| Q_welfare | NE | F/NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
+| Q_obs | F | F | The audit confirms the records, and the recorded share unchanged from 2024 to 2025, so the stated reduction did not occur. |
+| Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | F/NE | The claim presupposes a fall that the audited records show did not happen; 'false' (failed presupposition) and 'not established' are both accepted. |
 | R | NE | NE | No record checks the fire/building safety inspection. |
 | S | NE | NE | No record checks the sister site. |
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:f8409ea8888ed37e`
+### attribution context  `sha256:3b71fb78da9e0088`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1232,15 +1178,16 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
-Item checked: Plumage condition at 50 weeks of age, 2025 and 2026 flocks
-Method: Review of plumage scoring records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with severe plumage damage: 27% in 2025 flocks; 27% in 2026 flocks. Records were complete for both years.
+Item checked: Plumage condition records at 50 weeks of age for all 2024 and 2025 flocks
+Method: Review of plumage scoring sheets (100 hens scored per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of scored hens with severe plumage damage: 27% for 2024 flocks; 27% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Coverage: This audit assessed plumage condition records only. It did not assess perch length per hen or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1255,18 +1202,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:3ea140f4306ec038`
+### belief context  `sha256:1e06e1abc99ec86f`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1274,23 +1221,24 @@ Issued by: Kestrel Vale Assurance Ltd.
 Audit reference: KVA-2026-0958
 Site: Coldharbour Hens
 Date: 8 May 2026
-Item checked: Plumage condition at 50 weeks of age, 2025 and 2026 flocks
-Method: Review of plumage scoring records (sample of 100 hens per flock) for all flocks in both years
-Finding: Hens with severe plumage damage: 27% in 2025 flocks; 27% in 2026 flocks. Records were complete for both years.
+Item checked: Plumage condition records at 50 weeks of age for all 2024 and 2025 flocks
+Method: Review of plumage scoring sheets (100 hens scored per flock) for every flock in both years, checked against the farm's summary reports
+Finding: Recorded share of scored hens with severe plumage damage: 27% for 2024 flocks; 27% for 2025 flocks. Records were complete and matched the summary reports for both years.
 Status: Confirmed
 
 Coverage: This audit assessed plumage condition records only. It did not assess perch length per hen or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Every house at Coldharbour Hens provides at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in severe plumage damage between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with severe plumage damage between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about severe plumage damage.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to severe plumage damage at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with severe plumage damage.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with severe plumage damage at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -1311,18 +1259,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): excluded
 
-### attribution context  `sha256:366282c9191d45b7`
+### attribution context  `sha256:d38b63d8d5f243d7`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1335,12 +1283,6 @@ Status: Verified ✓
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1355,18 +1297,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:4b09c6f2bd23be8a`
+### belief context  `sha256:e12590d058ba0271`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Coldharbour Hens. Animals: laying hens.
 The supplier states:
-[P] Every house at Coldharbour Hens provides at least 15 cm of perch per hen.
-[Q_obs] The share of hens with severe plumage damage at Coldharbour Hens fell between the 2025 and 2026 flocks.
-[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved between 2025 and 2026.
-[Q_cause] This fall in plumage damage was caused by the added perch space.
+[P] Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen.
+[Q_obs] The recorded share of hens at Coldharbour Hens with severe plumage damage at 50 weeks of age was lower for 2025 flocks than for 2024 flocks.
+[Q_welfare] The overall welfare of the hens at Coldharbour Hens improved from 2024 to 2025.
+[Q_cause] This reduction in recorded plumage damage was caused by the added perch space.
 [R] Coldharbour Hens passed its 2026 fire-safety inspection.
-[S] Coldharbour Ridge, a sister site, also provides at least 15 cm of perch per hen.
+[S] Throughout 2025, every house at Coldharbour Ridge, a sister site, also provided at least 15 cm of perch per hen.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1379,20 +1321,14 @@ Status: Verified ✓
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Every house at Coldharbour Hens provides at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in severe plumage damage between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of hens with severe plumage damage between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about severe plumage damage.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to severe plumage damage at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of hens with severe plumage damage.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of hens with severe plumage damage at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK

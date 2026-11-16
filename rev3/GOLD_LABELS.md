@@ -35,7 +35,7 @@ Belief gold p(Q_obs): 0.5
 
 ## B
 
-Evidence profile: proposition=P; site=target; period=2026 (current); outcome_measured=False; outcome_change=None; causal_design=False; coverage_stated=False; unscoped_stamp=False
+Evidence profile: proposition=P; site=target; period=2025 (closed; matches the claim); outcome_measured=False; outcome_change=None; causal_design=False; coverage_stated=False; unscoped_stamp=False
 
 | claim | gold | accepted | why |
 |---|---|---|---|
@@ -50,7 +50,7 @@ Belief gold p(Q_obs): 0.75
 
 ## C
 
-Evidence profile: proposition=P; site=target; period=2026 (current); outcome_measured=False; outcome_change=None; causal_design=False; coverage_stated=True; unscoped_stamp=False
+Evidence profile: proposition=P; site=target; period=2025 (closed; matches the claim); outcome_measured=False; outcome_change=None; causal_design=False; coverage_stated=True; unscoped_stamp=False
 
 | claim | gold | accepted | why |
 |---|---|---|---|
@@ -65,7 +65,7 @@ Belief gold p(Q_obs): 0.75
 
 ## C_prime
 
-Evidence profile: proposition=P; site=target; period=2026 (current); outcome_measured=False; outcome_change=None; causal_design=False; coverage_stated=True; unscoped_stamp=False
+Evidence profile: proposition=P; site=target; period=2025 (closed; matches the claim); outcome_measured=False; outcome_change=None; causal_design=False; coverage_stated=True; unscoped_stamp=False
 
 | claim | gold | accepted | why |
 |---|---|---|---|
@@ -80,7 +80,7 @@ Belief gold p(Q_obs): 0.75
 
 ## D1
 
-Evidence profile: proposition=R; site=target; period=2026 (current); outcome_measured=False; outcome_change=None; causal_design=False; coverage_stated=False; unscoped_stamp=False
+Evidence profile: proposition=R; site=target; period=2026 inspection (matches the claim); outcome_measured=False; outcome_change=None; causal_design=False; coverage_stated=False; unscoped_stamp=False
 
 | claim | gold | accepted | why |
 |---|---|---|---|
@@ -95,7 +95,7 @@ Belief gold p(Q_obs): 0.65
 
 ## D2
 
-Evidence profile: proposition=P; site=sister; period=2026 (current); outcome_measured=False; outcome_change=None; causal_design=False; coverage_stated=False; unscoped_stamp=False
+Evidence profile: proposition=P; site=sister; period=2025 (closed; matches the claim); outcome_measured=False; outcome_change=None; causal_design=False; coverage_stated=False; unscoped_stamp=False
 
 | claim | gold | accepted | why |
 |---|---|---|---|
@@ -110,12 +110,12 @@ Belief gold p(Q_obs): 0.65
 
 ## E / improved
 
-Evidence profile: proposition=Q_obs; site=target; period=2025 vs 2026; outcome_measured=True; outcome_change=fell; causal_design=False; coverage_stated=False; unscoped_stamp=False
+Evidence profile: proposition=Q_obs; site=target; period=2024 vs 2025 (closed); outcome_measured=True; outcome_change=fell; causal_design=False; coverage_stated=False; unscoped_stamp=False
 
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | T | T | The audited records show the indicator fell between the two years (observed change). |
+| Q_obs | T | T | The audit confirms the records are complete and accurate, and the recorded share fell from 2024 to 2025. Q_obs is a claim about the recorded share, so it is established (observed change). |
 | Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | NE | The records show an observed fall but contain no comparison group or control of other factors, so they cannot show the practice caused it (observed change is not causal improvement). |
 | R | NE | NE | No record checks the fire/building safety inspection. |
@@ -125,13 +125,13 @@ Belief gold p(Q_obs): 1.0
 
 ## E / worsened
 
-Evidence profile: proposition=Q_obs; site=target; period=2025 vs 2026; outcome_measured=True; outcome_change=rose; causal_design=False; coverage_stated=False; unscoped_stamp=False
+Evidence profile: proposition=Q_obs; site=target; period=2024 vs 2025 (closed); outcome_measured=True; outcome_change=rose; causal_design=False; coverage_stated=False; unscoped_stamp=False
 
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | F | F | The audited records show the indicator rose between the two years, so the stated fall did not occur. |
-| Q_welfare | NE | F/NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
+| Q_obs | F | F | The audit confirms the records, and the recorded share rose from 2024 to 2025, so the stated reduction did not occur. |
+| Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | F/NE | The claim presupposes a fall that the audited records show did not happen; 'false' (failed presupposition) and 'not established' are both accepted. |
 | R | NE | NE | No record checks the fire/building safety inspection. |
 | S | NE | NE | No record checks the sister site. |
@@ -140,13 +140,13 @@ Belief gold p(Q_obs): 0.0
 
 ## E / unchanged
 
-Evidence profile: proposition=Q_obs; site=target; period=2025 vs 2026; outcome_measured=True; outcome_change=unchanged; causal_design=False; coverage_stated=False; unscoped_stamp=False
+Evidence profile: proposition=Q_obs; site=target; period=2024 vs 2025 (closed); outcome_measured=True; outcome_change=unchanged; causal_design=False; coverage_stated=False; unscoped_stamp=False
 
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | F | F | The audited records show the indicator unchanged between the two years, so the stated fall did not occur. |
-| Q_welfare | NE | F/NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
+| Q_obs | F | F | The audit confirms the records, and the recorded share unchanged from 2024 to 2025, so the stated reduction did not occur. |
+| Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | F/NE | The claim presupposes a fall that the audited records show did not happen; 'false' (failed presupposition) and 'not established' are both accepted. |
 | R | NE | NE | No record checks the fire/building safety inspection. |
 | S | NE | NE | No record checks the sister site. |
@@ -155,12 +155,12 @@ Belief gold p(Q_obs): 0.0
 
 ## E_scope / improved
 
-Evidence profile: proposition=Q_obs; site=target; period=2025 vs 2026; outcome_measured=True; outcome_change=fell; causal_design=False; coverage_stated=True; unscoped_stamp=False
+Evidence profile: proposition=Q_obs; site=target; period=2024 vs 2025 (closed); outcome_measured=True; outcome_change=fell; causal_design=False; coverage_stated=True; unscoped_stamp=False
 
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | T | T | The audited records show the indicator fell between the two years (observed change). |
+| Q_obs | T | T | The audit confirms the records are complete and accurate, and the recorded share fell from 2024 to 2025. Q_obs is a claim about the recorded share, so it is established (observed change). |
 | Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | NE | The records show an observed fall but contain no comparison group or control of other factors, so they cannot show the practice caused it (observed change is not causal improvement). |
 | R | NE | NE | No record checks the fire/building safety inspection. |
@@ -170,13 +170,13 @@ Belief gold p(Q_obs): 1.0
 
 ## E_scope / worsened
 
-Evidence profile: proposition=Q_obs; site=target; period=2025 vs 2026; outcome_measured=True; outcome_change=rose; causal_design=False; coverage_stated=True; unscoped_stamp=False
+Evidence profile: proposition=Q_obs; site=target; period=2024 vs 2025 (closed); outcome_measured=True; outcome_change=rose; causal_design=False; coverage_stated=True; unscoped_stamp=False
 
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | F | F | The audited records show the indicator rose between the two years, so the stated fall did not occur. |
-| Q_welfare | NE | F/NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
+| Q_obs | F | F | The audit confirms the records, and the recorded share rose from 2024 to 2025, so the stated reduction did not occur. |
+| Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | F/NE | The claim presupposes a fall that the audited records show did not happen; 'false' (failed presupposition) and 'not established' are both accepted. |
 | R | NE | NE | No record checks the fire/building safety inspection. |
 | S | NE | NE | No record checks the sister site. |
@@ -185,13 +185,13 @@ Belief gold p(Q_obs): 0.0
 
 ## E_scope / unchanged
 
-Evidence profile: proposition=Q_obs; site=target; period=2025 vs 2026; outcome_measured=True; outcome_change=unchanged; causal_design=False; coverage_stated=True; unscoped_stamp=False
+Evidence profile: proposition=Q_obs; site=target; period=2024 vs 2025 (closed); outcome_measured=True; outcome_change=unchanged; causal_design=False; coverage_stated=True; unscoped_stamp=False
 
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | F | F | The audited records show the indicator unchanged between the two years, so the stated fall did not occur. |
-| Q_welfare | NE | F/NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
+| Q_obs | F | F | The audit confirms the records, and the recorded share unchanged from 2024 to 2025, so the stated reduction did not occur. |
+| Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | F/NE | The claim presupposes a fall that the audited records show did not happen; 'false' (failed presupposition) and 'not established' are both accepted. |
 | R | NE | NE | No record checks the fire/building safety inspection. |
 | S | NE | NE | No record checks the sister site. |

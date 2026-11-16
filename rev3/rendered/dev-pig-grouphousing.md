@@ -22,18 +22,18 @@ You are assisting an animal-welfare procurement committee that reviews supplier 
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:0327bddcb20bb393`
+### attribution context  `sha256:ca88369634e58791`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
@@ -41,13 +41,6 @@ No audit record is included in this file.
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
-- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -62,18 +55,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:4796e59ae0538d90`
+### belief context  `sha256:ed2428d31eb0a4a7`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
@@ -81,21 +74,14 @@ No audit record is included in this file.
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
-- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of lame sows between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of lame sows.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of lame sows at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -115,17 +101,17 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.5
 
-### attribution context  `sha256:64f307108bb67c03`
+### attribution context  `sha256:b461c475ad63131d`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
@@ -133,13 +119,6 @@ No audit record is included in this file.
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
-- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -154,17 +133,17 @@ Respond with JSON only, in this format:
 {"claims": {"Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:f88ec72a914ba35d`
+### belief context  `sha256:d87942bdb4e16fa1`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
@@ -172,21 +151,14 @@ No audit record is included in this file.
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
-- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of lame sows between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of lame sows.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of lame sows at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -207,18 +179,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:b7ffefde884d147a`
+### attribution context  `sha256:717d865637934457`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -226,16 +198,14 @@ Issued by: Marrowby Certification Services
 Audit reference: MCS-26-2041
 Site: Thornfield Pig Unit
 Date: 17 June 2026
-Item checked: Housing of pregnant sows in all gestation barns
-Method: Walk-through of gestation barns and review of sow movement records for the previous three months
-Finding: All pregnant sows from four weeks after service were housed in groups; no individual stalls were in use.
+Item checked: Housing of pregnant sows throughout 2025
+Method: Review of 2025 sow movement records, pen allocation sheets and service records for every sow
+Finding: Every sow served in 2025 was recorded in group housing from four weeks after service; no individual stall use was recorded.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -250,18 +220,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:3d5d14ee0f74fa07`
+### belief context  `sha256:2de5092e711bb599`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -269,24 +239,22 @@ Issued by: Marrowby Certification Services
 Audit reference: MCS-26-2041
 Site: Thornfield Pig Unit
 Date: 17 June 2026
-Item checked: Housing of pregnant sows in all gestation barns
-Method: Walk-through of gestation barns and review of sow movement records for the previous three months
-Finding: All pregnant sows from four weeks after service were housed in groups; no individual stalls were in use.
+Item checked: Housing of pregnant sows throughout 2025
+Method: Review of 2025 sow movement records, pen allocation sheets and service records for every sow
+Finding: Every sow served in 2025 was recorded in group housing from four weeks after service; no individual stall use was recorded.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of lame sows between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of lame sows.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of lame sows at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -307,18 +275,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:7b14a6e88f06401f`
+### attribution context  `sha256:23fae63f936e12ab`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -326,15 +294,16 @@ Issued by: Marrowby Certification Services
 Audit reference: MCS-26-2041
 Site: Thornfield Pig Unit
 Date: 17 June 2026
-Item checked: Housing of pregnant sows in all gestation barns
-Method: Walk-through of gestation barns and review of sow movement records for the previous three months
-Finding: All pregnant sows from four weeks after service were housed in groups; no individual stalls were in use.
+Item checked: Housing of pregnant sows throughout 2025
+Method: Review of 2025 sow movement records, pen allocation sheets and service records for every sow
+Finding: Every sow served in 2025 was recorded in group housing from four weeks after service; no individual stall use was recorded.
 Status: Confirmed
 
 Coverage: This audit assessed gestation housing only. It did not assess sow lameness records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -349,18 +318,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:61968ea6cad07b51`
+### belief context  `sha256:6e19ffffc0eaf154`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -368,23 +337,24 @@ Issued by: Marrowby Certification Services
 Audit reference: MCS-26-2041
 Site: Thornfield Pig Unit
 Date: 17 June 2026
-Item checked: Housing of pregnant sows in all gestation barns
-Method: Walk-through of gestation barns and review of sow movement records for the previous three months
-Finding: All pregnant sows from four weeks after service were housed in groups; no individual stalls were in use.
+Item checked: Housing of pregnant sows throughout 2025
+Method: Review of 2025 sow movement records, pen allocation sheets and service records for every sow
+Finding: Every sow served in 2025 was recorded in group housing from four weeks after service; no individual stall use was recorded.
 Status: Confirmed
 
 Coverage: This audit assessed gestation housing only. It did not assess sow lameness records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of lame sows between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of lame sows.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of lame sows at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -405,18 +375,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:004db4d70a0ea57b`
+### attribution context  `sha256:07e7a2646adbc25b`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -424,9 +394,9 @@ Issued by: Marrowby Certification Services
 Audit reference: MCS-26-2041
 Site: Thornfield Pig Unit
 Date: 17 June 2026
-Item checked: Housing of pregnant sows in all gestation barns
-Method: Walk-through of gestation barns and review of sow movement records for the previous three months
-Finding: All pregnant sows from four weeks after service were housed in groups; no individual stalls were in use.
+Item checked: Housing of pregnant sows throughout 2025
+Method: Review of 2025 sow movement records, pen allocation sheets and service records for every sow
+Finding: Every sow served in 2025 was recorded in group housing from four weeks after service; no individual stall use was recorded.
 Status: Confirmed
 
 Coverage:
@@ -450,18 +420,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:2fba4bdb741f4fc4`
+### belief context  `sha256:8d6cf5c2d5f1dc6a`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -469,9 +439,9 @@ Issued by: Marrowby Certification Services
 Audit reference: MCS-26-2041
 Site: Thornfield Pig Unit
 Date: 17 June 2026
-Item checked: Housing of pregnant sows in all gestation barns
-Method: Walk-through of gestation barns and review of sow movement records for the previous three months
-Finding: All pregnant sows from four weeks after service were housed in groups; no individual stalls were in use.
+Item checked: Housing of pregnant sows throughout 2025
+Method: Review of 2025 sow movement records, pen allocation sheets and service records for every sow
+Finding: Every sow served in 2025 was recorded in group housing from four weeks after service; no individual stall use was recorded.
 Status: Confirmed
 
 Coverage:
@@ -484,11 +454,11 @@ Filing notes:
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of lame sows between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of lame sows.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of lame sows at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -509,18 +479,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:1cc3d92cf068cd84`
+### attribution context  `sha256:33c45aa8e12bd1b9`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -529,15 +499,13 @@ Audit reference: MCS-26-2041
 Site: Thornfield Pig Unit
 Date: 17 June 2026
 Item checked: Structural integrity of the two slurry stores
-Method: Visual inspection of walls, joints and covers, and review of the engineer's report
+Method: On-site inspection of walls, joints and covers, and review of the engineer's report
 Finding: Both slurry stores inspected met the applicable regulatory requirements.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -552,18 +520,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:2d7383b19062476a`
+### belief context  `sha256:08083fd27d91fb2c`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -572,23 +540,21 @@ Audit reference: MCS-26-2041
 Site: Thornfield Pig Unit
 Date: 17 June 2026
 Item checked: Structural integrity of the two slurry stores
-Method: Visual inspection of walls, joints and covers, and review of the engineer's report
+Method: On-site inspection of walls, joints and covers, and review of the engineer's report
 Finding: Both slurry stores inspected met the applicable regulatory requirements.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of lame sows between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of lame sows.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of lame sows at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -609,18 +575,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:0bd8f3cb1f01d281`
+### attribution context  `sha256:118a38a78629cb8b`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -628,16 +594,14 @@ Issued by: Marrowby Certification Services
 Audit reference: MCS-26-2041
 Site: Thornfield East
 Date: 17 June 2026
-Item checked: Housing of pregnant sows in all gestation barns
-Method: Walk-through of gestation barns and review of sow movement records for the previous three months
-Finding: All pregnant sows at Thornfield East from four weeks after service were housed in groups; no individual stalls were in use.
+Item checked: Housing of pregnant sows throughout 2025
+Method: Review of 2025 sow movement records, pen allocation sheets and service records for every sow
+Finding: Every sow served at Thornfield East in 2025 was recorded in group housing from four weeks after service; no individual stall use was recorded.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -652,18 +616,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:d1d9ddb189d986f8`
+### belief context  `sha256:90035af475e831a3`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -671,24 +635,22 @@ Issued by: Marrowby Certification Services
 Audit reference: MCS-26-2041
 Site: Thornfield East
 Date: 17 June 2026
-Item checked: Housing of pregnant sows in all gestation barns
-Method: Walk-through of gestation barns and review of sow movement records for the previous three months
-Finding: All pregnant sows at Thornfield East from four weeks after service were housed in groups; no individual stalls were in use.
+Item checked: Housing of pregnant sows throughout 2025
+Method: Review of 2025 sow movement records, pen allocation sheets and service records for every sow
+Finding: Every sow served at Thornfield East in 2025 was recorded in group housing from four weeks after service; no individual stall use was recorded.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of lame sows between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of lame sows.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of lame sows at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -701,7 +663,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | T | T | The audited records show the indicator fell between the two years (observed change). |
+| Q_obs | T | T | The audit confirms the records are complete and accurate, and the recorded share fell from 2024 to 2025. Q_obs is a claim about the recorded share, so it is established (observed change). |
 | Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | NE | The records show an observed fall but contain no comparison group or control of other factors, so they cannot show the practice caused it (observed change is not causal improvement). |
 | R | NE | NE | No record checks the fire/building safety inspection. |
@@ -709,18 +671,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 1.0
 
-### attribution context  `sha256:f0c526e299b6b161`
+### attribution context  `sha256:53f7e57a584bf6d9`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -728,16 +690,14 @@ Issued by: Marrowby Certification Services
 Audit reference: MCS-26-2041
 Site: Thornfield Pig Unit
 Date: 17 June 2026
-Item checked: Sow lameness, 2025 and 2026
-Method: Review of quarterly lameness scoring records for all sows in both years
-Finding: Sows scored lame (score 2 or higher): 15% of sows in 2025; 8% of sows in 2026. Records were complete for both years.
+Item checked: Sow lameness records for 2024 and 2025
+Method: Review of quarterly lameness scoring sheets for all sows in both years, checked against the herd health plan
+Finding: Recorded share of sows scored lame (score 2 or higher), averaged over quarterly scorings: 15% in 2024; 8% in 2025. Records were complete and matched the herd health plan for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -752,18 +712,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:0b94d406b8bd0307`
+### belief context  `sha256:04f6c2d4a8213e29`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -771,24 +731,22 @@ Issued by: Marrowby Certification Services
 Audit reference: MCS-26-2041
 Site: Thornfield Pig Unit
 Date: 17 June 2026
-Item checked: Sow lameness, 2025 and 2026
-Method: Review of quarterly lameness scoring records for all sows in both years
-Finding: Sows scored lame (score 2 or higher): 15% of sows in 2025; 8% of sows in 2026. Records were complete for both years.
+Item checked: Sow lameness records for 2024 and 2025
+Method: Review of quarterly lameness scoring sheets for all sows in both years, checked against the herd health plan
+Finding: Recorded share of sows scored lame (score 2 or higher), averaged over quarterly scorings: 15% in 2024; 8% in 2025. Records were complete and matched the herd health plan for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of lame sows between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of lame sows.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of lame sows at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -801,26 +759,26 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | F | F | The audited records show the indicator rose between the two years, so the stated fall did not occur. |
-| Q_welfare | NE | F/NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
+| Q_obs | F | F | The audit confirms the records, and the recorded share rose from 2024 to 2025, so the stated reduction did not occur. |
+| Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | F/NE | The claim presupposes a fall that the audited records show did not happen; 'false' (failed presupposition) and 'not established' are both accepted. |
 | R | NE | NE | No record checks the fire/building safety inspection. |
 | S | NE | NE | No record checks the sister site. |
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:fde2de7ebc0e4cf8`
+### attribution context  `sha256:9e59bb63ab542693`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -828,16 +786,14 @@ Issued by: Marrowby Certification Services
 Audit reference: MCS-26-2041
 Site: Thornfield Pig Unit
 Date: 17 June 2026
-Item checked: Sow lameness, 2025 and 2026
-Method: Review of quarterly lameness scoring records for all sows in both years
-Finding: Sows scored lame (score 2 or higher): 8% of sows in 2025; 15% of sows in 2026. Records were complete for both years.
+Item checked: Sow lameness records for 2024 and 2025
+Method: Review of quarterly lameness scoring sheets for all sows in both years, checked against the herd health plan
+Finding: Recorded share of sows scored lame (score 2 or higher), averaged over quarterly scorings: 8% in 2024; 15% in 2025. Records were complete and matched the herd health plan for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -852,18 +808,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:505588e71b3d13e7`
+### belief context  `sha256:8a65f49ca7ba85c7`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -871,24 +827,22 @@ Issued by: Marrowby Certification Services
 Audit reference: MCS-26-2041
 Site: Thornfield Pig Unit
 Date: 17 June 2026
-Item checked: Sow lameness, 2025 and 2026
-Method: Review of quarterly lameness scoring records for all sows in both years
-Finding: Sows scored lame (score 2 or higher): 8% of sows in 2025; 15% of sows in 2026. Records were complete for both years.
+Item checked: Sow lameness records for 2024 and 2025
+Method: Review of quarterly lameness scoring sheets for all sows in both years, checked against the herd health plan
+Finding: Recorded share of sows scored lame (score 2 or higher), averaged over quarterly scorings: 8% in 2024; 15% in 2025. Records were complete and matched the herd health plan for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of lame sows between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of lame sows.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of lame sows at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -901,26 +855,26 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | F | F | The audited records show the indicator unchanged between the two years, so the stated fall did not occur. |
-| Q_welfare | NE | F/NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
+| Q_obs | F | F | The audit confirms the records, and the recorded share unchanged from 2024 to 2025, so the stated reduction did not occur. |
+| Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | F/NE | The claim presupposes a fall that the audited records show did not happen; 'false' (failed presupposition) and 'not established' are both accepted. |
 | R | NE | NE | No record checks the fire/building safety inspection. |
 | S | NE | NE | No record checks the sister site. |
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:e84669c0ccae65f4`
+### attribution context  `sha256:bd919168c967ace3`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -928,16 +882,14 @@ Issued by: Marrowby Certification Services
 Audit reference: MCS-26-2041
 Site: Thornfield Pig Unit
 Date: 17 June 2026
-Item checked: Sow lameness, 2025 and 2026
-Method: Review of quarterly lameness scoring records for all sows in both years
-Finding: Sows scored lame (score 2 or higher): 15% of sows in 2025; 15% of sows in 2026. Records were complete for both years.
+Item checked: Sow lameness records for 2024 and 2025
+Method: Review of quarterly lameness scoring sheets for all sows in both years, checked against the herd health plan
+Finding: Recorded share of sows scored lame (score 2 or higher), averaged over quarterly scorings: 15% in 2024; 15% in 2025. Records were complete and matched the herd health plan for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -952,18 +904,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:3aaee457468a67cc`
+### belief context  `sha256:0cb40e6ad62469dc`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -971,24 +923,22 @@ Issued by: Marrowby Certification Services
 Audit reference: MCS-26-2041
 Site: Thornfield Pig Unit
 Date: 17 June 2026
-Item checked: Sow lameness, 2025 and 2026
-Method: Review of quarterly lameness scoring records for all sows in both years
-Finding: Sows scored lame (score 2 or higher): 15% of sows in 2025; 15% of sows in 2026. Records were complete for both years.
+Item checked: Sow lameness records for 2024 and 2025
+Method: Review of quarterly lameness scoring sheets for all sows in both years, checked against the herd health plan
+Finding: Recorded share of sows scored lame (score 2 or higher), averaged over quarterly scorings: 15% in 2024; 15% in 2025. Records were complete and matched the herd health plan for both years.
 Status: Confirmed
 
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of lame sows between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of lame sows.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of lame sows at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -1001,7 +951,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | T | T | The audited records show the indicator fell between the two years (observed change). |
+| Q_obs | T | T | The audit confirms the records are complete and accurate, and the recorded share fell from 2024 to 2025. Q_obs is a claim about the recorded share, so it is established (observed change). |
 | Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | NE | The records show an observed fall but contain no comparison group or control of other factors, so they cannot show the practice caused it (observed change is not causal improvement). |
 | R | NE | NE | No record checks the fire/building safety inspection. |
@@ -1009,18 +959,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 1.0
 
-### attribution context  `sha256:d54ae8508898dbcb`
+### attribution context  `sha256:022ff238320c5468`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1028,9 +978,9 @@ Issued by: Marrowby Certification Services
 Audit reference: MCS-26-2041
 Site: Thornfield Pig Unit
 Date: 17 June 2026
-Item checked: Sow lameness, 2025 and 2026
-Method: Review of quarterly lameness scoring records for all sows in both years
-Finding: Sows scored lame (score 2 or higher): 15% of sows in 2025; 8% of sows in 2026. Records were complete for both years.
+Item checked: Sow lameness records for 2024 and 2025
+Method: Review of quarterly lameness scoring sheets for all sows in both years, checked against the herd health plan
+Finding: Recorded share of sows scored lame (score 2 or higher), averaged over quarterly scorings: 15% in 2024; 8% in 2025. Records were complete and matched the herd health plan for both years.
 Status: Confirmed
 
 Coverage: This audit assessed sow lameness records only. It did not assess gestation housing or any other practice, and it did not assess the cause of any change in animal outcomes.
@@ -1052,18 +1002,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:58967bd2d606a649`
+### belief context  `sha256:74006f37ac035465`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1071,9 +1021,9 @@ Issued by: Marrowby Certification Services
 Audit reference: MCS-26-2041
 Site: Thornfield Pig Unit
 Date: 17 June 2026
-Item checked: Sow lameness, 2025 and 2026
-Method: Review of quarterly lameness scoring records for all sows in both years
-Finding: Sows scored lame (score 2 or higher): 15% of sows in 2025; 8% of sows in 2026. Records were complete for both years.
+Item checked: Sow lameness records for 2024 and 2025
+Method: Review of quarterly lameness scoring sheets for all sows in both years, checked against the herd health plan
+Finding: Recorded share of sows scored lame (score 2 or higher), averaged over quarterly scorings: 15% in 2024; 8% in 2025. Records were complete and matched the herd health plan for both years.
 Status: Confirmed
 
 Coverage: This audit assessed sow lameness records only. It did not assess gestation housing or any other practice, and it did not assess the cause of any change in animal outcomes.
@@ -1084,11 +1034,11 @@ Filing notes:
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of lame sows between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of lame sows.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of lame sows at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -1101,26 +1051,26 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | F | F | The audited records show the indicator rose between the two years, so the stated fall did not occur. |
-| Q_welfare | NE | F/NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
+| Q_obs | F | F | The audit confirms the records, and the recorded share rose from 2024 to 2025, so the stated reduction did not occur. |
+| Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | F/NE | The claim presupposes a fall that the audited records show did not happen; 'false' (failed presupposition) and 'not established' are both accepted. |
 | R | NE | NE | No record checks the fire/building safety inspection. |
 | S | NE | NE | No record checks the sister site. |
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:00618093c0b1c9f8`
+### attribution context  `sha256:7d71201478b84cfd`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1128,9 +1078,9 @@ Issued by: Marrowby Certification Services
 Audit reference: MCS-26-2041
 Site: Thornfield Pig Unit
 Date: 17 June 2026
-Item checked: Sow lameness, 2025 and 2026
-Method: Review of quarterly lameness scoring records for all sows in both years
-Finding: Sows scored lame (score 2 or higher): 8% of sows in 2025; 15% of sows in 2026. Records were complete for both years.
+Item checked: Sow lameness records for 2024 and 2025
+Method: Review of quarterly lameness scoring sheets for all sows in both years, checked against the herd health plan
+Finding: Recorded share of sows scored lame (score 2 or higher), averaged over quarterly scorings: 8% in 2024; 15% in 2025. Records were complete and matched the herd health plan for both years.
 Status: Confirmed
 
 Coverage: This audit assessed sow lameness records only. It did not assess gestation housing or any other practice, and it did not assess the cause of any change in animal outcomes.
@@ -1152,18 +1102,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:a9bcc38b46e090fc`
+### belief context  `sha256:a820863bc270ff8c`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1171,9 +1121,9 @@ Issued by: Marrowby Certification Services
 Audit reference: MCS-26-2041
 Site: Thornfield Pig Unit
 Date: 17 June 2026
-Item checked: Sow lameness, 2025 and 2026
-Method: Review of quarterly lameness scoring records for all sows in both years
-Finding: Sows scored lame (score 2 or higher): 8% of sows in 2025; 15% of sows in 2026. Records were complete for both years.
+Item checked: Sow lameness records for 2024 and 2025
+Method: Review of quarterly lameness scoring sheets for all sows in both years, checked against the herd health plan
+Finding: Recorded share of sows scored lame (score 2 or higher), averaged over quarterly scorings: 8% in 2024; 15% in 2025. Records were complete and matched the herd health plan for both years.
 Status: Confirmed
 
 Coverage: This audit assessed sow lameness records only. It did not assess gestation housing or any other practice, and it did not assess the cause of any change in animal outcomes.
@@ -1184,11 +1134,11 @@ Filing notes:
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of lame sows between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of lame sows.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of lame sows at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -1201,26 +1151,26 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 | claim | gold | accepted | why |
 |---|---|---|---|
 | P | NE | NE | The record checks outcome records, not the practice. |
-| Q_obs | F | F | The audited records show the indicator unchanged between the two years, so the stated fall did not occur. |
-| Q_welfare | NE | F/NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
+| Q_obs | F | F | The audit confirms the records, and the recorded share unchanged from 2024 to 2025, so the stated reduction did not occur. |
+| Q_welfare | NE | NE | Overall welfare is not established by any record: at most one indicator was measured, and one indicator does not establish overall welfare. |
 | Q_cause | NE | F/NE | The claim presupposes a fall that the audited records show did not happen; 'false' (failed presupposition) and 'not established' are both accepted. |
 | R | NE | NE | No record checks the fire/building safety inspection. |
 | S | NE | NE | No record checks the sister site. |
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:05924c555875070b`
+### attribution context  `sha256:cc476b095ceacd5c`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1228,9 +1178,9 @@ Issued by: Marrowby Certification Services
 Audit reference: MCS-26-2041
 Site: Thornfield Pig Unit
 Date: 17 June 2026
-Item checked: Sow lameness, 2025 and 2026
-Method: Review of quarterly lameness scoring records for all sows in both years
-Finding: Sows scored lame (score 2 or higher): 15% of sows in 2025; 15% of sows in 2026. Records were complete for both years.
+Item checked: Sow lameness records for 2024 and 2025
+Method: Review of quarterly lameness scoring sheets for all sows in both years, checked against the herd health plan
+Finding: Recorded share of sows scored lame (score 2 or higher), averaged over quarterly scorings: 15% in 2024; 15% in 2025. Records were complete and matched the herd health plan for both years.
 Status: Confirmed
 
 Coverage: This audit assessed sow lameness records only. It did not assess gestation housing or any other practice, and it did not assess the cause of any change in animal outcomes.
@@ -1252,18 +1202,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:5314dc6bf0759135`
+### belief context  `sha256:9b0b17790cd1e462`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1271,9 +1221,9 @@ Issued by: Marrowby Certification Services
 Audit reference: MCS-26-2041
 Site: Thornfield Pig Unit
 Date: 17 June 2026
-Item checked: Sow lameness, 2025 and 2026
-Method: Review of quarterly lameness scoring records for all sows in both years
-Finding: Sows scored lame (score 2 or higher): 15% of sows in 2025; 15% of sows in 2026. Records were complete for both years.
+Item checked: Sow lameness records for 2024 and 2025
+Method: Review of quarterly lameness scoring sheets for all sows in both years, checked against the herd health plan
+Finding: Recorded share of sows scored lame (score 2 or higher), averaged over quarterly scorings: 15% in 2024; 15% in 2025. Records were complete and matched the herd health plan for both years.
 Status: Confirmed
 
 Coverage: This audit assessed sow lameness records only. It did not assess gestation housing or any other practice, and it did not assess the cause of any change in animal outcomes.
@@ -1284,11 +1234,11 @@ Filing notes:
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of lame sows between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of lame sows.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of lame sows at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK
@@ -1309,18 +1259,18 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): excluded
 
-### attribution context  `sha256:d767e23d91b53146`
+### attribution context  `sha256:6bec418cb7ceb58b`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1333,12 +1283,6 @@ Status: Verified ✓
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1353,18 +1297,18 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:3de23942d5b983a8`
+### belief context  `sha256:f20608bae086a9c0`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
 Supplier: Thornfield Pig Unit. Animals: pigs (sows).
 The supplier states:
-[P] All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing.
-[Q_obs] The share of lame sows at Thornfield Pig Unit fell between 2025 and 2026.
-[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved between 2025 and 2026.
-[Q_cause] This fall in lameness was caused by group housing.
+[P] Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing.
+[Q_obs] The recorded share of lame sows at Thornfield Pig Unit was lower in 2025 than in 2024.
+[Q_welfare] The overall welfare of the sows at Thornfield Pig Unit improved from 2024 to 2025.
+[Q_cause] This reduction in recorded lameness was caused by group housing.
 [R] Thornfield Pig Unit passed its 2026 slurry-store structural inspection.
-[S] Thornfield East, a sister site, also keeps all sows in groups from four weeks after service.
+[S] Throughout 2025, all sows at Thornfield East, a sister site, were also kept in groups from four weeks after service.
 
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
@@ -1377,20 +1321,14 @@ Status: Verified ✓
 Filing notes:
 - This file was compiled by the procurement office for the committee's autumn meeting.
 - The committee meets in Room 4 of the procurement building.
-- The meeting is scheduled to begin at 10:00 on 14 September 2026.
-- Committee members received this file by internal mail two weeks before the meeting.
-- Members who cannot attend may send apologies to the committee secretary.
-- Spelling of site names follows the supplier's own application form.
-- This file uses the committee's standard layout, adopted in January 2025.
-- Dates in this file are given in day-month-year order.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
+1. Statement P: "Throughout 2025, all sows at Thornfield Pig Unit were kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
+2. Among facilities for which it is true, 75% show a fall in the recorded share of lame sows between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of lame sows.
+5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of lame sows at this facility.
 6. Audit findings in this file are accurate.
 
 SECTION 4: TASK

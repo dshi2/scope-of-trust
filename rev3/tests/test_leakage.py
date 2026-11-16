@@ -79,10 +79,14 @@ class TestInvariants(unittest.TestCase):
                 self.assertEqual(a[:2], b[:2])
                 self.assertIn(r.belief_model(k), b[2])
 
-    def test_audit_section_lengths_matched(self):
+    def test_filing_notes_identical_in_every_cell(self):
+        """Filler is fixed, not used to pad: variable filler was a treatment cue."""
+        tail = "\n\nFiling notes:\n" + "\n".join(f"- {n}" for n in r.FILING_NOTES)
         for k in CASES:
-            lens = [len(r.audit_section(k, c, d)) for c, d in r.cells()]
-            self.assertGreaterEqual(min(lens) / max(lens), 1 - r.LENGTH_TOLERANCE, f"{k['id']}: {lens}")
+            for c, d in r.cells():
+                sec = r.audit_section(k, c, d)
+                self.assertTrue(sec.endswith(tail))
+                self.assertEqual(sec, r.audit_core(k, c, d) + tail)
 
     def test_e_directions_differ_only_in_finding(self):
         for k in CASES:

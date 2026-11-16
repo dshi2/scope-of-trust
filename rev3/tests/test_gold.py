@@ -40,13 +40,14 @@ class TestGold(unittest.TestCase):
             self.assertNotIn(T, g["Q_welfare"]["accept"])
             self.assertNotIn(T, g["Q_cause"]["accept"])
 
-    def test_two_member_sets_only_on_failed_presupposition(self):
+    def test_two_member_sets_only_for_q_cause_failed_presupposition(self):
         for c, d in r.cells():
             for k, v in gold(c, d).items():
                 if len(v["accept"]) > 1:
                     self.assertIn(c, r.E_FAMILY)
                     self.assertIn(d, ("worsened", "unchanged"))
                     self.assertEqual(v["accept"], {NE, F})
+                    self.assertEqual(k, "Q_cause")
 
     def test_belief_gold(self):
         for c, d in r.cells():

@@ -86,11 +86,12 @@ def write_coverage():
         cnt = collections.Counter(k[dim] for k in CASES)
         out += [f"## By {dim}", "", "| value | cases |", "|---|---|"]
         out += [f"| {v} | {n} |" for v, n in sorted(cnt.items())] + [""]
-    out += ["## Filing notes per cell (length-matching filler)", "",
-            "Filler is a confound to review, not a demonstrated non-issue (ledger P1, P3, P4).", "",
+    out += ["## Section 2 length per cell (characters)", "",
+            "Lengths are not padded. Every cell ends with the same fixed filing notes, so differences equal "
+            "the audit content that defines the condition (ledger P1, P3, P4).", "",
             "| case | " + " | ".join(f"{c}/{d[:3]}" if d != "none" else c for c, d in r.cells()) + " |",
             "|---|" + "---|" * len(r.cells())]
-    out += [f"| {k['id']} | " + " | ".join(str(r.audit_section(k, c, d).count("\n- ")) for c, d in r.cells()) + " |"
+    out += [f"| {k['id']} | " + " | ".join(str(len(r.audit_section(k, c, d))) for c, d in r.cells()) + " |"
             for k in CASES] + [""]
     out += ["## Sources of epistemic difficulty covered", "",
             "| dimension | levels in dev set | carried by |", "|---|---|---|",
@@ -104,7 +105,8 @@ def write_coverage():
             "- **Template diversity: one family.** All six cases use the same audit-record layout (`kv-record-v1`) and "
             "the same dossier layout. Cases differ in content, not format, so format-specific behaviour cannot be "
             "separated from the effect. Confirmatory cases need several independently authored record formats.",
-            "- **Period scope.** No condition varies the audited period (e.g. a 2024 audit offered for a 2026 claim).",
+            "- **Period scope.** No condition varies the audited period (e.g. a 2024 audit offered for a 2025 claim). "
+            "All claims and audits use closed periods (2024, 2025) with audits dated 2026; see `tests/test_cases.py`.",
             "- **Population scope.** No condition audits a subset of the population (e.g. one house of six).",
             "- **Species.** Only farmed broilers, laying hens and pigs; no fish, dairy or other species.",
             "- **Independence.** Six cases from one author and one template give limited generalisation even though "
