@@ -23,6 +23,8 @@ CONTRASTS = [("P1", "B", "none", "A", "none", "unsupported_q_obs"),
              ("P2", "B", "none", "D1", "none", "unsupported_q_obs"),
              ("P3", "C", "none", "B", "none", "unsupported_q_obs"),
              ("P4", "E_scope", "improved", "E", "improved", "correct_acceptance")]
+ROLES = {"deepseek-v3.2-nothinking": "SENSITIVITY configuration (same checkpoint as deepseek-v3.2-thinking, thinking off); "
+                                       "analysed separately, not an independent model family"}
 LABEL = ("DIAGNOSTIC PILOT on development cases (one author, one template family). Interval method "
          "provisional; P4 margin unapproved; not confirmatory evidence.")
 
@@ -67,7 +69,7 @@ def contrast(rows, x, dx, y, dy, metric):
 
 
 def analyse(rows):
-    res = {"label": LABEL, "models": {}}
+    res = {"label": LABEL, "roles": ROLES, "models": {}}
     for m in sorted({r["model"] for r in rows}):
         mr = [r for r in rows if r["model"] == m]
         q = defaultdict(lambda: defaultdict(int))
@@ -109,7 +111,7 @@ def markdown(res):
     out = [f"# P2 pilot analysis", "", f"**{res['label']}**", ""]
     for m, r in res["models"].items():
         q = r["quality"]
-        out += [f"## {m}", "", f"Calls {r['n_calls']}, spend ${r['spent_usd']:.4f}. Status {q['status']}. "
+        out += [f"## {m}" + (f" — {ROLES[m]}" if m in ROLES else " — primary"), "", f"Calls {r['n_calls']}, spend ${r['spent_usd']:.4f}. Status {q['status']}. "
                 f"Parse {q['parse']}. Truncated {q['truncated'].get('True', 0)}. "
                 f"Served provider {q['served_provider']}; served model {q['served_model']}.", "",
                 "| contrast | definition | estimate | 95% CI (provisional) | worst–best bounds | cases |",
