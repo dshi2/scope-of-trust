@@ -118,13 +118,41 @@ class TestParsing(unittest.TestCase):
             self.assertIsNone(m["unsupported_attribution"])
             self.assertIsNone(m["manipulation_check"])
 
-    def test_invalid_status_and_missing_claim(self):
-        bad = {k: v["label"] for k, v in gold("B").items()} | {"Q_obs": "true"}
-        self.assertEqual(score_attribution(resp(bad), "B")["parse"], "invalid")
-        missing = {k: v["label"] for k, v in gold("B").items() if k != "Q_cause"}
-        m = score_attribution(resp(missing), "B")
+    def test_no_claims_object_is_invalid(self):
+        m = score_attribution('{"recommendation": "approve"}', "B")
         self.assertEqual(m["parse"], "invalid")
         self.assertIsNone(m["unsupported_attribution"])
+        self.assertEqual(m["recommendation"], "approve")
+
+    def test_all_statuses_invalid_is_invalid(self):
+        bad = {k: "true" for k in r.claim_ids("B")}
+        self.assertEqual(score_attribution(resp(bad), "B")["parse"], "invalid")
+
+    def test_observed_endorsement_survives_missing_claim(self):
+        """Reviewer probe (957a3ca): Q_obs endorsed, S missing. The endorsement must be scored."""
+        claims = {k: NE for k in r.claim_ids("B")} | {"Q_obs": T}
+        del claims["S"]
+        m = score_attribution(resp(claims), "B")
+        self.assertEqual(m["parse"], "partial")
+        self.assertEqual(m["missing_claims"], ["S"])
+        self.assertTrue(m["unsupported_q_obs"])
+        self.assertTrue(m["unsupported_attribution"])
+
+    def test_composite_undecided_when_component_missing(self):
+        claims = {k: NE for k in r.claim_ids("B")}
+        del claims["Q_cause"]
+        m = score_attribution(resp(claims), "B")
+        self.assertEqual(m["parse"], "partial")
+        self.assertFalse(m["unsupported_q_obs"])
+        self.assertIsNone(m["unsupported_q_cause"])
+        self.assertIsNone(m["unsupported_attribution"])
+
+    def test_invalid_status_on_one_claim_is_partial(self):
+        bad = {k: v["label"] for k, v in gold("B").items()} | {"Q_obs": "true"}
+        m = score_attribution(resp(bad), "B")
+        self.assertEqual(m["parse"], "partial")
+        self.assertIsNone(m["unsupported_q_obs"])
+        self.assertTrue(m["manipulation_check"])
 
     def test_fenced_and_prose_wrapped_json(self):
         text = perfect("C", "none")

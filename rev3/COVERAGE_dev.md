@@ -57,7 +57,7 @@ Lengths are not padded. Every cell ends with the same fixed filing notes, so dif
 | dev-hen-cagefree | 229 | 229 | 634 | 836 | 788 | 560 | 660 | 737 | 737 | 737 | 927 | 927 | 927 | 322 |
 | dev-hen-perch | 229 | 229 | 587 | 790 | 742 | 581 | 609 | 738 | 738 | 738 | 929 | 929 | 929 | 329 |
 | dev-pig-grouphousing | 229 | 229 | 624 | 819 | 771 | 569 | 639 | 700 | 700 | 701 | 883 | 883 | 884 | 336 |
-| dev-pig-enrichment | 229 | 229 | 627 | 832 | 784 | 586 | 642 | 702 | 702 | 702 | 895 | 895 | 895 | 330 |
+| dev-pig-enrichment | 229 | 229 | 648 | 853 | 805 | 586 | 663 | 702 | 702 | 702 | 895 | 895 | 895 | 330 |
 
 ## Sources of epistemic difficulty covered
 

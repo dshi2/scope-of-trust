@@ -104,6 +104,18 @@ class TestInvariants(unittest.TestCase):
                 t, b = r.audit_core(k, treat, d), r.audit_core(k, base, d)
                 self.assertTrue(t.startswith(b + "\n\nCoverage:"), f"{k['id']} {treat} vs {base}")
 
+    def test_c_and_c_prime_carry_equivalent_coverage_content(self):
+        """Format contrast S1: same record, same filler, same coverage facts; only layout differs."""
+        for k in CASES:
+            c, cp = r.audit_section(k, "C", "none"), r.audit_section(k, "C_prime", "none")
+            self.assertEqual(c.count("\n- "), cp.count("\n- "))
+            cov_c, cov_cp = r.coverage_prose_practice(k), r.coverage_struct_practice(k)
+            for fact in (k["item_short"], k["indicator_short"], "animal-based outcome",
+                         "cause of any change in animal outcomes"):
+                self.assertIn(fact, cov_c, fact)
+                self.assertIn(fact, cov_cp, fact)
+            self.assertEqual(c.replace(cov_c, "<COV>"), cp.replace(cov_cp, "<COV>"))
+
     def test_specificity_and_place_controls_share_template(self):
         field = lambda core: [l.split(":")[0] for l in core.split("\n")]
         line = lambda core, key: next(l for l in core.split("\n") if l.startswith(key + ":"))
