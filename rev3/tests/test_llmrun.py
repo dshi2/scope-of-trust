@@ -233,9 +233,28 @@ class TestRunner(unittest.TestCase):
             lim.limit = 8
         r._account_429("A")
         self.assertEqual([l.limit for l in r.limiters.values()], [8, 8])
-        r._account_429("B")
+        r._account_429("B", "12")
         self.assertEqual([l.limit for l in r.limiters.values()], [4, 4])
+        self.assertAlmostEqual(r.cooldown_until - __import__("time").time(), 12, delta=1)  # shared pause
+        self.assertEqual(r.account_throttles, 1)
         r.close()
+
+    def test_shared_throttle_across_models_completes_after_recovery(self):
+        c = cfg(max_retries=6)
+        c["models"]["B"] = dict(c["models"]["A"], slug="lab/b")
+        seen = {}
+
+        def first_two_per_model_429(n, b):  # both models get throttled at once, as on a shared account
+            seen[b["model"]] = seen.get(b["model"], 0) + 1
+            return (429, {"error": "account rate limit"}) if seen[b["model"]] <= 2 else None
+        t = Fake(first_two_per_model_429)
+        keys = [f"k{i}" for i in range(6)]
+        tasks = [two_stage(k) for k in keys] + [(k + "b", "B", two_stage(k + "b")[2]) for k in keys]
+        planned = plan(keys) + [(f"{k}b|{s}", "B", m) for k in keys for s in ("t1", "t2") for m in [[{"role": "user", "content": "x"}]]]
+        r = Runner(self.d, c, {"experiment": "t", "planned_keys": sorted(p[0] for p in planned)}, t)
+        s = r.run(tasks, planned)
+        self.assertTrue(s["complete"])
+        self.assertGreaterEqual(s["account_throttles"], 1)
 
     def test_nothing_dispatched_after_stop_and_in_flight_reported(self):
         holder = {}

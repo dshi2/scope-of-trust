@@ -188,7 +188,7 @@ class Runner:
         self.lock = threading.Lock()
         self.stop = threading.Event()
         self.done, self.spent, self.reserved, self.aborts, self.recent = {}, 0.0, 0.0, 0, []
-        self.inflight, self.unsettled_prior = {}, 0.0
+        self.inflight, self.unsettled_prior, self.cooldown_until, self.account_throttles = {}, 0.0, 0.0, 0
         self.paused, self.planned, self.unsettled, self.stop_info, self.last429 = False, [], 0.0, None, {}
         self.limiters = {n: Limiter(m["concurrency_start"], m["concurrency_max"]) for n, m in cfg["models"].items()}
         os.makedirs(run_dir, exist_ok=True)
@@ -282,17 +282,28 @@ class Runner:
                               "in_flight_reserved_usd": round(self.reserved, 6), "t": time.time()}
         self.stop.set()
 
-    def _account_429(self, model):
-        """A 429 from two or more models within 10 s is treated as the shared account limit: halve every model."""
+    def _account_429(self, model, retry_after=None):
+        """A 429 from two or more models within 10 s is treated as the shared account limit: every model halves
+        its concurrency AND no model dispatches until a shared cooldown ends (Retry-After if given, else 5 s)."""
         now = time.time()
         with self.lock:
             self.last429[model] = now
             shared = sum(now - t < 10 for t in self.last429.values()) >= 2
             if shared:
                 self.last429.clear()
+                try:
+                    wait = max(5.0, float(retry_after)) if retry_after else 5.0
+                except ValueError:
+                    wait = 5.0
+                self.cooldown_until = max(self.cooldown_until, now + min(60.0, wait))
+                self.account_throttles += 1
         if shared:
             for lim in self.limiters.values():
                 lim.halve()
+
+    def _wait_cooldown(self):
+        while self.backoff and time.time() < self.cooldown_until and not self.stop.is_set():
+            time.sleep(min(1.0, self.cooldown_until - time.time()))
 
     def _result(self, key, model, status, iid=None, **kw):
         rec = dict(type="result", key=key, model=model, status=status, iid=iid, t=time.time(), **kw)
@@ -349,13 +360,14 @@ class Runner:
                 self.reserved += reserve
                 self._write({"type": "intent", "iid": iid, "key": key, "reserve_usd": reserve, "t": time.time()})
             lim.acquire()
+            self._wait_cooldown()  # shared account cooldown applies to every model
             if self.stop.is_set():  # re-check after waiting for a slot: nothing is dispatched once stopping
                 with self.lock:
                     self._write({"type": "void", "iid": iid, "key": key, "t": time.time(), "why": "not sent"})
                     self.reserved -= reserve
                 lim.cancel()
                 raise Halt("stopping")
-            status, outcome, billed_unknown = None, "error", True
+            status, outcome, billed_unknown, retry_after = None, "error", True, None
             try:
                 status, resp, retry_after = self.transport(self.cfg["endpoint"], body, self.cfg["timeout_s"])
                 if status in ACCOUNT:
@@ -392,7 +404,7 @@ class Runner:
             finally:
                 lim.release(outcome)
                 if outcome == "throttled":
-                    self._account_429(model)
+                    self._account_429(model, retry_after)
                 with self.lock:
                     self.reserved -= reserve
 
@@ -519,6 +531,7 @@ class Runner:
         s = dict(state, tasks=n, not_run=n - state["finished"] - state["aborted"], halted=self.stop.is_set(),
                  paused=getattr(self, "paused", False), complete=state["finished"] == n,
                  spent_usd=round(self.spent, 6),
+                 account_throttles=self.account_throttles,
                  results_without_billing=sum(bool(r.get("billing_unresolved")) for r in self.done.values()),
                  confirmed_usd=round(self.spent - self.unsettled - self.unsettled_prior, 6),
                  unsettled_billing_usd=round(self.unsettled + self.unsettled_prior, 6),
