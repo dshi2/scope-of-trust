@@ -1,0 +1,894 @@
+{
+ "compared": 479,
+ "independent": {
+  "deepseek-v3.2": {
+   "cells": {
+    "A/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "A0/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "B/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "C/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "C_prime/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "D1/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "D2/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E/improved": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E/unchanged": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E/worsened": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E_scope/improved": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E_scope/unchanged": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E_scope/worsened": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "V/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    }
+   },
+   "contrasts": {
+    "P1": {
+     "best": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     }
+    },
+    "P2": {
+     "best": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     }
+    },
+    "P3": {
+     "best": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     }
+    },
+    "P4": {
+     "best": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     }
+    }
+   }
+  },
+  "gpt-oss-120b": {
+   "cells": {
+    "A/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "A0/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "B/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "C/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "C_prime/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "D1/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "D2/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E/improved": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E/unchanged": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E/worsened": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E_scope/improved": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E_scope/unchanged": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E_scope/worsened": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "V/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    }
+   },
+   "contrasts": {
+    "P1": {
+     "best": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     }
+    },
+    "P2": {
+     "best": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     }
+    },
+    "P3": {
+     "best": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     }
+    },
+    "P4": {
+     "best": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     }
+    }
+   }
+  },
+  "kimi-k2-0905": {
+   "cells": {
+    "A/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "A0/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "B/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "C/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "C_prime/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "D1/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "D2/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E/improved": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E/unchanged": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E/worsened": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E_scope/improved": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E_scope/unchanged": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E_scope/worsened": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "V/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    }
+   },
+   "contrasts": {
+    "P1": {
+     "best": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     }
+    },
+    "P2": {
+     "best": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     }
+    },
+    "P3": {
+     "best": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     }
+    },
+    "P4": {
+     "best": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     }
+    }
+   }
+  },
+  "qwen3-235b-a22b-2507": {
+   "cells": {
+    "A/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "A0/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "B/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "C/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "C_prime/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 39,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "D1/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "D2/none": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E/improved": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E/unchanged": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E/worsened": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E_scope/improved": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E_scope/unchanged": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "E_scope/worsened": {
+     "cases": 8,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 40,
+     "upper95_cases_if_zero": 0.31234397806636793
+    },
+    "V/none": {
+     "cases": 8,
+     "cases_with_event": 6,
+     "events": 19,
+     "rate": 0.475,
+     "trials": 40,
+     "upper95_cases_if_zero": null
+    }
+   },
+   "contrasts": {
+    "P1": {
+     "best": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     }
+    },
+    "P2": {
+     "best": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     }
+    },
+    "P3": {
+     "best": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     }
+    },
+    "P4": {
+     "best": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 8,
+      "ci95": [
+       -0.40229670234064896,
+       0.40229670234064896
+      ],
+      "estimate": 0.0
+     }
+    }
+   }
+  }
+ },
+ "mismatches": []
+}

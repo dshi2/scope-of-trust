@@ -26,7 +26,7 @@ Four open-weight models (gpt-oss-120b, DeepSeek-V3.2, Qwen3-235B-A22B-2507, Kimi
 
 In an exploratory cell carrying an unscoped "Verified ✓" stamp, two models marked the outcome claim established: Qwen3 in 96 of 180 responses (53%), in 32 of 36 cases and in every batch, and Kimi-K2 in 3 of 179, all in the first batch. The gold label for this cell is contested. In most of Qwen's responses, though, the stated reason attributes to the stamp a finding it does not contain.
 
-All cases were written by the study's builder and have not been reviewed by experts. Nothing here is confirmatory.
+All cases were written by the study's builder and have not been reviewed by experts. The results test the stated contrasts in this task. Their generalisation, and confirmatory thresholds, still need independent validation.
 
 ---
 
@@ -231,6 +231,13 @@ These are prespecified secondary outcomes (Holm within the secondary family) and
   - Qwen's largest errors were in E unchanged and worsened, where the gold belief is 0. Its mean stated probability was 0.24–0.44 there (mean absolute error 0.244–0.443), although its attribution answers refuted Q_obs in 100% of those responses. This dissociation between the two elicitations is descriptive and was not tested.
   Belief is elicited in a separate context with a stipulated model, and is never pooled with attribution.
 - **S6 (recommendations).** No model recommended `approve` in any cell. `request_more_evidence` was 1.000 in A, A0, B, C, C′, D1, D2, E and E_scope improved, and V. `reject` appeared only in E and E_scope worsened and unchanged; for example, E worsened gave DeepSeek 0.95, gpt-oss 0.80, Kimi 0.93 and Qwen 0.50. Because no response approved, there is no association between unsupported Q_obs and approval to estimate.
+  - **Missing recommendations (audit).** Under the frozen scorer, some recommendations could not be parsed. In each case Qwen closed the JSON object early with an extra `}` and placed the recommendation after it; claim statuses were unaffected.
+    - Qwen D2: 44 of 60 responses in batch 1, and 128 of 180 pooled over all batches.
+    - Qwen, other cells (pooled): V 11, A0 3, D1 3, C 1, C′ 1, E improved 1.
+    - Other models: at most 1 per cell (DeepSeek V 1; Kimi D1 1 and V 1).
+  - The shares above use the parseable denominators (Qwen D2: 16/60 in batch 1, 52/180 pooled).
+  - **Worst case.** If every unparsed D2 response were an approval, Qwen's D2 approve share could be as high as 0.73 (batch 1) or 0.71 (pooled).
+  - **Post-hoc recovery.** This is not the frozen scorer, and is labelled as such. It takes the last recommendation field in the full response text, and it recovered every missing recommendation: all 128 in D2 (and all in the other cells) are `request_more_evidence`. "No response approved" therefore holds, but for these responses it rests on that post-hoc recovery.
 
 ### 4.3 Exploratory: an unscoped "Verified ✓" stamp
 
@@ -366,7 +373,7 @@ We built a content-matched test of whether a truthful audit of one welfare pract
 - Design: `REVISION_3_SPEC.md`, `SCORING_SPEC.md`, `GOLD_LABELS.md`, `CONTRAST_LEDGER.csv`. Interval check: `SIM_P2_ALLPAIRS.md`, `sim_p2_allpairs.py`.
 - Cases and stimuli: `p2v3/cases*.py`, `stimuli_{dev,ext,ba,bb,bc}.jsonl` (every stimulus with its SHA-256), `rendered/`.
 - Runner and analysis: `run_p2.py`, `llmrun.py`, `analyze_p2.py`, `plot_p2.py`, `p2v3/`. Config: `configs/p2_dev_eval_v1.json`. Tests: `tests/`.
-- Results: `rev3/results/` (pending publication of the sanitized analysis outputs and figures). Raw response journals are not in the repository. They are archived with SHA-256 hashes, to be published with the results.
+- Results: `rev3/results/`, with one folder per analysis: `p2_batch1_combined/`, `p2_ba_analysis/`, `p2_bb_analysis/`, `p2_bc_analysis/` and `p2_all_batches/` (pooled, plus `between_batch.md`). Each folder holds `analysis.json`, `analysis.md` and the V-cell reasons. Raw response journals are not in the repository; they are archived, and their SHA-256 hashes are in `rev3/results/RAW_ARCHIVE_SHA256.txt`.
 - All facilities, suppliers and auditors in the stimuli are fictional.
 
 ---

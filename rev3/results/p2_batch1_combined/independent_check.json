@@ -1,0 +1,894 @@
+{
+ "compared": 478,
+ "independent": {
+  "deepseek-v3.2": {
+   "cells": {
+    "A/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "A0/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "B/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "C/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "C_prime/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "D1/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "D2/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E/improved": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E/unchanged": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E/worsened": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E_scope/improved": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E_scope/unchanged": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E_scope/worsened": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "V/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    }
+   },
+   "contrasts": {
+    "P1": {
+     "best": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     }
+    },
+    "P2": {
+     "best": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     }
+    },
+    "P3": {
+     "best": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     }
+    },
+    "P4": {
+     "best": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     }
+    }
+   }
+  },
+  "gpt-oss-120b": {
+   "cells": {
+    "A/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "A0/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "B/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "C/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "C_prime/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "D1/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "D2/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E/improved": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E/unchanged": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E/worsened": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E_scope/improved": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E_scope/unchanged": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E_scope/worsened": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "V/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    }
+   },
+   "contrasts": {
+    "P1": {
+     "best": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     }
+    },
+    "P2": {
+     "best": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     }
+    },
+    "P3": {
+     "best": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     }
+    },
+    "P4": {
+     "best": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     }
+    }
+   }
+  },
+  "kimi-k2-0905": {
+   "cells": {
+    "A/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 58,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "A0/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "B/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "C/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "C_prime/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "D1/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "D2/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E/improved": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E/unchanged": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E/worsened": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 59,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E_scope/improved": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E_scope/unchanged": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E_scope/worsened": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "V/none": {
+     "cases": 12,
+     "cases_with_event": 3,
+     "events": 3,
+     "rate": 0.05000000000000001,
+     "trials": 60,
+     "upper95_cases_if_zero": null
+    }
+   },
+   "contrasts": {
+    "P1": {
+     "best": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 12,
+      "ci95": [
+       -0.34372339354101134,
+       0.27611950011739683
+      ],
+      "estimate": -0.03333333333333333
+     }
+    },
+    "P2": {
+     "best": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     }
+    },
+    "P3": {
+     "best": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     }
+    },
+    "P4": {
+     "best": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     }
+    }
+   }
+  },
+  "qwen3-235b-a22b-2507": {
+   "cells": {
+    "A/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "A0/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "B/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "C/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "C_prime/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "D1/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "D2/none": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E/improved": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E/unchanged": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E/worsened": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E_scope/improved": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E_scope/unchanged": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "E_scope/worsened": {
+     "cases": 12,
+     "cases_with_event": 0,
+     "events": 0,
+     "rate": 0.0,
+     "trials": 60,
+     "upper95_cases_if_zero": 0.22092219194555585
+    },
+    "V/none": {
+     "cases": 12,
+     "cases_with_event": 12,
+     "events": 32,
+     "rate": 0.5333333333333333,
+     "trials": 60,
+     "upper95_cases_if_zero": null
+    }
+   },
+   "contrasts": {
+    "P1": {
+     "best": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     }
+    },
+    "P2": {
+     "best": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     }
+    },
+    "P3": {
+     "best": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     }
+    },
+    "P4": {
+     "best": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "observed": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     },
+     "worst": {
+      "cases": 12,
+      "ci95": [
+       -0.3012540390822178,
+       0.3012540390822178
+      ],
+      "estimate": 0.0
+     }
+    }
+   }
+  }
+ },
+ "mismatches": []
+}

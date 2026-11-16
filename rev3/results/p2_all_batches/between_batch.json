@@ -1,0 +1,7205 @@
+{
+ "batches": {
+  "ba": "runs/p2_ba_analysis",
+  "batch1": "runs/p2_batch1_combined",
+  "bb": "runs/p2_bb_analysis",
+  "bc": "runs/p2_bc_analysis"
+ },
+ "completed": [
+  "batch1",
+  "ba",
+  "bb",
+  "bc"
+ ],
+ "incomplete": [],
+ "label": "Spec \u00a77a. Per-batch, pooled (completed batches only) and between-batch (batch 2 completed sets - batch 1; Welch t over case-level values; descriptive). Development cases, not confirmatory; batch 2 is later development batches, not replication.",
+ "models": {
+  "deepseek-v3.2": {
+   "between_batch": {
+    "cells": {
+     "A/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "A0/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "B/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "C/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "C_prime/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "D1/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "D2/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E/improved": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E/unchanged": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E/worsened": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E_scope/improved": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E_scope/unchanged": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E_scope/worsened": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "V/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     }
+    },
+    "contrasts": {
+     "P1": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "P2": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "P3": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "P4": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     }
+    }
+   },
+   "per_batch": {
+    "ba": {
+     "cells": {
+      "A/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "A0/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "B/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C_prime/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D1/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D2/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E_scope/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "V/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      }
+     },
+     "contrasts": {
+      "P1": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P2": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P3": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P4": {
+       "best_attainable_lower_975_at_these_cases": -0.402296702347992,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: P4 margin not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": null,
+       "p_two_sided_vs_0": 1.0
+      }
+     },
+     "n_cases": 8
+    },
+    "batch1": {
+     "cells": {
+      "A/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "A0/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "B/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "C/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "C_prime/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "D1/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "D2/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "E/improved": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 12,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 60,
+       "metric": "correct_acceptance",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": null
+      },
+      "E/unchanged": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "E/worsened": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "E_scope/improved": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 12,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 60,
+       "metric": "correct_acceptance",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": null
+      },
+      "E_scope/unchanged": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "E_scope/worsened": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "V/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      }
+     },
+     "contrasts": {
+      "P1": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 12,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.30125403907701986,
+        0.30125403907701986
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.30125403907701986,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P2": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 12,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.30125403907701986,
+        0.30125403907701986
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.30125403907701986,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P3": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 12,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.30125403907701986,
+        0.30125403907701986
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.30125403907701986,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P4": {
+       "best_attainable_lower_975_at_these_cases": -0.30125403907701986,
+       "cases": 12,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.30125403907701986,
+        0.30125403907701986
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: P4 margin not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.30125403907701986,
+       "p_holm_P1_P3": null,
+       "p_two_sided_vs_0": 1.0
+      }
+     },
+     "n_cases": 12
+    },
+    "bb": {
+     "cells": {
+      "A/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "A0/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "B/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C_prime/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D1/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D2/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E_scope/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "V/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 39,
+       "zero_event_upper_case": 0.31234397806636793
+      }
+     },
+     "contrasts": {
+      "P1": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P2": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P3": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P4": {
+       "best_attainable_lower_975_at_these_cases": -0.402296702347992,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: P4 margin not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": null,
+       "p_two_sided_vs_0": 1.0
+      }
+     },
+     "n_cases": 8
+    },
+    "bc": {
+     "cells": {
+      "A/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "A0/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "B/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C_prime/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D1/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D2/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E_scope/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "V/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      }
+     },
+     "contrasts": {
+      "P1": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P2": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P3": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P4": {
+       "best_attainable_lower_975_at_these_cases": -0.402296702347992,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: P4 margin not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": null,
+       "p_two_sided_vs_0": 1.0
+      }
+     },
+     "n_cases": 8
+    }
+   },
+   "pooled": {
+    "cells": {
+     "A/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "A0/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "B/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "C/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "C_prime/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "D1/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "D2/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "E/improved": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 36,
+      "ci95_case_t": [
+       1.0,
+       1.0
+      ],
+      "correct_here": true,
+      "degenerate": true,
+      "equal_case_mean": 1.0,
+      "events": 180,
+      "metric": "correct_acceptance",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": null
+     },
+     "E/unchanged": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "E/worsened": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "E_scope/improved": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 36,
+      "ci95_case_t": [
+       1.0,
+       1.0
+      ],
+      "correct_here": true,
+      "degenerate": true,
+      "equal_case_mean": 1.0,
+      "events": 180,
+      "metric": "correct_acceptance",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": null
+     },
+     "E_scope/unchanged": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "E_scope/worsened": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "V/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 179,
+      "zero_event_upper_case": 0.07984650951989436
+     }
+    },
+    "contrasts": {
+     "P1": {
+      "best_attainable_lower_975_at_these_cases": null,
+      "cases": 36,
+      "cases_dropped": 0,
+      "ci95": [
+       -0.12006639802700009,
+       0.12006639802700009
+      ],
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "ci95_case_t_degenerate": true,
+      "decision": "no decision: SESOI not set",
+      "estimate": 0.0,
+      "lower_975_one_sided": -0.12006639802700009,
+      "p_holm_P1_P3": 1.0,
+      "p_two_sided_vs_0": 1.0
+     },
+     "P2": {
+      "best_attainable_lower_975_at_these_cases": null,
+      "cases": 36,
+      "cases_dropped": 0,
+      "ci95": [
+       -0.12006639802700009,
+       0.12006639802700009
+      ],
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "ci95_case_t_degenerate": true,
+      "decision": "no decision: SESOI not set",
+      "estimate": 0.0,
+      "lower_975_one_sided": -0.12006639802700009,
+      "p_holm_P1_P3": 1.0,
+      "p_two_sided_vs_0": 1.0
+     },
+     "P3": {
+      "best_attainable_lower_975_at_these_cases": null,
+      "cases": 36,
+      "cases_dropped": 0,
+      "ci95": [
+       -0.12006639802700009,
+       0.12006639802700009
+      ],
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "ci95_case_t_degenerate": true,
+      "decision": "no decision: SESOI not set",
+      "estimate": 0.0,
+      "lower_975_one_sided": -0.12006639802700009,
+      "p_holm_P1_P3": 1.0,
+      "p_two_sided_vs_0": 1.0
+     },
+     "P4": {
+      "best_attainable_lower_975_at_these_cases": -0.12006639802700009,
+      "cases": 36,
+      "cases_dropped": 0,
+      "ci95": [
+       -0.12006639802700009,
+       0.12006639802700009
+      ],
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "ci95_case_t_degenerate": true,
+      "decision": "no decision: P4 margin not set",
+      "estimate": 0.0,
+      "lower_975_one_sided": -0.12006639802700009,
+      "p_holm_P1_P3": null,
+      "p_two_sided_vs_0": 1.0
+     }
+    }
+   }
+  },
+  "gpt-oss-120b": {
+   "between_batch": {
+    "cells": {
+     "A/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "A0/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "B/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "C/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "C_prime/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "D1/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "D2/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E/improved": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E/unchanged": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E/worsened": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E_scope/improved": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E_scope/unchanged": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E_scope/worsened": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "V/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     }
+    },
+    "contrasts": {
+     "P1": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "P2": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "P3": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "P4": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     }
+    }
+   },
+   "per_batch": {
+    "ba": {
+     "cells": {
+      "A/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "A0/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "B/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C_prime/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D1/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D2/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E_scope/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "V/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      }
+     },
+     "contrasts": {
+      "P1": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P2": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P3": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P4": {
+       "best_attainable_lower_975_at_these_cases": -0.402296702347992,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: P4 margin not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": null,
+       "p_two_sided_vs_0": 1.0
+      }
+     },
+     "n_cases": 8
+    },
+    "batch1": {
+     "cells": {
+      "A/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "A0/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "B/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "C/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "C_prime/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "D1/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "D2/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "E/improved": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 12,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 60,
+       "metric": "correct_acceptance",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": null
+      },
+      "E/unchanged": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "E/worsened": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "E_scope/improved": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 12,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 60,
+       "metric": "correct_acceptance",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": null
+      },
+      "E_scope/unchanged": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "E_scope/worsened": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "V/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      }
+     },
+     "contrasts": {
+      "P1": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 12,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.30125403907701986,
+        0.30125403907701986
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.30125403907701986,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P2": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 12,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.30125403907701986,
+        0.30125403907701986
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.30125403907701986,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P3": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 12,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.30125403907701986,
+        0.30125403907701986
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.30125403907701986,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P4": {
+       "best_attainable_lower_975_at_these_cases": -0.30125403907701986,
+       "cases": 12,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.30125403907701986,
+        0.30125403907701986
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: P4 margin not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.30125403907701986,
+       "p_holm_P1_P3": null,
+       "p_two_sided_vs_0": 1.0
+      }
+     },
+     "n_cases": 12
+    },
+    "bb": {
+     "cells": {
+      "A/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "A0/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "B/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C_prime/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D1/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D2/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E_scope/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "V/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      }
+     },
+     "contrasts": {
+      "P1": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P2": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P3": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P4": {
+       "best_attainable_lower_975_at_these_cases": -0.402296702347992,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: P4 margin not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": null,
+       "p_two_sided_vs_0": 1.0
+      }
+     },
+     "n_cases": 8
+    },
+    "bc": {
+     "cells": {
+      "A/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "A0/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "B/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C_prime/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D1/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D2/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E_scope/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "V/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      }
+     },
+     "contrasts": {
+      "P1": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P2": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P3": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P4": {
+       "best_attainable_lower_975_at_these_cases": -0.402296702347992,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: P4 margin not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": null,
+       "p_two_sided_vs_0": 1.0
+      }
+     },
+     "n_cases": 8
+    }
+   },
+   "pooled": {
+    "cells": {
+     "A/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "A0/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "B/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "C/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "C_prime/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "D1/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "D2/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "E/improved": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 36,
+      "ci95_case_t": [
+       1.0,
+       1.0
+      ],
+      "correct_here": true,
+      "degenerate": true,
+      "equal_case_mean": 1.0,
+      "events": 180,
+      "metric": "correct_acceptance",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": null
+     },
+     "E/unchanged": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "E/worsened": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "E_scope/improved": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 36,
+      "ci95_case_t": [
+       1.0,
+       1.0
+      ],
+      "correct_here": true,
+      "degenerate": true,
+      "equal_case_mean": 1.0,
+      "events": 180,
+      "metric": "correct_acceptance",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": null
+     },
+     "E_scope/unchanged": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "E_scope/worsened": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "V/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     }
+    },
+    "contrasts": {
+     "P1": {
+      "best_attainable_lower_975_at_these_cases": null,
+      "cases": 36,
+      "cases_dropped": 0,
+      "ci95": [
+       -0.12006639802700009,
+       0.12006639802700009
+      ],
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "ci95_case_t_degenerate": true,
+      "decision": "no decision: SESOI not set",
+      "estimate": 0.0,
+      "lower_975_one_sided": -0.12006639802700009,
+      "p_holm_P1_P3": 1.0,
+      "p_two_sided_vs_0": 1.0
+     },
+     "P2": {
+      "best_attainable_lower_975_at_these_cases": null,
+      "cases": 36,
+      "cases_dropped": 0,
+      "ci95": [
+       -0.12006639802700009,
+       0.12006639802700009
+      ],
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "ci95_case_t_degenerate": true,
+      "decision": "no decision: SESOI not set",
+      "estimate": 0.0,
+      "lower_975_one_sided": -0.12006639802700009,
+      "p_holm_P1_P3": 1.0,
+      "p_two_sided_vs_0": 1.0
+     },
+     "P3": {
+      "best_attainable_lower_975_at_these_cases": null,
+      "cases": 36,
+      "cases_dropped": 0,
+      "ci95": [
+       -0.12006639802700009,
+       0.12006639802700009
+      ],
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "ci95_case_t_degenerate": true,
+      "decision": "no decision: SESOI not set",
+      "estimate": 0.0,
+      "lower_975_one_sided": -0.12006639802700009,
+      "p_holm_P1_P3": 1.0,
+      "p_two_sided_vs_0": 1.0
+     },
+     "P4": {
+      "best_attainable_lower_975_at_these_cases": -0.12006639802700009,
+      "cases": 36,
+      "cases_dropped": 0,
+      "ci95": [
+       -0.12006639802700009,
+       0.12006639802700009
+      ],
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "ci95_case_t_degenerate": true,
+      "decision": "no decision: P4 margin not set",
+      "estimate": 0.0,
+      "lower_975_one_sided": -0.12006639802700009,
+      "p_holm_P1_P3": null,
+      "p_two_sided_vs_0": 1.0
+     }
+    }
+   }
+  },
+  "kimi-k2-0905": {
+   "between_batch": {
+    "cells": {
+     "A/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "A0/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "B/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "C/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "C_prime/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "D1/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "D2/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E/improved": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E/unchanged": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E/worsened": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E_scope/improved": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E_scope/unchanged": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E_scope/worsened": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "V/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       -0.1074713506193043,
+       0.007471350619304297
+      ],
+      "degenerate": false,
+      "df": 11.0,
+      "difference": -0.05
+     }
+    },
+    "contrasts": {
+     "P1": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "P2": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "P3": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "P4": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     }
+    }
+   },
+   "per_batch": {
+    "ba": {
+     "cells": {
+      "A/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "A0/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "B/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C_prime/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D1/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D2/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E_scope/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "V/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      }
+     },
+     "contrasts": {
+      "P1": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P2": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P3": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P4": {
+       "best_attainable_lower_975_at_these_cases": -0.402296702347992,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: P4 margin not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": null,
+       "p_two_sided_vs_0": 1.0
+      }
+     },
+     "n_cases": 8
+    },
+    "batch1": {
+     "cells": {
+      "A/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 58,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "A0/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "B/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "C/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "C_prime/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "D1/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "D2/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "E/improved": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 12,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 60,
+       "metric": "correct_acceptance",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": null
+      },
+      "E/unchanged": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "E/worsened": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 59,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "E_scope/improved": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 12,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 60,
+       "metric": "correct_acceptance",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": null
+      },
+      "E_scope/unchanged": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "E_scope/worsened": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "V/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 3,
+       "ci95_case_t": [
+        0.0,
+        0.10747135061930431
+       ],
+       "correct_here": false,
+       "degenerate": false,
+       "equal_case_mean": 0.05,
+       "events": 3,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": null
+      }
+     },
+     "contrasts": {
+      "P1": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 12,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.30125403907701986,
+        0.30125403907701986
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.30125403907701986,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P2": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 12,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.30125403907701986,
+        0.30125403907701986
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.30125403907701986,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P3": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 12,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.30125403907701986,
+        0.30125403907701986
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.30125403907701986,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P4": {
+       "best_attainable_lower_975_at_these_cases": -0.30125403907701986,
+       "cases": 12,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.30125403907701986,
+        0.30125403907701986
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: P4 margin not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.30125403907701986,
+       "p_holm_P1_P3": null,
+       "p_two_sided_vs_0": 1.0
+      }
+     },
+     "n_cases": 12
+    },
+    "bb": {
+     "cells": {
+      "A/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "A0/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "B/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C_prime/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D1/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D2/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E_scope/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "V/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      }
+     },
+     "contrasts": {
+      "P1": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P2": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P3": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P4": {
+       "best_attainable_lower_975_at_these_cases": -0.402296702347992,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: P4 margin not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": null,
+       "p_two_sided_vs_0": 1.0
+      }
+     },
+     "n_cases": 8
+    },
+    "bc": {
+     "cells": {
+      "A/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "A0/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "B/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C_prime/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D1/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D2/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E_scope/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "V/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 39,
+       "zero_event_upper_case": 0.31234397806636793
+      }
+     },
+     "contrasts": {
+      "P1": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P2": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P3": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P4": {
+       "best_attainable_lower_975_at_these_cases": -0.402296702347992,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: P4 margin not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": null,
+       "p_two_sided_vs_0": 1.0
+      }
+     },
+     "n_cases": 8
+    }
+   },
+   "pooled": {
+    "cells": {
+     "A/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 178,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "A0/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "B/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "C/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "C_prime/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "D1/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "D2/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "E/improved": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 36,
+      "ci95_case_t": [
+       1.0,
+       1.0
+      ],
+      "correct_here": true,
+      "degenerate": true,
+      "equal_case_mean": 1.0,
+      "events": 180,
+      "metric": "correct_acceptance",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": null
+     },
+     "E/unchanged": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "E/worsened": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 179,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "E_scope/improved": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 36,
+      "ci95_case_t": [
+       1.0,
+       1.0
+      ],
+      "correct_here": true,
+      "degenerate": true,
+      "equal_case_mean": 1.0,
+      "events": 180,
+      "metric": "correct_acceptance",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": null
+     },
+     "E_scope/unchanged": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "E_scope/worsened": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "V/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 3,
+      "ci95_case_t": [
+       0.0,
+       0.03563504473904745
+      ],
+      "correct_here": false,
+      "degenerate": false,
+      "equal_case_mean": 0.016666666666666666,
+      "events": 3,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 179,
+      "zero_event_upper_case": null
+     }
+    },
+    "contrasts": {
+     "P1": {
+      "best_attainable_lower_975_at_these_cases": null,
+      "cases": 36,
+      "cases_dropped": 0,
+      "ci95": [
+       -0.12006639802700009,
+       0.12006639802700009
+      ],
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "ci95_case_t_degenerate": true,
+      "decision": "no decision: SESOI not set",
+      "estimate": 0.0,
+      "lower_975_one_sided": -0.12006639802700009,
+      "p_holm_P1_P3": 1.0,
+      "p_two_sided_vs_0": 1.0
+     },
+     "P2": {
+      "best_attainable_lower_975_at_these_cases": null,
+      "cases": 36,
+      "cases_dropped": 0,
+      "ci95": [
+       -0.12006639802700009,
+       0.12006639802700009
+      ],
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "ci95_case_t_degenerate": true,
+      "decision": "no decision: SESOI not set",
+      "estimate": 0.0,
+      "lower_975_one_sided": -0.12006639802700009,
+      "p_holm_P1_P3": 1.0,
+      "p_two_sided_vs_0": 1.0
+     },
+     "P3": {
+      "best_attainable_lower_975_at_these_cases": null,
+      "cases": 36,
+      "cases_dropped": 0,
+      "ci95": [
+       -0.12006639802700009,
+       0.12006639802700009
+      ],
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "ci95_case_t_degenerate": true,
+      "decision": "no decision: SESOI not set",
+      "estimate": 0.0,
+      "lower_975_one_sided": -0.12006639802700009,
+      "p_holm_P1_P3": 1.0,
+      "p_two_sided_vs_0": 1.0
+     },
+     "P4": {
+      "best_attainable_lower_975_at_these_cases": -0.12006639802700009,
+      "cases": 36,
+      "cases_dropped": 0,
+      "ci95": [
+       -0.12006639802700009,
+       0.12006639802700009
+      ],
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "ci95_case_t_degenerate": true,
+      "decision": "no decision: P4 margin not set",
+      "estimate": 0.0,
+      "lower_975_one_sided": -0.12006639802700009,
+      "p_holm_P1_P3": null,
+      "p_two_sided_vs_0": 1.0
+     }
+    }
+   }
+  },
+  "qwen3-235b-a22b-2507": {
+   "between_batch": {
+    "cells": {
+     "A/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "A0/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "B/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "C/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "C_prime/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "D1/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "D2/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E/improved": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E/unchanged": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E/worsened": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E_scope/improved": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E_scope/unchanged": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "E_scope/worsened": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "V/none": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       -0.23948146015109958,
+       0.23948146015109958
+      ],
+      "degenerate": false,
+      "df": 25.34921913069989,
+      "difference": 0.0
+     }
+    },
+    "contrasts": {
+     "P1": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "P2": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "P3": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     },
+     "P4": {
+      "cases_batch1": 12,
+      "cases_batch2": 24,
+      "ci95_welch": [
+       0.0,
+       0.0
+      ],
+      "degenerate": true,
+      "difference": 0.0
+     }
+    }
+   },
+   "per_batch": {
+    "ba": {
+     "cells": {
+      "A/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "A0/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "B/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C_prime/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 39,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D1/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D2/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E_scope/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "V/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 6,
+       "ci95_case_t": [
+        0.17942196855090198,
+        0.770578031449098
+       ],
+       "correct_here": false,
+       "degenerate": false,
+       "equal_case_mean": 0.475,
+       "events": 19,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      }
+     },
+     "contrasts": {
+      "P1": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P2": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P3": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P4": {
+       "best_attainable_lower_975_at_these_cases": -0.402296702347992,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: P4 margin not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": null,
+       "p_two_sided_vs_0": 1.0
+      }
+     },
+     "n_cases": 8
+    },
+    "batch1": {
+     "cells": {
+      "A/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "A0/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "B/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "C/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "C_prime/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "D1/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "D2/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "E/improved": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 12,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 60,
+       "metric": "correct_acceptance",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": null
+      },
+      "E/unchanged": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "E/worsened": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "E_scope/improved": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 12,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 60,
+       "metric": "correct_acceptance",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": null
+      },
+      "E_scope/unchanged": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "E_scope/worsened": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": 0.22092219194555585
+      },
+      "V/none": {
+       "cases": 12,
+       "cases_scheduled": 12,
+       "cases_with_event": 12,
+       "ci95_case_t": [
+        0.33547948103767744,
+        0.7311871856289892
+       ],
+       "correct_here": false,
+       "degenerate": false,
+       "equal_case_mean": 0.5333333333333333,
+       "events": 32,
+       "metric": "unsupported_q_obs",
+       "scheduled": 60,
+       "scored": 60,
+       "zero_event_upper_case": null
+      }
+     },
+     "contrasts": {
+      "P1": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 12,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.30125403907701986,
+        0.30125403907701986
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.30125403907701986,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P2": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 12,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.30125403907701986,
+        0.30125403907701986
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.30125403907701986,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P3": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 12,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.30125403907701986,
+        0.30125403907701986
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.30125403907701986,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P4": {
+       "best_attainable_lower_975_at_these_cases": -0.30125403907701986,
+       "cases": 12,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.30125403907701986,
+        0.30125403907701986
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: P4 margin not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.30125403907701986,
+       "p_holm_P1_P3": null,
+       "p_two_sided_vs_0": 1.0
+      }
+     },
+     "n_cases": 12
+    },
+    "bb": {
+     "cells": {
+      "A/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "A0/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "B/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C_prime/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D1/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D2/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E_scope/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "V/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 6,
+       "ci95_case_t": [
+        0.10357866289585105,
+        0.696421337104149
+       ],
+       "correct_here": false,
+       "degenerate": false,
+       "equal_case_mean": 0.4,
+       "events": 16,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      }
+     },
+     "contrasts": {
+      "P1": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P2": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P3": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P4": {
+       "best_attainable_lower_975_at_these_cases": -0.402296702347992,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: P4 margin not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": null,
+       "p_two_sided_vs_0": 1.0
+      }
+     },
+     "n_cases": 8
+    },
+    "bc": {
+     "cells": {
+      "A/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "A0/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "B/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "C_prime/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D1/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "D2/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/improved": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        1.0,
+        1.0
+       ],
+       "correct_here": true,
+       "degenerate": true,
+       "equal_case_mean": 1.0,
+       "events": 40,
+       "metric": "correct_acceptance",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      },
+      "E_scope/unchanged": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "E_scope/worsened": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 0,
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "correct_here": false,
+       "degenerate": true,
+       "equal_case_mean": 0.0,
+       "events": 0,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": 0.31234397806636793
+      },
+      "V/none": {
+       "cases": 8,
+       "cases_scheduled": 8,
+       "cases_with_event": 8,
+       "ci95_case_t": [
+        0.44325793705816147,
+        1.0
+       ],
+       "correct_here": false,
+       "degenerate": false,
+       "equal_case_mean": 0.725,
+       "events": 29,
+       "metric": "unsupported_q_obs",
+       "scheduled": 40,
+       "scored": 40,
+       "zero_event_upper_case": null
+      }
+     },
+     "contrasts": {
+      "P1": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P2": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P3": {
+       "best_attainable_lower_975_at_these_cases": null,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: SESOI not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": 1.0,
+       "p_two_sided_vs_0": 1.0
+      },
+      "P4": {
+       "best_attainable_lower_975_at_these_cases": -0.402296702347992,
+       "cases": 8,
+       "cases_dropped": 0,
+       "ci95": [
+        -0.402296702347992,
+        0.402296702347992
+       ],
+       "ci95_case_t": [
+        0.0,
+        0.0
+       ],
+       "ci95_case_t_degenerate": true,
+       "decision": "no decision: P4 margin not set",
+       "estimate": 0.0,
+       "lower_975_one_sided": -0.402296702347992,
+       "p_holm_P1_P3": null,
+       "p_two_sided_vs_0": 1.0
+      }
+     },
+     "n_cases": 8
+    }
+   },
+   "pooled": {
+    "cells": {
+     "A/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "A0/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "B/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "C/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "C_prime/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 179,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "D1/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "D2/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "E/improved": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 36,
+      "ci95_case_t": [
+       1.0,
+       1.0
+      ],
+      "correct_here": true,
+      "degenerate": true,
+      "equal_case_mean": 1.0,
+      "events": 180,
+      "metric": "correct_acceptance",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": null
+     },
+     "E/unchanged": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "E/worsened": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "E_scope/improved": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 36,
+      "ci95_case_t": [
+       1.0,
+       1.0
+      ],
+      "correct_here": true,
+      "degenerate": true,
+      "equal_case_mean": 1.0,
+      "events": 180,
+      "metric": "correct_acceptance",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": null
+     },
+     "E_scope/unchanged": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "E_scope/worsened": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 0,
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "correct_here": false,
+      "degenerate": true,
+      "equal_case_mean": 0.0,
+      "events": 0,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": 0.07984650951989436
+     },
+     "V/none": {
+      "cases": 36,
+      "cases_scheduled": 36,
+      "cases_with_event": 32,
+      "ci95_case_t": [
+       0.417811536251065,
+       0.6488551304156017
+      ],
+      "correct_here": false,
+      "degenerate": false,
+      "equal_case_mean": 0.5333333333333333,
+      "events": 96,
+      "metric": "unsupported_q_obs",
+      "scheduled": 180,
+      "scored": 180,
+      "zero_event_upper_case": null
+     }
+    },
+    "contrasts": {
+     "P1": {
+      "best_attainable_lower_975_at_these_cases": null,
+      "cases": 36,
+      "cases_dropped": 0,
+      "ci95": [
+       -0.12006639802700009,
+       0.12006639802700009
+      ],
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "ci95_case_t_degenerate": true,
+      "decision": "no decision: SESOI not set",
+      "estimate": 0.0,
+      "lower_975_one_sided": -0.12006639802700009,
+      "p_holm_P1_P3": 1.0,
+      "p_two_sided_vs_0": 1.0
+     },
+     "P2": {
+      "best_attainable_lower_975_at_these_cases": null,
+      "cases": 36,
+      "cases_dropped": 0,
+      "ci95": [
+       -0.12006639802700009,
+       0.12006639802700009
+      ],
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "ci95_case_t_degenerate": true,
+      "decision": "no decision: SESOI not set",
+      "estimate": 0.0,
+      "lower_975_one_sided": -0.12006639802700009,
+      "p_holm_P1_P3": 1.0,
+      "p_two_sided_vs_0": 1.0
+     },
+     "P3": {
+      "best_attainable_lower_975_at_these_cases": null,
+      "cases": 36,
+      "cases_dropped": 0,
+      "ci95": [
+       -0.12006639802700009,
+       0.12006639802700009
+      ],
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "ci95_case_t_degenerate": true,
+      "decision": "no decision: SESOI not set",
+      "estimate": 0.0,
+      "lower_975_one_sided": -0.12006639802700009,
+      "p_holm_P1_P3": 1.0,
+      "p_two_sided_vs_0": 1.0
+     },
+     "P4": {
+      "best_attainable_lower_975_at_these_cases": -0.12006639802700009,
+      "cases": 36,
+      "cases_dropped": 0,
+      "ci95": [
+       -0.12006639802700009,
+       0.12006639802700009
+      ],
+      "ci95_case_t": [
+       0.0,
+       0.0
+      ],
+      "ci95_case_t_degenerate": true,
+      "decision": "no decision: P4 margin not set",
+      "estimate": 0.0,
+      "lower_975_one_sided": -0.12006639802700009,
+      "p_holm_P1_P3": null,
+      "p_two_sided_vs_0": 1.0
+     }
+    }
+   }
+  }
+ },
+ "pooled_dir": "runs/p2_all_batches",
+ "pooled_n_cases": 36,
+ "pooled_run_dirs": [
+  "runs/p2_dev_eval_v1",
+  "runs/p2_ext_v1",
+  "runs/p2_ba_v1",
+  "runs/p2_bb_v1",
+  "runs/p2_bc_v1"
+ ]
+}
