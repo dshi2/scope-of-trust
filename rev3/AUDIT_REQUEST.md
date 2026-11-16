@@ -25,7 +25,7 @@ Python 3.9+ standard library only. No network, no model calls.
 
 ## Specific risks the builder is unsure about
 1. The coverage statement in C names "the cause of any change", which may be a lexical cue for Q_cause (ledger P3).
-2. Filler imbalance: A has 8–9 filing notes, B 3–5. Is a long run of notes with no record itself a cue?
+2. Filler imbalance: A has 9 filing notes, B 4–5 (`COVERAGE_dev.md`). Is a long run of notes with no record itself a cue?
 3. Belief-context item 5 (independence) is scope-like, but it is needed to define the gold.
 4. Q_cause wording ("the lower stocking density") names the practice in every condition, including A0.
 5. The task's definition of "established" ("an independent check whose findings establish…") could be read as coaching.

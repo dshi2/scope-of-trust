@@ -22,7 +22,7 @@ You are assisting an animal-welfare procurement committee that reviews supplier 
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:f6ea6b575ce9c91d`
+### attribution context  `sha256:4dc0e25ca8a8a21e`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -39,14 +39,15 @@ SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
-- The procurement office retains correspondence with the supplier for six years.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
+- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -61,7 +62,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:d8de563a2616301e`
+### belief context  `sha256:367ada04cc32129e`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -78,21 +79,22 @@ SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
-- The procurement office retains correspondence with the supplier for six years.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
+- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every pen at Brackenhill Finishers gives pigs permanent access to straw in racks as manipulable material." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in tail lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about tail lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to tail lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -113,7 +115,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.5
 
-### attribution context  `sha256:85c8909640659348`
+### attribution context  `sha256:ed7a57bba794dc1c`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -129,14 +131,15 @@ SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
-- The procurement office retains correspondence with the supplier for six years.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
+- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -151,7 +154,7 @@ Respond with JSON only, in this format:
 {"claims": {"Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:22332ea892d7019a`
+### belief context  `sha256:81722072322a48cc`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -167,21 +170,22 @@ SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
-- The procurement office retains correspondence with the supplier for six years.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
+- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every pen at Brackenhill Finishers gives pigs permanent access to straw in racks as manipulable material." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in tail lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about tail lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to tail lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -203,7 +207,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:c3af7e6779afe59c`
+### attribution context  `sha256:e6292659444f8b74`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -228,10 +232,10 @@ Finding: Every pen inspected had a filled straw rack; delivery records showed co
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -246,7 +250,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:81cecd6629edda35`
+### belief context  `sha256:6115e071535fd9f7`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -271,17 +275,17 @@ Finding: Every pen inspected had a filled straw rack; delivery records showed co
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every pen at Brackenhill Finishers gives pigs permanent access to straw in racks as manipulable material." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in tail lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about tail lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to tail lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -303,7 +307,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:ec97f99a07633e43`
+### attribution context  `sha256:28bb07a1bb3c3baf`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -330,7 +334,7 @@ Status: Confirmed
 Coverage: This audit assessed manipulable material in pens only. It did not assess tail lesion records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -345,7 +349,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:09a6aa5d5d85b605`
+### belief context  `sha256:cce27fdf63e4c9d6`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -372,14 +376,14 @@ Status: Confirmed
 Coverage: This audit assessed manipulable material in pens only. It did not assess tail lesion records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every pen at Brackenhill Finishers gives pigs permanent access to straw in racks as manipulable material." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in tail lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about tail lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to tail lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -401,7 +405,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:d96b9aa4f240e40a`
+### attribution context  `sha256:bfb873261d803a6a`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -430,8 +434,8 @@ Coverage:
   Not assessed: tail lesion records; other animal-based outcomes; cause of any change in animal outcomes
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -446,7 +450,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:474648d56e17da1e`
+### belief context  `sha256:b87ad9f3548dab4a`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -475,15 +479,15 @@ Coverage:
   Not assessed: tail lesion records; other animal-based outcomes; cause of any change in animal outcomes
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every pen at Brackenhill Finishers gives pigs permanent access to straw in racks as manipulable material." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in tail lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about tail lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to tail lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -505,7 +509,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:92cc9c7683d23cc8`
+### attribution context  `sha256:42179744fce9076e`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -530,10 +534,10 @@ Finding: All fire-safety systems inspected met the applicable regulatory require
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -548,7 +552,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:8c036986b3d8a475`
+### belief context  `sha256:83d1f2e90eaf537a`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -573,17 +577,17 @@ Finding: All fire-safety systems inspected met the applicable regulatory require
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every pen at Brackenhill Finishers gives pigs permanent access to straw in racks as manipulable material." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in tail lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about tail lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to tail lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -605,7 +609,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:6da88d5808691fdc`
+### attribution context  `sha256:5ff4aa3d040fe8ec`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -630,9 +634,10 @@ Finding: Every pen inspected at Brackenhill West had a filled straw rack; delive
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -647,7 +652,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:ca4ffb6e9c75f89a`
+### belief context  `sha256:b78d2cbce2c4154e`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -672,16 +677,17 @@ Finding: Every pen inspected at Brackenhill West had a filled straw rack; delive
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every pen at Brackenhill Finishers gives pigs permanent access to straw in racks as manipulable material." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in tail lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about tail lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to tail lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -703,7 +709,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 1.0
 
-### attribution context  `sha256:b5d3259a80b4578a`
+### attribution context  `sha256:c34094280f555ebd`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -728,10 +734,10 @@ Finding: Pigs with tail lesions at slaughter: 6.8% in 2025; 3.1% in 2026. Record
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -746,7 +752,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:3030c8e89d6d5ae0`
+### belief context  `sha256:b87a2054818cbc70`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -771,17 +777,17 @@ Finding: Pigs with tail lesions at slaughter: 6.8% in 2025; 3.1% in 2026. Record
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every pen at Brackenhill Finishers gives pigs permanent access to straw in racks as manipulable material." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in tail lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about tail lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to tail lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -803,7 +809,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:7a99d1992767ca6e`
+### attribution context  `sha256:3dd4c5653c5fcbd4`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -828,10 +834,10 @@ Finding: Pigs with tail lesions at slaughter: 3.1% in 2025; 6.8% in 2026. Record
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -846,7 +852,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:6b5ad237e20ed287`
+### belief context  `sha256:1432aa0a24758945`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -871,17 +877,17 @@ Finding: Pigs with tail lesions at slaughter: 3.1% in 2025; 6.8% in 2026. Record
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every pen at Brackenhill Finishers gives pigs permanent access to straw in racks as manipulable material." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in tail lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about tail lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to tail lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -903,7 +909,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:1173d1c47cd4d9f3`
+### attribution context  `sha256:a04ee41dbdf8503b`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -928,10 +934,10 @@ Finding: Pigs with tail lesions at slaughter: 6.8% in 2025; 6.8% in 2026. Record
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -946,7 +952,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:5c4bb109d45b3726`
+### belief context  `sha256:900987df39bdff76`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -971,17 +977,17 @@ Finding: Pigs with tail lesions at slaughter: 6.8% in 2025; 6.8% in 2026. Record
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every pen at Brackenhill Finishers gives pigs permanent access to straw in racks as manipulable material." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in tail lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about tail lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to tail lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -1003,7 +1009,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 1.0
 
-### attribution context  `sha256:aa6aded031fef149`
+### attribution context  `sha256:4e648d804a589886`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1030,7 +1036,7 @@ Status: Confirmed
 Coverage: This audit assessed tail lesion records only. It did not assess manipulable material in pens or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1045,7 +1051,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:bb477fd493f3bead`
+### belief context  `sha256:45b3084e2e05e163`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1072,14 +1078,14 @@ Status: Confirmed
 Coverage: This audit assessed tail lesion records only. It did not assess manipulable material in pens or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every pen at Brackenhill Finishers gives pigs permanent access to straw in racks as manipulable material." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in tail lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about tail lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to tail lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -1101,7 +1107,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:c748e50db9c01881`
+### attribution context  `sha256:d54b05779753afb8`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1128,7 +1134,7 @@ Status: Confirmed
 Coverage: This audit assessed tail lesion records only. It did not assess manipulable material in pens or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1143,7 +1149,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:faa4507b3aceb483`
+### belief context  `sha256:f75eb54f12b35f20`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1170,14 +1176,14 @@ Status: Confirmed
 Coverage: This audit assessed tail lesion records only. It did not assess manipulable material in pens or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every pen at Brackenhill Finishers gives pigs permanent access to straw in racks as manipulable material." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in tail lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about tail lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to tail lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -1199,7 +1205,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:474bdf1945d9562e`
+### attribution context  `sha256:1edcbab7da1e4309`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1226,7 +1232,7 @@ Status: Confirmed
 Coverage: This audit assessed tail lesion records only. It did not assess manipulable material in pens or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1241,7 +1247,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:60e8ff8ac21415f9`
+### belief context  `sha256:fba3cd0386da704f`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1268,14 +1274,14 @@ Status: Confirmed
 Coverage: This audit assessed tail lesion records only. It did not assess manipulable material in pens or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every pen at Brackenhill Finishers gives pigs permanent access to straw in racks as manipulable material." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in tail lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about tail lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to tail lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -1297,7 +1303,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): excluded
 
-### attribution context  `sha256:32a5c5ebd3158f43`
+### attribution context  `sha256:5815a78c38712d06`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1319,13 +1325,13 @@ Date: 29 July 2026
 Status: Verified ✓
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
+- This file uses the committee's standard layout, adopted in January 2025.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1340,7 +1346,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:171ea4d1b89ba1aa`
+### belief context  `sha256:a8b2623a495737fa`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1362,20 +1368,20 @@ Date: 29 July 2026
 Status: Verified ✓
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
+- This file uses the committee's standard layout, adopted in January 2025.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every pen at Brackenhill Finishers gives pigs permanent access to straw in racks as manipulable material." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in tail lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about tail lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to tail lesions at this facility.
 6. Audit findings in this file are accurate.
 

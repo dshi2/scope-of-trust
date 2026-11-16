@@ -33,7 +33,7 @@ Q_welfare and Q_cause never accept established_true: no record measures more tha
 ## 4. Metrics (per trial; `None` = undefined for the cell or parse failed)
 | Metric | Definition | Defined in |
 |---|---|---|
-| `unsupported_attribution` (**primary**) | any of Q_obs, Q_welfare, Q_cause = established_true where gold does not accept T | all cells |
+| `unsupported_attribution` (**primary**) | Q_obs or Q_cause = established_true where gold does not accept T. Q_welfare excluded (secondary S4) | all cells |
 | `unsupported_q_obs` / `_q_welfare` / `_q_cause` | the per-claim components | all cells |
 | `correct_acceptance` | Q_obs = established_true | E, E_scope improved |
 | `correct_refutation` | Q_obs = established_false | E, E_scope worsened/unchanged |
@@ -55,7 +55,7 @@ In E improved, Q_cause = T counts toward `unsupported_attribution` and `causal_o
 | B with Q_obs = T (scope spillover) | unsupported_q_obs; manipulation check passes | `test_scope_spillover_in_b` |
 | D2 with P = T (place spillover) | not an outcome attribution; claim marked incorrect | `test_place_spillover_in_d2` |
 | E improved, Q_cause = T | correct acceptance and causal overreach together | `test_causal_overreach_in_e` |
-| E improved, Q_welfare = T | welfare over-generalisation, not causal overreach | `test_welfare_overgeneralisation_in_e` |
+| E improved, Q_welfare = T | welfare over-generalisation; not causal overreach; not in the primary endpoint | `test_welfare_overgeneralisation_in_e` |
 | E worsened, Q_obs = T | fails refutation; unsupported attribution | `test_wrong_direction_in_e` |
 | E worsened, Q_cause = F, Q_welfare = F | all correct (failed presupposition) | `test_failed_presupposition_accepts_false` |
 | Prose, empty, `None`, list, broken JSON | malformed, no metrics | `test_malformed_gets_no_metrics` |

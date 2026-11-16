@@ -22,7 +22,7 @@ You are assisting an animal-welfare procurement committee that reviews supplier 
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:6e830d43e65f03d6`
+### attribution context  `sha256:0327bddcb20bb393`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -39,14 +39,15 @@ SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
-- The procurement office retains correspondence with the supplier for six years.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
+- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -61,7 +62,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:852dc6eb05bef422`
+### belief context  `sha256:4796e59ae0538d90`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -78,21 +79,22 @@ SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
-- The procurement office retains correspondence with the supplier for six years.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
+- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
 6. Audit findings in this file are accurate.
 
@@ -113,7 +115,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.5
 
-### attribution context  `sha256:7620520f393a173f`
+### attribution context  `sha256:64f307108bb67c03`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -129,14 +131,15 @@ SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
-- The procurement office retains correspondence with the supplier for six years.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
+- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -151,7 +154,7 @@ Respond with JSON only, in this format:
 {"claims": {"Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:8fbfe9e4740e20f1`
+### belief context  `sha256:f88ec72a914ba35d`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -167,21 +170,22 @@ SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
-- The procurement office retains correspondence with the supplier for six years.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
+- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
 6. Audit findings in this file are accurate.
 
@@ -203,7 +207,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:e9e987e56dc8e15d`
+### attribution context  `sha256:b7ffefde884d147a`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -228,9 +232,10 @@ Finding: All pregnant sows from four weeks after service were housed in groups; 
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -245,7 +250,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:69e9ee32d5c20000`
+### belief context  `sha256:3d5d14ee0f74fa07`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -270,16 +275,17 @@ Finding: All pregnant sows from four weeks after service were housed in groups; 
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
 6. Audit findings in this file are accurate.
 
@@ -301,7 +307,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:4fe3337684692d3f`
+### attribution context  `sha256:7b14a6e88f06401f`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -328,7 +334,7 @@ Status: Confirmed
 Coverage: This audit assessed gestation housing only. It did not assess sow lameness records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -343,7 +349,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:69e12ead1b915234`
+### belief context  `sha256:61968ea6cad07b51`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -370,14 +376,14 @@ Status: Confirmed
 Coverage: This audit assessed gestation housing only. It did not assess sow lameness records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
 6. Audit findings in this file are accurate.
 
@@ -399,7 +405,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:3c707a683ecef94c`
+### attribution context  `sha256:004db4d70a0ea57b`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -428,8 +434,8 @@ Coverage:
   Not assessed: sow lameness records; other animal-based outcomes; cause of any change in animal outcomes
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -444,7 +450,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:5c4be34eb59e719f`
+### belief context  `sha256:2fba4bdb741f4fc4`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -473,15 +479,15 @@ Coverage:
   Not assessed: sow lameness records; other animal-based outcomes; cause of any change in animal outcomes
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
 6. Audit findings in this file are accurate.
 
@@ -503,7 +509,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:6544fe5e20286d61`
+### attribution context  `sha256:1cc3d92cf068cd84`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -528,10 +534,10 @@ Finding: Both slurry stores inspected met the applicable regulatory requirements
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -546,7 +552,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:d20477f115627188`
+### belief context  `sha256:2d7383b19062476a`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -571,17 +577,17 @@ Finding: Both slurry stores inspected met the applicable regulatory requirements
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
 6. Audit findings in this file are accurate.
 
@@ -603,7 +609,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:1381f038c55711e5`
+### attribution context  `sha256:0bd8f3cb1f01d281`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -628,9 +634,10 @@ Finding: All pregnant sows at Thornfield East from four weeks after service were
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -645,7 +652,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:58423af7c54a3759`
+### belief context  `sha256:d1d9ddb189d986f8`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -670,16 +677,17 @@ Finding: All pregnant sows at Thornfield East from four weeks after service were
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
 6. Audit findings in this file are accurate.
 
@@ -701,7 +709,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 1.0
 
-### attribution context  `sha256:d246340780600ff3`
+### attribution context  `sha256:f0c526e299b6b161`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -726,10 +734,10 @@ Finding: Sows scored lame (score 2 or higher): 15% of sows in 2025; 8% of sows i
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -744,7 +752,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:6370c24a26bc0064`
+### belief context  `sha256:0b94d406b8bd0307`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -769,17 +777,17 @@ Finding: Sows scored lame (score 2 or higher): 15% of sows in 2025; 8% of sows i
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
 6. Audit findings in this file are accurate.
 
@@ -801,7 +809,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:ab51277399ebf36f`
+### attribution context  `sha256:fde2de7ebc0e4cf8`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -826,10 +834,10 @@ Finding: Sows scored lame (score 2 or higher): 8% of sows in 2025; 15% of sows i
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -844,7 +852,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:e862c7aecd0b9650`
+### belief context  `sha256:505588e71b3d13e7`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -869,17 +877,17 @@ Finding: Sows scored lame (score 2 or higher): 8% of sows in 2025; 15% of sows i
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
 6. Audit findings in this file are accurate.
 
@@ -901,7 +909,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:facaecfcd6211a0f`
+### attribution context  `sha256:e84669c0ccae65f4`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -926,10 +934,10 @@ Finding: Sows scored lame (score 2 or higher): 15% of sows in 2025; 15% of sows 
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -944,7 +952,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:534f7dd71077f2cd`
+### belief context  `sha256:3aaee457468a67cc`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -969,17 +977,17 @@ Finding: Sows scored lame (score 2 or higher): 15% of sows in 2025; 15% of sows 
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
 6. Audit findings in this file are accurate.
 
@@ -1001,7 +1009,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 1.0
 
-### attribution context  `sha256:b8fd329e3fec574d`
+### attribution context  `sha256:d54ae8508898dbcb`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1028,8 +1036,8 @@ Status: Confirmed
 Coverage: This audit assessed sow lameness records only. It did not assess gestation housing or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1044,7 +1052,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:184d01c14b3839ba`
+### belief context  `sha256:58967bd2d606a649`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1071,15 +1079,15 @@ Status: Confirmed
 Coverage: This audit assessed sow lameness records only. It did not assess gestation housing or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
 6. Audit findings in this file are accurate.
 
@@ -1101,7 +1109,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:343837858b0a48d5`
+### attribution context  `sha256:00618093c0b1c9f8`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1128,8 +1136,8 @@ Status: Confirmed
 Coverage: This audit assessed sow lameness records only. It did not assess gestation housing or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1144,7 +1152,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:b53a36f21c343c70`
+### belief context  `sha256:a9bcc38b46e090fc`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1171,15 +1179,15 @@ Status: Confirmed
 Coverage: This audit assessed sow lameness records only. It did not assess gestation housing or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
 6. Audit findings in this file are accurate.
 
@@ -1201,7 +1209,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:e49d4e5d6795a8bd`
+### attribution context  `sha256:05924c555875070b`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1228,8 +1236,8 @@ Status: Confirmed
 Coverage: This audit assessed sow lameness records only. It did not assess gestation housing or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1244,7 +1252,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:2d35393318f5d46d`
+### belief context  `sha256:5314dc6bf0759135`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1271,15 +1279,15 @@ Status: Confirmed
 Coverage: This audit assessed sow lameness records only. It did not assess gestation housing or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
 6. Audit findings in this file are accurate.
 
@@ -1301,7 +1309,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): excluded
 
-### attribution context  `sha256:11a102532cb81df9`
+### attribution context  `sha256:d767e23d91b53146`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1323,13 +1331,14 @@ Date: 17 June 2026
 Status: Verified ✓
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1344,7 +1353,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:cde0e0aaf63c7279`
+### belief context  `sha256:3de23942d5b983a8`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1366,20 +1375,21 @@ Date: 17 June 2026
 Status: Verified ✓
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All sows at Thornfield Pig Unit are kept in groups from four weeks after service until one week before farrowing." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in sow lameness between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about sow lameness.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to sow lameness at this facility.
 6. Audit findings in this file are accurate.
 

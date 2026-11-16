@@ -26,25 +26,21 @@ SYSTEM = (
     "requested, with no other text."
 )
 
-# Neutral administrative filler. Must say nothing about what any record checked,
-# about evidence, scope, outcomes or probability.
+# Neutral meeting logistics. Must say nothing about what any record checked, about evidence,
+# document completeness or authenticity, scope, outcomes or probability (review of 16 Nov 2026).
 FILING_NOTES = (
-    "This file was compiled by the procurement office from documents submitted with the supplier application.",
-    "Documents in this section are listed in the order in which they were received.",
-    "Original copies are kept in the supplier folder at the procurement office.",
-    "Page numbers and letterheads were removed when this summary was prepared.",
-    "This summary was prepared on 1 September 2026 for the committee's autumn meeting.",
+    "This file was compiled by the procurement office for the committee's autumn meeting.",
+    "The committee meets in Room 4 of the procurement building.",
+    "The meeting is scheduled to begin at 10:00 on 14 September 2026.",
     "Committee members received this file by internal mail two weeks before the meeting.",
+    "Members who cannot attend may send apologies to the committee secretary.",
     "Spelling of site names follows the supplier's own application form.",
-    "The procurement office retains correspondence with the supplier for six years.",
-    "Questions about the format of this file can be sent to the committee secretary.",
     "This file uses the committee's standard layout, adopted in January 2025.",
     "Dates in this file are given in day-month-year order.",
-    "The supplier was given a copy of the file layout before submitting documents.",
-    "No pages were withheld from this summary at the supplier's request.",
-    "Translations, where any were needed, were prepared by the procurement office.",
-    "The file index was checked against the submission receipt on 28 August 2026.",
-    "This summary replaces the draft circulated on 15 August 2026.",
+    "Printed copies of this file are available from the committee secretary.",
+    "Refreshments for the meeting are arranged by the office manager.",
+    "The committee's next meeting after this one is planned for December 2026.",
+    "Parking for visitors is available behind the procurement building.",
 )
 
 LENGTH_TOLERANCE = 0.15
@@ -225,7 +221,9 @@ def belief_model(case):
         f"2. Among facilities for which it is true, {pct(bp['pr_q_given_p'])} show a fall in "
         f"{case['indicator_name']} between consecutive years. Among the others, {pct(bp['pr_q_given_not_p'])} do.",
         f"3. When a supplier makes statement P, it is true {pct(bp['statement_accuracy'])} of the time.",
-        "4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.",
+        "4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. "
+        f"Once it is known whether P is true, nothing else the supplier states carries any information about "
+        f"{case['indicator_name']}.",
         f"5. Whether the corresponding statement is true at the sister site, and the results of inspections on "
         f"other topics, are unrelated to whether P is true and to {case['indicator_name']} at this facility.",
         "6. Audit findings in this file are accurate.",

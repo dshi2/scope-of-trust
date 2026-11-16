@@ -22,7 +22,7 @@ You are assisting an animal-welfare procurement committee that reviews supplier 
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:0603cfc189fb9a5b`
+### attribution context  `sha256:2163d324d11a76ed`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -39,15 +39,15 @@ SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
-- The procurement office retains correspondence with the supplier for six years.
-- Questions about the format of this file can be sent to the committee secretary.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
+- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -62,7 +62,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:1099f46c91194daa`
+### belief context  `sha256:62532f84fac1e421`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -79,22 +79,22 @@ SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
-- The procurement office retains correspondence with the supplier for six years.
-- Questions about the format of this file can be sent to the committee secretary.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
+- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
 6. Audit findings in this file are accurate.
 
@@ -115,7 +115,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.5
 
-### attribution context  `sha256:58dad9945dfd9cbe`
+### attribution context  `sha256:074585cac3f308b7`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -131,15 +131,15 @@ SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
-- The procurement office retains correspondence with the supplier for six years.
-- Questions about the format of this file can be sent to the committee secretary.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
+- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -154,7 +154,7 @@ Respond with JSON only, in this format:
 {"claims": {"Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:fcb4ed71936462d9`
+### belief context  `sha256:acedb8725c114435`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -170,22 +170,22 @@ SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
-- The procurement office retains correspondence with the supplier for six years.
-- Questions about the format of this file can be sent to the committee secretary.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
+- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
 6. Audit findings in this file are accurate.
 
@@ -207,7 +207,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:4589f5da77c8690f`
+### attribution context  `sha256:c7152a024992212a`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -232,11 +232,11 @@ Finding: All five flocks on site were housed in cage-free aviary systems; no cag
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -251,7 +251,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:d2c1580dcdf0ffab`
+### belief context  `sha256:c662e986cda35158`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -276,18 +276,18 @@ Finding: All five flocks on site were housed in cage-free aviary systems; no cag
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
 6. Audit findings in this file are accurate.
 
@@ -309,7 +309,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:2fb533fd595d4e47`
+### attribution context  `sha256:15086e917fdc2061`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -336,8 +336,8 @@ Status: Confirmed
 Coverage: This audit assessed the housing system only. It did not assess keel bone fracture records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -352,7 +352,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:0ce111aa5b7d707f`
+### belief context  `sha256:84490cb84d79ce20`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -379,15 +379,15 @@ Status: Confirmed
 Coverage: This audit assessed the housing system only. It did not assess keel bone fracture records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
 6. Audit findings in this file are accurate.
 
@@ -409,7 +409,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:4aca414dd606afca`
+### attribution context  `sha256:e260f95a5aeedfe6`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -438,9 +438,9 @@ Coverage:
   Not assessed: keel bone fracture records; other animal-based outcomes; cause of any change in animal outcomes
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -455,7 +455,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:81556f8c469457d6`
+### belief context  `sha256:9117e729490f64a0`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -484,16 +484,16 @@ Coverage:
   Not assessed: keel bone fracture records; other animal-based outcomes; cause of any change in animal outcomes
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
 6. Audit findings in this file are accurate.
 
@@ -515,7 +515,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:1180297b3dad1688`
+### attribution context  `sha256:45c268a5db632d6f`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -540,11 +540,11 @@ Finding: All fuel-storage installations inspected met the applicable regulatory 
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -559,7 +559,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:2f1b086d4dc39add`
+### belief context  `sha256:8d1930a47a00408b`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -584,18 +584,18 @@ Finding: All fuel-storage installations inspected met the applicable regulatory 
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
 6. Audit findings in this file are accurate.
 
@@ -617,7 +617,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:9727d61523c8c26b`
+### attribution context  `sha256:d5b270ec5c674603`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -642,10 +642,11 @@ Finding: All four flocks at Redmire Fell Site were housed in cage-free aviary sy
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -660,7 +661,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:c108e30f91189f7f`
+### belief context  `sha256:39899b9957b3e519`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -685,17 +686,18 @@ Finding: All four flocks at Redmire Fell Site were housed in cage-free aviary sy
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
 6. Audit findings in this file are accurate.
 
@@ -717,7 +719,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 1.0
 
-### attribution context  `sha256:df35e8cec19cf98a`
+### attribution context  `sha256:2a06c2d05680e908`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -742,9 +744,10 @@ Finding: Hens with palpable keel bone fractures at end of lay: 61% in 2025 flock
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -759,7 +762,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:06635ffc30c28708`
+### belief context  `sha256:6ccfaa928fdb369d`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -784,16 +787,17 @@ Finding: Hens with palpable keel bone fractures at end of lay: 61% in 2025 flock
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
 6. Audit findings in this file are accurate.
 
@@ -815,7 +819,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:da076e4181363dce`
+### attribution context  `sha256:75aa72d04dfb9fec`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -840,9 +844,10 @@ Finding: Hens with palpable keel bone fractures at end of lay: 42% in 2025 flock
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -857,7 +862,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:ba422d7021202159`
+### belief context  `sha256:cc7030302a8443b9`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -882,16 +887,17 @@ Finding: Hens with palpable keel bone fractures at end of lay: 42% in 2025 flock
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
 6. Audit findings in this file are accurate.
 
@@ -913,7 +919,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:d11aa1b308453e12`
+### attribution context  `sha256:d5eeb47c0cc4da71`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -938,9 +944,10 @@ Finding: Hens with palpable keel bone fractures at end of lay: 61% in 2025 flock
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -955,7 +962,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:4ac31af6c249713d`
+### belief context  `sha256:ea4f5319d07e200c`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -980,16 +987,17 @@ Finding: Hens with palpable keel bone fractures at end of lay: 61% in 2025 flock
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
 6. Audit findings in this file are accurate.
 
@@ -1011,7 +1019,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 1.0
 
-### attribution context  `sha256:ccdfdb3eec748170`
+### attribution context  `sha256:ea1c06f4c663cb64`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1038,7 +1046,7 @@ Status: Confirmed
 Coverage: This audit assessed keel bone fracture records only. It did not assess the housing system or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1053,7 +1061,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:85bcca60deb1ac91`
+### belief context  `sha256:13baac1a45006088`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1080,14 +1088,14 @@ Status: Confirmed
 Coverage: This audit assessed keel bone fracture records only. It did not assess the housing system or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
 6. Audit findings in this file are accurate.
 
@@ -1109,7 +1117,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:f46c41cd4bfe26df`
+### attribution context  `sha256:ef7ca10a7b47aa9e`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1136,7 +1144,7 @@ Status: Confirmed
 Coverage: This audit assessed keel bone fracture records only. It did not assess the housing system or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1151,7 +1159,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:d62ccd2d8f6c5f3b`
+### belief context  `sha256:59caa88870310a72`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1178,14 +1186,14 @@ Status: Confirmed
 Coverage: This audit assessed keel bone fracture records only. It did not assess the housing system or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
 6. Audit findings in this file are accurate.
 
@@ -1207,7 +1215,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:6be2011c9ad80826`
+### attribution context  `sha256:3b375edcf4b45f12`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1234,7 +1242,7 @@ Status: Confirmed
 Coverage: This audit assessed keel bone fracture records only. It did not assess the housing system or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1249,7 +1257,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:02427f2ade198b94`
+### belief context  `sha256:cf3da58b3fd66201`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1276,14 +1284,14 @@ Status: Confirmed
 Coverage: This audit assessed keel bone fracture records only. It did not assess the housing system or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
 6. Audit findings in this file are accurate.
 
@@ -1305,7 +1313,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): excluded
 
-### attribution context  `sha256:2fcfa2ae83781e00`
+### attribution context  `sha256:2233146eb6e59d8f`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1327,13 +1335,14 @@ Date: 20 April 2026
 Status: Verified ✓
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1348,7 +1357,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:d122ee242e386c04`
+### belief context  `sha256:ff9fd5fe875fcd7f`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1370,20 +1379,21 @@ Date: 20 April 2026
 Status: Verified ✓
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All laying hens at Redmire Eggs are housed in cage-free aviary systems." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in keel bone fractures between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about keel bone fractures.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to keel bone fractures at this facility.
 6. Audit findings in this file are accurate.
 

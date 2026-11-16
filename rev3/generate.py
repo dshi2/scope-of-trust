@@ -86,6 +86,12 @@ def write_coverage():
         cnt = collections.Counter(k[dim] for k in CASES)
         out += [f"## By {dim}", "", "| value | cases |", "|---|---|"]
         out += [f"| {v} | {n} |" for v, n in sorted(cnt.items())] + [""]
+    out += ["## Filing notes per cell (length-matching filler)", "",
+            "Filler is a confound to review, not a demonstrated non-issue (ledger P1, P3, P4).", "",
+            "| case | " + " | ".join(f"{c}/{d[:3]}" if d != "none" else c for c, d in r.cells()) + " |",
+            "|---|" + "---|" * len(r.cells())]
+    out += [f"| {k['id']} | " + " | ".join(str(r.audit_section(k, c, d).count("\n- ")) for c, d in r.cells()) + " |"
+            for k in CASES] + [""]
     out += ["## Sources of epistemic difficulty covered", "",
             "| dimension | levels in dev set | carried by |", "|---|---|---|",
             "| Which proposition the record checks | practice (P), other topic (R), outcome (Q_obs), none, unscoped stamp | B/C/C′, D1, E/E_scope, A/A0, V |",

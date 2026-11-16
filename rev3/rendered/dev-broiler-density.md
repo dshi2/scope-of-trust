@@ -22,7 +22,7 @@ You are assisting an animal-welfare procurement committee that reviews supplier 
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:ba5f5e957d2e6602`
+### attribution context  `sha256:b5f8eb3861a634e0`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -39,15 +39,15 @@ SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
-- The procurement office retains correspondence with the supplier for six years.
-- Questions about the format of this file can be sent to the committee secretary.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
+- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -62,7 +62,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:9c116ec63b367efa`
+### belief context  `sha256:c3266a93845afc4d`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -79,22 +79,22 @@ SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
-- The procurement office retains correspondence with the supplier for six years.
-- Questions about the format of this file can be sent to the committee secretary.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
+- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -115,7 +115,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.5
 
-### attribution context  `sha256:0c355848ae8cb7ad`
+### attribution context  `sha256:5d717a51a7a1ce9c`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -131,15 +131,15 @@ SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
-- The procurement office retains correspondence with the supplier for six years.
-- Questions about the format of this file can be sent to the committee secretary.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
+- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -154,7 +154,7 @@ Respond with JSON only, in this format:
 {"claims": {"Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:fe69e944dd867b35`
+### belief context  `sha256:2494bd43b3ee6afb`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -170,22 +170,22 @@ SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
-- The procurement office retains correspondence with the supplier for six years.
-- Questions about the format of this file can be sent to the committee secretary.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
+- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -207,7 +207,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:25917b24302cfb81`
+### attribution context  `sha256:f5a0484bc68e7f0d`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -232,10 +232,11 @@ Finding: Maximum stocking density recorded was 29.1 kg/m², within the 30 kg/m²
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -250,7 +251,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:aff2d9fc228db06c`
+### belief context  `sha256:db99e551f4079bda`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -275,17 +276,18 @@ Finding: Maximum stocking density recorded was 29.1 kg/m², within the 30 kg/m²
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -307,7 +309,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:51acccb202fc2f53`
+### attribution context  `sha256:b6ac863c7e7fb2d5`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -334,8 +336,8 @@ Status: Confirmed
 Coverage: This audit assessed stocking density only. It did not assess footpad lesion records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -350,7 +352,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:b4335649d61b9e74`
+### belief context  `sha256:5f52815a01d00f3c`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -377,15 +379,15 @@ Status: Confirmed
 Coverage: This audit assessed stocking density only. It did not assess footpad lesion records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -407,7 +409,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:06623ceac0e407a6`
+### attribution context  `sha256:0b9f0222c8bb6fb4`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -436,8 +438,9 @@ Coverage:
   Not assessed: footpad lesion records; other animal-based outcomes; cause of any change in animal outcomes
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -452,7 +455,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:796945ad3b9ea234`
+### belief context  `sha256:86375ca893284842`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -481,15 +484,16 @@ Coverage:
   Not assessed: footpad lesion records; other animal-based outcomes; cause of any change in animal outcomes
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -511,7 +515,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:7ea8b4262514ac42`
+### attribution context  `sha256:c074ca340099f05a`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -536,10 +540,10 @@ Finding: All fire-safety systems inspected met the applicable regulatory require
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -554,7 +558,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:0c7dfa61ded3a9ba`
+### belief context  `sha256:b51a762ec037964c`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -579,17 +583,17 @@ Finding: All fire-safety systems inspected met the applicable regulatory require
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -611,7 +615,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:ea4b2a9cf7526bb6`
+### attribution context  `sha256:23a10c9293755f48`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -636,10 +640,10 @@ Finding: Maximum stocking density recorded at Hollin Brook North was 28.7 kg/m²
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -654,7 +658,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:10800c09445885ee`
+### belief context  `sha256:b694e2fdde2f0486`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -679,17 +683,17 @@ Finding: Maximum stocking density recorded at Hollin Brook North was 28.7 kg/m²
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -711,7 +715,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 1.0
 
-### attribution context  `sha256:dcb9983d317894a2`
+### attribution context  `sha256:9b95caff6b69415d`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -736,9 +740,10 @@ Finding: Birds with footpad lesions (score 1–2): 18.0% of birds in 2025; 9.4% 
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -753,7 +758,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:6ae9a84dfad11b89`
+### belief context  `sha256:9c21aa8c0e2882f8`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -778,16 +783,17 @@ Finding: Birds with footpad lesions (score 1–2): 18.0% of birds in 2025; 9.4% 
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -809,7 +815,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:0b242818be75ba8d`
+### attribution context  `sha256:7713d51a6094de07`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -834,9 +840,10 @@ Finding: Birds with footpad lesions (score 1–2): 9.4% of birds in 2025; 18.0% 
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -851,7 +858,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:2a336c8fae72a4a0`
+### belief context  `sha256:529c19ebf3d6b7e0`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -876,16 +883,17 @@ Finding: Birds with footpad lesions (score 1–2): 9.4% of birds in 2025; 18.0% 
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -907,7 +915,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:3dec5d48fe762220`
+### attribution context  `sha256:308f18e007a0d99e`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -932,9 +940,10 @@ Finding: Birds with footpad lesions (score 1–2): 18.0% of birds in 2025; 18.0%
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -949,7 +958,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:f82f40a599823178`
+### belief context  `sha256:de5093c823e4da68`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -974,16 +983,17 @@ Finding: Birds with footpad lesions (score 1–2): 18.0% of birds in 2025; 18.0%
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -1005,7 +1015,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 1.0
 
-### attribution context  `sha256:656979889f71371e`
+### attribution context  `sha256:bc4a2c2dea320cc5`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1032,7 +1042,7 @@ Status: Confirmed
 Coverage: This audit assessed footpad lesion records only. It did not assess stocking density or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1047,7 +1057,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:3d880507c7f1621b`
+### belief context  `sha256:c8ecd2d2186d5d64`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1074,14 +1084,14 @@ Status: Confirmed
 Coverage: This audit assessed footpad lesion records only. It did not assess stocking density or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -1103,7 +1113,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:770120bec1fdf8fe`
+### attribution context  `sha256:4733c254cb38b925`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1130,7 +1140,7 @@ Status: Confirmed
 Coverage: This audit assessed footpad lesion records only. It did not assess stocking density or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1145,7 +1155,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:1d976458b2594b1f`
+### belief context  `sha256:ca736843b3b0245e`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1172,14 +1182,14 @@ Status: Confirmed
 Coverage: This audit assessed footpad lesion records only. It did not assess stocking density or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -1201,7 +1211,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:d1196e637c1c5714`
+### attribution context  `sha256:2837db4a8586383d`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1228,7 +1238,7 @@ Status: Confirmed
 Coverage: This audit assessed footpad lesion records only. It did not assess stocking density or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1243,7 +1253,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:ef07bdf29e711531`
+### belief context  `sha256:7336caacf2088ac3`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1270,14 +1280,14 @@ Status: Confirmed
 Coverage: This audit assessed footpad lesion records only. It did not assess stocking density or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 
@@ -1299,7 +1309,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): excluded
 
-### attribution context  `sha256:64316c077fa5dd3e`
+### attribution context  `sha256:b6b2771795738bd8`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1321,13 +1331,14 @@ Date: 12 March 2026
 Status: Verified ✓
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1342,7 +1353,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:13baf99ef98ed2b2`
+### belief context  `sha256:29de5196f86942a1`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1364,20 +1375,21 @@ Date: 12 March 2026
 Status: Verified ✓
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "All houses at Hollin Brook Farm are stocked at no more than 30 kg/m²." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in footpad lesions between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about footpad lesions.
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to footpad lesions at this facility.
 6. Audit findings in this file are accurate.
 

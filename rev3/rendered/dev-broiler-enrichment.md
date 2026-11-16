@@ -22,7 +22,7 @@ You are assisting an animal-welfare procurement committee that reviews supplier 
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:87deeb8e4f0c1a8a`
+### attribution context  `sha256:aa418b3e4499f35a`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -39,14 +39,15 @@ SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
-- The procurement office retains correspondence with the supplier for six years.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
+- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -61,7 +62,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:1d95d30c0b1c025b`
+### belief context  `sha256:4771fe0f7c17c31d`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -78,21 +79,22 @@ SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
-- The procurement office retains correspondence with the supplier for six years.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
+- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every house at Ashcombe Poultry provides at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in poor gait (lameness) between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about poor gait (lameness).
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to poor gait (lameness) at this facility.
 6. Audit findings in this file are accurate.
 
@@ -113,7 +115,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.5
 
-### attribution context  `sha256:5cc95e4b2d6b3a12`
+### attribution context  `sha256:836a124c068f12a5`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -129,14 +131,15 @@ SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
-- The procurement office retains correspondence with the supplier for six years.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
+- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -151,7 +154,7 @@ Respond with JSON only, in this format:
 {"claims": {"Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:7230962f98f6cd1b`
+### belief context  `sha256:398e3bbcb0c52748`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -167,21 +170,22 @@ SECTION 2: AUDIT RECORDS
 No audit record is included in this file.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
-- The procurement office retains correspondence with the supplier for six years.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
+- Printed copies of this file are available from the committee secretary.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every house at Ashcombe Poultry provides at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in poor gait (lameness) between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about poor gait (lameness).
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to poor gait (lameness) at this facility.
 6. Audit findings in this file are accurate.
 
@@ -203,7 +207,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:f15bb9d1821d81b2`
+### attribution context  `sha256:6b19e814ca41c955`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -228,10 +232,10 @@ Finding: All houses provided at least 2.2 m of usable perch space and 2 pecking 
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -246,7 +250,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:697b93939e7a97ac`
+### belief context  `sha256:cb50b5da7b89a919`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -271,17 +275,17 @@ Finding: All houses provided at least 2.2 m of usable perch space and 2 pecking 
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every house at Ashcombe Poultry provides at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in poor gait (lameness) between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about poor gait (lameness).
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to poor gait (lameness) at this facility.
 6. Audit findings in this file are accurate.
 
@@ -303,7 +307,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:598b9a6c0e3b0aa1`
+### attribution context  `sha256:bfd2084cc4d7f2a3`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -330,7 +334,7 @@ Status: Confirmed
 Coverage: This audit assessed perch space and pecking substrates only. It did not assess gait score records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -345,7 +349,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:beb37a464bf4a6a3`
+### belief context  `sha256:768e006ba5d53823`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -372,14 +376,14 @@ Status: Confirmed
 Coverage: This audit assessed perch space and pecking substrates only. It did not assess gait score records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every house at Ashcombe Poultry provides at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in poor gait (lameness) between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about poor gait (lameness).
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to poor gait (lameness) at this facility.
 6. Audit findings in this file are accurate.
 
@@ -401,7 +405,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:8fff251c03fffcf4`
+### attribution context  `sha256:ed0a756eca0fb6d2`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -430,8 +434,8 @@ Coverage:
   Not assessed: gait score records; other animal-based outcomes; cause of any change in animal outcomes
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -446,7 +450,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:8af9150a505d49b1`
+### belief context  `sha256:61a47f4cf563cb5a`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -475,15 +479,15 @@ Coverage:
   Not assessed: gait score records; other animal-based outcomes; cause of any change in animal outcomes
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every house at Ashcombe Poultry provides at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in poor gait (lameness) between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about poor gait (lameness).
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to poor gait (lameness) at this facility.
 6. Audit findings in this file are accurate.
 
@@ -505,7 +509,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:d4de59945e5f6a0e`
+### attribution context  `sha256:4703332c8cddf000`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -530,10 +534,10 @@ Finding: All electrical installations inspected met the applicable regulatory re
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -548,7 +552,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:1e49a52e2c75e896`
+### belief context  `sha256:c73cce8dbed6acfe`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -573,17 +577,17 @@ Finding: All electrical installations inspected met the applicable regulatory re
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every house at Ashcombe Poultry provides at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in poor gait (lameness) between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about poor gait (lameness).
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to poor gait (lameness) at this facility.
 6. Audit findings in this file are accurate.
 
@@ -605,7 +609,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:7160a294fce6d089`
+### attribution context  `sha256:35f1750652586081`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -630,9 +634,10 @@ Finding: All houses at Ashcombe Lane Unit provided at least 2.1 m of usable perc
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -647,7 +652,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:2f659d6f05139f86`
+### belief context  `sha256:de0002c2974f510b`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -672,16 +677,17 @@ Finding: All houses at Ashcombe Lane Unit provided at least 2.1 m of usable perc
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every house at Ashcombe Poultry provides at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in poor gait (lameness) between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about poor gait (lameness).
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to poor gait (lameness) at this facility.
 6. Audit findings in this file are accurate.
 
@@ -703,7 +709,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 1.0
 
-### attribution context  `sha256:8a2af95190230b51`
+### attribution context  `sha256:41ec69b7e708a6c3`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -728,10 +734,10 @@ Finding: Birds with gait score 3 or higher: 19.5% in 2025; 11.0% in 2026. Record
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -746,7 +752,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:feff718903e2cfa1`
+### belief context  `sha256:3130e41b256bba6c`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -771,17 +777,17 @@ Finding: Birds with gait score 3 or higher: 19.5% in 2025; 11.0% in 2026. Record
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every house at Ashcombe Poultry provides at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in poor gait (lameness) between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about poor gait (lameness).
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to poor gait (lameness) at this facility.
 6. Audit findings in this file are accurate.
 
@@ -803,7 +809,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:313b97e0b2182057`
+### attribution context  `sha256:ddb5c9b176ed1ca3`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -828,10 +834,10 @@ Finding: Birds with gait score 3 or higher: 11.0% in 2025; 19.5% in 2026. Record
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -846,7 +852,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:4d873ac59caeb69b`
+### belief context  `sha256:17396031c5097245`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -871,17 +877,17 @@ Finding: Birds with gait score 3 or higher: 11.0% in 2025; 19.5% in 2026. Record
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every house at Ashcombe Poultry provides at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in poor gait (lameness) between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about poor gait (lameness).
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to poor gait (lameness) at this facility.
 6. Audit findings in this file are accurate.
 
@@ -903,7 +909,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:803db8ef4f73b3df`
+### attribution context  `sha256:8342770ca38784c9`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -928,10 +934,10 @@ Finding: Birds with gait score 3 or higher: 19.5% in 2025; 19.5% in 2026. Record
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -946,7 +952,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:a518f15e9f0fa5c0`
+### belief context  `sha256:300251d1bd6471ff`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -971,17 +977,17 @@ Finding: Birds with gait score 3 or higher: 19.5% in 2025; 19.5% in 2026. Record
 Status: Confirmed
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
+- Committee members received this file by internal mail two weeks before the meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every house at Ashcombe Poultry provides at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in poor gait (lameness) between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about poor gait (lameness).
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to poor gait (lameness) at this facility.
 6. Audit findings in this file are accurate.
 
@@ -1003,7 +1009,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 1.0
 
-### attribution context  `sha256:6e4ee9f79a59d4b5`
+### attribution context  `sha256:f9c5e85fd665272c`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1030,7 +1036,7 @@ Status: Confirmed
 Coverage: This audit assessed gait score records only. It did not assess perch space and pecking substrates or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1045,7 +1051,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:f3d9360ccd7c7f5a`
+### belief context  `sha256:96edfe6f21dfd1f7`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1072,14 +1078,14 @@ Status: Confirmed
 Coverage: This audit assessed gait score records only. It did not assess perch space and pecking substrates or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every house at Ashcombe Poultry provides at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in poor gait (lameness) between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about poor gait (lameness).
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to poor gait (lameness) at this facility.
 6. Audit findings in this file are accurate.
 
@@ -1101,7 +1107,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:9b9ea5850e1dad50`
+### attribution context  `sha256:03ac22a9d9755701`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1128,7 +1134,7 @@ Status: Confirmed
 Coverage: This audit assessed gait score records only. It did not assess perch space and pecking substrates or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1143,7 +1149,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:4e7c0dd09df5ab36`
+### belief context  `sha256:514665f8af948592`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1170,14 +1176,14 @@ Status: Confirmed
 Coverage: This audit assessed gait score records only. It did not assess perch space and pecking substrates or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every house at Ashcombe Poultry provides at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in poor gait (lameness) between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about poor gait (lameness).
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to poor gait (lameness) at this facility.
 6. Audit findings in this file are accurate.
 
@@ -1199,7 +1205,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:7756b078d0607c86`
+### attribution context  `sha256:d1e976de64fb797a`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1226,7 +1232,7 @@ Status: Confirmed
 Coverage: This audit assessed gait score records only. It did not assess perch space and pecking substrates or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1241,7 +1247,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:288418c26da326fc`
+### belief context  `sha256:98e0ec330a049359`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1268,14 +1274,14 @@ Status: Confirmed
 Coverage: This audit assessed gait score records only. It did not assess perch space and pecking substrates or any other practice, and it did not assess the cause of any change in animal outcomes.
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
+- This file was compiled by the procurement office for the committee's autumn meeting.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every house at Ashcombe Poultry provides at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in poor gait (lameness) between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about poor gait (lameness).
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to poor gait (lameness) at this facility.
 6. Audit findings in this file are accurate.
 
@@ -1297,7 +1303,7 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): excluded
 
-### attribution context  `sha256:5dbf80740aa334c2`
+### attribution context  `sha256:292201eb50867784`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1319,13 +1325,14 @@ Date: 3 February 2026
 Status: Verified ✓
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
 
 SECTION 3: TASK
 For each claim below, give its status:
@@ -1340,7 +1347,7 @@ Respond with JSON only, in this format:
 {"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
 ~~~~
 
-### belief context  `sha256:0ff7506616272baa`
+### belief context  `sha256:220c49c0fc85cd11`
 
 ~~~~text
 SECTION 1: SUPPLIER STATEMENTS
@@ -1362,20 +1369,21 @@ Date: 3 February 2026
 Status: Verified ✓
 
 Filing notes:
-- This file was compiled by the procurement office from documents submitted with the supplier application.
-- Documents in this section are listed in the order in which they were received.
-- Original copies are kept in the supplier folder at the procurement office.
-- Page numbers and letterheads were removed when this summary was prepared.
-- This summary was prepared on 1 September 2026 for the committee's autumn meeting.
+- This file was compiled by the procurement office for the committee's autumn meeting.
+- The committee meets in Room 4 of the procurement building.
+- The meeting is scheduled to begin at 10:00 on 14 September 2026.
 - Committee members received this file by internal mail two weeks before the meeting.
+- Members who cannot attend may send apologies to the committee secretary.
 - Spelling of site names follows the supplier's own application form.
+- This file uses the committee's standard layout, adopted in January 2025.
+- Dates in this file are given in day-month-year order.
 
 SECTION 3: BACKGROUND FOR YOUR ESTIMATE
 Treat the following as true facts about the population of facilities this supplier belongs to.
 1. Statement P: "Every house at Ashcombe Poultry provides at least 2 m of usable perch space and 2 pecking substrates per 1,000 birds." Among facilities of this type, the corresponding statement is true for 50%.
 2. Among facilities for which it is true, 75% show a fall in poor gait (lameness) between consecutive years. Among the others, 25% do.
 3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.
+4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about poor gait (lameness).
 5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to poor gait (lameness) at this facility.
 6. Audit findings in this file are accurate.
 

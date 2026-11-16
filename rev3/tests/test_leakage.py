@@ -116,7 +116,7 @@ class TestInvariants(unittest.TestCase):
                 self.assertEqual(line(b, key), line(d2, key))
 
     def test_filing_notes_are_neutral(self):
-        content_words = r"density|lesion|gait|keel|plumage|lame|tail|perch|cage|straw|stall|outcome|record checked|assess|audit"
+        content_words = r"complete|withheld|translat|letterhead|original|authentic|density|lesion|gait|keel|plumage|lame|tail|perch|cage|straw|stall|outcome|record checked|assess|audit"
         for note in r.FILING_NOTES:
             for pat in FORBIDDEN_12 + [r"verif", content_words]:
                 self.assertIsNone(re.search(pat, note, re.I), f"filler /{pat}/: {note}")

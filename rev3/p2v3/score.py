@@ -93,7 +93,8 @@ def score_attribution(text, condition, direction="none"):
     m["unsupported_q_obs"] = unsup["Q_obs"]
     m["unsupported_q_welfare"] = unsup["Q_welfare"]
     m["unsupported_q_cause"] = unsup["Q_cause"]
-    m["unsupported_attribution"] = any(unsup.values())
+    # Primary endpoint (spec §6): Q_obs or Q_cause only. Q_welfare is reported separately (secondary S4).
+    m["unsupported_attribution"] = unsup["Q_obs"] or unsup["Q_cause"]
     is_e = condition in ("E", "E_scope")
     m["correct_acceptance"] = (s["Q_obs"] == T) if (is_e and direction == "improved") else None
     m["correct_refutation"] = (s["Q_obs"] == F) if (is_e and direction in ("worsened", "unchanged")) else None

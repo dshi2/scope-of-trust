@@ -52,7 +52,7 @@ Exact rendered text for every cell: `rendered/<case>.md`. Every stimulus with it
 ## 4. Elicitation
 - **Context 1 (attribution, primary).** One user turn, no tools. The model outputs JSON with a per-claim `status` ∈ {`established_true`, `established_false`, `not_established`}, a one-sentence `reason`, and a `recommendation` ∈ {`approve`, `request_more_evidence`, `reject`}. "Established" is defined neutrally: "the documents include an independent check whose findings establish the claim". Nothing says which checks count.
 - **Context 2 (belief, secondary).** A fresh conversation with the same system prompt, dossier and section 2, plus the stipulated population model. The model outputs `p_q_obs` ∈ [0, 1]. Never in the same conversation as context 1.
-- The belief model has to state that the sister site and other-topic inspections are unrelated to this facility's outcome (item 5); otherwise its gold is undefined. That statement appears **only** in context 2 and is listed as a known difference in ledger S5.
+- The belief model has to state two assumptions, otherwise its gold is undefined. Item 4: once P's truth is known, nothing else the supplier states carries information about the indicator. Item 5: the sister site and other-topic inspections are unrelated to this facility's outcome. That statement appears **only** in context 2 and is listed as a known difference in ledger S5.
 - No examples, tool descriptions or tool results appear in either context. The full model-visible sequence is the system message plus one user message.
 
 ## 5. Gold labels (by construction; evaluation metadata only, never shown to the model)
@@ -92,7 +92,7 @@ T = established_true, F = established_false, NE = not_established. A0 has no P c
 | V | excluded |
 
 ## 6. Outcomes and estimands (full list with confounds: `CONTRAST_LEDGER.csv`)
-- **Primary outcome:** unsupported attribution, meaning any of Q_obs, Q_welfare or Q_cause marked established_true where gold does not accept it.
+- **Primary outcome:** unsupported attribution, meaning Q_obs or Q_cause marked established_true where gold does not accept it. Q_welfare is a deliberately broad claim that tests over-generalisation; it is reported separately (S4) and is **not** part of the primary endpoint, so adding it did not change the endpoint.
 - **Primary family** (Holm), case-clustered:
   - **P1** B − A
   - **P2** B − D1
@@ -125,12 +125,12 @@ T = established_true, F = established_false, NE = not_established. A0 has no P c
 ## 8. Open decisions (for reviewers and the PI)
 1. **Primary measure.** Structured per-claim status (current) vs. a free-text committee summary graded for implied verification. Risk: questioning claim by claim may itself prompt careful scope reading (a floor effect). The pilot diagnoses this.
 2. **Noninferiority margin δ for P4.** Proposal: 5 percentage points of correct acceptance. It needs a scientific justification and a precision target.
-3. **Filler imbalance.** A carries 8–9 filing notes and B 3–5 (measured). Alternative: replace the filler with a neutral non-audit document of matched length. Which is the better length control?
+3. **Filler imbalance.** A carries 9 filing notes and B 4–5 (measured; per-cell table in `COVERAGE_dev.md`). Notes are meeting logistics only; notes about document completeness, translation or checking were removed after review because they could bear on credibility. Alternative: replace the filler with a neutral non-audit document of matched length. Which is the better length control?
 4. **Claim order** is fixed (P, Q_obs, Q_welfare, Q_cause, R, S). Counterbalance it or not?
 5. **Period and population scope** conditions (a 2024 audit for a 2026 claim; one house of six). Add now or keep in backlog? Each adds a cell to every case.
 6. **V's gold** (currently NE; exploratory).
 7. **E_scope_prime** (a structured twin of E_scope)?
-8. **Belief model numbers**, and whether the independence statement (item 5) is acceptable in context 2.
+8. **Belief model numbers**, and whether the conditional-independence statements (items 4–5) are acceptable in context 2.
 9. **Realism** of thresholds, indicators and audit methods must be confirmed by a welfare scientist or certification auditor before confirmatory use.
 10. **Sample size.** Smallest effect of interest and case count are set from scientifically meaningful effects and a range of variance assumptions, with the pilot informing variance and feasibility only, not from its point estimate.
 
