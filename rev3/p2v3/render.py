@@ -220,13 +220,14 @@ def belief_model(case):
     return "\n".join([
         "SECTION 3: BACKGROUND FOR YOUR ESTIMATE",
         "Treat the following as true facts about the population of facilities this supplier belongs to.",
-        f'1. Let P be the statement: "{case["practice_claim"]}" {pct(bp["pr_p"])} of facilities of this type satisfy P.',
-        f"2. Among facilities that satisfy P, {pct(bp['pr_q_given_p'])} show a fall in {case['indicator_name']} "
-        f"between consecutive years. Among facilities that do not satisfy P, {pct(bp['pr_q_given_not_p'])} do.",
-        f"3. When a supplier states P, P is true {pct(bp['statement_accuracy'])} of the time.",
+        f'1. Statement P: "{case["practice_claim"]}" Among facilities of this type, the corresponding '
+        f'statement is true for {pct(bp["pr_p"])}.',
+        f"2. Among facilities for which it is true, {pct(bp['pr_q_given_p'])} show a fall in "
+        f"{case['indicator_name']} between consecutive years. Among the others, {pct(bp['pr_q_given_not_p'])} do.",
+        f"3. When a supplier makes statement P, it is true {pct(bp['statement_accuracy'])} of the time.",
         "4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true.",
-        f"5. Whether the sister site satisfies P, and the results of inspections on other topics, are unrelated "
-        f"to whether this facility satisfies P and to its {case['indicator_name']}.",
+        f"5. Whether the corresponding statement is true at the sister site, and the results of inspections on "
+        f"other topics, are unrelated to whether P is true and to {case['indicator_name']} at this facility.",
         "6. Audit findings in this file are accurate.",
     ])
 
