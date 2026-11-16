@@ -10,7 +10,7 @@
 
 ## Abstract
 
-An audit can be true and still be over-read. Suppose a certifier truthfully confirms that every flock on a farm was stocked at no more than 30 kg/m² throughout 2025. That check says nothing about whether recorded footpad lesions fell. We test whether language models reviewing a supplier file treat such a truthful practice audit as establishing an outcome claim *outside its scope*. Every supplier statement is held fixed; only the audit section varies. Against a no-audit baseline (A), we test whether a practice audit (B) raises the rate at which the unaudited outcome claim is marked established. Against a same-issuer, same-template fire-safety inspection (D1), we test whether that depends on what was checked. We also test whether a prose coverage statement (C) reduces the error without suppressing correct acceptance when the outcome records *were* audited (E_scope vs. E). Four open-weight, text-only models were evaluated on 12 builder-written synthetic cases (6 base, 6 extension, run separately). [[One to two sentences: P1 B−A and P2 B−D1 per model, with direction and range of estimates and provisional 95% intervals; P3 C−B beside the P4 estimates; whether the positive controls behaved as expected.]] This is a diagnostic development evaluation: expert verdicts on the cases have not been collected, the noninferiority margin and smallest effects of interest are not fixed, and the intervals are provisional. No result here is confirmatory.
+An audit can be true and still be over-read. Suppose a certifier truthfully confirms that every flock on a farm was stocked at no more than 30 kg/m² throughout 2025. That check says nothing about whether recorded footpad lesions fell. We test whether language models reviewing a supplier file treat such a truthful practice audit as establishing an outcome claim *outside its scope*. Every supplier statement is held fixed; only the audit section varies. Against a no-audit baseline (A), we test whether a practice audit (B) raises the rate at which the unaudited outcome claim is marked established. Against a same-issuer, same-template fire-safety inspection (D1), we test whether that depends on what was checked. We also test whether a prose coverage statement (C) reduces the error without suppressing correct acceptance when the outcome records *were* audited (E_scope vs. E). Four open-weight, text-only models were evaluated on 12 builder-written synthetic cases (6 base, 6 extension, run separately). No model ever marked the unaudited outcome claim established after a practice audit: across 3,360 attribution trials, unsupported endorsement was 0 in every audit and control cell for every model. That makes the spillover contrasts exactly zero (one-sided 95% upper bound on the per-cell rate 4.9% per model, treating trials as independent). Positive controls were at ceiling. The error appeared only for an unscoped "Verified ✓" stamp, and it depended on the model: Qwen3-235B 53%, Kimi-K2 5%, DeepSeek-V3.2 and gpt-oss-120b 0%. This is a diagnostic development evaluation: expert verdicts on the cases have not been collected, the noninferiority margin and smallest effects of interest are not fixed, and the intervals are provisional. No result here is confirmatory.
 
 ---
 
@@ -87,55 +87,65 @@ Within each model:
 
 ### 3.4 Models
 
-We evaluated four open-weight, text-only models (`openai/gpt-oss-120b`, `deepseek-ai/DeepSeek-V3.2`, `Qwen/Qwen3-235B-A22B-Instruct-2507`, `moonshotai/Kimi-K2-Instruct-0905`) through pinned providers. We evaluated the four model families using the pinned serving providers' default sampling configurations, with reasoning enabled for gpt-oss-120b (its default) and DeepSeek-V3.2 (explicit override), and recorded all request parameters and available inference metadata. Each model ran every stimulus [[R]] times. Results are reported per model and never pooled (serving details in Appendix D).
+We evaluated four open-weight, text-only models (`openai/gpt-oss-120b`, `deepseek-ai/DeepSeek-V3.2`, `Qwen/Qwen3-235B-A22B-Instruct-2507`, `moonshotai/Kimi-K2-Instruct-0905`) through pinned providers. We evaluated the four model families using the pinned serving providers' default sampling configurations, with reasoning enabled for gpt-oss-120b (its default) and DeepSeek-V3.2 (explicit override), and recorded all request parameters and available inference metadata. Each model ran every stimulus 5 times (12 cases × 14 cells × 5 = 840 attribution trials per model). Results are reported per model and never pooled (serving details in Appendix D).
 
 ---
 
 ## 4. Results
 
-> Diagnostic development evaluation on builder-written cases. Intervals are provisional, and no SESOI or margin is fixed. Not confirmatory.
+> Exploratory development evaluation on builder-written cases (batch 1: 12 cases, 4 models, 5 repeats; `runs/p2_batch1_combined/analysis.json`). Intervals are provisional, and no SESOI or margin is fixed, so no decisions are made. Not confirmatory.
 
-[[One to two sentences on data quality across models (calls completed, parse failures, truncation, whether missingness depends on condition), with details in Appendix F. Source: `runs/p2_dev_eval_v1/analysis.md`, `runs/p2_ext_v1/analysis.md` (path to confirm).]]
-
-[[One sentence on the positive controls: V1–V3 case-level rates per model, flagging any model whose contrasts should not be interpreted; no post-hoc threshold. Figure A2 in Appendix F.]]
+**Data quality.** All 3,360 scheduled calls completed in each run. Parsing was fully valid for DeepSeek-V3.2, gpt-oss-120b and Qwen3-235B. Kimi-K2 had 28 malformed (all truncated) and 3 invalid responses out of 1,680; imputing these worst-case moves its P1 estimate by at most −3.3 points. Recorded spend was $6.77 + $8.17. That is an upper estimate that includes unsettled billing for retried requests; $6.41 was confirmed at settlement. **Positive controls:** correct acceptance (V1), correct refutation (V2) and manipulation checks (V3) were 1.00 for every model, cell and case.
 
 ### 4.1 The evidence-scope ladder
 
 ![Figure 1: Evidence-scope ladder](figures/fig_p2_ladder.png)
-*Figure 1. Rate of unsupported Q_obs in A (no audit), D1 (unrelated audit), B (practice audit) and C (practice audit + coverage statement), per model. [[Confirm the figure shows these four conditions in this order, with the other cells moved to Appendix G; note that rates are over all scored trials with no interval, because trials within a case are not independent.]]*
+*Figure 1. Rate of unsupported Q_obs in A, D1, B, C and the unscoped stamp V, per model. [[Generate with `plot_p2.py --analysis runs/p2_batch1_combined/analysis.json` and confirm the order.]]*
 
-[[Two to three sentences: per model, the A → D1 → B → C pattern. Is there a floor at A? Does B rise above both A and D1 (out-of-scope endorsement tied to the checked topic), or do B and D1 both rise (a generic record effect)? Does C bring B back down?]]
+Unsupported Q_obs was 0/60 in A, D1, B and C for every model, and also in A0, C′, D2 and all six E-family cells (Kimi: 0/58 in A). The ladder is flat at zero until the last rung. Every model marked the audited practice (P) established in B and C, so the audit was read, yet none let it vouch for the outcome.
 
 ### 4.2 Primary contrasts
 
 ![Figure 2: Primary contrasts per model](figures/fig_p2_forest.png)
-*Figure 2. P1–P3 (unsupported Q_obs) and P4 (correct acceptance), in percentage points per model: equal-case estimate, provisional 95% Tango-c-cc interval (P1–P3) or one-sided 97.5% lower bound (P4), and worst–best imputation band. [[Confirm against the rendered figure.]]*
+*Figure 2. P1–P4 per model: estimate and provisional Tango-c-cc interval. All estimates are 0.000.*
 
-**Table 2.** Primary contrasts per model ([[12 cases if the extension run completed; otherwise 6]]). Per-set tables are in Appendix G.
+**Table 2.** Primary contrasts, 12 cases per model. Each cell gives the estimate, the provisional 95% Tango-c-cc interval and, in brackets, the one-sided 95% exact upper bound on the per-cell rate.
 
 | Model | P1 B−A | P2 B−D1 | P3 C−B | P4 E_scope−E (97.5% LB) |
 |---|---|---|---|---|
-| gpt-oss-120b | [[est [95% CI]; p_Holm]] | [[…]] | [[…]] | [[est; LB]] |
-| DeepSeek-V3.2 | [[…]] | [[…]] | [[…]] | [[…]] |
-| Qwen3-235B-A22B-2507 | [[…]] | [[…]] | [[…]] | [[…]] |
-| Kimi-K2-0905 | [[…]] | [[…]] | [[…]] | [[…]] |
+| gpt-oss-120b | 0.000 [−0.30, 0.30] (B ≤ 4.9%) | 0.000 [−0.30, 0.30] | 0.000 [−0.30, 0.30] | 0.000; LB −0.30 |
+| DeepSeek-V3.2 | 0.000 [−0.30, 0.30] (≤ 4.9%) | 0.000 [−0.30, 0.30] | 0.000 [−0.30, 0.30] | 0.000; LB −0.30 |
+| Qwen3-235B-A22B-2507 | 0.000 [−0.30, 0.30] (≤ 4.9%) | 0.000 [−0.30, 0.30] | 0.000 [−0.30, 0.30] | 0.000; LB −0.30 |
+| Kimi-K2-0905 | 0.000 [−0.30, 0.30] (≤ 4.9%) | 0.000 [−0.30, 0.30] | 0.000 [−0.30, 0.30] | 0.000; LB −0.30 |
 
-[[P1 B−A per model: estimate, 95% CI, from runs/p2_dev_eval_v1/analysis.md (and the combined analysis)]] [[P2 B−D1 per model: estimate, 95% CI; descriptive reading only]] [[Whether any contrast reverses direction across models; a reversal is not reported as a general effect.]] [[One sentence on whether the components (Q_cause, Q_welfare; Appendix G, Figure A3) carry any of P1 instead of Q_obs.]]
+With zero events in both arms, the all-pairs Tango-c-cc interval (±0.301) reflects only the case count. It is conservative and uninformative, and the case-level t interval degenerates to [0, 0]. We therefore also give exact zero-event bounds on the rate in B:
+- 0/60 trials per model gives a one-sided 95% upper bound of 4.9%;
+- 0/240 pooled over models gives 1.2%, but this ignores clustering by case and model;
+- treating each case as one unit (0/12) gives 22%.
 
-### 4.3 Disclosure selectivity
+The components (Q_cause, Q_welfare, composite) were also zero in P1–P3 for every model. Observed correct acceptance was 100% in both E and E_scope, so no loss was observed. Formally, however, noninferiority cannot be shown: the lower bound is −0.30 at 12 cases (Appendix E), and δ is not fixed.
+
+### 4.3 Disclosure selectivity and the unscoped stamp
 
 ![Figure 3: Disclosure selectivity](figures/fig_p2_selectivity.png)
-*Figure 3. Per model: the reduction in unsupported Q_obs from coverage disclosure (C − B, with 95% interval), beside the change in correct acceptance when the outcome was audited (E_scope − E, with one-sided 97.5% lower bound). A dashed line marks the proposed P4 margin of −5 points, **which is not yet fixed**. A disclosure is selective only if C − B is negative while E_scope − E stays above the margin. [[Figure to be produced; `plot_p2.py` does not yet draw it.]]*
+*Figure 3. C − B beside E_scope − E per model, with the proposed −5-point P4 margin (not fixed). Both are 0.000 for every model. [[Figure to be produced.]]*
 
-[[P3 C−B per model: estimate, 95% CI; P4 E_scope−E per model: estimate and lower bound. State explicitly: "no noninferiority decision is possible: δ is not fixed, and with K cases the best attainable lower bound is about −30 points (K = 12) or −48 points (K = 6) even with perfect data". Note any rise in false refutation under C.]]
+With no unsupported endorsement in B, coverage disclosure had nothing to remove (P3 = 0), and it cost no observed acceptance. Selectivity is therefore untested rather than shown. The only cell where the error occurred was the exploratory **unscoped stamp V** (issuer, site and "Status: Verified ✓", with no item, method or finding):
+- **Qwen3-235B: 32/60 (53%)**, in all 12 cases. V − A = +0.53, Tango-c-cc 95% [+0.10, +0.80], p = 0.02 unadjusted (exploratory). In V it also marked the fire-safety claim R established 60/60 and the practice P 41/60, but Q_welfare and Q_cause 0/60. It read the stamp as covering every concrete claim.
+- **Kimi-K2: 3/60 (5%)**, in 3 of 12 cases; 95% [−0.26, +0.36].
+- **DeepSeek-V3.2 and gpt-oss-120b: 0/60.**
+
+V's gold label is contested (a stamp can be read as covering everything), so this result is exploratory. No V error led to an "approve" recommendation: every model chose `request_more_evidence` in V. Secondary outcomes are in Appendix G.
 
 ---
 
 ## 5. Discussion and Limitations
 
-The design separates readings that a plain audit-vs.-no-audit comparison would conflate. If B > A and B > D1, a truthful audit leads models to endorse claims beyond its scope, in a way that depends on what was checked. That is the distinctive claim, and it is not explained by the mere presence of an official record. If B ≈ D1 > A, the effect is a generic record effect rather than scope over-extension. If B ≈ A within a meaningful bound, the result is an informative null for this task, these cases and these models. Coverage disclosure helps only if it is selective: lower unsupported endorsement (C − B) without lost correct acceptance (E_scope − E).
+**A spillover null in this task.** When the audit record shows its item, method and finding, all four models confined its endorsement to the practice it checked. This held with zero events across 12 cases, 5 repeats and four model families, and the positive controls show that the models do accept and refute outcome claims from audited numbers. The distinctive failure we designed for, a truthful practice audit vouching for an out-of-scope outcome, did not occur. Because no SESOI was fixed, this is not a formal equivalence result. Within these cases the per-model rate in B is below about 5% at the trial level (22% treating cases as units).
 
-[[Two to four sentences reading the development results against these patterns, per model, using only "the interval excludes or includes zero" language. Note any floor at A or B that limits sensitivity.]]
+**The vulnerability is to unscoped verification, and it depends on the model.** Remove the record's scope and keep its status, and one model (Qwen3-235B) treated an unscoped "Verified ✓" as establishing the outcome in half its responses. Kimi-K2 did so occasionally; the two reasoning-enabled models never did. This is consistent with the scope-omission findings of Jeffries (2026) and Hu (2026): in this task the risk lies in verification signals that do not state what they cover, not in over-reading signals that do.
+
+**Possible floor.** The structured six-claim task may itself make scope salient. A free-text committee summary could still show spillover. Batch 2 (3 × 8 new builder-written cases in new formats, `runs/p2_ba_v1`, `p2_bb_v1`, `p2_bc_v1`) is pending and will test whether the null holds on new cases.
 
 ### Limitations
 
@@ -154,7 +164,7 @@ Fix SESOIs and δ from practitioner base rates, together with the case count the
 
 ## 6. Conclusion
 
-We built a content-matched test of whether a truthful audit of one welfare practice leads language models to endorse an outcome claim outside the audit's scope, and whether disclosing coverage reduces that error selectively. Supplier statements are fixed, the unrelated-audit control matches issuer and template, and positive controls must be inferred from audited numbers. [[One to two sentences summarising the development results per model, without confirmatory language.]] These results come from 12 builder-written, expert-unvalidated development cases with no fixed effect thresholds. The next step is a confirmatory study with prespecified margins.
+We built a content-matched test of whether a truthful audit of one welfare practice leads language models to endorse an outcome claim outside the audit's scope, and whether disclosing coverage reduces that error selectively. Supplier statements are fixed, the unrelated-audit control matches issuer and template, and positive controls must be inferred from audited numbers. In batch 1, no model let a visible practice audit vouch for the outcome claim (0 events in every audit cell), while an unscoped verification stamp produced the error in Qwen3-235B (53%) and Kimi-K2 (5%). These results come from 12 builder-written, expert-unvalidated development cases with no fixed effect thresholds. The next step is a confirmatory study with prespecified margins.
 
 ---
 
