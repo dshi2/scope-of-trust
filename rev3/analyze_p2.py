@@ -15,8 +15,9 @@ Per model, never pooled across models (spec: model-specific effects first; pooli
   across P1-P3 on the primary outcome (P4 joins the family once its margin is fixed; until then it has only
   its lower bound);
 - validity / positive-control checks V1 (correct acceptance, E and E_scope improved), V2 (correct
-  refutation, worsened / unchanged) and V3 (manipulation checks B, C, C_prime, D1, D2): equal-case rate with
-  a Wilson 95% interval on the number of cases (conservative: repeats add no precision);
+  refutation, worsened / unchanged) and V3 (manipulation checks B, C, C_prime, D1, D2): equal-case mean of
+  case-level rates with a t interval over cases (df = cases - 1), clipped to [0, 1]; `degenerate` when every
+  case has the same rate (zero width is not precision);
 - belief context: mean absolute error of p(Q_obs) per cell.
 The interval method and the P4 margin are not yet approved, so no hypothesis decisions are made here.
 """
@@ -146,8 +147,10 @@ def validity_checks(mr):
             rates = [sum(v) / len(v) for v in per_case.values()]
             k = len(rates)
             rate = sum(rates) / k if k else None
+            ci = case_t(rates) if k > 1 else None
             out[name][f"{c}/{d}"] = {"rate": rate, "cases": k, "trials": sum(map(len, per_case.values())),
-                                     "ci95_wilson_cases": wilson(rate * k, k) if k else None}
+                                     "ci95_case_t": [max(0.0, ci[0]), min(1.0, ci[1])] if ci else None,
+                                     "degenerate": k > 1 and len(set(rates)) == 1}
     return out
 
 
@@ -233,12 +236,12 @@ def markdown(res):
                                if o.get("ci95") else "–")
             out.append(f"| {n} | " + " | ".join(cellf(comps[k]) for k in COMPONENTS) + " |")
         out += ["", "Validity / positive controls (must pass before contrasts are read):", "",
-                "| check | cell | rate | Wilson 95% (n = cases) | cases | trials |", "|---|---|---|---|---|---|"]
+                "| check | cell | rate | 95% CI over cases (t, clipped) | cases | trials |", "|---|---|---|---|---|---|"]
         for name, cells in r["validity_checks"].items():
             for cell, v in cells.items():
-                ci = v["ci95_wilson_cases"]
+                ci = v["ci95_case_t"]
                 out.append(f"| {name} | {cell} | {fmt3(v['rate'])} | "
-                           f"{'–' if not ci else f'[{ci[0]:.3f}, {ci[1]:.3f}]'} | {v['cases']} | {v['trials']} |")
+                           f"{'–' if not ci else f'[{ci[0]:.3f}, {ci[1]:.3f}]' + (' (degenerate)' if v.get('degenerate') else '')} | {v['cases']} | {v['trials']} |")
         out += ["", "| cell | unsupported Q_obs rate | n | belief MAE | n |", "|---|---|---|---|---|"]
         cells = sorted(set(r["unsupported_q_obs_rate"]) | set(r["belief_mean_abs_error"]))
         for c in cells:
