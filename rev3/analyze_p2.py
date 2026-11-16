@@ -29,7 +29,7 @@ from collections import defaultdict
 from statistics import NormalDist
 
 from p2v3 import stats
-from p2v3.score import score_attribution, score_belief
+from p2v3.score import parse_attribution, score_attribution, score_belief
 
 CONTRASTS = [("P1", "B", "none", "A", "none", "unsupported_q_obs"),
              ("P2", "B", "none", "D1", "none", "unsupported_q_obs"),
@@ -54,6 +54,9 @@ def score_rows(rows):
         ok = r["status"] == "ok"
         if r["context"] == "attribution":
             r["metrics"] = score_attribution(r["text"] or "", r["condition"], r["direction"]) if ok else None
+            if r["metrics"] is not None:
+                st = parse_attribution(r["text"] or "", r["condition"])["statuses"]
+                r["metrics"]["p_marked_true"] = (st["P"] == "established_true") if "P" in st else None
         else:
             r["metrics"] = score_belief(r["text"] or "", r["condition"], r["direction"]) if ok else None
         r["parse"] = r["metrics"]["parse"] if r["metrics"] else f"not_scored:{r['status']}"
@@ -163,6 +166,94 @@ def holm(pvals):
     return adj
 
 
+SECONDARY_CONTRASTS = [  # (id, X cell, X dir, Y cell, Y dir, metric); spec §6 secondary family + exploratory
+    ("S1_Cprime_vs_C", "C_prime", "none", "C", "none", "unsupported_q_obs"),
+    ("S2_D2_vs_A", "D2", "none", "A", "none", "unsupported_q_obs"),
+    ("S3_cause_B_vs_A", "B", "none", "A", "none", "unsupported_q_cause"),
+    ("S3_overreach_Escope_vs_E", "E_scope", "improved", "E", "improved", "causal_overreach"),
+    ("X1_A0_vs_A", "A0", "none", "A", "none", "unsupported_q_obs"),
+    ("X2_V_vs_A", "V", "none", "A", "none", "unsupported_q_obs"),
+    ("X2_V_vs_B", "V", "none", "B", "none", "unsupported_q_obs"),
+]
+SECONDARY_RATES = [  # (id, cell, dir, metric): single-arm rates, case-level
+    ("S2_P_spillover_in_D2", "D2", "none", "p_marked_true"),
+    ("S3_causal_overreach_E_improved", "E", "improved", "causal_overreach"),
+    ("S3_causal_overreach_Escope_improved", "E_scope", "improved", "causal_overreach"),
+    ("S4_welfare_overgeneralisation_E_improved", "E", "improved", "unsupported_q_welfare"),
+]
+
+
+def case_rate(mr, cell, d, metric, context="attribution"):
+    per = defaultdict(list)
+    for r in mr:
+        if r["context"] == context and (r["condition"], r["direction"]) == (cell, d):
+            v = (r["metrics"] or {}).get(metric)
+            if v is not None:
+                per[r["item_id"]].append(float(v))
+    return {k: sum(v) / len(v) for k, v in per.items()}
+
+
+def secondary(mr):
+    """Prespecified secondary family (Holm over the S contrasts) and exploratory X contrasts; S5 belief; S6
+    recommendations. Same interval method as the primary contrasts."""
+    from statistics import mean
+    out = {"contrasts": {}, "rates": {}, "belief": {}, "recommendation": {}}
+    for cid, x, dx, y, dy, met in SECONDARY_CONTRASTS:
+        out["contrasts"][cid] = dict(contrast(mr, x, dx, y, dy, met)["observed"], definition=f"{x}/{dx} - {y}/{dy} on {met}")
+    adj = holm({k: v.get("p_two_sided_vs_0") for k, v in out["contrasts"].items() if k.startswith("S")})
+    for k, v in adj.items():
+        out["contrasts"][k]["p_holm_secondary"] = v
+    for rid, cell, d, met in SECONDARY_RATES:
+        cr = case_rate(mr, cell, d, met)
+        rates = list(cr.values())
+        ci = case_t(rates) if len(rates) > 1 else None
+        out["rates"][rid] = {"rate": mean(rates) if rates else None, "cases": len(rates),
+                             "ci95_case_t": [max(0.0, ci[0]), min(1.0, ci[1])] if ci else None}
+    # S5: belief context. Mean p(Q_obs) per cell against its gold, and the B - A shift against the normative 0.10
+    gold = {"A": 0.65, "D1": 0.65, "D2": 0.65, "B": 0.75, "C": 0.75, "C_prime": 0.75, "A0": 0.5}
+    pc = {}
+    for r in mr:
+        if r["context"] == "belief" and (r["metrics"] or {}).get("p_q_obs") is not None:
+            pc.setdefault(f"{r['condition']}/{r['direction']}", defaultdict(list))[r["item_id"]].append(r["metrics"]["p_q_obs"])
+    for cell, per in sorted(pc.items()):
+        cm = [sum(v) / len(v) for v in per.values()]
+        g = gold.get(cell.split("/")[0]) if cell.endswith("/none") else (1.0 if cell.endswith("improved") else 0.0)
+        out["belief"][cell] = {"mean_p": mean(cm), "gold": g, "cases": len(cm), "ci95_case_t": case_t(cm)}
+    a, b = pc.get("A/none", {}), pc.get("B/none", {})
+    shift = [sum(b[k]) / len(b[k]) - sum(a[k]) / len(a[k]) for k in sorted(set(a) & set(b))]
+    if shift:
+        out["belief"]["shift_B_minus_A"] = {"mean": mean(shift), "normative": 0.10, "cases": len(shift),
+                                             "ci95_case_t": case_t(shift)}
+    for r in mr:
+        if r["context"] == "attribution" and r["metrics"]:
+            rec = r["metrics"].get("recommendation") or "unparsed"
+            cell = f"{r['condition']}/{r['direction']}"
+            out["recommendation"].setdefault(cell, defaultdict(int))[rec] += 1
+    out["recommendation"] = {c: dict(v) for c, v in sorted(out["recommendation"].items())}
+    return out
+
+
+def examples(mr, k=3):
+    """Up to k model reasons for an unsupported Q_obs attribution in B (the central error), for the report."""
+    out = []
+    for r in mr:
+        if len(out) >= k:
+            break
+        if r["context"] == "attribution" and r["condition"] == "B" and (r["metrics"] or {}).get("unsupported_q_obs"):
+            try:
+                t = r["text"]
+                obj = json.loads(t[t.find("{"):t.rfind("}") + 1])
+                claims = obj.get("claims", obj)
+                q = claims.get("Q_obs") if isinstance(claims, dict) else None
+                if q is None and isinstance(claims, list):
+                    q = next((c for c in claims if isinstance(c, dict) and c.get("id") == "Q_obs"), None)
+                reason = (q or {}).get("reason") if isinstance(q, dict) else None
+            except (ValueError, AttributeError):
+                reason = None
+            out.append({"case": r["item_id"], "repeat": r["repeat"], "Q_obs_reason": reason})
+    return out
+
+
 def analyse(rows):
     res = {"label": LABEL, "roles": ROLES, "models": {}}
     for m in sorted({r["model"] for r in rows}):
@@ -197,7 +288,9 @@ def analyse(rows):
                           for n, x, dx, y, dy, met in CONTRASTS},
             "components": {n: {comp: contrast(mr, x, dx, y, dy, comp)["observed"] for comp in COMPONENTS}
                            for n, x, dx, y, dy, met in CONTRASTS if met == "unsupported_q_obs"},
-            "validity_checks": validity_checks(mr)}
+            "validity_checks": validity_checks(mr),
+            "secondary": secondary(mr),
+            "examples_unsupported_Q_obs_in_B": examples(mr)}
         cs = res["models"][m]["contrasts"]
         adj = holm({n: cs[n]["observed"].get("p_two_sided_vs_0") for n in ("P1", "P2", "P3")})
         for n in ("P1", "P2", "P3"):
@@ -249,6 +342,24 @@ def markdown(res):
             out.append(f"| {c} | {u.get('rate', float('nan')):.3f} | {u.get('n', 0)} | "
                        f"{bm.get('mae', float('nan')):.3f} | {bm.get('n', 0)} |")
         out.append("")
+    for m, r in res["models"].items():
+        sec = r["secondary"]
+        out += [f"## {m}: secondary (Holm within S) and exploratory (X)", "",
+                "| contrast | definition | estimate | 95% CI | p vs 0 (Holm S) | cases |", "|---|---|---|---|---|---|"]
+        for cid, o in sec["contrasts"].items():
+            ci = f"[{o['ci95'][0]:+.3f}, {o['ci95'][1]:+.3f}]" if o.get("ci95") else o.get("note", "–")
+            pv = "–" if o.get("p_two_sided_vs_0") is None else f"{o['p_two_sided_vs_0']:.2g}" + (
+                f" ({o['p_holm_secondary']:.2g})" if o.get("p_holm_secondary") is not None else "")
+            out.append(f"| {cid} | {o.get('definition')} | {fmt(o.get('estimate'))} | {ci} | {pv} | {o.get('cases', '–')} |")
+        out += ["", "| rate | estimate | 95% CI over cases | cases |", "|---|---|---|---|"]
+        for rid, v in sec["rates"].items():
+            ci = v["ci95_case_t"]
+            out.append(f"| {rid} | {fmt3(v['rate'])} | {'–' if not ci else f'[{ci[0]:.3f}, {ci[1]:.3f}]'} | {v['cases']} |")
+        b = sec["belief"]
+        if "shift_B_minus_A" in b:
+            sh = b["shift_B_minus_A"]
+            out += ["", f"S5 belief: mean p(Q_obs) shift B − A = {sh['mean']:+.3f} (normative +0.10), CI {sh['ci95_case_t']}, {sh['cases']} cases."]
+        out += ["", f"S6 recommendations by cell: {sec['recommendation']}", ""]
     return "\n".join(out)
 
 
