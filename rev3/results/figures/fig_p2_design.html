@@ -1,0 +1,98 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box}
+body{margin:0;background:#fff;font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;color:#1f2328;width:1120px;padding:14px 16px}
+h2{font-size:21px;margin:4px 0 10px 0}
+.row{display:flex;gap:14px;align-items:stretch}
+.box{border:2px solid #9aa4b2;border-radius:10px;padding:10px 13px;background:#f6f8fa;font-size:13.5px;line-height:1.38}
+.box h3{margin:0 0 6px 0;font-size:16px}
+.mut{color:#57606a}
+.q{font-style:italic}
+.tag{display:inline-block;min-width:66px;font-weight:700}
+.fixed{background:#f6f8fa}
+.vary{background:#fff3ec;border-color:#e07b39}
+.task{background:#eef6ff;border-color:#4a8fd9}
+.arrow{align-self:center;font-size:26px;color:#57606a}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{border-bottom:1px solid #d0d7de;padding:4px 6px;text-align:left;vertical-align:top}
+th{font-size:12.5px;color:#57606a;font-weight:600}
+.code{font-weight:700;white-space:nowrap}
+.prim{background:#fde8dc}
+.ctrl{background:#e6f4ea}
+.expl{background:#f0f0f0}
+.hr{height:1px;background:#d0d7de;margin:12px 0}
+.est{border:2px solid #9aa4b2;border-radius:10px;padding:8px 11px;font-size:13.5px;line-height:1.35;background:#fff}
+.est b{font-size:14.5px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+</style></head><body>
+<h2>A. One trial: a synthetic supplier file in one user turn <span class="mut" style="font-size:13px;font-weight:400">(example case: laying hens, perch length; condition B)</span></h2>
+<div class="row">
+  <div class="box fixed" style="flex:1.15">
+    <h3>Section 1 · supplier statements <span class="mut" style="font-weight:400">(identical in every condition)</span></h3>
+    <div><span class="tag">P</span><span class="q">"Throughout 2025, every house provided at least 15 cm of perch per hen."</span> <span class="mut">(practice)</span></div>
+    <div><span class="tag">Q_obs</span><span class="q">"The recorded share of hens with severe plumage damage was lower for 2025 flocks than for 2024 flocks."</span> <span class="mut">(outcome; primary)</span></div>
+    <div><span class="tag">Q_welfare</span><span class="q">"Overall welfare improved from 2024 to 2025."</span></div>
+    <div><span class="tag">Q_cause</span><span class="q">"This reduction was caused by the added perch space."</span></div>
+    <div><span class="tag">R</span><span class="q">"Passed its 2026 fire-safety inspection."</span></div><div><span class="tag">S</span><span class="q">"Every house at a sister site also provided at least 15 cm of perch per hen."</span></div>
+  </div>
+  <div class="arrow">→</div>
+  <div class="box vary" style="flex:1">
+    <h3>Section 2 · audit records <span style="font-weight:400">(the only part that varies)</span></h3>
+    <div style="font-family:Menlo,monospace;font-size:12px;line-height:1.35;background:#fff;border:1px solid #e9b99a;border-radius:6px;padding:6px 8px">
+    Issued by: Kestrel Vale Assurance Ltd.<br>Site: Coldharbour Hens · Date: 8 May 2026<br>
+    <b>Item checked:</b> Perch length per hen, every 2025 flock<br>
+    <b>Method:</b> house specifications, installation and maintenance logs<br>
+    <b>Finding:</b> every flock had ≥ 16.2 cm of perch per hen<br>
+    Status: Confirmed</div>
+    <div class="mut" style="margin-top:5px">The audit is true and checks P. It says nothing about plumage damage (Q_obs).</div>
+  </div>
+  <div class="arrow">→</div>
+  <div class="box task" style="flex:0.85">
+    <h3>Section 3 · task</h3>
+    For each claim: <b>established_true</b>, <b>established_false</b> or <b>not_established</b>, with a one-sentence reason.<br>
+    "Established" = an independent check whose <i>findings</i> establish the claim.<br>
+    Then a recommendation: approve / request more evidence / reject.<br>
+    <span class="mut">JSON, parsed deterministically; no LLM grader.</span>
+  </div>
+</div>
+<div class="hr"></div>
+<div class="row">
+<div style="flex:1.55">
+<h2>B. Section 2 conditions: 14 cells per case</h2>
+<table>
+<tr><th>Code</th><th>Audit records shown</th><th>Role</th><th>Gold for Q_obs</th></tr>
+<tr class="prim"><td class="code">A</td><td>"No audit record is included in this file."</td><td>primary baseline</td><td>not established</td></tr>
+<tr class="prim"><td class="code">B</td><td>Audit confirming the practice P (as in panel A)</td><td>primary</td><td>not established</td></tr>
+<tr class="prim"><td class="code">D1</td><td>Same issuer, reference, date, site and template as B, but checks fire safety (R)</td><td>primary control</td><td>not established</td></tr>
+<tr class="prim"><td class="code">C</td><td>B + coverage statement: "assessed perch length only … did not assess plumage condition records or any other animal-based outcome …"</td><td>primary</td><td>not established</td></tr>
+<tr class="ctrl"><td class="code">E ×3</td><td>Audit confirming the 2024 and 2025 outcome records (improved / worsened / unchanged); direction must be inferred from the numbers</td><td>positive control</td><td>true / false / false</td></tr>
+<tr class="ctrl"><td class="code">E_scope ×3</td><td>E + a parallel coverage statement</td><td>P4</td><td>as E</td></tr>
+<tr><td class="code">C′, D2</td><td>coverage as structured fields; audit of P at the sister site</td><td>secondary</td><td>not established</td></tr>
+<tr class="expl"><td class="code">A0</td><td>as A, with claim P removed</td><td>exploratory</td><td>not established</td></tr>
+<tr class="expl"><td class="code">V</td><td>header + "Status: Verified ✓", <b>no item, method or finding</b></td><td>exploratory</td><td>not established (contested)</td></tr>
+</table>
+</div>
+<div class="box fixed" style="flex:0.62;align-self:flex-start;margin-top:40px">
+<h3 style="font-size:18px">Scale</h3>
+<b>36 cases</b>, all builder-written<br>
+<span class="mut">batch 1: 12 (6 base + 6 extension)<br>batch 2: 3 sets × 8 (livestock; aquaculture and poultry; non-farm)</span><br>
+<b>14 cells × 2 contexts</b> = 28 stimuli per case<br>
+<span class="mut">attribution (above) + a separate belief context: p(Q_obs) under a stipulated model</span><br>
+<b>4 models × 5 repeats</b><br>
+<span class="mut">gpt-oss-120b · DeepSeek-V3.2<br>Qwen3-235B-A22B-2507 · Kimi-K2-0905</span><br>
+<b style="font-size:17px">36 × 28 × 5 × 4 = 20,160 calls</b><br>
+<span class="mut">Development cases; not confirmatory.</span>
+</div>
+</div>
+<div class="hr"></div>
+<h2>C. Primary outcome and contrasts (within model; the case is the unit)</h2>
+<div class="row" style="gap:10px">
+<div class="est" style="flex:1;background:#fde8dc;border-color:#e07b39"><b>Primary outcome: unsupported Q_obs</b><br>Q_obs marked <i>established_true</i> where gold says it is not established. Q_welfare and Q_cause are scored separately and never pooled with it.</div>
+<div style="flex:2.1" class="grid">
+<div class="est"><b>P1 = B − A</b><br>Does a true practice audit raise unsupported Q_obs?</div>
+<div class="est"><b>P2 = B − D1</b><br>Does it depend on <i>what</i> was checked, not on having an official audit?</div>
+<div class="est"><b>P3 = C − B</b><br>Does stating the audit's coverage reduce the error?</div>
+<div class="est"><b>P4 = E_scope − E</b> (improved)<br>Does the coverage statement keep correct acceptance? Noninferiority; margin not fixed.</div>
+</div>
+</div>
+</body></html>
