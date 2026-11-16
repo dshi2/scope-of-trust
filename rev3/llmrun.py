@@ -51,6 +51,7 @@ RUN_KEYS = {"run_id", "allow_live", "endpoint", "spend_cap_usd", "seed", "timeou
 MODEL_KEYS = {"slug", "provider", "provider_name", "quantization", "params", "price_in_per_m", "price_out_per_m",
               "concurrency_start", "concurrency_max"}
 TRANSIENT = {408, 409, 425, 429, 500, 502, 503, 504, 520, 522, 524, 529}
+ACCOUNT = {401, 402, 403}  # auth / credit / permission: infrastructure, never a model outcome -> halt, no journal
 
 
 class Halt(Exception):
@@ -266,6 +267,11 @@ class Runner:
             status = None
             try:
                 status, resp, retry_after = self.transport(self.cfg["endpoint"], body, self.cfg["timeout_s"])
+                if status in ACCOUNT:
+                    with self.lock:
+                        self._write({"type": "void", "iid": iid, "key": key, "t": time.time()})
+                        self.stop.set()
+                    raise Halt(f"HTTP {status} (auth/credit): run halted with nothing journaled; fix, then --resume")
                 if status in TRANSIENT:
                     raise Transient(f"HTTP {status}", retry_after)
                 return self._settle(key, model, iid, req_sha, status, resp)

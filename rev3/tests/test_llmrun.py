@@ -178,6 +178,14 @@ class TestRunner(unittest.TestCase):
         self.assertTrue(s2["complete"])
         self.assertEqual(len(results(self.d)), 40)
 
+    def test_out_of_credit_halts_without_recording_failures(self):
+        _, s = self.go(Fake(lambda n, b: (402, {"error": "insufficient credits"}) if n > 6 else None))
+        self.assertTrue(s["halted"])
+        self.assertTrue(all(x["status"] == "ok" for x in results(self.d)))  # no 402 ever journaled as a failure
+        _, s2 = self.go(Fake(), resume=True)
+        self.assertTrue(s2["complete"])
+        self.assertEqual(len(results(self.d)), 40)
+
     def test_unsettled_intent_counts_as_spent_on_resume(self):
         r = Runner(self.d, cfg(), man(["a"]), Fake())
         r._write({"type": "intent", "iid": "z#0#1", "key": "a|t1", "reserve_usd": 0.25})
