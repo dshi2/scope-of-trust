@@ -13,6 +13,9 @@ The defensible claim if the result is positive: "Holding supplier assertions fix
 - B > A and B > D1: content-dependent unsupported attribution in this task. B > D1 does not separate on-topic authority from inference (ledger P2).
 - B ≈ D1 > A: a broader verification/record effect, not a unique mechanism.
 - C reduces errors *and* E_scope meets the margin: a useful disclosure intervention. C reducing all acceptance is caution, not selective improvement.
+- B ≈ A within ±SESOI: truthful practice audits do not produce meaningful outcome-verification spillover in this task. This is a valid and reportable result, provided V1–V3 pass, since the instrument must be shown to detect accepted and refuted outcomes.
+
+**Interpreting each primary contrast (fixed before data).** Report "no meaningful effect" only if the 95% interval lies entirely inside ±SESOI (§9 step 1). If the interval crosses SESOI, the result is "inconclusive", never "no effect". The precision target is set so that both outcomes are informative. Every prespecified outcome is reported, including those against the hypotheses. Items and cases are chosen to tell explanations apart, never to raise error rates.
 
 **Contribution sentence.** Existing work shows that status loss, authority cues and scope disclosure influence model judgments (Silence Is Endorsement 2609.20211; Authority Bias 2609.37616; Who Verifies the Tools? 2610.32110). With supplier assertions held fixed, we test whether truthful verification of a narrow practice changes unsupported outcome attribution, whether that depends on the checked topic, and whether scope disclosure reduces errors while keeping justified acceptance. C − B alone overlaps substantially with Who Verifies the Tools?; the main contribution rests on B − A and B − D1.
 
@@ -231,3 +234,4 @@ Large confirmatory runs are on **hold**.
 | B | P4 boundary-safe inference; justify δ | Method requirements (11fc58c) plus explicit coverage grid and acceptance criterion; P1–P3 intervals under the same rule; δ justification rule (§6, §8.2) | this commit |
 | C | External validity; expert and naturalistic validation as prerequisites | Claim gates table (§9b) | this commit |
 | ChatGPT check (6e67eca) | δ rule ignored base rates (π_u = .1, B = .1, π_s = .9, L = .05 is a net loss) | δ = (π_u/π_s)·B/r; worked example; earlier rule withdrawn (§8.2) | this commit |
+| PI standard (16 Nov) | Informative nulls; report all prespecified outcomes | Equivalence-based null rule; null outcome added to the interpretation list (§1) |
