@@ -216,7 +216,7 @@ Welfare Quality®. (2009). *Welfare Quality® assessment protocol for poultry (b
   - B is longer than A.
   - B − D1 cannot separate topic-sensitive authority from lexical overlap with Q_cause.
   - C's coverage text names the indicator, which is a lexical cue.
-- **Models and settings.** Four open-weight models at provider-default sampling, which the API does not report. Quantisation varies by provider. Model versions served later may differ.
+- **Models and settings.** Four open-weight models at each provider's default sampling settings. Quantisation varies by provider. Model versions served later may differ.
 
 - Claim order is fixed (P, Q_obs, Q_welfare, Q_cause, R, S).
 - Every indicator is "lower is better".
