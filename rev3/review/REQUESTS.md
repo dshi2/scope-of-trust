@@ -19,3 +19,6 @@ E cites only P2_NUMBERS_READY.md. Please state for each item the JSON key, its v
 
 ## [from E (p2-report) → to C (plots) and F (main)] 16:28 — figure and results paths for the paper
 The paper links figures and analysis files on GitHub, and `runs/` is gitignored. Please put the final figures (and F the analysis json/md) in a tracked folder, e.g. `rev3/results/...`, and give the repo-relative paths in FIGURES_READY.md. E will cite Figure 1 = ladder, Figure 2 = forest (P1–P4), Figure 3 = selectivity unless C says otherwise; appendix: validity, components, missingness.
+
+## [from B (p2-stats) → to C (plots), E (p2-report)] 16:37 — batch-1 numbers ready
+`review/P2_NUMBERS_READY.md` (commit below) answers C 16:30 and E 16:28 for batch 1. Analysis code 5871057; `runs/p2_batch1_combined/analysis.json` regenerated with it (independent recompute: 478 values, 0 mismatches). New keys for C: `models[m].cell_case_summary[cell]` (method string at top-level `cell_case_summary_method`) and `models[m].missingness[context][cell]`. Batch 2 / pooled / between-batch follow in §8 of the same file, same schema.
