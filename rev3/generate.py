@@ -26,29 +26,38 @@ def fence(text):
     return "~~~~text\n" + text + "\n~~~~"
 
 
+FULL_CELLS = ("A", "A0")  # shown in full; every other cell differs from A only in Section 2
+
+
 def write_rendered():
     os.makedirs(os.path.join(HERE, "rendered"), exist_ok=True)
     rows = []
     for k in CASES:
         out = [f"# Rendered stimuli: `{k['id']}`", "",
-               "Exact model-visible messages for every cell and both contexts. Synthetic case; pending expert review.",
-               "Contexts are separate conversations; nothing from one is shown in the other.", "",
+               "Synthetic case; pending expert review. Contexts are separate conversations.",
+               "A and A0 are shown in full. Every other cell is A with the Section 2 audit records replaced by the block",
+               "shown; filing notes are identical (tests/test_leakage.py). Exact messages and hashes: stimuli_dev.jsonl.", "",
                "## System message (identical in every cell and context)", "", fence(r.SYSTEM), ""]
         for c, d in r.cells():
             label = c if d == "none" else f"{c} / {d}"
             g = gold(c, d)
+            bg = belief_gold(c, d)
             out += [f"## {label}  ({ROLE[c]})", "",
                     "| claim | gold | accepted | why |", "|---|---|---|---|"]
             out += [f"| {cid} | {SHORT[v['label']]} | {'/'.join(sorted(SHORT[a] for a in v['accept']))} | {v['why']} |"
                     for cid, v in g.items()]
-            bg = belief_gold(c, d)
             out += ["", f"Belief gold p(Q_obs): {'excluded' if bg is None else bg}", ""]
+            hashes = []
             for x in r.CONTEXTS:
                 msgs = r.render(k, c, d, x)
                 h = r.stimulus_hash(msgs)
-                out += [f"### {x} context  `sha256:{h[:16]}`", "", fence(msgs[1]["content"]), ""]
+                hashes.append(f"{x} `sha256:{h[:16]}`")
                 rows.append({"item_id": k["id"], "condition": c, "direction": d, "context": x,
                              "stimulus_sha256": h, "messages": msgs})
+                if c in FULL_CELLS:
+                    out += [f"### {x} context  `sha256:{h[:16]}`", "", fence(msgs[1]["content"]), ""]
+            if c not in FULL_CELLS:
+                out += ["Hashes: " + "; ".join(hashes), "", fence(r.audit_core(k, c, d)), ""]
         with open(os.path.join(HERE, "rendered", f"{k['id']}.md"), "w") as f:
             f.write("\n".join(out))
     with open(os.path.join(HERE, "stimuli_dev.jsonl"), "w") as f:

@@ -1,7 +1,8 @@
 # Rendered stimuli: `dev-pig-enrichment`
 
-Exact model-visible messages for every cell and both contexts. Synthetic case; pending expert review.
-Contexts are separate conversations; nothing from one is shown in the other.
+Synthetic case; pending expert review. Contexts are separate conversations.
+A and A0 are shown in full. Every other cell is A with the Section 2 audit records replaced by the block
+shown; filing notes are identical (tests/test_leakage.py). Exact messages and hashes: stimuli_dev.jsonl.
 
 ## System message (identical in every cell and context)
 
@@ -179,19 +180,9 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:8aa54fe7b2dc7753`
+Hashes: attribution `sha256:8aa54fe7b2dc7753`; belief `sha256:7b3deae5b52cc8fb`
 
 ~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
 Issued by: Oakhurst Audit Partners
@@ -202,64 +193,6 @@ Item checked: Manipulable material in finishing pens throughout 2025
 Method: Review of 2025 straw delivery records, daily pen check sheets and enrichment logs for every pen
 Finding: Daily check sheets for 2025 were complete and recorded a filled straw rack in every pen at every check; deliveries matched recorded use.
 Status: Confirmed
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: TASK
-For each claim below, give its status:
-- "established_true": the documents include an independent check whose findings establish that the claim is true.
-- "established_false": the documents include an independent check whose findings establish that the claim is false.
-- "not_established": neither of the above.
-Give a one-sentence reason for each status. Then give the committee's recommendation on the supplier's statements: "approve", "request_more_evidence" or "reject".
-
-Claims: P, Q_obs, Q_welfare, Q_cause, R, S (as labelled in Section 1).
-
-Respond with JSON only, in this format:
-{"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
-~~~~
-
-### belief context  `sha256:7b3deae5b52cc8fb`
-
-~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
-SECTION 2: AUDIT RECORDS
-AUDIT RECORD
-Issued by: Oakhurst Audit Partners
-Audit reference: OAP-0626-71
-Site: Brackenhill Finishers
-Date: 29 July 2026
-Item checked: Manipulable material in finishing pens throughout 2025
-Method: Review of 2025 straw delivery records, daily pen check sheets and enrichment logs for every pen
-Finding: Daily check sheets for 2025 were complete and recorded a filled straw rack in every pen at every check; deliveries matched recorded use.
-Status: Confirmed
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: BACKGROUND FOR YOUR ESTIMATE
-Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in the recorded share of pigs with tail lesions at slaughter between consecutive years. Among the others, 25% do.
-3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of pigs with tail lesions at slaughter.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of pigs with tail lesions at slaughter at this facility.
-6. Audit findings in this file are accurate.
-
-SECTION 4: TASK
-Using the file and the background facts, estimate the probability that claim Q_obs is true.
-Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 ~~~~
 
 ## C  (primary)
@@ -275,19 +208,9 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:7a1e6e92b4592cba`
+Hashes: attribution `sha256:7a1e6e92b4592cba`; belief `sha256:7468fcc1f509adac`
 
 ~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
 Issued by: Oakhurst Audit Partners
@@ -300,66 +223,6 @@ Finding: Daily check sheets for 2025 were complete and recorded a filled straw r
 Status: Confirmed
 
 Coverage: This audit assessed manipulable material in pens only. It did not assess tail lesion records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: TASK
-For each claim below, give its status:
-- "established_true": the documents include an independent check whose findings establish that the claim is true.
-- "established_false": the documents include an independent check whose findings establish that the claim is false.
-- "not_established": neither of the above.
-Give a one-sentence reason for each status. Then give the committee's recommendation on the supplier's statements: "approve", "request_more_evidence" or "reject".
-
-Claims: P, Q_obs, Q_welfare, Q_cause, R, S (as labelled in Section 1).
-
-Respond with JSON only, in this format:
-{"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
-~~~~
-
-### belief context  `sha256:7468fcc1f509adac`
-
-~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
-SECTION 2: AUDIT RECORDS
-AUDIT RECORD
-Issued by: Oakhurst Audit Partners
-Audit reference: OAP-0626-71
-Site: Brackenhill Finishers
-Date: 29 July 2026
-Item checked: Manipulable material in finishing pens throughout 2025
-Method: Review of 2025 straw delivery records, daily pen check sheets and enrichment logs for every pen
-Finding: Daily check sheets for 2025 were complete and recorded a filled straw rack in every pen at every check; deliveries matched recorded use.
-Status: Confirmed
-
-Coverage: This audit assessed manipulable material in pens only. It did not assess tail lesion records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes.
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: BACKGROUND FOR YOUR ESTIMATE
-Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in the recorded share of pigs with tail lesions at slaughter between consecutive years. Among the others, 25% do.
-3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of pigs with tail lesions at slaughter.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of pigs with tail lesions at slaughter at this facility.
-6. Audit findings in this file are accurate.
-
-SECTION 4: TASK
-Using the file and the background facts, estimate the probability that claim Q_obs is true.
-Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 ~~~~
 
 ## C_prime  (secondary)
@@ -375,19 +238,9 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.75
 
-### attribution context  `sha256:1fe6a81afb46f1c4`
+Hashes: attribution `sha256:1fe6a81afb46f1c4`; belief `sha256:4f34d1a1c945a1b0`
 
 ~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
 Issued by: Oakhurst Audit Partners
@@ -402,68 +255,6 @@ Status: Confirmed
 Coverage:
   Assessed: manipulable material in pens
   Not assessed: tail lesion records; other animal-based outcomes; cause of any change in animal outcomes
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: TASK
-For each claim below, give its status:
-- "established_true": the documents include an independent check whose findings establish that the claim is true.
-- "established_false": the documents include an independent check whose findings establish that the claim is false.
-- "not_established": neither of the above.
-Give a one-sentence reason for each status. Then give the committee's recommendation on the supplier's statements: "approve", "request_more_evidence" or "reject".
-
-Claims: P, Q_obs, Q_welfare, Q_cause, R, S (as labelled in Section 1).
-
-Respond with JSON only, in this format:
-{"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
-~~~~
-
-### belief context  `sha256:4f34d1a1c945a1b0`
-
-~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
-SECTION 2: AUDIT RECORDS
-AUDIT RECORD
-Issued by: Oakhurst Audit Partners
-Audit reference: OAP-0626-71
-Site: Brackenhill Finishers
-Date: 29 July 2026
-Item checked: Manipulable material in finishing pens throughout 2025
-Method: Review of 2025 straw delivery records, daily pen check sheets and enrichment logs for every pen
-Finding: Daily check sheets for 2025 were complete and recorded a filled straw rack in every pen at every check; deliveries matched recorded use.
-Status: Confirmed
-
-Coverage:
-  Assessed: manipulable material in pens
-  Not assessed: tail lesion records; other animal-based outcomes; cause of any change in animal outcomes
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: BACKGROUND FOR YOUR ESTIMATE
-Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in the recorded share of pigs with tail lesions at slaughter between consecutive years. Among the others, 25% do.
-3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of pigs with tail lesions at slaughter.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of pigs with tail lesions at slaughter at this facility.
-6. Audit findings in this file are accurate.
-
-SECTION 4: TASK
-Using the file and the background facts, estimate the probability that claim Q_obs is true.
-Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 ~~~~
 
 ## D1  (primary)
@@ -479,19 +270,9 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:98566adbf794f5b4`
+Hashes: attribution `sha256:98566adbf794f5b4`; belief `sha256:84d0d4de763d0788`
 
 ~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
 Issued by: Oakhurst Audit Partners
@@ -502,64 +283,6 @@ Item checked: Fire-safety systems in all finishing buildings and the feed mill
 Method: On-site inspection of alarms, extinguishers, emergency exits and electrical panels
 Finding: All fire-safety systems inspected met the applicable regulatory requirements.
 Status: Confirmed
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: TASK
-For each claim below, give its status:
-- "established_true": the documents include an independent check whose findings establish that the claim is true.
-- "established_false": the documents include an independent check whose findings establish that the claim is false.
-- "not_established": neither of the above.
-Give a one-sentence reason for each status. Then give the committee's recommendation on the supplier's statements: "approve", "request_more_evidence" or "reject".
-
-Claims: P, Q_obs, Q_welfare, Q_cause, R, S (as labelled in Section 1).
-
-Respond with JSON only, in this format:
-{"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
-~~~~
-
-### belief context  `sha256:84d0d4de763d0788`
-
-~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
-SECTION 2: AUDIT RECORDS
-AUDIT RECORD
-Issued by: Oakhurst Audit Partners
-Audit reference: OAP-0626-71
-Site: Brackenhill Finishers
-Date: 29 July 2026
-Item checked: Fire-safety systems in all finishing buildings and the feed mill
-Method: On-site inspection of alarms, extinguishers, emergency exits and electrical panels
-Finding: All fire-safety systems inspected met the applicable regulatory requirements.
-Status: Confirmed
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: BACKGROUND FOR YOUR ESTIMATE
-Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in the recorded share of pigs with tail lesions at slaughter between consecutive years. Among the others, 25% do.
-3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of pigs with tail lesions at slaughter.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of pigs with tail lesions at slaughter at this facility.
-6. Audit findings in this file are accurate.
-
-SECTION 4: TASK
-Using the file and the background facts, estimate the probability that claim Q_obs is true.
-Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 ~~~~
 
 ## D2  (secondary)
@@ -575,19 +298,9 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.65
 
-### attribution context  `sha256:7057b42caf47571d`
+Hashes: attribution `sha256:7057b42caf47571d`; belief `sha256:40f4d0a896f2143a`
 
 ~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
 Issued by: Oakhurst Audit Partners
@@ -598,64 +311,6 @@ Item checked: Manipulable material in finishing pens throughout 2025
 Method: Review of 2025 straw delivery records, daily pen check sheets and enrichment logs for every pen
 Finding: Daily check sheets at Brackenhill West for 2025 were complete and recorded a filled straw rack in every pen at every check; deliveries matched recorded use.
 Status: Confirmed
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: TASK
-For each claim below, give its status:
-- "established_true": the documents include an independent check whose findings establish that the claim is true.
-- "established_false": the documents include an independent check whose findings establish that the claim is false.
-- "not_established": neither of the above.
-Give a one-sentence reason for each status. Then give the committee's recommendation on the supplier's statements: "approve", "request_more_evidence" or "reject".
-
-Claims: P, Q_obs, Q_welfare, Q_cause, R, S (as labelled in Section 1).
-
-Respond with JSON only, in this format:
-{"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
-~~~~
-
-### belief context  `sha256:40f4d0a896f2143a`
-
-~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
-SECTION 2: AUDIT RECORDS
-AUDIT RECORD
-Issued by: Oakhurst Audit Partners
-Audit reference: OAP-0626-71
-Site: Brackenhill West
-Date: 29 July 2026
-Item checked: Manipulable material in finishing pens throughout 2025
-Method: Review of 2025 straw delivery records, daily pen check sheets and enrichment logs for every pen
-Finding: Daily check sheets at Brackenhill West for 2025 were complete and recorded a filled straw rack in every pen at every check; deliveries matched recorded use.
-Status: Confirmed
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: BACKGROUND FOR YOUR ESTIMATE
-Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in the recorded share of pigs with tail lesions at slaughter between consecutive years. Among the others, 25% do.
-3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of pigs with tail lesions at slaughter.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of pigs with tail lesions at slaughter at this facility.
-6. Audit findings in this file are accurate.
-
-SECTION 4: TASK
-Using the file and the background facts, estimate the probability that claim Q_obs is true.
-Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 ~~~~
 
 ## E / improved  (primary)
@@ -671,19 +326,9 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 1.0
 
-### attribution context  `sha256:9902ed477a91b3b5`
+Hashes: attribution `sha256:9902ed477a91b3b5`; belief `sha256:c564e85085b6641e`
 
 ~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
 Issued by: Oakhurst Audit Partners
@@ -694,64 +339,6 @@ Item checked: Tail lesion records at slaughter for all batches in 2024 and 2025
 Method: Review of abattoir carcass inspection reports for every batch in both years, checked against the abattoir's own records
 Finding: Recorded share of pigs with tail lesions at slaughter: 6.8% in 2024; 3.1% in 2025. Records were complete and matched the abattoir's records for both years.
 Status: Confirmed
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: TASK
-For each claim below, give its status:
-- "established_true": the documents include an independent check whose findings establish that the claim is true.
-- "established_false": the documents include an independent check whose findings establish that the claim is false.
-- "not_established": neither of the above.
-Give a one-sentence reason for each status. Then give the committee's recommendation on the supplier's statements: "approve", "request_more_evidence" or "reject".
-
-Claims: P, Q_obs, Q_welfare, Q_cause, R, S (as labelled in Section 1).
-
-Respond with JSON only, in this format:
-{"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
-~~~~
-
-### belief context  `sha256:c564e85085b6641e`
-
-~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
-SECTION 2: AUDIT RECORDS
-AUDIT RECORD
-Issued by: Oakhurst Audit Partners
-Audit reference: OAP-0626-71
-Site: Brackenhill Finishers
-Date: 29 July 2026
-Item checked: Tail lesion records at slaughter for all batches in 2024 and 2025
-Method: Review of abattoir carcass inspection reports for every batch in both years, checked against the abattoir's own records
-Finding: Recorded share of pigs with tail lesions at slaughter: 6.8% in 2024; 3.1% in 2025. Records were complete and matched the abattoir's records for both years.
-Status: Confirmed
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: BACKGROUND FOR YOUR ESTIMATE
-Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in the recorded share of pigs with tail lesions at slaughter between consecutive years. Among the others, 25% do.
-3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of pigs with tail lesions at slaughter.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of pigs with tail lesions at slaughter at this facility.
-6. Audit findings in this file are accurate.
-
-SECTION 4: TASK
-Using the file and the background facts, estimate the probability that claim Q_obs is true.
-Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 ~~~~
 
 ## E / worsened  (primary)
@@ -767,19 +354,9 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:a453a785e8760322`
+Hashes: attribution `sha256:a453a785e8760322`; belief `sha256:55310e6889f635d9`
 
 ~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
 Issued by: Oakhurst Audit Partners
@@ -790,64 +367,6 @@ Item checked: Tail lesion records at slaughter for all batches in 2024 and 2025
 Method: Review of abattoir carcass inspection reports for every batch in both years, checked against the abattoir's own records
 Finding: Recorded share of pigs with tail lesions at slaughter: 3.1% in 2024; 6.8% in 2025. Records were complete and matched the abattoir's records for both years.
 Status: Confirmed
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: TASK
-For each claim below, give its status:
-- "established_true": the documents include an independent check whose findings establish that the claim is true.
-- "established_false": the documents include an independent check whose findings establish that the claim is false.
-- "not_established": neither of the above.
-Give a one-sentence reason for each status. Then give the committee's recommendation on the supplier's statements: "approve", "request_more_evidence" or "reject".
-
-Claims: P, Q_obs, Q_welfare, Q_cause, R, S (as labelled in Section 1).
-
-Respond with JSON only, in this format:
-{"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
-~~~~
-
-### belief context  `sha256:55310e6889f635d9`
-
-~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
-SECTION 2: AUDIT RECORDS
-AUDIT RECORD
-Issued by: Oakhurst Audit Partners
-Audit reference: OAP-0626-71
-Site: Brackenhill Finishers
-Date: 29 July 2026
-Item checked: Tail lesion records at slaughter for all batches in 2024 and 2025
-Method: Review of abattoir carcass inspection reports for every batch in both years, checked against the abattoir's own records
-Finding: Recorded share of pigs with tail lesions at slaughter: 3.1% in 2024; 6.8% in 2025. Records were complete and matched the abattoir's records for both years.
-Status: Confirmed
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: BACKGROUND FOR YOUR ESTIMATE
-Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in the recorded share of pigs with tail lesions at slaughter between consecutive years. Among the others, 25% do.
-3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of pigs with tail lesions at slaughter.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of pigs with tail lesions at slaughter at this facility.
-6. Audit findings in this file are accurate.
-
-SECTION 4: TASK
-Using the file and the background facts, estimate the probability that claim Q_obs is true.
-Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 ~~~~
 
 ## E / unchanged  (primary)
@@ -863,19 +382,9 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:753cc7d912bdbbc6`
+Hashes: attribution `sha256:753cc7d912bdbbc6`; belief `sha256:29b13b444698a62e`
 
 ~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
 Issued by: Oakhurst Audit Partners
@@ -886,64 +395,6 @@ Item checked: Tail lesion records at slaughter for all batches in 2024 and 2025
 Method: Review of abattoir carcass inspection reports for every batch in both years, checked against the abattoir's own records
 Finding: Recorded share of pigs with tail lesions at slaughter: 6.8% in 2024; 6.8% in 2025. Records were complete and matched the abattoir's records for both years.
 Status: Confirmed
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: TASK
-For each claim below, give its status:
-- "established_true": the documents include an independent check whose findings establish that the claim is true.
-- "established_false": the documents include an independent check whose findings establish that the claim is false.
-- "not_established": neither of the above.
-Give a one-sentence reason for each status. Then give the committee's recommendation on the supplier's statements: "approve", "request_more_evidence" or "reject".
-
-Claims: P, Q_obs, Q_welfare, Q_cause, R, S (as labelled in Section 1).
-
-Respond with JSON only, in this format:
-{"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
-~~~~
-
-### belief context  `sha256:29b13b444698a62e`
-
-~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
-SECTION 2: AUDIT RECORDS
-AUDIT RECORD
-Issued by: Oakhurst Audit Partners
-Audit reference: OAP-0626-71
-Site: Brackenhill Finishers
-Date: 29 July 2026
-Item checked: Tail lesion records at slaughter for all batches in 2024 and 2025
-Method: Review of abattoir carcass inspection reports for every batch in both years, checked against the abattoir's own records
-Finding: Recorded share of pigs with tail lesions at slaughter: 6.8% in 2024; 6.8% in 2025. Records were complete and matched the abattoir's records for both years.
-Status: Confirmed
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: BACKGROUND FOR YOUR ESTIMATE
-Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in the recorded share of pigs with tail lesions at slaughter between consecutive years. Among the others, 25% do.
-3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of pigs with tail lesions at slaughter.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of pigs with tail lesions at slaughter at this facility.
-6. Audit findings in this file are accurate.
-
-SECTION 4: TASK
-Using the file and the background facts, estimate the probability that claim Q_obs is true.
-Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 ~~~~
 
 ## E_scope / improved  (primary)
@@ -959,19 +410,9 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 1.0
 
-### attribution context  `sha256:200ae98a27212a5e`
+Hashes: attribution `sha256:200ae98a27212a5e`; belief `sha256:c302874bbbcb2ac9`
 
 ~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
 Issued by: Oakhurst Audit Partners
@@ -984,66 +425,6 @@ Finding: Recorded share of pigs with tail lesions at slaughter: 6.8% in 2024; 3.
 Status: Confirmed
 
 Coverage: This audit assessed tail lesion records only. It did not assess manipulable material in pens or any other practice, and it did not assess the cause of any change in animal outcomes.
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: TASK
-For each claim below, give its status:
-- "established_true": the documents include an independent check whose findings establish that the claim is true.
-- "established_false": the documents include an independent check whose findings establish that the claim is false.
-- "not_established": neither of the above.
-Give a one-sentence reason for each status. Then give the committee's recommendation on the supplier's statements: "approve", "request_more_evidence" or "reject".
-
-Claims: P, Q_obs, Q_welfare, Q_cause, R, S (as labelled in Section 1).
-
-Respond with JSON only, in this format:
-{"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
-~~~~
-
-### belief context  `sha256:c302874bbbcb2ac9`
-
-~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
-SECTION 2: AUDIT RECORDS
-AUDIT RECORD
-Issued by: Oakhurst Audit Partners
-Audit reference: OAP-0626-71
-Site: Brackenhill Finishers
-Date: 29 July 2026
-Item checked: Tail lesion records at slaughter for all batches in 2024 and 2025
-Method: Review of abattoir carcass inspection reports for every batch in both years, checked against the abattoir's own records
-Finding: Recorded share of pigs with tail lesions at slaughter: 6.8% in 2024; 3.1% in 2025. Records were complete and matched the abattoir's records for both years.
-Status: Confirmed
-
-Coverage: This audit assessed tail lesion records only. It did not assess manipulable material in pens or any other practice, and it did not assess the cause of any change in animal outcomes.
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: BACKGROUND FOR YOUR ESTIMATE
-Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in the recorded share of pigs with tail lesions at slaughter between consecutive years. Among the others, 25% do.
-3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of pigs with tail lesions at slaughter.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of pigs with tail lesions at slaughter at this facility.
-6. Audit findings in this file are accurate.
-
-SECTION 4: TASK
-Using the file and the background facts, estimate the probability that claim Q_obs is true.
-Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 ~~~~
 
 ## E_scope / worsened  (primary)
@@ -1059,19 +440,9 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:7e8c0775200f43de`
+Hashes: attribution `sha256:7e8c0775200f43de`; belief `sha256:5aec16f38fcf49d1`
 
 ~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
 Issued by: Oakhurst Audit Partners
@@ -1084,66 +455,6 @@ Finding: Recorded share of pigs with tail lesions at slaughter: 3.1% in 2024; 6.
 Status: Confirmed
 
 Coverage: This audit assessed tail lesion records only. It did not assess manipulable material in pens or any other practice, and it did not assess the cause of any change in animal outcomes.
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: TASK
-For each claim below, give its status:
-- "established_true": the documents include an independent check whose findings establish that the claim is true.
-- "established_false": the documents include an independent check whose findings establish that the claim is false.
-- "not_established": neither of the above.
-Give a one-sentence reason for each status. Then give the committee's recommendation on the supplier's statements: "approve", "request_more_evidence" or "reject".
-
-Claims: P, Q_obs, Q_welfare, Q_cause, R, S (as labelled in Section 1).
-
-Respond with JSON only, in this format:
-{"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
-~~~~
-
-### belief context  `sha256:5aec16f38fcf49d1`
-
-~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
-SECTION 2: AUDIT RECORDS
-AUDIT RECORD
-Issued by: Oakhurst Audit Partners
-Audit reference: OAP-0626-71
-Site: Brackenhill Finishers
-Date: 29 July 2026
-Item checked: Tail lesion records at slaughter for all batches in 2024 and 2025
-Method: Review of abattoir carcass inspection reports for every batch in both years, checked against the abattoir's own records
-Finding: Recorded share of pigs with tail lesions at slaughter: 3.1% in 2024; 6.8% in 2025. Records were complete and matched the abattoir's records for both years.
-Status: Confirmed
-
-Coverage: This audit assessed tail lesion records only. It did not assess manipulable material in pens or any other practice, and it did not assess the cause of any change in animal outcomes.
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: BACKGROUND FOR YOUR ESTIMATE
-Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in the recorded share of pigs with tail lesions at slaughter between consecutive years. Among the others, 25% do.
-3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of pigs with tail lesions at slaughter.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of pigs with tail lesions at slaughter at this facility.
-6. Audit findings in this file are accurate.
-
-SECTION 4: TASK
-Using the file and the background facts, estimate the probability that claim Q_obs is true.
-Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 ~~~~
 
 ## E_scope / unchanged  (primary)
@@ -1159,19 +470,9 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): 0.0
 
-### attribution context  `sha256:e9afa4282cbfc9a0`
+Hashes: attribution `sha256:e9afa4282cbfc9a0`; belief `sha256:75d1db49d7a6766c`
 
 ~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
 Issued by: Oakhurst Audit Partners
@@ -1184,66 +485,6 @@ Finding: Recorded share of pigs with tail lesions at slaughter: 6.8% in 2024; 6.
 Status: Confirmed
 
 Coverage: This audit assessed tail lesion records only. It did not assess manipulable material in pens or any other practice, and it did not assess the cause of any change in animal outcomes.
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: TASK
-For each claim below, give its status:
-- "established_true": the documents include an independent check whose findings establish that the claim is true.
-- "established_false": the documents include an independent check whose findings establish that the claim is false.
-- "not_established": neither of the above.
-Give a one-sentence reason for each status. Then give the committee's recommendation on the supplier's statements: "approve", "request_more_evidence" or "reject".
-
-Claims: P, Q_obs, Q_welfare, Q_cause, R, S (as labelled in Section 1).
-
-Respond with JSON only, in this format:
-{"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
-~~~~
-
-### belief context  `sha256:75d1db49d7a6766c`
-
-~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
-SECTION 2: AUDIT RECORDS
-AUDIT RECORD
-Issued by: Oakhurst Audit Partners
-Audit reference: OAP-0626-71
-Site: Brackenhill Finishers
-Date: 29 July 2026
-Item checked: Tail lesion records at slaughter for all batches in 2024 and 2025
-Method: Review of abattoir carcass inspection reports for every batch in both years, checked against the abattoir's own records
-Finding: Recorded share of pigs with tail lesions at slaughter: 6.8% in 2024; 6.8% in 2025. Records were complete and matched the abattoir's records for both years.
-Status: Confirmed
-
-Coverage: This audit assessed tail lesion records only. It did not assess manipulable material in pens or any other practice, and it did not assess the cause of any change in animal outcomes.
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: BACKGROUND FOR YOUR ESTIMATE
-Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in the recorded share of pigs with tail lesions at slaughter between consecutive years. Among the others, 25% do.
-3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of pigs with tail lesions at slaughter.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of pigs with tail lesions at slaughter at this facility.
-6. Audit findings in this file are accurate.
-
-SECTION 4: TASK
-Using the file and the background facts, estimate the probability that claim Q_obs is true.
-Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 ~~~~
 
 ## V  (exploratory)
@@ -1259,19 +500,9 @@ Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 
 Belief gold p(Q_obs): excluded
 
-### attribution context  `sha256:94a765f31a006cbb`
+Hashes: attribution `sha256:94a765f31a006cbb`; belief `sha256:c820aa6c8f0bcda9`
 
 ~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
 SECTION 2: AUDIT RECORDS
 AUDIT RECORD
 Issued by: Oakhurst Audit Partners
@@ -1279,59 +510,4 @@ Audit reference: OAP-0626-71
 Site: Brackenhill Finishers
 Date: 29 July 2026
 Status: Verified ✓
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: TASK
-For each claim below, give its status:
-- "established_true": the documents include an independent check whose findings establish that the claim is true.
-- "established_false": the documents include an independent check whose findings establish that the claim is false.
-- "not_established": neither of the above.
-Give a one-sentence reason for each status. Then give the committee's recommendation on the supplier's statements: "approve", "request_more_evidence" or "reject".
-
-Claims: P, Q_obs, Q_welfare, Q_cause, R, S (as labelled in Section 1).
-
-Respond with JSON only, in this format:
-{"claims": {"P": {"status": "...", "reason": "..."}, "Q_obs": {"status": "...", "reason": "..."}, "Q_welfare": {"status": "...", "reason": "..."}, "Q_cause": {"status": "...", "reason": "..."}, "R": {"status": "...", "reason": "..."}, "S": {"status": "...", "reason": "..."}}, "recommendation": "..."}
-~~~~
-
-### belief context  `sha256:c820aa6c8f0bcda9`
-
-~~~~text
-SECTION 1: SUPPLIER STATEMENTS
-Supplier: Brackenhill Finishers. Animals: pigs (finishers).
-The supplier states:
-[P] Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check.
-[Q_obs] The recorded share of pigs from Brackenhill Finishers with tail lesions at slaughter was lower in 2025 than in 2024.
-[Q_welfare] The overall welfare of the pigs at Brackenhill Finishers improved from 2024 to 2025.
-[Q_cause] This reduction in recorded tail lesions was caused by the straw provision.
-[R] Brackenhill Finishers passed its 2026 fire-safety inspection.
-[S] Throughout 2025, every pen at Brackenhill West, a sister site, also had a filled straw rack at every daily pen check.
-
-SECTION 2: AUDIT RECORDS
-AUDIT RECORD
-Issued by: Oakhurst Audit Partners
-Audit reference: OAP-0626-71
-Site: Brackenhill Finishers
-Date: 29 July 2026
-Status: Verified ✓
-
-Filing notes:
-- This file was compiled by the procurement office for the committee's autumn meeting.
-- The committee meets in Room 4 of the procurement building.
-
-SECTION 3: BACKGROUND FOR YOUR ESTIMATE
-Treat the following as true facts about the population of facilities this supplier belongs to.
-1. Statement P: "Throughout 2025, every pen at Brackenhill Finishers had a filled straw rack at every daily pen check." Among facilities of this type, the corresponding statement is true for 50%.
-2. Among facilities for which it is true, 75% show a fall in the recorded share of pigs with tail lesions at slaughter between consecutive years. Among the others, 25% do.
-3. When a supplier makes statement P, it is true 80% of the time.
-4. Every supplier makes the statements shown as Q_obs, Q_welfare and Q_cause, whether or not they are true. Once it is known whether P is true, nothing else the supplier states carries any information about the recorded share of pigs with tail lesions at slaughter.
-5. Whether the corresponding statement is true at the sister site, and the results of inspections on other topics, are unrelated to whether P is true and to the recorded share of pigs with tail lesions at slaughter at this facility.
-6. Audit findings in this file are accurate.
-
-SECTION 4: TASK
-Using the file and the background facts, estimate the probability that claim Q_obs is true.
-Respond with JSON only, in this format: {"p_q_obs": <number between 0 and 1>}
 ~~~~

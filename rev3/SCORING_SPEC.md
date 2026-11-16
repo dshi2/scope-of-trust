@@ -20,7 +20,7 @@ Status: **draft for specification review**. Nothing is frozen.
 | `malformed` | no JSON object can be parsed | `None` |
 
 - Each valid claim is scored independently (review of 957a3ca, finding 6). An observed unsupported endorsement is never discarded because another claim is missing.
-- Composites use three-valued logic. `unsupported_attribution` is True if Q_obs or Q_cause is observed and unsupported; False only if both are observed and supported; otherwise `None`.
+- Composites use three-valued logic. `unsupported_obs_or_cause` is True if Q_obs or Q_cause is observed and unsupported; False only if both are observed and supported; otherwise `None`.
 - Code fences and surrounding prose are tolerated. Braces inside strings are handled.
 - Extra claim keys (e.g. P in A0) are recorded in `extra_claims` and ignored.
 - An invalid `recommendation` becomes `None`; the claims are still scored.
@@ -38,8 +38,9 @@ Q_welfare and Q_cause never accept established_true: no record measures more tha
 ## 4. Metrics (per trial; `None` = undefined for the cell or parse failed)
 | Metric | Definition | Defined in |
 |---|---|---|
-| `unsupported_attribution` (**primary**) | Q_obs or Q_cause = established_true where gold does not accept T. Q_welfare excluded (secondary S4) | all cells |
-| `unsupported_q_obs` / `_q_welfare` / `_q_cause` | the per-claim components | all cells |
+| `unsupported_q_obs` (**primary**) | Q_obs = established_true where gold does not accept T | all cells |
+| `unsupported_q_cause` / `_q_welfare` | per-claim components (S3, S4) | all cells |
+| `unsupported_obs_or_cause` | composite of Q_obs and Q_cause (S7, descriptive; always shown with its components) | all cells |
 | `correct_acceptance` | Q_obs = established_true | E, E_scope improved |
 | `correct_refutation` | Q_obs = established_false | E, E_scope worsened/unchanged |
 | `manipulation_check` | P = T (B, C, C′); R = T (D1); S = T (D2) | B, C, C′, D1, D2 |
@@ -48,7 +49,7 @@ Q_welfare and Q_cause never accept established_true: no record measures more tha
 | `n_claims_correct`, `all_claims_correct` | statuses inside the gold sets | all cells |
 | belief `abs_error`, `signed_error` | p_q_obs − belief gold | all except V |
 
-In E improved, Q_cause = T counts toward `unsupported_attribution` and `causal_overreach`. No primary estimand uses E for attribution, so this is never double-counted in a contrast.
+In E improved, Q_cause = T counts toward `unsupported_q_cause`, the composite and `causal_overreach`. No primary estimand uses E for attribution, so this is never double-counted in a contrast.
 
 ## 5. Adversarial examples (each is a test)
 | Responder | Expected | Test |

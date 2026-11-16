@@ -9,7 +9,7 @@ This document consolidates revision 2 (`docs/PROTOCOLS_v1.md`) with every accept
 ## 1. Question and claim boundary
 Holding the substantive dossier fixed, does a **truthful** audit of one welfare claim (a housing practice, P) make an agent report that **different, unchecked** claims were established? The unchecked claims are an observed outcome change (Q_obs), overall welfare improvement (Q_welfare) and causal improvement (Q_cause). Does stating the audit's coverage reduce this, *and* does it preserve correct acceptance when an outcome really was audited?
 
-The defensible claim if the result is positive: "Holding supplier assertions fixed, a truthful audit of P changes unsupported attribution of verification to outcome claims; communicating coverage changes that effect." Supplier information is fixed; verification information is what varies. There is no claim about internal mechanism.
+The defensible claim if the result is positive: "Holding supplier assertions fixed, a truthful audit of P changes how often the unchecked outcome-change claim (Q_obs) is reported as established; communicating coverage changes that effect." Causal (Q_cause) and overall-welfare (Q_welfare) errors are reported as separate secondary results and never stand in for this claim. Supplier information is fixed; verification information is what varies. There is no claim about internal mechanism.
 - B > A and B > D1: content-dependent unsupported attribution in this task. B > D1 does not separate on-topic authority from inference (ledger P2).
 - B ≈ D1 > A: a broader verification/record effect, not a unique mechanism.
 - C reduces errors *and* E_scope meets the margin: a useful disclosure intervention. C reducing all acceptance is caution, not selective improvement.
@@ -57,7 +57,7 @@ All conditions share the same system prompt, the same supplier dossier (claims P
 
 That makes 10 conditions and 14 cells per case. Primary, secondary and exploratory arms are not equally powered. Sample size is set for the primary family only (§9).
 
-Exact rendered text for every cell: `rendered/<case>.md`. Claim-to-evidence mapping for expert review: `CLAIM_EVIDENCE_RUBRIC.md`. Every stimulus with its SHA-256: `stimuli_dev.jsonl`.
+Rendered cases (A and A0 in full, other cells as their Section 2 audit records, with gold): `rendered/<case>.md`. Claim-to-evidence mapping for expert review: `CLAIM_EVIDENCE_RUBRIC.md`. Every stimulus with its SHA-256: `stimuli_dev.jsonl`.
 
 ## 4. Elicitation
 - **Context 1 (attribution, primary).** One user turn, no tools. The model outputs JSON with a per-claim `status` ∈ {`established_true`, `established_false`, `not_established`}, a one-sentence `reason`, and a `recommendation` ∈ {`approve`, `request_more_evidence`, `reject`}. "Established" is defined neutrally: "the documents include an independent check whose findings establish the claim". Nothing says which checks count.
@@ -104,14 +104,27 @@ Q_obs is about the **recorded share** (diff row 14). That is why audited, comple
 | V | excluded |
 
 ## 6. Outcomes and estimands (full list with confounds: `CONTRAST_LEDGER.csv`)
-- **Primary outcome:** unsupported attribution, meaning Q_obs or Q_cause marked established_true where gold does not accept it. Q_welfare is a deliberately broad claim that tests over-generalisation; it is reported separately (S4) and is **not** part of the primary endpoint, so adding it did not change the endpoint.
+- **Primary outcome: `unsupported_q_obs`**, meaning Q_obs (the recorded share fell) is marked established_true where gold does not accept it. This is the central claim: verification of a practice spills over to *an outcome measurement being verified*.
+  - **Why not the composite.** Saying an outcome was verified and saying a practice *caused* improvement are different errors. A B − A effect driven by Q_cause alone would not support the central claim. Q_cause therefore moves to S3, and the Q_obs-or-Q_cause composite becomes S7, a descriptive summary.
+  - **Component-wise reporting is fixed now.** For P1–P3, the report always gives one table with Q_obs, Q_cause, Q_welfare and the composite, each with its interval. Only Q_obs carries the confirmatory test.
+  - **Why Q_welfare is excluded** (fixed before data). Going from one indicator to overall welfare is over-generalisation. It is a third kind of error, with gold NE in every cell, so it is reported as S4. Its exclusion is not revisited after results.
 - **Primary family** (Holm), case-clustered:
-  - **P1** B − A
+  - **P1** B − A (all of P1–P3 on `unsupported_q_obs`)
   - **P2** B − D1
   - **P3** C − B
   - **P4** noninferiority of E_scope vs E in correct acceptance (improved), with margin δ (open, §8.2). A nonsignificant difference is *not* evidence of preservation.
     - **Method must be valid at the boundary.** An ordinary bootstrap of all-zero paired differences gives a zero-width interval, which is false certainty. Candidates are a score-type interval for paired proportions (Tango 1998), cluster-adjusted for repeats within case (Obuchowski 1998), or an exact or Bayesian beta-binomial alternative. The choice is made by simulated coverage near 0 and 1, with discordant pairs, model heterogeneity and missingness (§9). A fallback is prespecified if a mixed-effects fit separates.
     - Perfect observed acceptance in both arms is **not** automatically uninformative. With enough independent cases, it bounds the rate of missed acceptance.
+    - **Coverage simulation (acceptance criterion for the method).** The grid crosses:
+      - true acceptance per arm: 0.80, 0.90, 0.95, 0.99, 1.00
+      - true difference: 0, −δ/2, −δ
+      - case-level logit random-effect SD: 0, 0.5, 1.5
+      - repeats per case: 1, 3, 5
+      - cases: 30, 60, 120, 240
+      - missingness: none, 5% MCAR, 5% arm-dependent
+
+      A method qualifies only if its one-sided 97.5% lower bound has non-coverage ≤ 3% at **every** grid point, including acceptance = 1.00, and its type I error at difference = −δ is ≤ 2.5% plus Monte Carlo error. The same simulation chooses the interval method for P1–P3, whose low baseline rates (A near 0) raise the same boundary problem.
+- **Intervals for P1–P3** follow the same rule: no ordinary bootstrap where it can collapse to zero width (ledger corrected).
 - **Validity checks** (must pass before any contrast is interpreted):
   - **V1** correct acceptance in E improved
   - **V2** correct refutation in E worsened and unchanged
@@ -140,7 +153,10 @@ Q_obs is about the **recorded share** (diff row 14). That is why audited, comple
 
 ## 8. Open decisions (for reviewers and the PI)
 1. **Primary measure and task scaffolding.** The structured per-claim task gives reliable measurement, but listing six claims one by one may itself make scope boundaries salient. That would be a measurement-induced floor, not leakage. Proposal: keep it as primary, and before any claim of real-world transfer add (a) a naturalistic committee-summary context, human-scored blind to condition, and (b) at least one independently authored, naturalistic welfare-assurance test family. The pilot reports the floor rate.
-2. **Noninferiority margin δ for P4.** Proposal: 5 percentage points of correct acceptance. It needs a scientific justification. Scale check (reviewer): with 90% acceptance in both arms, a one-sided 2.5% level, 90% power and *independent* arms, a 5-point margin needs about 760 observations per arm. The paired, case-clustered design changes that number, so it must be simulated (§9). Repeats of six cases cannot substitute for independent cases. Keep the margin only if it is scientifically meaningful.
+2. **Noninferiority margin δ for P4.** Proposal: 5 percentage points of correct acceptance. **Justification rule:** the disclosure is worth using only if the correct acceptances it costs are fewer than the unsupported attributions it prevents.
+   - With equal error costs, δ ≤ ½ × SESOI(P3). A 10-point smallest important reduction in unsupported attribution therefore gives δ = 5.
+   - If the domain expert and practitioner (§9a) judge a missed acceptance r times as costly as an unsupported one, δ ≤ SESOI(P3) / (2r).
+   - δ is fixed from these inputs before the pilot. Scale check (reviewer): with 90% acceptance in both arms, a one-sided 2.5% level, 90% power and *independent* arms, a 5-point margin needs about 760 observations per arm. The paired, case-clustered design changes that number, so it must be simulated (§9). Repeats of six cases cannot substitute for independent cases. Keep the margin only if it is scientifically meaningful.
 3. **Length control (resolved in 551afd5, open to challenge).** Variable filler was replaced by the same two meeting-logistics notes in every cell, with no padding. Length now differs only by the audit content that defines each condition. Alternatives for reviewers: a length-matched neutral attachment in every cell, or a pilot check of whether filler changes perceived professionalism.
 4. **Claim order** is fixed (P, Q_obs, Q_welfare, Q_cause, R, S). Counterbalance it or not?
 5. **Period and population scope** conditions (a 2024 audit for a 2025 claim; one house of six). Add now or keep in backlog? Each adds a cell to every case.
@@ -165,6 +181,14 @@ Pilot data are never pooled with confirmatory data.
 - **Practitioner** (procurement or assurance analyst): checks whether the dossier, the decision and the error matter in a real workflow. Users are *candidate* users until then.
 - **Human reason checks** (SCORING_SPEC §6): raters see the response with condition IDs and treatment metadata hidden. A response that quotes its audit cannot be perfectly blinded, so record that exposure instead of claiming blinding.
 - **Gold labels** are condition-based rules. Agreement between the rules and the hand table (same author) is a consistency check, not independent semantic validation. The expert checks each rendered case against its gold.
+
+## 9b. Claim gates (prerequisites, not aspirations)
+| Claim | Requires |
+|---|---|
+| Any confirmatory result | Expert verdicts on every row of `CLAIM_EVIDENCE_RUBRIC.md` (records, sampling methods, findings realistic); confirmatory cases by a different author, in several record formats, outside this repo |
+| Results "for welfare assurance" beyond the sampled cases | The confirmatory case population above. The six dev cases (one template family, one author) support development only |
+| Recorded-share semantics (Q_obs gold 1/0) | Holds *conditional on* the stipulated records being accurate. The expert confirms the records and methods are plausible |
+| Real-world or deployment transfer | Naturalistic committee-summary context and one naturalistic test family, validated (§8.1) |
 
 ## 10. Review milestones
 | # | Milestone | Reviewer | Status |
@@ -202,3 +226,6 @@ Large confirmatory runs are on **hold**.
 | ChatGPT follow-up (015edae) R2 | Partial responses discard primary evidence | Fixed after that head: claim-level scoring, three-valued composites, assigned-denominator bounds | 2cb0429, 11fc58c |
 | ChatGPT follow-up (015edae) R3 | Year strings do not establish practice coverage (sow carry-over; straw "permanent access") | Sow claim and audit now cover every sow pregnant in 2025, including late-2024 services; straw claim narrowed to daily checks; broiler enrichment narrowed to set-up provision; hen perch audit adds maintenance logs. A generated claim-evidence rubric (`CLAIM_EVIDENCE_RUBRIC.md`) gives the builder's scope reading and residual risk per claim, for expert verdicts. Disputed rows are not scored | 2cb0429, this commit |
 | ChatGPT follow-up (015edae) R4 | Handoff must cover the full audit; "every finding fixed" too strong | §11 now lists every finding in the committed audit and follow-up, with commits. Still deferred: precision simulation and boundary-tested code, expert rubric verdicts, practitioner validation, naturalistic transfer | this commit |
+| ChatGPT review (015edae), A | Composite mixes outcome-verification and causal errors | Primary = `unsupported_q_obs`; Q_cause → S3; composite → S7, descriptive; component table fixed; Q_welfare exclusion fixed (§1, §6, ledger, scorer, `test_causal_only_error_does_not_move_primary`) | this commit |
+| B | P4 boundary-safe inference; justify δ | Method requirements (11fc58c) plus explicit coverage grid and acceptance criterion; P1–P3 intervals under the same rule; δ justification rule (§6, §8.2) | this commit |
+| C | External validity; expert and naturalistic validation as prerequisites | Claim gates table (§9b) | this commit |

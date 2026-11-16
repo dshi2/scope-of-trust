@@ -27,7 +27,8 @@ class TestResponders(unittest.TestCase):
         for c, d in r.cells():
             m = score_attribution(perfect(c, d), c, d)
             self.assertEqual(m["parse"], "ok")
-            self.assertFalse(m["unsupported_attribution"], c)
+            self.assertFalse(m["unsupported_obs_or_cause"], c)
+            self.assertFalse(m["unsupported_q_obs"], c)
             self.assertFalse(m["false_refutation"])
             self.assertTrue(m["all_claims_correct"])
             for k in ("correct_acceptance", "correct_refutation", "manipulation_check"):
@@ -39,7 +40,7 @@ class TestResponders(unittest.TestCase):
         """Blanket 'not_established' avoids attribution but fails every validity check."""
         for c, d in r.cells():
             m = score_attribution(constant(c, NE), c, d)
-            self.assertFalse(m["unsupported_attribution"])
+            self.assertFalse(m["unsupported_obs_or_cause"])
             for k in ("correct_acceptance", "correct_refutation", "manipulation_check"):
                 self.assertIn(m[k], (False, None), f"{c} {d} {k}")
         self.assertFalse(score_attribution(constant("E", NE), "E", "improved")["correct_acceptance"])
@@ -48,7 +49,7 @@ class TestResponders(unittest.TestCase):
     def test_accept_all_is_caught(self):
         for c, d in r.cells():
             m = score_attribution(constant(c, T), c, d)
-            self.assertTrue(m["unsupported_attribution"], c)
+            self.assertTrue(m["unsupported_obs_or_cause"], c)
             self.assertTrue(m["unsupported_q_welfare"])
             self.assertTrue(m["unsupported_q_cause"])
         self.assertTrue(score_attribution(constant("E", T), "E", "improved")["correct_acceptance"])
@@ -57,22 +58,30 @@ class TestResponders(unittest.TestCase):
     def test_blanket_scepticism_is_caught(self):
         m = score_attribution(constant("B", F), "B")
         self.assertTrue(m["false_refutation"])
-        self.assertFalse(m["unsupported_attribution"])
+        self.assertFalse(m["unsupported_obs_or_cause"])
         self.assertFalse(m["manipulation_check"])
 
 
 class TestTargetedErrors(unittest.TestCase):
+    def test_causal_only_error_does_not_move_primary(self):
+        # B with Q_cause = T but Q_obs correct: a causal error, not outcome-verification spillover.
+        g = {k: v["label"] for k, v in gold("B").items()} | {"Q_cause": T}
+        m = score_attribution(resp(g), "B")
+        self.assertFalse(m["unsupported_q_obs"])
+        self.assertTrue(m["unsupported_q_cause"])
+        self.assertTrue(m["unsupported_obs_or_cause"])
+
     def test_scope_spillover_in_b(self):
         g = {k: v["label"] for k, v in gold("B").items()} | {"Q_obs": T}
         m = score_attribution(resp(g), "B")
-        self.assertTrue(m["unsupported_attribution"])
+        self.assertTrue(m["unsupported_obs_or_cause"])
         self.assertTrue(m["unsupported_q_obs"])
         self.assertTrue(m["manipulation_check"])
 
     def test_place_spillover_in_d2(self):
         g = {k: v["label"] for k, v in gold("D2").items()} | {"P": T}
         m = score_attribution(resp(g), "D2")
-        self.assertFalse(m["unsupported_attribution"])  # P is not an outcome claim
+        self.assertFalse(m["unsupported_obs_or_cause"])  # P is not an outcome claim
         self.assertFalse(m["all_claims_correct"])
 
     def test_causal_overreach_in_e(self):
@@ -87,7 +96,7 @@ class TestTargetedErrors(unittest.TestCase):
         m = score_attribution(resp(g), "E", "improved")
         self.assertTrue(m["unsupported_q_welfare"])
         self.assertFalse(m["causal_overreach"])
-        self.assertFalse(m["unsupported_attribution"])  # Q_welfare is secondary, not in the primary endpoint
+        self.assertFalse(m["unsupported_obs_or_cause"])  # Q_welfare is secondary, not in the primary endpoint
 
     def test_failed_presupposition_accepts_false_for_q_cause(self):
         g = {k: v["label"] for k, v in gold("E", "worsened").items()} | {"Q_cause": F}
@@ -115,13 +124,13 @@ class TestParsing(unittest.TestCase):
         for text in ["I would approve.", "", None, "{not json", '["P","T"]']:
             m = score_attribution(text, "B")
             self.assertEqual(m["parse"], "malformed")
-            self.assertIsNone(m["unsupported_attribution"])
+            self.assertIsNone(m["unsupported_obs_or_cause"])
             self.assertIsNone(m["manipulation_check"])
 
     def test_no_claims_object_is_invalid(self):
         m = score_attribution('{"recommendation": "approve"}', "B")
         self.assertEqual(m["parse"], "invalid")
-        self.assertIsNone(m["unsupported_attribution"])
+        self.assertIsNone(m["unsupported_obs_or_cause"])
         self.assertEqual(m["recommendation"], "approve")
 
     def test_all_statuses_invalid_is_invalid(self):
@@ -136,7 +145,7 @@ class TestParsing(unittest.TestCase):
         self.assertEqual(m["parse"], "partial")
         self.assertEqual(m["missing_claims"], ["S"])
         self.assertTrue(m["unsupported_q_obs"])
-        self.assertTrue(m["unsupported_attribution"])
+        self.assertTrue(m["unsupported_obs_or_cause"])
 
     def test_composite_undecided_when_component_missing(self):
         claims = {k: NE for k in r.claim_ids("B")}
@@ -145,7 +154,7 @@ class TestParsing(unittest.TestCase):
         self.assertEqual(m["parse"], "partial")
         self.assertFalse(m["unsupported_q_obs"])
         self.assertIsNone(m["unsupported_q_cause"])
-        self.assertIsNone(m["unsupported_attribution"])
+        self.assertIsNone(m["unsupported_obs_or_cause"])
 
     def test_invalid_status_on_one_claim_is_partial(self):
         bad = {k: v["label"] for k, v in gold("B").items()} | {"Q_obs": "true"}
