@@ -1,182 +1,314 @@
-# The Scope of Trust: Truthful Practice Audits and Out-of-Scope Endorsement by Language Models
+# The Scope of Trust: When a True Audit Licenses an Unsupported Conclusion
 
-> **Draft status (delete before submission).** Every `[[...]]` marks a placeholder to be filled from the run outputs or confirmed by the authors. No result in this draft is real. All data come from a diagnostic development evaluation, not a confirmatory study. Design sources: `REVISION_3_SPEC.md`, `SCORING_SPEC.md`, `GOLD_LABELS.md`, `CONTRAST_LEDGER.csv`, `SIM_P2_ALLPAIRS.md`.
+> **Working draft (workstream E).** Every `[[B: …]]` slot is filled only from `review/P2_NUMBERS_READY.md`, and every `[[C: …]]` slot only from `review/FIGURES_READY.md`. Values shown inside a slot as "old: …" come from the pre-review batch-1 analysis (`runs/p2_batch1_combined/analysis.md`, generated before the analysis-code review). They are for orientation only, and are replaced or confirmed before anything is final. The paste-ready copy is `report/REPORT_P2_FINAL.md`. All data are builder-written development cases. Nothing here is confirmatory.
 
-**Authors:** [[ ]]
+**Authors:** ⟪AUTHOR LINE: to be completed by the authors (names, affiliations). Not filled by Claude.⟫
 
-**Track / sprint:** Apart Research AI × Epistemics sprint, November 2026
+**Apart Research AI × Epistemics sprint, November 2026**
 
 ---
 
 ## Abstract
 
-An audit can be true and still be over-read. Suppose a certifier truthfully confirms that every flock on a farm was stocked at no more than 30 kg/m² throughout 2025. That check says nothing about whether recorded footpad lesions fell. We test whether language models reviewing a supplier file treat such a truthful practice audit as establishing an outcome claim *outside its scope*. Every supplier statement is held fixed; only the audit section varies. Against a no-audit baseline (A), we test whether a practice audit (B) raises the rate at which the unaudited outcome claim is marked established. Against a same-issuer, same-template fire-safety inspection (D1), we test whether that depends on what was checked. We also test whether a prose coverage statement (C) reduces the error without suppressing correct acceptance when the outcome records *were* audited (E_scope vs. E). Four open-weight, text-only models were evaluated on 12 builder-written synthetic cases (6 base, 6 extension, run separately). No model ever marked the unaudited outcome claim established after a practice audit: across 3,360 attribution trials, unsupported endorsement was 0 in every audit and control cell for every model. That makes the spillover contrasts exactly zero (one-sided 95% upper bound on the per-cell rate 4.9% per model, treating trials as independent). Positive controls were at ceiling. The error appeared only for an unscoped "Verified ✓" stamp, and it depended on the model: Qwen3-235B 53%, Kimi-K2 5%, DeepSeek-V3.2 and gpt-oss-120b 0%. This is a diagnostic development evaluation: expert verdicts on the cases have not been collected, the noninferiority margin and smallest effects of interest are not fixed, and the intervals are provisional. No result here is confirmatory.
+An audit can be true and still be over-read. A certifier may truthfully confirm a housing practice, but that check alone does not establish four other things:
+- that a recorded animal-based outcome changed;
+- that welfare improved overall;
+- that the practice caused anything.
+
+We test whether language models reviewing a synthetic supplier file let a truthful practice audit license an unchecked claim about outcomes. The supplier's statements are fixed, and only the audit section varies:
+- no audit (A);
+- an audit of the practice (B);
+- a same-template audit of an unrelated property (D1);
+- the practice audit plus a statement of what it did and did not cover (C);
+- audited outcome records, with and without that coverage statement (E, E_scope).
+
+Four open-weight models (gpt-oss-120b, DeepSeek-V3.2, Qwen3-235B-A22B-2507, Kimi-K2-0905) each answered [[B: K]] builder-written development cases five times.
+
+**The primary result is a floor.** No model marked the unchecked outcome claim established in any audit or control cell, so all three primary contrasts were 0.000: B − A, B − D1 and C − B. This is a null with wide case-level uncertainty, not a precise null. With zero events in [[B: K]] cases, the one-sided 95% upper bound on the share of cases showing the error is [[B: case-level bound]] per model. The positive controls were at ceiling. Whether the coverage statement costs correct acceptance is undecided: no margin has been fixed, and the lower bound is [[B: P4 LB]].
+
+In an exploratory cell carrying an unscoped "Verified ✓" stamp, two models marked the outcome claim established: Qwen3 in [[B: old 32/60, 53%]] of responses and Kimi-K2 in [[B: old 3/60, 5%]]. The gold label for this cell is contested.
+
+All cases were written by the study's builder and have not been reviewed by experts. Nothing here is confirmatory.
 
 ---
 
 ## 1. Introduction
 
-The failure we study is narrow. A document contains a real, correct check of claim P, and a reader concludes that a different claim, Q, has also been checked. Nothing in the file is false, and no source is misattributed. The error is in the *scope* the reader assigns to a truthful verification. This differs from hallucination, where content is unsupported by the source (Maynez et al., 2020; Ji et al., 2023). It also differs from authority bias, where a false claim is accepted because a credible source is said to back it (Kumar & Chopra, 2026). In our setting the authority is legitimate, and the question is how far its endorsement is allowed to travel.
+The failure we study is narrow. A file contains a real, correct check of claim P, and a reader concludes that a different claim, Q, has also been checked. Nothing in the file is false, and no source is misattributed. The error lies in the *scope* the reader assigns to a truthful verification. This differs from hallucination, where content is unsupported by the source (Maynez et al., 2020; Ji et al., 2023). It also differs from authority bias, where a false answer is accepted because a credible source is said to back it (Kumar & Chopra, 2026). In our setting the authority is legitimate and correct. The question is how far its endorsement travels.
 
-Animal-welfare assurance makes this concrete. Schemes often audit *resource- and management-based* measures, such as stocking density, perch length and group housing. Welfare science treats *animal-based* measures, such as lameness, lesions and plumage damage, as closer to the animals' actual state (EFSA AHAW Panel, 2012; Welfare Quality, 2009). A supplier can truthfully pass a practice audit and, in the same file, assert without any check that an animal-based outcome improved. AI agents are increasingly asked to summarise such files and flag claims as verified for human committees. An agent that lets the practice audit vouch for the outcome would give unchecked claims unearned credibility, and the committee would have no visible error to catch.
+Animal-welfare assurance makes the problem concrete. Assurance schemes often check *resource- and management-based* measures, such as stocking density, perch length or group housing. Welfare science treats *animal-based* measures, such as lameness, lesions or plumage damage, as closer to the animals' actual state (EFSA AHAW Panel, 2012; Welfare Quality®, 2009). A supplier can truthfully pass a practice audit and, in the same file, assert unchecked claims about outcomes. AI assistants are increasingly asked to summarise such files for decision-makers. If one lets the practice audit vouch for the outcome, an unchecked claim gains credibility it has not earned, and the human reader sees no error to catch.
 
-**Questions.** With supplier statements held fixed:
-- Does a truthful practice audit raise the rate at which a model marks an unaudited recorded-outcome decline (Q_obs) as `established_true`, compared with no audit (P1: B − A)?
-- Does that depend on what was checked, compared with an equally official audit of an unrelated property (P2: B − D1)?
-- Does stating the audit's coverage reduce the error (P3: C − B) while preserving correct acceptance when the outcome *was* audited (P4: E_scope − E, noninferiority)?
+**Four claims, kept distinct.** A supplier file can make four claims that a careless reader might merge. We score each separately (Table 1).
 
-A disclosure that makes the model reject everything would be caution, not better scope reading.
+**Table 1.** The four claims and what would establish each one in this design.
 
-**Contributions.** (1) A content-matched design that isolates out-of-scope endorsement from generic record or authority effects. The D1 control shares issuer, reference, date, site and template with B. (2) A disclosure intervention evaluated for *selectivity*: P3 and P4 are read together, and positive controls require inferring the outcome's direction from audited numbers rather than copying a verdict. (3) Separate scoring of an observed change marked verified (primary), causal over-reach and overall-welfare over-generalisation. (4) Rule-derived gold labels and boundary-valid, case-clustered intervals, with decision rules fixed before data. We report a **diagnostic development evaluation** that feeds measurement and sample planning. It is not evidence about deployed assurance workflows.
+| # | Claim (dossier label) | Example (case `dev-hen-perch`) | Established in this design by | Can the practice audit B establish it? |
+|---|---|---|---|---|
+| 1 | Verification of a **practice** (P) | "Throughout 2025, every house … provided at least 15 cm of perch per hen." | a record whose item and finding cover the practice at this facility (B, C, C′) | yes, by design |
+| 2 | Verification of an **outcome change** (Q_obs) | "The recorded share of hens … with severe plumage damage … was lower for 2025 flocks than for 2024 flocks." | an audit confirming the 2024 and 2025 indicator records, from whose numbers the direction must be inferred (E family) | no |
+| 3 | **Overall welfare** improvement (Q_welfare) | "The overall welfare of the hens … improved from 2024 to 2025." | never: no record measures more than one indicator | no |
+| 4 | **Causal** improvement (Q_cause) | "This reduction … was caused by the added perch space." | never: no record has a comparison group | no |
+
+The primary outcome is claim 2 marked established when nothing establishes it. Claims 3 and 4 are separate secondary outcomes and never stand in for claim 2.
+
+**Questions.** Holding the supplier's statements fixed:
+- Does a truthful practice audit raise the rate at which a model marks the unchecked outcome claim Q_obs as established, compared with no audit (P1: B − A)?
+- Does any such rise depend on *what* was checked, compared with an equally official audit of an unrelated property (P2: B − D1)?
+- Does stating the audit's coverage reduce the error (P3: C − B)?
+- Does it do so without suppressing correct acceptance when the outcome *was* audited (P4: E_scope vs. E, noninferiority)?
+
+A disclosure that made models reject everything would be caution, not better reading of scope.
+
+**What we found.** The primary error did not occur. In every audit and control cell, all four models confined each record's endorsement to the claim it checked. The positive controls were passed. The only place where models marked the outcome claim established without an outcome audit was an exploratory stamp that states no scope at all. Because every primary contrast sits at the floor, our main task is to say what a floor licenses. It is not evidence that models "cannot" make the error. It is not an equivalence result. It may reflect a task format that makes scope easy to read (§5).
+
+**Contributions.**
+1. A content-matched design separating out-of-scope endorsement from generic record or authority effects. The D1 control shares issuer, reference, date, site and template with B.
+2. Separate scoring of the four claims, including outcome controls in which the model must infer the direction from audited numbers rather than copy a verdict.
+3. A boundary-valid, case-clustered analysis of a zero-event result. The headline is a case-level bound, and the noninferiority question is left undecided because no margin is fixed.
+4. Released stimuli, rule-derived gold labels, code and a coverage simulation, for a development evaluation that feeds a confirmatory design. It is not evidence about deployed assurance workflows.
 
 ---
 
 ## 2. Related Work
 
-**Scope of assurance.** Assurance standards require a report to state the subject matter and criteria it covers (IAASB, 2013), because readers otherwise over-extend it. The audit expectation gap describes users attributing to audits assurances they never provided (Porter, 1993). Power (1997) argues that verification rituals can substitute for scrutiny of outcomes. In human ratings, a global impression spreading across separate attributes is the classic halo error (Thorndike, 1920). Our P/Q_obs split operationalises the welfare-science distinction between management-based and animal-based measures (EFSA AHAW Panel, 2012). We make no claim that models share a human mechanism.
+**The scope of assurance.** Assurance standards require a report to identify the subject matter and the criteria it covers. ISAE 3000 (Revised) requires the report to identify "the subject matter information" and "the applicable criteria" (IAASB, 2013, ¶69). The audit expectation–performance gap describes society expecting more of auditors than audits deliver (Porter, 1993). Power (1997) analyses how audit's spread produces assurance that is partly ritual and can stand in for direct scrutiny. A global impression spreading across separately rated attributes is the classic halo error in human ratings (Thorndike, 1920). Our split between P and Q_obs follows the welfare-science distinction between resource- and management-based measures and animal-based measures (EFSA AHAW Panel, 2012). We make no claim that models share a human mechanism.
 
-**Verification status in LLM pipelines.** Recent work shows that verification metadata strongly shapes model judgments. Hu (2026) finds that when handoff summaries drop the fact that an action was never verified, monitors approve risky actions more often. Kumar and Chopra (2026) show that wrong answers attributed to a verified source flip 45–88% of baseline-correct answers in seven of eight models. Arslan (2026) finds that LLM auditors relay upstream conclusions rather than check them. Jeffries (2026) shows that tool-output formatters that omit scope details mislead agents, and that restoring the details reduces unsupported claims. Our P3 (C − B) overlaps substantially with that last finding, so the distinctive contribution rests on P1 and P2. Those studies vary whether a status is true, present or relayed. We keep the verification true and present, and vary only *which* claim it covers. The WelfareFacts dataset (marhmpa, 2026) tests numeric welfare facts but has no audit-scope manipulation.
+**Verification status in LLM pipelines.** Recent preprints show that verification metadata shapes model judgments:
+- Hu (2026): when handoff summaries drop the fact that an authorization was never verified, monitors approve risky actions far more often.
+- Kumar and Chopra (2026): a note attributing a wrong answer to a verified source flips 45–88% of baseline-correct answers in seven of eight models.
+- Arslan (2026): LLM auditors in multi-agent pipelines largely relay upstream conclusions rather than check them.
+- Jeffries (2026): tool-output formatters that drop scope details (search limits, result caps, identifier namespaces) mislead agents and their verifiers, and restoring those details reduces unsupported claims for three of four failure types.
 
-**Evidence evaluation and grounding.** Fact verification distinguishes supported, refuted and not-enough-information verdicts (Thorne et al., 2018). Attribution frameworks ask whether statements are supported by their sources (Rashkin et al., 2023). Our task adds a twist: the evidence is genuine, and only its scope decides the label. Models can rely on lexical overlap rather than entailment (McCoy et al., 2019), which is a named confound for P2. Stated reasons can diverge from what drives an answer (Turpin et al., 2023), so we score statuses, not reasons.
+Our C − B contrast overlaps substantially with Jeffries (2026), so any distinctive contribution rests on B − A and B − D1. Those studies vary whether a status is true, present or relayed. We keep the verification true and present, and vary only *which* claim it covers. WelfareFacts (marhmpa, 2026) tests source-grounded numeric welfare facts but has no audit-scope manipulation.
 
-**Paired, clustered proportions.** Each case appears in both arms of a contrast. Tango (1998) gives a score interval for paired differences in proportions, Obuchowski (1998) extends correlated-proportion comparisons to clustered data, equivalence uses a smallest effect size of interest (Lakens, 2017), and noninferiority requires the interval to exclude a prespecified margin (Blackwelder, 1982). Validity-check rates use Wilson (1927) intervals, and the primary family uses Holm (1979).
+**Evidence evaluation.** Fact verification separates supported, refuted and not-enough-information verdicts (Thorne et al., 2018). Attribution frameworks ask whether generated statements are supported by identified sources (Rashkin et al., 2023). Our twist is that the evidence is genuine, and only its scope decides the label. Models can rely on lexical overlap rather than entailment (McCoy et al., 2019), which is a named confound for B − D1. Stated reasons can diverge from what drives an answer (Turpin et al., 2023), so we score statuses and use reasons only qualitatively.
+
+**Paired, clustered proportions and zero events.** Tango (1998) gives a score interval for paired differences in proportions. Obuchowski (1998) extends the comparison of correlated proportions to clustered data. Equivalence needs a smallest effect size of interest (Lakens, 2017), and noninferiority needs a prespecified margin (Blackwelder, 1982). With zero events, an exact binomial bound (Clopper & Pearson, 1934) is close to the "rule of three", 3/n (Hanley & Lippman-Hand, 1983). Multiplicity uses Holm (1979).
 
 ---
 
 ## 3. Methods
 
-### 3.1 Stimuli and conditions
+### 3.1 Stimuli
 
-Each stimulus is one user turn under a fixed, neutral system prompt, with no tools or examples. **Section 1** lists six supplier claims, identical in every condition of a case:
-- **P**, the practice, e.g. "Throughout 2025, every house at Coldharbour Hens provided at least 15 cm of perch per hen";
-- **Q_obs**, a decline in a *recorded* animal-based indicator from 2024 to 2025;
-- **Q_welfare**, overall welfare improved;
-- **Q_cause**, the practice caused the decline;
-- **R**, a 2026 fire- or building-safety inspection was passed;
-- **S**, the practice held at a sister site.
+Each attribution trial is one user turn under a fixed, neutral system prompt, with no tools and no examples. The file has three sections:
+- **Section 1** lists the supplier's six claims, identical in every condition of a case. They are P, Q_obs, Q_welfare and Q_cause (Table 1), plus R, a 2026 fire- or building-safety inspection passed, and S, the same practice at a sister site.
+- **Section 2**, the audit records, is the only part that varies. It always ends with the same two neutral filing notes. Lengths are not padded, so they differ only by the treatment content.
+- **Section 3** asks for each claim's status as `established_true`, `established_false` or `not_established`, with a one-sentence reason, then a recommendation (`approve`, `request_more_evidence` or `reject`), all as JSON. "Established" is defined neutrally: "the documents include an independent check whose findings establish that the claim is true [false]". No condition says which checks count.
 
-**Section 2** is the only part that varies (Table 1) and always ends with the same two filing notes. Lengths are not padded. **Section 3** asks for each claim's status as `established_true`, `established_false` or `not_established`, with a one-sentence reason and a recommendation, all as JSON. "Established" is defined neutrally: an independent check in the documents establishes the claim. No condition says which checks count. All periods are closed (2025 practice, 2024 vs. 2025 outcome, audits dated 2026), and Q_obs refers to the recorded share, so an audit of complete, accurate records settles it exactly.
+All periods are closed: practice claims cover 2025, the outcome compares 2024 with 2025, and every audit is dated 2026. Q_obs is a claim about the *recorded* share, so an audit confirming complete, accurate records settles it exactly.
 
-**Table 1. Primary conditions** (full inventory of 10 conditions and 14 cells per case, and an example stimulus, in Appendix A).
+**Table 2. Conditions.** There are 10 conditions and 14 cells per case. Appendix A gives the full Section 2 text for one case.
 
-| Code | Audit section | Gold for Q_obs |
+| Code | Section 2 (audit records) | Role | Gold for Q_obs |
+|---|---|---|---|
+| A | "No audit record is included in this file." | primary baseline | not established |
+| B | Record confirming P at this facility (issuer, reference, site, date, item checked, method, finding, "Status: Confirmed") | primary | not established |
+| D1 | Same issuer, reference, date, site and template as B, confirming R (fire or building safety) | primary control | not established |
+| C | B plus a prose coverage statement ("This audit assessed [practice] only. It did not assess [indicator] or any other animal-based outcome, and it did not assess the cause of any change …") | primary | not established |
+| E × {improved, worsened, unchanged} | Audit confirming the 2024 and 2025 indicator records are complete and accurate, giving both values; the direction must be inferred | positive control (V1, V2) | true / false / false |
+| E_scope × 3 | E plus a parallel coverage statement (practice and cause not assessed) | P4 | as E |
+| C′ | B plus the same coverage as structured fields | secondary (S1) | not established |
+| D2 | Record confirming the practice at the sister site | secondary (S2) | not established |
+| A0 | As A, with claim P removed from the dossier | exploratory (X1) | not established |
+| V | Header with issuer, reference, site, date and "Status: Verified ✓", but no item, method or finding | exploratory (X2); gold contested | not established (contested) |
+
+**Belief context (secondary).** A fresh conversation with the same file and a stipulated population model asks for p(Q_obs). The model and its gold values are in Appendix C. It is never in the same conversation as the attribution task.
+
+### 3.2 Cases and batches
+
+A case is one facility × practice × indicator × set of numbers. All cases are synthetic and were written by the study's builder (Claude sessions, §LLM Usage). Every indicator is "lower is better", and no case establishes causation. Each case yields 28 hashed stimuli: 14 cells × 2 contexts.
+
+- **Batch 1 (12 cases):**
+  - a base set of 6 cases: broilers, laying hens, pigs;
+  - an extension set of 6 cases, written after the base stimuli were frozen: dairy cows, salmon, turkeys, ducks, rabbits, calves;
+  - each set run separately, on 16 Nov 2026.
+- **Batch 2 (3 × 8 cases):**
+  - three further builder-written sets: livestock (`ba`), aquaculture and poultry (`bb`), and non-farm populations (`bc`);
+  - the same renderer, prompts, cells, model configuration and repeats;
+  - commissioned after batch 1 had run but before its contrasts were analysed. The commission and its reporting rule were fixed in advance (spec §7a, commit `c22ff29`): every completed batch is reported, and the pooled estimate is read only together with the per-batch estimates and the between-batch difference.
+
+Batch 2 is a set of later development batches. It is not a replication: the same builder wrote it with the same template logic.
+
+### 3.3 Gold labels and outcomes
+
+Gold statuses are derived by rule from each cell's *evidence profile*: what was checked, where, for which period, whether an outcome was measured and in which direction, and whether there was a causal design (`p2v3/gold.py`; Appendix B). They are cross-checked against a hand table by the same author, which is a consistency check, not independent validation.
+
+- **Primary outcome:** `unsupported_q_obs`, meaning Q_obs is marked `established_true` where gold does not accept it.
+- **Components and secondary outcomes:** unsupported Q_welfare (S4) and unsupported Q_cause (S3), always reported beside Q_obs and never combined with it.
+- **Validity checks:**
+  - V1, correct acceptance in E improved;
+  - V2, correct refutation in E worsened and unchanged;
+  - V3, manipulation checks (P marked true in B, C and C′; R in D1; S in D2).
+
+Parsing is deterministic and claim-level. A response with one malformed claim still has its valid claims scored, and no status synonyms are mapped.
+
+### 3.4 Estimands and inference
+
+All estimands are within-model, and the **case** is the unit of analysis. Each case contributes the mean over its repeats, and estimates are equal-case means. Repeats are nested within cases and add no independent cases.
+
+- **P1** = B − A, **P2** = B − D1, **P3** = C − B, on `unsupported_q_obs`. Each is two-sided, with Holm adjustment across P1–P3.
+- **P4** = E_scope − E (improved) on correct acceptance. This is a one-sided noninferiority test against a margin δ.
+
+**Interval for contrasts.** The two arms of a contrast are generated independently, so the repeat index is not a matched pair. Each case's 2 × 2 counts are built *pairing-free*: every repeat in one arm is set against every repeat in the other, so the case's difference equals the difference of its two arm rates. The interval is Tango's (1998) score interval on these counts, with the design effect fixed at 1 and a 0.5 continuity correction ("Tango-c-cc"; `p2v3/stats.py`).
+
+Because the cross-products are not real pairs, no theorem guarantees this interval's calibration. We retained it on simulation evidence (`SIM_P2_ALLPAIRS.md`): over 48 grid points × 40,000 replicates, with acceptance up to 1.00 and 6–60 cases, it never exceeded 3% one-sided non-coverage. A case-level t interval exceeded that limit at 21 of 48 points. The price is conservatism: even perfect data in both arms give a P4 lower bound of −30.1 points at 12 cases (Appendix E).
+
+**Zero events.** When every case in a cell has zero events, the case-level t interval degenerates to [0, 0]. That shows no precision, so we do not use it. The headline bound instead treats each case as one unit:
+- It is the exact one-sided 95% upper bound on the share of cases showing the error at least once in their repeats: 1 − 0.05^(1/K) for K cases. That is about 22% at K = 12 and about 8% at K = 36, close to the rule of three, 3/K.
+- A case's per-response error rate cannot exceed its chance of producing at least one error in five repeats. So the bound also bounds the mean per-case rate in the population the cases are drawn from.
+- It treats the cases as exchangeable draws from the builder's case population, which they are not in any sampling sense. It describes this case population only.
+
+A trial-level bound (0/60 → 4.9%) assumes independent responses, which repeats are not. It appears only in Appendix F, labelled as such.
+
+**Other intervals.** V1–V3 and single-cell rates use a t interval over case-level rates (df = K − 1), clipped to [0, 1] and flagged when degenerate. Missing or unparsable responses are counted against the scheduled design. Worst- and best-case imputations bound every primary contrast.
+
+**What is not fixed.** The decision rules were fixed before data:
+- P1–P3: "equivalent" if the interval lies inside ±SESOI; "meaningful effect" if it lies beyond ±SESOI; otherwise "inconclusive".
+- P4: "noninferior" if the lower bound exceeds −δ.
+
+**Neither the SESOIs nor δ has been set.** The spec proposes δ = 5 points, pending a base-rate justification (spec §8.2). So this report makes **no equivalence, meaningful-effect or noninferiority decision**. It reports estimates, intervals and whether each interval excludes zero.
+
+### 3.5 Models and serving
+
+We evaluated four open-weight, text-only models, each confirmed text-only from its `config.json`, through OpenRouter with the provider pinned (`configs/p2_dev_eval_v1.json`):
+
+| Model | Provider | Precision |
 |---|---|---|
-| A | "No audit record is included in this file." | not established |
-| B | Record confirming P at this facility (issuer, reference, site, date, item, method, finding, "Status: Confirmed") | not established |
-| D1 | Same issuer, reference, date, site and template as B, but confirming R (fire/building safety) | not established |
-| C | B + prose coverage statement ("assessed perch length per hen only; did not assess plumage condition records … or the cause of any change") | not established |
-| E (improved / worsened / unchanged) | Audit of the facility's outcome records, giving the 2024 and 2025 values; the direction must be inferred | true / false / false |
-| E_scope | E + parallel coverage statement | as E |
+| `openai/gpt-oss-120b` | DeepInfra | bf16 |
+| `deepseek-ai/DeepSeek-V3.2` | AtlasCloud | fp8 |
+| `Qwen/Qwen3-235B-A22B-Instruct-2507` | DeepInfra | fp8 |
+| `moonshotai/Kimi-K2-Instruct-0905` | Novita | fp8 |
 
-**Cases.** The 12 synthetic cases each have a distinct species × practice × indicator family. The **base set** covers broilers, laying hens and pigs. The **extension set** covers dairy cows, salmon, turkeys, ducks, rabbits and calves; it was authored after the base stimuli were frozen, without reference to model output. Both sets use the same renderer, prompt, conditions and model configuration, and were run separately under a pre-declared rule: the extension is reported alongside the base if its run completes. One author wrote all cases in one record-template family. Each case yields 28 hashed stimuli (14 cells × attribution and belief contexts). The belief context is secondary (Appendix C).
-
-### 3.2 Gold labels and outcome
-
-Gold statuses are derived by rule from each cell's evidence profile: what was checked, where, for which period, whether an outcome was measured, and whether there was a causal design (Appendix B). The **primary outcome**, `unsupported_q_obs`, is Q_obs marked `established_true` where gold does not accept it. Parsing is deterministic and claim-level: a response with one malformed claim still has its valid claims scored. Unsupported Q_cause and Q_welfare are reported as components but carry no test.
-
-### 3.3 Estimands and inference
-
-Within each model:
-- **P1** = B − A, **P2** = B − D1 and **P3** = C − B, each on `unsupported_q_obs`;
-- **P4** = E_scope − E (improved) on correct acceptance, as one-sided noninferiority with margin δ;
-- **validity checks**: V1 correct acceptance, V2 correct refutation, V3 manipulation checks (P, R or S marked true where audited).
-
-**Intervals.** The case is the unit of analysis, and the estimate is the equal-weighted mean of case-level rate differences. Repeat index is *not* a matched pair: the two arms of a contrast are generated independently. So each case's counts are built pairing-free, setting every repeat in one arm against every repeat in the other. The interval is Tango's score interval on these counts, with the design effect fixed at 1 and a 0.5 continuity correction (Tango-c-cc; `p2v3/stats.py`). It was retained after a coverage simulation (`SIM_P2_ALLPAIRS.md`): 48 grid points, 40,000 replicates each, acceptance up to 1.00, 6–60 cases. No grid point exceeded the 3% one-sided non-coverage limit. By contrast, a case-level t interval reached 29% non-coverage near the ceiling. The price is conservatism: with 12 cases, even perfect acceptance in both arms gives a P4 lower bound no higher than −30 points. P1–P3 get two-sided 95% intervals, with score-test p-values Holm-adjusted across P1–P3. P4 gets a one-sided 97.5% lower bound. Positive-control (V1–V3) intervals are case-level Wilson intervals with n = number of cases, so repeats add no precision. Worst- and best-case imputation of missing outcomes is reported for every contrast.
-
-**What is not yet fixed.** The decision rules were fixed before data. For P1–P3: equivalence if the interval lies inside ±SESOI, a meaningful effect if it lies beyond ±SESOI, otherwise inconclusive. For P4: noninferiority if the lower bound exceeds −δ. **But neither the SESOIs nor δ has been set** (the spec proposes δ = 5 points, pending a base-rate justification), so this report makes no such decisions. It gives estimates and intervals, and says whether each interval excludes zero.
-
-### 3.4 Models
-
-We evaluated four open-weight, text-only models (`openai/gpt-oss-120b`, `deepseek-ai/DeepSeek-V3.2`, `Qwen/Qwen3-235B-A22B-Instruct-2507`, `moonshotai/Kimi-K2-Instruct-0905`) through pinned providers. We evaluated the four model families using the pinned serving providers' default sampling configurations, with reasoning enabled for gpt-oss-120b (its default) and DeepSeek-V3.2 (explicit override), and recorded all request parameters and available inference metadata. Each model ran every stimulus 5 times (12 cases × 14 cells × 5 = 840 attribution trials per model). Results are reported per model and never pooled (serving details in Appendix D).
+We used the pinned serving providers' default sampling configurations. Reasoning was enabled for gpt-oss-120b (its default) and for DeepSeek-V3.2 (an explicit override). All request parameters and the available inference metadata were recorded. No sampling parameter is sent; the API does not report the values a provider applies, and `max_tokens` = 8192 throughout. Each model answered every stimulus 5 times. Results are reported per model and never pooled across models.
 
 ---
 
 ## 4. Results
 
-> Exploratory development evaluation on builder-written cases (batch 1: 12 cases, 4 models, 5 repeats; `runs/p2_batch1_combined/analysis.json`). Intervals are provisional, and no SESOI or margin is fixed, so no decisions are made. Not confirmatory.
+> Development evaluation on builder-written cases. Every interval is provisional. No SESOI or margin is fixed, so no decisions are made. Not confirmatory. Source: [[B: analysis directories and commit from P2_NUMBERS_READY.md]].
 
-**Data quality.** All 3,360 scheduled calls completed in each run. Parsing was fully valid for DeepSeek-V3.2, gpt-oss-120b and Qwen3-235B. Kimi-K2 had 28 malformed (all truncated) and 3 invalid responses out of 1,680; imputing these worst-case moves its P1 estimate by at most −3.3 points. Recorded spend was $6.77 + $8.17. That is an upper estimate that includes unsettled billing for retried requests; $6.41 was confirmed at settlement. **Positive controls:** correct acceptance (V1), correct refutation (V2) and manipulation checks (V3) were 1.00 for every model, cell and case.
+**Data quality.** [[B: per model, scheduled vs. completed calls; parse-status counts; truncation; whether missingness depends on condition. Old batch 1: every call completed; Kimi-K2 had 28 malformed (truncated) and 3 invalid outputs of 1,680; the others parsed fully; Kimi's worst-case imputation moves its P1 by −0.033.]] **Validity checks.** [[B: V1–V3 per model; old batch 1: 1.00 in every cell, model and case (degenerate case-t interval).]]
 
-### 4.1 The evidence-scope ladder
+### 4.1 Primary result: the error is at the floor
 
-![Figure 1: Evidence-scope ladder](figures/fig_p2_ladder.png)
-*Figure 1. Rate of unsupported Q_obs in A, D1, B, C and the unscoped stamp V, per model. [[Generate with `plot_p2.py --analysis runs/p2_batch1_combined/analysis.json` and confirm the order.]]*
+![Figure 1: Evidence-scope ladder](⟦C: path⟧)
+*Figure 1. [[C: caption. Unsupported Q_obs in A, D1, B, C and the exploratory V, per model, with case-level uncertainty.]]*
 
-Unsupported Q_obs was 0/60 in A, D1, B and C for every model, and also in A0, C′, D2 and all six E-family cells (Kimi: 0/58 in A). The ladder is flat at zero until the last rung. Every model marked the audited practice (P) established in B and C, so the audit was read, yet none let it vouch for the outcome.
+[[B: In every A, B, C and D1 cell (and in A0, C′, D2 and all six E-family cells), no model marked Q_obs established: old batch 1 0/60 per cell per model (Kimi 0/58 in A).]] Every model marked the audited practice P established in B and C, so the audit was read. None let it vouch for the outcome claim.
 
-### 4.2 Primary contrasts
+**Table 3.** Primary contrasts per model, [[B: K]] cases (per-batch tables in Appendix G). Columns:
+- **P1–P3:** estimate [provisional 95% Tango-c-cc].
+- **Case-level bound:** the one-sided 95% upper bound on the share of cases with ≥1 unsupported Q_obs in B.
+- **P4:** estimate and one-sided 97.5% lower bound.
 
-![Figure 2: Primary contrasts per model](figures/fig_p2_forest.png)
-*Figure 2. P1–P4 per model: estimate and provisional Tango-c-cc interval. All estimates are 0.000.*
+| Model | P1 B − A | P2 B − D1 | P3 C − B | Case-level bound in B | P4 E_scope − E | P4 decision |
+|---|---|---|---|---|---|---|
+| gpt-oss-120b | [[B]] | [[B]] | [[B]] | [[B]] | [[B]] | no decision (δ not fixed) |
+| DeepSeek-V3.2 | [[B]] | [[B]] | [[B]] | [[B]] | [[B]] | no decision (δ not fixed) |
+| Qwen3-235B-A22B-2507 | [[B]] | [[B]] | [[B]] | [[B]] | [[B]] | no decision (δ not fixed) |
+| Kimi-K2-0905 | [[B]] | [[B]] | [[B]] | [[B]] | [[B]] | no decision (δ not fixed) |
 
-**Table 2.** Primary contrasts, 12 cases per model. Each cell gives the estimate, the provisional 95% Tango-c-cc interval and, in brackets, the one-sided 95% exact upper bound on the per-cell rate.
+How to read Table 3:
+- **The primary contrasts are 0.000 because both arms are 0.** The Tango-c-cc interval at zero events reflects only the case count, and is wide and conservative. The degenerate case-t interval [0, 0] is not a precision claim.
+- **What the data support** is a case-level statement. In this case population, the share of cases in which a model would ever mark Q_obs established after a practice audit is plausibly below [[B: bound]], and could be that large. That is a null with wide uncertainty, not a precise null, and not an equivalence result.
+- **The [[B: N]] attribution responses do not narrow it further.** Repeats are nested in the [[B: K]] cases.
+- **P4.** Observed correct acceptance was [[B: 100% vs 100%]]. With no margin fixed, P4 is **no decision**. The lower bound of [[B: −0.30]] would not meet any margin a practitioner is likely to accept. Even with perfect data, 12 cases cannot show noninferiority at a 5-point margin; on our method that takes about 92 cases (Appendix E).
 
-| Model | P1 B−A | P2 B−D1 | P3 C−B | P4 E_scope−E (97.5% LB) |
-|---|---|---|---|---|
-| gpt-oss-120b | 0.000 [−0.30, 0.30] (B ≤ 4.9%) | 0.000 [−0.30, 0.30] | 0.000 [−0.30, 0.30] | 0.000; LB −0.30 |
-| DeepSeek-V3.2 | 0.000 [−0.30, 0.30] (≤ 4.9%) | 0.000 [−0.30, 0.30] | 0.000 [−0.30, 0.30] | 0.000; LB −0.30 |
-| Qwen3-235B-A22B-2507 | 0.000 [−0.30, 0.30] (≤ 4.9%) | 0.000 [−0.30, 0.30] | 0.000 [−0.30, 0.30] | 0.000; LB −0.30 |
-| Kimi-K2-0905 | 0.000 [−0.30, 0.30] (≤ 4.9%) | 0.000 [−0.30, 0.30] | 0.000 [−0.30, 0.30] | 0.000; LB −0.30 |
+### 4.2 Secondary outcomes (the evidence hierarchy)
 
-With zero events in both arms, the all-pairs Tango-c-cc interval (±0.301) reflects only the case count. It is conservative and uninformative, and the case-level t interval degenerates to [0, 0]. We therefore also give exact zero-event bounds on the rate in B:
-- 0/60 trials per model gives a one-sided 95% upper bound of 4.9%;
-- 0/240 pooled over models gives 1.2%, but this ignores clustering by case and model;
-- treating each case as one unit (0/12) gives 22%.
+These are prespecified secondary outcomes (Holm within the secondary family) and are descriptive at this case count.
 
-The components (Q_cause, Q_welfare, composite) were also zero in P1–P3 for every model. Observed correct acceptance was 100% in both E and E_scope, so no loss was observed. Formally, however, noninferiority cannot be shown: the lower bound is −0.30 at 12 cases (Appendix E), and δ is not fixed.
+- **Overall welfare (Q_welfare, S4) and causal improvement (Q_cause, S3).** [[B: unsupported Q_welfare and Q_cause in A, B, C and D1; causal overreach and welfare over-generalisation in E/E_scope improved. Old batch 1: 0 for every model.]] So the floor holds for all three over-reads, not only Q_obs. Claims 3 and 4 were also never marked established when the outcome *was* audited (E improved). Models did not read one improved indicator as overall improvement, or a before/after comparison as causation.
+- **S1 (structured vs. prose coverage).** [[B]]. With both arms at zero, it is uninformative.
+- **S2 (sister-site record, D2).** [[B: D2 − A on Q_obs, and P marked established after a sister-site audit (place-scope spillover); old batch 1: Qwen 0.033, others 0.]]
+- **S5 (belief).** [[B: mean shift in p(Q_obs) from A to B vs. the normative +0.10, per model; old: DeepSeek +0.100, gpt-oss +0.100, Kimi +0.104, Qwen +0.052. MAE by cell; old: Qwen's largest errors in E unchanged/worsened.]] Belief is elicited in a separate context with a stipulated model, and is never pooled with attribution.
+- **S6 (recommendations).** [[B: distribution by cell; old: request_more_evidence in every non-E cell for every model; reject concentrated in E worsened/unchanged.]]
 
-### 4.3 Disclosure selectivity and the unscoped stamp
+### 4.3 Exploratory: an unscoped "Verified ✓" stamp
 
-![Figure 3: Disclosure selectivity](figures/fig_p2_selectivity.png)
-*Figure 3. C − B beside E_scope − E per model, with the proposed −5-point P4 margin (not fixed). Both are 0.000 for every model. [[Figure to be produced.]]*
+V keeps the record's header and a "Status: Verified ✓" line, but names no item, method or finding. It was a prespecified *exploratory* cell (X2), not a primary hypothesis. Its gold label (not established) is contested (spec §8.6): a reader could take an unqualified "verified" stamp on a supplier file to cover the file's claims.
 
-With no unsupported endorsement in B, coverage disclosure had nothing to remove (P3 = 0), and it cost no observed acceptance. Selectivity is therefore untested rather than shown. The only cell where the error occurred was the exploratory **unscoped stamp V** (issuer, site and "Status: Verified ✓", with no item, method or finding):
-- **Qwen3-235B: 32/60 (53%)**, in all 12 cases. V − A = +0.53, Tango-c-cc 95% [+0.10, +0.80], p = 0.02 unadjusted (exploratory). In V it also marked the fire-safety claim R established 60/60 and the practice P 41/60, but Q_welfare and Q_cause 0/60. It read the stamp as covering every concrete claim.
-- **Kimi-K2: 3/60 (5%)**, in 3 of 12 cases; 95% [−0.26, +0.36].
-- **DeepSeek-V3.2 and gpt-oss-120b: 0/60.**
+[[B: per model, Q_obs marked established in V: events/trials, cases with ≥1 event of K, equal-case rate with case-t CI; V − A contrast. Old batch 1: Qwen 32/60 in all 12 cases, V − A +0.533 [+0.101, +0.801], p = 0.02 unadjusted; Kimi 3/60 in 3 of 12 cases, +0.050 [−0.264, +0.364]; DeepSeek and gpt-oss 0/60.]]
 
-V's gold label is contested (a stamp can be read as covering everything), so this result is exploratory. No V error led to an "approve" recommendation: every model chose `request_more_evidence` in V. Secondary outcomes are in Appendix G.
+[[B: what else was marked established in V (P, R, Q_welfare, Q_cause), and recommendations; plus 2–3 verbatim reason excerpts per model from `reasons_when_marked_established`.]]
+
+We describe this as "marked established after an unscoped stamp". It is not a validated failure rate. The label is contested, no human has reviewed the reasons, and the cell was not a primary hypothesis.
+
+### 4.4 Batches
+
+[[B: per batch (batch 1, ba, bb, bc), pooled and between-batch difference, per spec §7a; or, if a batch did not complete, a statement that it is incomplete and excluded from the pooled estimate.]]
 
 ---
 
 ## 5. Discussion and Limitations
 
-**A spillover null in this task.** When the audit record shows its item, method and finding, all four models confined its endorsement to the practice it checked. This held with zero events across 12 cases, 5 repeats and four model families, and the positive controls show that the models do accept and refute outcome claims from audited numbers. The distinctive failure we designed for, a truthful practice audit vouching for an out-of-scope outcome, did not occur. Because no SESOI was fixed, this is not a formal equivalence result. Within these cases the per-model rate in B is below about 5% at the trial level (22% treating cases as units).
+**What the null says.** When the audit record states its item, method and finding, all four models confined its endorsement to the claim it checked. This held in every audit and control cell, across [[B: K]] cases and four model families. The positive controls show that the models did accept and refute outcome claims from audited numbers, and did read the practice audit. The specific failure we designed for, a truthful practice audit vouching for an out-of-scope outcome, did not occur in this task. Three limits apply:
+- It is not an equivalence result, because no SESOI was fixed.
+- It is not a precise null: the case-level bound is [[B]].
+- It does not show that models "cannot" make this error.
 
-**The vulnerability is to unscoped verification, and it depends on the model.** Remove the record's scope and keep its status, and one model (Qwen3-235B) treated an unscoped "Verified ✓" as establishing the outcome in half its responses. Kimi-K2 did so occasionally; the two reasoning-enabled models never did. This is consistent with the scope-omission findings of Jeffries (2026) and Hu (2026): in this task the risk lies in verification signals that do not state what they cover, not in over-reading signals that do.
+**Why is the primary at the floor?** Two explanations fit the data, and this design cannot separate them.
 
-**Possible floor.** The structured six-claim task may itself make scope salient. A free-text committee summary could still show spillover. Batch 2 (3 × 8 new builder-written cases in new formats, `runs/p2_ba_v1`, `p2_bb_v1`, `p2_bc_v1`) is pending and will test whether the null holds on new cases.
+1. **Scope discrimination.** The models read each record as covering what its item and finding name, and nothing more.
+   - The floor is not blanket scepticism. The same models marked the audited practice established (V3) and accepted or refuted audited outcomes (V1, V2).
+   - The response format does not mechanically force the floor. Two models did mark Q_obs established when the record named no item (V).
+2. **Task explicitness.** The task lists six labelled claims, defines "established" as an independent check whose *findings* establish the claim, and asks for a status per claim. That format may itself make the question "which check covers this claim?" unavoidable. If so, the floor is induced by the measurement, not leakage of the answer (spec §8.1).
+   - Real assurance reading is less structured: free-text summaries, long files, several records, no claim list.
+   - The V result does not rule this out. V removes scope information altogether, so it shows the format *permits* the error, not that the task is sensitive to a subtler spillover from a scoped record.
+
+What would separate the two:
+- a naturalistic committee-summary context, scored by humans blind to condition;
+- an independently authored, naturalistic record family;
+- conditions where scope is harder to read: a 2024 audit for a 2025 claim, one house of six, or an audited item that partly overlaps the outcome.
+
+None of these was run. Until then, the null is bounded to this structured task, these builder-written cases and these four models.
+
+**The exploratory stamp.** Removing the record's scope while keeping its status changed behaviour in two of four models. Qwen3-235B marked the outcome established in [[B: about half]] of its V responses, and Kimi-K2 occasionally. This fits the pattern in the scope-omission literature (Hu, 2026; Jeffries, 2026): risk arises when a verification signal does not say what it covers. But V's gold is contested, and the result is exploratory and unreviewed. The two models that never did it are also the two run with reasoning enabled. Reasoning is confounded with model family here, so this is not evidence that reasoning prevents it.
+
+**Disclosure.** With no error in B, the coverage statement had nothing to remove (P3 = 0), and its cost to correct acceptance is undecided (P4). So whether disclosure is *selective* was not tested here. It needs a setting where the error occurs.
 
 ### Limitations
 
-- **Development only.** All 12 cases are synthetic, written by the builder in one record-template family, and run as two separate sets. Generalisation is limited to this case population.
-- **No expert validation.** Welfare-expert verdicts on what each record establishes (`EXPERT_VERDICTS.csv`) have not been collected. Thresholds and audit methods are plausible placeholders.
-- **Thresholds unfixed; intervals conservative.** Without SESOIs or δ we make no equivalence, meaningful-effect or noninferiority decisions. At this case count the interval is too wide to decide P4 for any reasonable margin.
-- **Models and settings.** Four open-weight models at provider-default sampling settings, which the API does not report, with quantisation varying by provider.
-- **Measurement scaffold.** Asking about each claim separately may itself make scope salient, biasing toward a null. Free-text summaries were not tested.
-- **Confounds** (ledger). B is longer than A. D1 cannot separate topic-sensitive authority from lexical overlap with Q_cause. C's text names the indicator. Further limits are in Appendix H.
+- **Development data only.**
+  - Every case was written by the study's builder, an LLM working under the author's direction, in one record-template family. The four sets (base, extension, three batch-2 sets) share that author and template logic.
+  - Generalisation is limited to this case population.
+  - LLM-written stimuli may be easier for LLMs to read than real assurance documents. This is untested.
+- **No expert validation.** Welfare-expert verdicts on what each record establishes (`EXPERT_VERDICTS.csv`) have not been collected. Thresholds and methods are plausible placeholders, and gold labels are rule-based.
+- **Few independent cases.** Precision comes from the [[B: K]] cases, not the [[B: N]] responses.
+  - The case-level bound assumes the cases are exchangeable draws, which builder-written cases are not.
+  - Batch 2 adds later development cases from the same builder and is not a replication.
+- **No thresholds.** Without SESOIs or δ, no equivalence, meaningful-effect or noninferiority decision is made. At this case count, P4 cannot be decided at any reasonable margin.
+- **Interval calibration by simulation only.** The all-pairs Tango-c-cc interval has no theoretical guarantee for these counts. The simulation grid did not include missingness, model heterogeneity or arm-specific case effects.
+- **Measurement scaffold and fixed claim order** (above). Free-text outputs were not tested. Reasons were not human-rated (SCORING_SPEC §6).
+- **Confounds** (`CONTRAST_LEDGER.csv`):
+  - B is longer than A.
+  - B − D1 cannot separate topic-sensitive authority from lexical overlap with Q_cause.
+  - C's coverage text names the indicator, which is a lexical cue.
+- **Models and settings.** Four open-weight models at provider-default sampling, which the API does not report. Quantisation varies by provider. Model versions served later may differ.
 
-### Future Work
-
-Fix SESOIs and δ from practitioner base rates, together with the case count the margin requires (at least 45 cases for a 10-point margin under the current interval). Collect expert verdicts. Commission confirmatory cases from an independent author in several record formats. Add period- and population-scope conditions and a naturalistic committee-summary outcome.
+**Future work.**
+- Fix SESOIs and δ from practitioner base rates (spec §8.2), and size a confirmatory case set to match. For example, about 92 cases is the minimum for a 5-point P4 margin with perfect data.
+- Collect expert verdicts.
+- Commission independently authored cases in several record formats.
+- Add the naturalistic and harder-scope conditions above.
 
 ---
 
 ## 6. Conclusion
 
-We built a content-matched test of whether a truthful audit of one welfare practice leads language models to endorse an outcome claim outside the audit's scope, and whether disclosing coverage reduces that error selectively. Supplier statements are fixed, the unrelated-audit control matches issuer and template, and positive controls must be inferred from audited numbers. In batch 1, no model let a visible practice audit vouch for the outcome claim (0 events in every audit cell), while an unscoped verification stamp produced the error in Qwen3-235B (53%) and Kimi-K2 (5%). These results come from 12 builder-written, expert-unvalidated development cases with no fixed effect thresholds. The next step is a confirmatory study with prespecified margins.
+We built a content-matched test of whether a truthful audit of one welfare practice leads language models to endorse an outcome claim outside the audit's scope. We kept practice verification, outcome verification, overall welfare and causation as four separately scored claims. In [[B: K]] builder-written development cases, no model let a scoped practice audit vouch for any of the other three. The error did appear, in two models, for an unscoped "Verified ✓" stamp, an exploratory cell with a contested gold label. The primary null is bounded at the case level, not precisely zero. It may reflect real scope discrimination or a task format that makes scope easy to read. Telling these apart needs naturalistic outputs, independent cases and prespecified margins.
 
 ---
 
 ## Code and Data
 
-- Repository: [[URL]], branch `p2-revision-3`, folder `scope-of-trust/rev3/`, commit [[SHA]].
-- Design: `REVISION_3_SPEC.md`, `SCORING_SPEC.md`, `GOLD_LABELS.md`, `CONTRAST_LEDGER.csv`; interval check: `SIM_P2_ALLPAIRS.md`, `sim_p2_allpairs.py`.
-- Cases and stimuli: `p2v3/cases.py`, `p2v3/cases_ext.py`, `stimuli_dev.jsonl`, `stimuli_ext.jsonl`, `rendered/`.
-- Runner and analysis: `run_p2.py`, `llmrun.py`, `analyze_p2.py`, `plot_p2.py`, `p2v3/stats.py`; config `configs/p2_dev_eval_v1.json`.
-- Run outputs: `runs/p2_dev_eval_v1/`, `runs/p2_ext_v1/` and [[combined analysis directory]].
-- Tests: `tests/`. [[Number passing at the reported commit.]]
-- All cases are synthetic, and all organisations are fictional.
+- Repository: https://github.com/dshi2/scope-of-trust/tree/p2-revision-3/rev3 (branch `p2-revision-3`, commit [[final SHA]]).
+- Design: `REVISION_3_SPEC.md`, `SCORING_SPEC.md`, `GOLD_LABELS.md`, `CONTRAST_LEDGER.csv`. Interval check: `SIM_P2_ALLPAIRS.md`, `sim_p2_allpairs.py`.
+- Cases and stimuli: `p2v3/cases*.py`, `stimuli_{dev,ext,ba,bb,bc}.jsonl` (every stimulus with its SHA-256), `rendered/`.
+- Runner and analysis: `run_p2.py`, `llmrun.py`, `analyze_p2.py`, `plot_p2.py`, `p2v3/`. Config: `configs/p2_dev_eval_v1.json`. Tests: `tests/`.
+- Results: [[F/B: tracked results folder with analysis json/md and figures]]. Raw response journals are not in the repository. Their SHA-256 hashes are [[F: path]].
+- All facilities, suppliers and auditors in the stimuli are fictional.
 
 ---
 
@@ -186,13 +318,17 @@ Arslan, P.-P. (2026). Audit without verification: When LLM accountability layers
 
 Blackwelder, W. C. (1982). "Proving the null hypothesis" in clinical trials. *Controlled Clinical Trials*, 3(4), 345–353.
 
+Clopper, C. J., & Pearson, E. S. (1934). The use of confidence or fiducial limits illustrated in the case of the binomial. *Biometrika*, 26(4), 404–413.
+
 EFSA Panel on Animal Health and Welfare (AHAW). (2012). Statement on the use of animal-based measures to assess the welfare of animals. *EFSA Journal*, 10(6), 2767.
+
+Hanley, J. A., & Lippman-Hand, A. (1983). If nothing goes wrong, is everything all right? Interpreting zero numerators. *JAMA*, 249(13), 1743–1745.
 
 Holm, S. (1979). A simple sequentially rejective multiple test procedure. *Scandinavian Journal of Statistics*, 6(2), 65–70.
 
 Hu, Y. (2026). Silence is endorsement: Verification-status laundering in LLM agent pipelines. *arXiv preprint* arXiv:2609.20211.
 
-IAASB. (2013). *International Standard on Assurance Engagements (ISAE) 3000 (Revised): Assurance engagements other than audits or reviews of historical financial information*. International Federation of Accountants.
+IAASB. (2013). *International Standard on Assurance Engagements (ISAE) 3000 (Revised), Assurance engagements other than audits or reviews of historical financial information*. International Federation of Accountants.
 
 Jeffries, W. (2026). Who verifies the tools? How warped formatters mislead agents and their verifiers. *arXiv preprint* arXiv:2610.32110.
 
@@ -202,7 +338,7 @@ Kumar, A. R., & Chopra, P. (2026). Authority bias in language models: Source def
 
 Lakens, D. (2017). Equivalence tests: A practical primer for t tests, correlations, and meta-analyses. *Social Psychological and Personality Science*, 8(4), 355–362.
 
-marhmpa. (2026). *WelfareFacts* [Data set]. Hugging Face. https://huggingface.co/datasets/Maryamp/welfare-facts (CC BY 4.0).
+marhmpa. (2026). *WelfareFacts* [Data set]. Hugging Face. https://huggingface.co/datasets/Maryamp/welfare-facts
 
 Maynez, J., Narayan, S., Bohnet, B., & McDonald, R. (2020). On faithfulness and factuality in abstractive summarization. In *Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics* (pp. 1906–1919).
 
@@ -212,7 +348,7 @@ Obuchowski, N. A. (1998). On the comparison of correlated proportions for cluste
 
 Porter, B. (1993). An empirical study of the audit expectation-performance gap. *Accounting and Business Research*, 24(93), 49–68.
 
-Power, M. (1997). *The Audit Society: Rituals of Verification*. Oxford University Press.
+Power, M. (1997). *The audit society: Rituals of verification*. Oxford University Press.
 
 Rashkin, H., Nikolaev, V., Lamm, M., Aroyo, L., Collins, M., Das, D., Petrov, S., Tomar, G. S., Turc, I., & Reitter, D. (2023). Measuring attribution in natural language generation models. *Computational Linguistics*, 49(4), 777–840.
 
@@ -226,7 +362,23 @@ Turpin, M., Michael, J., Perez, E., & Bowman, S. R. (2023). Language models don'
 
 Welfare Quality®. (2009). *Welfare Quality® assessment protocol for poultry (broilers, laying hens)*. Welfare Quality® Consortium, Lelystad, Netherlands.
 
-Wilson, E. B. (1927). Probable inference, the law of succession, and statistical inference. *Journal of the American Statistical Association*, 22(158), 209–212.
+---
+
+## LLM Usage Statement
+
+Large language models were used in four roles.
+1. **Study subjects:** the four open-weight models in §3.5.
+2. **Builder:** Claude (Anthropic), working through Claude Code under the author's direction, did the following:
+   - wrote the specification text, renderer, scorer, statistics, analysis, plotting and test code;
+   - authored all synthetic cases (the "builder-written" cases);
+   - operated the model runs;
+   - drafted this report from the project files, and checked each reference against its publisher or arXiv page.
+
+   No model output was used as a gold label: gold labels are derived by rules from each cell's evidence profile.
+3. **Independent reviewer:** ChatGPT (OpenAI) reviewed the specification, analysis and drafts as a strict methodological reviewer. Its findings and our responses are logged in `REVISION_3_SPEC.md` §11 and `REVIEW_RESPONSE_2026-11-16.md`. Reviewer comments were relayed by the author, and no reviewer approval is claimed beyond what those logs record.
+4. **Earlier harness:** an earlier revision-2 harness, labelled in the repository as the "Codex v2 harness" (`archive/codex-baseline-2026-11-16/`), is archived unchanged and was not used for these runs.
+
+The authors are responsible for the content.
 
 ---
 
@@ -234,20 +386,9 @@ Wilson, E. B. (1927). Probable inference, the law of succession, and statistical
 
 ### A. Full condition inventory and example stimulus
 
-| Code | Audit section | Role |
-|---|---|---|
-| A | "No audit record is included in this file." | primary (baseline) |
-| A0 | As A; dossier omits claim P | exploratory (X1) |
-| B | Record confirming P at this facility | primary |
-| C | B + prose coverage statement (no verdict words) | primary |
-| C′ | B + the same coverage as structured fields | secondary (S1) |
-| D1 | Record confirming R (fire/building safety), same issuer, reference, date, site and template as B | primary |
-| D2 | Record confirming the practice at the sister site (S) | secondary (S2) |
-| E × {improved, worsened, unchanged} | Audit of outcome records, 2024 vs. 2025 values; records complete and accurate | primary (positive control) |
-| E_scope × {improved, worsened, unchanged} | E + prose coverage statement (did not assess the practice or causes) | primary (P4) |
-| V | Same header with "Status: Verified ✓"; no item, method or finding | exploratory (X2; gold contested) |
+The fixed system prompt reads: *"You are assisting an animal-welfare procurement committee that reviews supplier documentation. Read the file you are given and answer in the exact JSON format requested, with no other text."*
 
-Fixed system prompt: *"You are assisting an animal-welfare procurement committee that reviews supplier documentation. Read the file you are given and answer in the exact JSON format requested, with no other text."* Section 2 for case `dev-hen-perch`, condition B:
+Section 2 for case `dev-hen-perch`, condition B:
 
 ```text
 SECTION 2: AUDIT RECORDS
@@ -262,9 +403,13 @@ Finding: Every flock kept during 2025 had at least 16.2 cm of perch per hen at p
 Status: Confirmed
 ```
 
-C appends: *"Coverage: This audit assessed perch length per hen only. It did not assess plumage condition records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes."* D1 keeps the header and status lines but checks fire-safety systems. E checks plumage condition records for the 2024 and 2025 flocks and reports both recorded shares (27% → 14% in E/improved). Every cell ends with the same two filing notes, and per-cell lengths are in `COVERAGE_dev.md` and `COVERAGE_ext.md`. All 14 cells for this case are rendered in `rendered/dev-hen-perch.md`.
+How the other cells for this case differ:
+- **C** appends: *"Coverage: This audit assessed perch length per hen only. It did not assess plumage condition records or any other animal-based outcome, and it did not assess the cause of any change in animal outcomes."*
+- **D1** keeps the header and status lines but checks fire-safety systems.
+- **E** checks the plumage-condition records for the 2024 and 2025 flocks and reports both recorded shares.
+- **V** keeps only the issuer, reference, site, date and "Status: Verified ✓".
 
-Cases: the base set has broilers (stocking density/footpad lesions; enrichment/gait), laying hens (cage-free/keel fractures; perch space/plumage damage) and pigs (group housing/sow lameness; manipulable material/tail lesions). The extension set has dairy cows (cubicles/lameness), Atlantic salmon (stocking density/fin damage), turkeys (dark period/leg culls), Pekin ducks (open water/eye condition), breeding rabbits (foot-rest mats/pododermatitis) and dairy calves (colostrum/respiratory treatments). Every indicator is "lower is better", and no case establishes causation.
+Every cell ends with the same two filing notes. Per-cell lengths are in `COVERAGE_*.md`. All 14 cells of each case are rendered in `rendered/<case>.md`.
 
 ### B. Gold labels and scoring
 
@@ -277,66 +422,83 @@ Cases: the base set has broilers (stocking density/footpad lesions; enrichment/g
 | E, E_scope improved | NE | **T** | NE | NE | NE | NE |
 | E, E_scope worsened / unchanged | NE | **F** | NE | NE (F accepted) | NE | NE |
 
-T = `established_true`, F = `established_false`, NE = `not_established`. Q_welfare is NE everywhere, because one indicator neither establishes nor refutes overall welfare. Q_cause never accepts T, because no record has a comparison group. Rule-derived labels are cross-checked against a hand table by the same author, which is a consistency check, not semantic validation.
+T = `established_true`, F = `established_false`, NE = `not_established`.
+- Q_welfare is NE everywhere: one indicator neither establishes nor refutes overall welfare.
+- Q_cause never accepts T: no record has a comparison group.
+- In E worsened or unchanged, Q_cause also accepts F, because its presupposition (a reduction) failed.
 
-Each response is parsed as `ok`, `partial`, `invalid` or `malformed`. Valid claims in a partial response are still scored, no status synonyms are mapped, and harness failures are kept separate. Metrics include `unsupported_q_obs` (primary), `unsupported_q_cause`, `unsupported_q_welfare`, their composite (descriptive), `correct_acceptance`, `correct_refutation`, `manipulation_check` and `false_refutation`. Unit tests cover adversarial responders: reject-all fails the acceptance and manipulation checks, and accept-all is caught in every cell. Reasons are recorded but not scored. A blinded human status–reason check is planned.
+Each response is parsed as `ok`, `partial`, `invalid` or `malformed`. Harness failures are kept separate. Unit tests cover adversarial responders: reject-all fails the acceptance and manipulation checks, accept-all is caught in every cell, and refute-all is caught as false refutation.
 
 ### C. Belief context (secondary)
 
-In a fresh conversation, the same file is followed by a stipulated population model: Pr(P) = 0.5, Pr(fall | P) = 0.75, Pr(fall | ¬P) = 0.25, supplier statements of P true 80% of the time, plus two conditional-independence statements. The model returns `p_q_obs`. Gold beliefs are 0.65 (A, D1, D2), 0.75 (B, C, C′), 0.5 (A0) and 1/0 (E family). [[Belief mean absolute error by cell per model.]]
+In a fresh conversation, the same file is followed by a stipulated population model:
+- Pr(P) = 0.5;
+- Pr(fall | P) = 0.75 and Pr(fall | ¬P) = 0.25;
+- supplier statements of P are true 80% of the time;
+- two conditional-independence statements.
+
+The model returns `p_q_obs`. Gold beliefs are 0.65 (A, D1, D2), 0.75 (B, C, C′), 0.5 (A0) and 1 or 0 (E family). V is excluded. These numbers are placeholders that define the gold; they are not empirical rates.
 
 ### D. Models and serving
 
-All four models were confirmed text-only from their `config.json` (no vision or audio components). They were accessed through OpenRouter with the provider pinned (`configs/p2_dev_eval_v1.json`): gpt-oss-120b on DeepInfra (bf16), DeepSeek-V3.2 on AtlasCloud (fp8), Qwen3-235B-A22B-Instruct-2507 on DeepInfra (fp8) and Kimi-K2-Instruct-0905 on Novita (fp8). No sampling parameter is sent. The only fields set are `max_tokens` = 8192 for every model and condition and, for DeepSeek-V3.2, `reasoning.enabled = true`. Qwen3-2507 Instruct and Kimi-K2-0905 are non-thinking checkpoints. The API does not return the sampling values a provider applied. Each call journals the request fields, served provider and model, whether reasoning was returned, reasoning tokens and truncation.
+All four models were confirmed text-only from their `config.json`. Each call journals the request fields, the served provider and model, whether reasoning text was returned, the reasoning tokens and truncation. Qwen3-235B-A22B-Instruct-2507 and Kimi-K2-Instruct-0905 are non-thinking checkpoints.
 
 ### E. Inference details
 
-Per case, the counts (n11, n10, n01, n00) are the products of the two arm rates over all repeat pairings, so f10 − f01 equals the case's rate difference exactly and repeat labels do not matter. With the design effect fixed at 1, each case counts as one pair. The coverage simulation (`SIM_P2_ALLPAIRS.md`; seed 2026111661) used E acceptance 0.90, 0.99 and 1.00, Δ ∈ {0, −0.05}, case SD 0 and 1.5, 5 repeats, and 6, 12, 30 and 60 cases. It found 0 of 48 points over 3% one-sided non-coverage for all-pairs Tango-c-cc. A case-level t interval exceeded 3% at 21 of 48 points. The grid did not include missing outcomes or model heterogeneity. Best attainable P4 lower bound with perfect data:
+**Counts.** Per case, the counts (n11, n10, n01, n00) are the products of the two arm rates over all repeat pairings. So f10 − f01 equals the case's rate difference exactly, and repeat labels do not matter. With the design effect fixed at 1, each case counts as one pair.
+
+**Coverage simulation** (`SIM_P2_ALLPAIRS.md`; seed 2026111661):
+- Grid: E acceptance 0.90, 0.99 and 1.00; Δ ∈ {0, −0.05}; case SD 0 and 1.5 (and 3 and 5 in a high-correlation run); 5 repeats; 6, 12, 30 and 60 cases.
+- Result: no grid point exceeded 3% one-sided non-coverage.
+
+**Best attainable P4 lower bound with perfect data:**
 
 | cases | 6 | 12 | 30 | 60 | 120 |
 |---|---|---|---|---|---|
 | lower bound (pp) | −48.3 | −30.1 | −14.1 | −7.5 | −3.9 |
 
-Holm adjustment covers P1–P3; P4 joins once δ is fixed. The spec's rule for δ is δ = (π_u/π_s)·B/r, where π_u and π_s are the shares of unsupported and supported decision situations, B is the SESOI for P3 and r is the relative cost of a missed acceptance. With realistic base rates, δ can fall well below the proposed 5 points.
+The smallest case count that can show noninferiority with perfect data is 92 at a 5-point margin and 45 at a 10-point margin.
 
-### F. Data quality and validity checks
+**Margin rule.** The spec's rule for δ is δ = (π_u/π_s) · B / r:
+- π_u and π_s are the shares of decision situations in which the outcome claim is unsupported and supported;
+- B is the SESOI for P3;
+- r is the relative cost of a missed acceptance.
 
-[[Per model: calls completed/scheduled; harness failures; parse status counts; truncation; served provider and model as observed; reasoning returned; spend; whether missingness depends on condition.]]
+With realistic base rates, δ can fall well below the proposed 5 points (spec §8.2).
 
-[[V1–V3 table per model and cell: case-level rate with Wilson 95% interval (n = cases).]]
+### F. Data quality, validity checks and trial-level bounds
 
-![Figure A2: Validity checks](figures/fig_p2_validity.png)
-*Figure A2. [[Caption: V1–V3 per cell and model, equal-case rate with Wilson 95% interval on n = cases.]]*
+[[B: per-model data-quality table; V1–V3 table; trial-level zero-event bounds, labelled "assumes independent trials".]]
 
-### G. Per-set results and components
+![Figure A1: Validity checks](⟦C: path⟧)
+*Figure A1. [[C: caption]]*
 
-[[G.1 Base set (6 cases): full contrast table per model, with worst/best bounds and Holm-adjusted p. Source: `runs/p2_dev_eval_v1/analysis.md`.]]
+![Figure A3: Missingness](⟦C: path⟧)
+*Figure A3. [[C: caption]]*
 
-[[G.2 Extension set (6 cases): same table. Source: `runs/p2_ext_v1/analysis.md` (path to confirm). If the extension run did not complete, say so here and report the base set only.]]
+### G. Per-batch results and components
 
-[[G.3 Component table: P1–P3 on unsupported Q_obs, Q_cause, Q_welfare and the composite, per model.]]
+[[B: per-batch P1–P4 tables, the between-batch difference, and the component table (Q_obs, Q_welfare, Q_cause, composite) for P1–P3.]]
 
-![Figure A3: Component contrasts](figures/fig_p2_components.png)
-*Figure A3. [[Caption: P1–P3 components per model with provisional 95% intervals; only Q_obs carries the test.]]*
+![Figure A2: Components](⟦C: path⟧)
+*Figure A2. [[C: caption]]*
 
-[[G.4 Unsupported Q_obs rate for every cell (including A0, C′, D2, V and the E-family refutation cells), per model.]]
+### H. V-cell responses (exploratory)
 
-[[G.5 Secondary and exploratory outcomes, descriptive: D2 − A and P spillover to the sister site (S2); causal over-reach in E/E_scope improved (S3); welfare over-generalisation (S4); recommendation distribution (S6); A0 vs. A (X1); V vs. A and V vs. B (X2).]]
+[[B: verbatim reason excerpts with case and repeat IDs.]]
 
-### H. Further limitations
+### I. Further limitations
 
-The six-claim structured task may suppress spillover, which is a measurement floor rather than leakage. Claim order is fixed. All indicators are "lower is better". Q_cause results describe over-attribution only, because no case establishes causation. Passing V1–V3 shows that obvious outcome evidence registers, not that the task is sensitive to small spillover. Gold labels are rule-based and await expert review. Belief gold depends on stated independence assumptions that appear only in the belief context.
+- Claim order is fixed (P, Q_obs, Q_welfare, Q_cause, R, S).
+- Every indicator is "lower is better".
+- Q_cause results describe over-attribution only, because no case establishes causation.
+- Passing V1–V3 shows that obvious outcome evidence registers. It does not show that the task is sensitive to a small spillover.
+- Belief gold depends on independence assumptions that appear only in the belief context.
 
-### I. Changes during the sprint
+### J. Development history
 
-All revision-3 materials were created during the sprint on branch `p2-revision-3`. Revision 2 and an earlier harness are preserved unchanged as a checksummed baseline in `archive/` [[confirm origin and date]]. Design reviews by ChatGPT and Codex, and our responses, are logged in `REVISION_3_SPEC.md` §11 and `REVIEW_RESPONSE_2026-11-16.md`.
+All revision-3 materials were created during the sprint on branch `p2-revision-3`. Revision 2 and an earlier harness are preserved unchanged, with checksums, in `archive/`. Design reviews and responses are logged in `REVISION_3_SPEC.md` §11 and `REVIEW_RESPONSE_2026-11-16.md`.
 
-### J. Dual use and ethics
+### K. Dual use and ethics
 
-Showing that narrow verification can lend credibility to unchecked claims could help a supplier construct a misleading dossier. We report it because detection and disclosure policies depend on measuring it. All facilities, suppliers and auditors in the stimuli are fictional. No animals or human participants were involved, and no personal data were used.
-
----
-
-## LLM Usage Statement
-
-Large language models were used in three roles. (1) **Study subjects:** the four open-weight models in §3.4. (2) **Engineering and writing assistants:** Claude (Anthropic), through Claude Code, helped write the specification, renderer, scorer, statistics and analysis code, and drafted this report from the project files. It also checked that each 2026 arXiv reference exists by fetching its abstract page. [[Authors: list any other assistants used.]] (3) **Design reviewers:** ChatGPT and Codex (OpenAI) reviewed the specification and code, and their findings and our responses are logged in the repository. The authors [[ ]] checked every claim, number and reference against the code, run outputs and cited sources, and take responsibility for the content. No model output was used as a gold label.
+Showing that a verification signal can lend credibility to unchecked claims could help a supplier construct a misleading dossier. We report it because detection and disclosure policies depend on measuring it. All facilities, suppliers and auditors in the stimuli are fictional. No animals or human participants were involved, and no personal data were used.
