@@ -231,9 +231,16 @@ V keeps the record's header and a "Status: Verified ✓" line, but names no item
 
 [[B: per model, Q_obs marked established in V: events/trials, cases with ≥1 event of K, equal-case rate with case-t CI; V − A contrast. Old batch 1: Qwen 32/60 in all 12 cases, V − A +0.533 [+0.101, +0.801], p = 0.02 unadjusted; Kimi 3/60 in 3 of 12 cases, +0.050 [−0.264, +0.364]; DeepSeek and gpt-oss 0/60.]]
 
-[[B: what else was marked established in V (P, R, Q_welfare, Q_cause), and recommendations; plus 2–3 verbatim reason excerpts per model from `reasons_when_marked_established`.]]
+[[B: what else was marked established in V (P, R, Q_welfare, Q_cause), and recommendations.]]
 
-We describe this as "marked established after an unscoped stamp". It is not a validated failure rate. The label is contested, no human has reviewed the reasons, and the cell was not a primary hypothesis.
+**What the stated reasons say.** We read every reason given when a model marked Q_obs established in V ([[B: 35 in batch 1; `v_cell_reasons.md`]]; Appendix H). This is the builder's reading, not a blinded or validated coding, and we give no rates for it. Three kinds of reason recur:
+- **The stamp as general verification of the site's records.** For example (Qwen3, `dev-hen-perch`): "The audit record … verifies the site's data, and since the claim is about recorded observations, the audit constitutes an independent check confirming the trend." This is the reading under which V's gold label is contested.
+- **The record described as containing outcome data it does not have.** For example (Qwen3, `dev-hen-cagefree`): "The audit includes verified observational data showing a lower recorded share of keel bone fractures …". The V record contains no data or finding.
+- **A checkable claim treated as checked.** For example (Qwen3, `dev-turkey-darkness`): "Q_obs is a factual comparison of recorded cull rates that falls within the scope of verifiable data."
+
+The second and third kinds are not explained by a broad reading of the stamp alone. So at least some V responses look like more than a defensible reading of an ambiguous label. Without human coding, though, we cannot say how many.
+
+We therefore describe V as "marked established after an unscoped stamp". It is not a validated failure rate: the label is contested, no human has reviewed the reasons, and the cell was not a primary hypothesis.
 
 ### 4.4 Batches
 
