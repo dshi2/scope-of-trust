@@ -306,6 +306,14 @@ class TestPlannedDesign(unittest.TestCase):
         zb = A.zero_event_bounds(A.score_rows(kept), planned)["per_cell"]["B/none"]
         self.assertEqual((zb["scheduled_trials"], zb["trials"], zb["missing_trials"]), (7, 5, 2))
         self.assertEqual(zb["cases"], 2)
+        cs = A.cell_case_summary(A.score_rows(kept), planned)["B/none"]
+        self.assertEqual((cs["scheduled"], cs["scored"], cs["cases_scheduled"], cs["cases"]), (7, 5, 3, 2))
+        self.assertAlmostEqual(cs["equal_case_mean"], 0.5)
+        self.assertIsNone(cs["zero_event_upper_case"])  # events present: no zero-event bound
+        c0 = A.cell_case_summary(A.score_rows(kept), planned)["C/none"]
+        self.assertAlmostEqual(c0["zero_event_upper_case"], 1 - 0.05 ** (1 / 2))
+        self.assertTrue(c0["degenerate"])
+        self.assertAlmostEqual(A.best_attainable_lower(12), -0.30125403907701986, places=6)
 
     def test_absent_cell_counts_as_missing_not_dropped(self):
         rows = build_rows()

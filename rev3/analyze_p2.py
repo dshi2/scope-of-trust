@@ -493,6 +493,74 @@ def v_cell(mr, planned=None):
             "reasons_when_marked_established": sorted(reasons, key=lambda x: (x["case"], x["repeat"]))}
 
 
+CELL_SUMMARY_METHOD = (
+    "attribution context, unsupported_q_obs (in E/E_scope improved, Q_obs = T is correct: `correct_here` true). "
+    "equal_case_mean = mean over cases of the case's mean over scored repeats; ci95_case_t = t interval over case "
+    "means (df = cases - 1), clipped to [0, 1], descriptive and anti-conservative near 0/1; degenerate = every case "
+    "has the same mean (zero width is not precision). zero_event_upper_case = exact one-sided 95% Clopper-Pearson "
+    "bound over cases, 1 - 0.05**(1/cases), given only when no case has an event (null otherwise); it treats cases "
+    "as exchangeable draws from the builder's case population. scheduled / cases_scheduled from manifest.json.")
+
+
+def cell_case_summary(mr, planned=None, metric="unsupported_q_obs"):
+    """Per cell, the plot-ready case-level summary (plots session request, review/REQUESTS.md 16:30)."""
+    sched, sched_cases = defaultdict(int), defaultdict(set)
+    for item, c, d, rep in (planned or ()):
+        sched[(c, d)] += 1
+        sched_cases[(c, d)].add(item)
+    out = {}
+    for c, d in all_cells():
+        per = per_case(mr, c, d, metric)
+        rates = {k: sum(v) / len(v) for k, v in per.items()}
+        s = summarise_cases(list(rates.values()))
+        ev = int(sum(map(sum, per.values())))
+        out[f"{c}/{d}"] = {
+            "equal_case_mean": s["mean"], "cases": s["cases"],
+            "cases_scheduled": len(sched_cases[(c, d)]) if planned else None,
+            "events": ev, "cases_with_event": sum(1 for v in per.values() if any(v)),
+            "scored": sum(map(len, per.values())), "scheduled": sched[(c, d)] if planned else None,
+            "ci95_case_t": s["ci95_case_t"], "degenerate": s["degenerate"],
+            "zero_event_upper_case": cp_upper(0, s["cases"]) if (s["cases"] and ev == 0) else None,
+            "correct_here": (c, d) in NOT_REPORTED_PRIMARY, "case_values": dict(sorted(rates.items()))}
+    return out
+
+
+def missingness(mr, planned_all=None):
+    """Per context and cell: scheduled (manifest) vs usable (scored) trials. Usable = attribution trials with Q_obs
+    observed, belief trials with a valid p(Q_obs). planned_all: {context: {(cond, dir): n}} or None."""
+    out = {}
+    for ctx, metric in (("attribution", "unsupported_q_obs"), ("belief", "p_q_obs")):
+        out[ctx] = {}
+        for c, d in all_cells():
+            n_rows = sum(1 for r in mr if r["context"] == ctx and (r["condition"], r["direction"]) == (c, d))
+            usable = sum(len(v) for v in per_case(mr, c, d, metric, ctx).values())
+            sch = (planned_all or {}).get(ctx, {}).get((c, d)) if planned_all else None
+            out[ctx][f"{c}/{d}"] = {"scheduled": sch, "returned": n_rows, "usable": usable,
+                                    "missing": (sch - usable) if sch is not None else None}
+    return out
+
+
+def planned_all_contexts(run_dirs):
+    """{model: {context: {(cond, dir): scheduled trials}}} from manifest.json (both contexts)."""
+    out = defaultdict(lambda: defaultdict(lambda: defaultdict(int)))
+    for d in run_dirs:
+        path = os.path.join(d, "manifest.json")
+        if not os.path.exists(path):
+            continue
+        with open(path) as f:
+            for key in json.load(f)["planned_keys"]:
+                model, item, cond, direction, ctx = key.split("|")[:5]
+                out[model][ctx][(cond, direction)] += 1
+    return {m: {c: dict(v) for c, v in cx.items()} for m, cx in out.items()}
+
+
+def best_attainable_lower(K):
+    """P4 one-sided 97.5% lower bound with perfect data (every case 100% in both arms) at K cases, same method."""
+    if K < 2:
+        return None
+    return stats.tango(stats.summarize([(1, 0, 0, 0)] * K), 0.025, conservative=True, cc=0.5)[0]
+
+
 def evidence_hierarchy(mr):
     """Per model: for A, B, D1, C, equal-case rates of unsupported Q_obs (primary), Q_welfare (S4), Q_cause (S3)."""
     return {c: {m: rate_summary(mr, c, "none", m) for m in HIERARCHY_OUTCOMES} for c in HIERARCHY_CELLS}
@@ -546,9 +614,11 @@ def examples(mr, k=3):
     return out
 
 
-def analyse(rows, s1_sesoi=None, planned=None):
-    """planned: {model: set of (item, cond, dir, repeat)} from planned_keys(); None = observed rows only."""
-    res = {"label": LABEL, "roles": ROLES, "secondary_holm_family": list(SECONDARY_HOLM_FAMILY), "models": {}}
+def analyse(rows, s1_sesoi=None, planned=None, planned_all=None):
+    """planned: {model: set of (item, cond, dir, repeat)} from planned_keys(); None = observed rows only.
+    planned_all: {model: {context: {(cond, dir): n}}} from planned_all_contexts(), for missingness."""
+    res = {"label": LABEL, "roles": ROLES, "secondary_holm_family": list(SECONDARY_HOLM_FAMILY), "models": {},
+           "cell_case_summary_method": CELL_SUMMARY_METHOD}
     # A model in the frozen design with no returned rows is still reported (all its trials count as missing).
     for m in sorted({r["model"] for r in rows} | set(planned or {})):
         mr = [r for r in rows if r["model"] == m]
@@ -589,6 +659,8 @@ def analyse(rows, s1_sesoi=None, planned=None):
             "zero_event_bounds": zero_event_bounds(mr, pm),
             "outcome_rates_by_cell": outcome_rates_by_cell(mr),
             "V_cell_exploratory": v_cell(mr, pm),
+            "cell_case_summary": cell_case_summary(mr, pm),
+            "missingness": missingness(mr, (planned_all or {}).get(m)),
             "examples_unsupported_Q_obs_in_B": examples(mr)}
         cs = res["models"][m]["contrasts"]
         adj = holm({n: cs[n]["observed"].get("p_two_sided_vs_0") for n in ("P1", "P2", "P3")})
@@ -597,6 +669,7 @@ def analyse(rows, s1_sesoi=None, planned=None):
             cs[n]["observed"]["decision"] = decide(cs[n]["observed"].get("ci95"), None)  # no SESOI fixed
         p4 = cs["P4"]["observed"]
         p4["decision"] = decide_ni(p4.get("lower_975_one_sided"), None)  # no margin fixed: never "noninferior"
+        p4["best_attainable_lower_975_at_these_cases"] = best_attainable_lower(p4.get("cases") or 0)
     return res
 
 
@@ -787,7 +860,7 @@ def main():
         for r in rows:
             if r["run_dir_"] in no_manifest and r["context"] == "attribution":
                 planned.setdefault(r["model"], set()).add((r["item_id"], r["condition"], r["direction"], r["repeat"]))
-    res = analyse(rows, a.s1_sesoi, planned)
+    res = analyse(rows, a.s1_sesoi, planned, planned_all_contexts(a.run_dir))
     res["design_source"] = {"manifest": [d for d in a.run_dir if d not in no_manifest], "observed_rows": no_manifest}
     res["run_dirs"], res["n_cases"] = a.run_dir, len({r["item_id"] for r in rows})
     with open(os.path.join(out_dir, "analysis.json"), "w") as f:
