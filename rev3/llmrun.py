@@ -12,8 +12,8 @@ Contract
 - Transient errors (429, 5xx, timeouts, connection) are retried with backoff. If retries run out the task
   is aborted, NOT journaled, and runs again on resume. halt_transient_aborts aborts halt the run, as does a
   terminal-failure rate above halt_error_rate over the last 50 results (once 20 exist).
-- Concurrency per model starts at concurrency_start: halved on a 429, +1 after `limit` straight successes,
-  capped at concurrency_max.
+- Concurrency per model starts at concurrency_start: halved on a 429, +25% after limit/2 straight
+  successes, capped at concurrency_max.
 - Spend: budget must never truncate a design (that is what made the shutdown study's cells uneven).
   run() refuses to start unless spend_cap_usd covers spent + the worst case of every remaining planned
   call. Each call writes an intent with a worst-case reservation and settles to the billed cost after;
@@ -121,9 +121,9 @@ class Limiter:
             if throttled:
                 self.limit, self.streak = max(1, self.limit // 2), 0
             else:
-                self.streak += 1
-                if self.streak >= self.limit and self.limit < self.cap:
-                    self.limit, self.streak = self.limit + 1, 0
+                self.streak += 1  # fast ramp: +25% after limit/2 straight successes (max throughput)
+                if self.streak >= max(1, self.limit // 2) and self.limit < self.cap:
+                    self.limit, self.streak = min(self.cap, self.limit + max(1, self.limit // 4)), 0
             self.cv.notify_all()
 
 
