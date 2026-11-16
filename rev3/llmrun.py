@@ -67,6 +67,10 @@ class Halt(Exception):
     pass
 
 
+class Deferred(Exception):
+    """A shared stage this task depends on was aborted by the task that owned it; this task runs on resume."""
+
+
 class Transient(Exception):
     def __init__(self, msg, retry_after=None, billed_unknown=False):
         super().__init__(msg)
@@ -182,6 +186,7 @@ class Runner:
         self.lock = threading.Lock()
         self.stop = threading.Event()
         self.done, self.spent, self.reserved, self.aborts, self.recent = {}, 0.0, 0.0, 0, []
+        self.inflight, self.unsettled_prior = {}, 0.0
         self.paused, self.planned, self.unsettled, self.stop_info, self.last429 = False, [], 0.0, None, {}
         self.limiters = {n: Limiter(m["concurrency_start"], m["concurrency_max"]) for n, m in cfg["models"].items()}
         os.makedirs(run_dir, exist_ok=True)
@@ -235,7 +240,8 @@ class Runner:
                     if r["type"] == "result":
                         self.done[r["key"]] = r
                         self.spent += r.get("cost_usd") or 0.0
-            self.spent += sum(intents.values())  # possibly billed, never settled: count conservatively
+            self.unsettled_prior = sum(intents.values())
+            self.spent += self.unsettled_prior  # possibly billed, never settled: count conservatively
         self.f = open(self.path, "a")
         if fresh:
             with open(os.path.join(self.dir, "manifest.json"), "w") as mf:
@@ -249,13 +255,15 @@ class Runner:
         os.fsync(self.f.fileno())
 
     # ---- one stage -----------------------------------------------------------------------------
-    def _body(self, model, messages, tools):
+    def _body(self, model, messages, tools, tool_choice=None):
         m = self.cfg["models"][model]
         body = dict(m["params"], model=m["slug"], messages=messages, usage={"include": True},
                     provider={"order": [m["provider"]], "allow_fallbacks": False, "require_parameters": True,
                               "quantizations": [m["quantization"]], "data_collection": "deny"})
         if tools:
             body["tools"] = tools
+            if tool_choice is not None:
+                body["tool_choice"] = tool_choice
         return body
 
     def _reserve(self, model, body):
@@ -296,15 +304,37 @@ class Runner:
                     self._halt("terminal-failure rate above halt_error_rate")
         return rec
 
-    def call(self, key, model, messages, tools=None):
+    def call(self, key, model, messages, tools=None, tool_choice=None):
+        """One stage. Concurrent calls with the same key (e.g. P1 branches sharing turn 1) send ONE request:
+        the first caller owns it, the others wait for its journaled result."""
         if key in self.done:
             return self.done[key]
+        with self.lock:
+            if key in self.done:
+                return self.done[key]
+            ev = self.inflight.get(key)
+            owner = ev is None
+            if owner:
+                ev = self.inflight[key] = threading.Event()
+        if not owner:
+            ev.wait()
+            if key in self.done:
+                return self.done[key]
+            raise Deferred(key)
+        try:
+            return self._call(key, model, messages, tools, tool_choice)
+        finally:
+            with self.lock:
+                self.inflight.pop(key, None)
+            ev.set()
+
+    def _call(self, key, model, messages, tools, tool_choice):
         if os.path.exists(self.pausefile):
             self.paused = True
             self._halt("PAUSE file")
         if self.stop.is_set():
             raise Halt("stopping")
-        body = self._body(model, messages, tools)
+        body = self._body(model, messages, tools, tool_choice)
         req_sha = hashlib.sha256(json.dumps(body, sort_keys=True).encode()).hexdigest()
         lim = self.limiters[model]
         for attempt in range(self.cfg["max_retries"] + 1):
@@ -390,7 +420,8 @@ class Runner:
     def worst_case_usd(self, planned):
         """Worst-case cost of every planned call not yet journaled. planned: [(full_key, model, messages)],
         one entry per call the frozen design can make (P1: include every possible lookup continuation)."""
-        return sum(self._reserve(m, self._body(m, msgs, None)) for k, m, msgs in planned if k not in self.done)
+        return sum(self._reserve(p[1], self._body(p[1], p[2], p[3] if len(p) > 3 else None))
+                   for p in planned if p[0] not in self.done)
 
     @staticmethod
     def _raise_fd_limit(need):
@@ -410,7 +441,7 @@ class Runner:
         Budget never truncates a design: the run refuses to START unless spend_cap_usd covers the money
         already spent plus the worst case of everything remaining. The in-run cap check then only fires on
         a runaway fault (retry storm, price change), never as a planned stopping rule."""
-        if sorted(k for k, _, _ in planned) != sorted(self.manifest["planned_keys"]):
+        if sorted(p[0] for p in planned) != sorted(self.manifest["planned_keys"]):
             self.close()
             raise Halt("planned calls differ from the run's frozen manifest; a changed design is a new run")
         self.planned, self.paused = planned, False
@@ -428,7 +459,8 @@ class Runner:
             if self.stop.is_set():
                 return
             try:
-                fn(lambda stage, messages, tools=None: self.call(f"{tkey}|{stage}", model, messages, tools),
+                fn(lambda stage, messages, tools=None, tool_choice=None:
+                   self.call(f"{tkey}|{stage}", model, messages, tools, tool_choice),
                    lambda stage, reason: self.skip(f"{tkey}|{stage}", model, reason))
                 with self.lock:
                     state["finished"] += 1
@@ -438,16 +470,16 @@ class Runner:
                     self.aborts += 1
                     if self.aborts >= self.cfg["halt_transient_aborts"]:
                         self._halt("too many tasks aborted on transient errors")
-            except Halt:
+            except (Halt, Deferred):
                 pass
 
         t0, total = time.time(), len(planned)
-        start_done = sum(k in self.done for k, _, _ in planned)
+        start_done = sum(p[0] in self.done for p in planned)
         ticker_stop = threading.Event()
 
         def ticker():  # one progress line every `progress_every` seconds, to stderr
             while not ticker_stop.wait(self.progress_every):
-                d = sum(k in self.done for k, _, _ in planned)
+                d = sum(p[0] in self.done for p in planned)
                 rate = (d - start_done) / max(1e-9, time.time() - t0)
                 eta = (total - d) / rate if rate > 0 else float("inf")
                 conc = " ".join(f"{n}={lim.active}/{lim.limit}" for n, lim in self.limiters.items())
@@ -481,9 +513,11 @@ class Runner:
             by[r["model"]][r["status"]] += 1
         s = dict(state, tasks=n, not_run=n - state["finished"] - state["aborted"], halted=self.stop.is_set(),
                  paused=getattr(self, "paused", False), complete=state["finished"] == n,
-                 spent_usd=round(self.spent, 6), unsettled_billing_usd=round(self.unsettled, 6),
+                 spent_usd=round(self.spent, 6),  # exposure = confirmed + unresolved (in-flight is 0 at the end)
+                 confirmed_usd=round(self.spent - self.unsettled - self.unsettled_prior, 6),
+                 unsettled_billing_usd=round(self.unsettled + self.unsettled_prior, 6),
                  stop_info=self.stop_info, journal_by_model=by,
-                 calls_pending=sum(k not in self.done for k, _, _ in self.planned),
+                 calls_pending=sum(p[0] not in self.done for p in self.planned),
                  remaining_worst_case_usd=round(self.worst_case_usd(self.planned), 6))
         with self.lock:
             self._write({"type": "session", "event": "end", "summary": s, "t": time.time()})
