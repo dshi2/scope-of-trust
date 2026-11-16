@@ -241,7 +241,8 @@ class TestRunner(unittest.TestCase):
         self.assertTrue(done_before)
         st = status(self.d)
         self.assertEqual(st["unique_stage_results"], 40)
-        self.assertGreaterEqual(st["network_attempts"], 40)
+        self.assertGreaterEqual(st["dispatched_requests"], 40)
+        self.assertEqual(st["dispatched_requests"], t1.n + t2.n)
 
     def test_corrupt_record_in_middle_of_journal_refuses_resume(self):
         self.go(Fake(), keys=["a"])
@@ -360,8 +361,25 @@ class TestRunner(unittest.TestCase):
         holder["r"] = r
         s = r.run([two_stage(k) for k in self.keys], plan(self.keys))
         self.assertEqual(t.n, 1)
+        st = status(self.d)
+        # a request reserved while the stop fired is voided before dispatch: reserved > dispatched == sent
+        self.assertEqual(st["dispatched_requests"], 1)
+        self.assertEqual(s["dispatched_requests_this_session"], 1)
         self.assertEqual(s["stop_info"]["reason"], "test")
         self.assertEqual(s["stop_info"]["in_flight"], 1)
+
+    def test_reserved_request_cancelled_before_dispatch_is_not_counted_as_sent(self):
+        t = Fake()
+        r = Runner(self.d, cfg(), man(["a"]), t)
+        r._wait_cooldown = lambda: r._halt("stop between reservation and dispatch")
+        s = r.run([two_stage("a")], plan(["a"]))
+        st = status(self.d)
+        self.assertEqual(t.n, 0)
+        self.assertGreaterEqual(st["reserved_intents"], 1)
+        self.assertEqual(st["dispatched_requests"], 0)
+        self.assertEqual(st["provider_responses"], 0)
+        self.assertEqual(s["dispatched_requests_this_session"], 0)
+        self.assertEqual(st["in_flight_or_unsettled"], 0)  # the reservation was voided
 
     def test_no_cap_runs_full_design(self):
         _, s = self.go(Fake(), c=cfg(spend_cap_usd=None))

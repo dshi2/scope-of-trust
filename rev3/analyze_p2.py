@@ -72,17 +72,54 @@ def contrast(rows, x, dx, y, dy, metric):
     for name, fill in (("observed", None), ("worst", (0, 1)), ("best", (1, 0))):
         cells = []
         for case, (ax, ay) in sorted(arms.items()):
-            reps = sorted(set(ax) | set(ay))
-            cells.append(stats.pair_counts([ax.get(k) for k in reps], [ay.get(k) for k in reps], fill))
+            cells.append(stats.all_pairs_counts(list(ax.values()), list(ay.values()), fill))
         try:
             s = stats.summarize(cells)
             lo, hi = stats.tango(s, 0.025, conservative=True, cc=0.5)
             z0 = stats.tango_z(s, 0.0, conservative=True, cc=0.5)
-            out[name] = {"estimate": stats.estimate(s), "ci95": [lo, hi], "cases": s.K, "cases_dropped": s.dropped,
-                         "p_two_sided_vs_0": min(1.0, 2 * (1 - NormalDist().cdf(abs(z0))))}
+            lo1, _ = stats.tango(s, 0.025, conservative=True, cc=0.5)  # one-sided 97.5% lower bound (P4)
+            d_case = [(a10 - a01) / (a11 + a10 + a01 + a00) for a11, a10, a01, a00 in cells if a11 + a10 + a01 + a00]
+            out[name] = {"estimate": stats.estimate(s), "ci95": [lo, hi], "lower_975_one_sided": lo1,
+                         "cases": s.K, "cases_dropped": s.dropped,
+                         "p_two_sided_vs_0": min(1.0, 2 * (1 - NormalDist().cdf(abs(z0)))),
+                         "ci95_case_t": case_t(d_case), "case_differences": d_case}
         except ValueError as e:
             out[name] = {"estimate": None, "note": f"not estimable: {e}"}
     return out
+
+
+def case_t(d):
+    """Comparison interval: t over case-level differences (df = cases - 1); zero width if all equal."""
+    if len(d) < 2:
+        return None
+    from statistics import mean, stdev
+    from p2v3.tdist import t_quantile
+    h = t_quantile(0.975, len(d) - 1) * stdev(d) / math.sqrt(len(d))
+    return [mean(d) - h, mean(d) + h]
+
+
+def decide(ci, sesoi):
+    """Spec §1 rule, fixed before data: needs a prespecified SESOI; otherwise says so."""
+    if not ci:
+        return "not estimable"
+    if sesoi is None:
+        return "no decision: SESOI not set"
+    lo, hi = ci
+    if lo > sesoi:
+        return "meaningful positive"
+    if hi < -sesoi:
+        return "meaningful negative"
+    if -sesoi < lo and hi < sesoi:
+        return "equivalent within SESOI"
+    return "inconclusive"
+
+
+def decide_ni(lower, margin):
+    if lower is None:
+        return "not estimable"
+    if margin is None:
+        return "no decision: P4 margin not set"
+    return "noninferior" if lower > -margin else "noninferiority not shown"
 
 
 def wilson(k, n, z=1.959964):

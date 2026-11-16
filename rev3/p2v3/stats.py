@@ -52,6 +52,23 @@ def pair_counts(x, y, fill=None):
     return tuple(n)
 
 
+def all_pairs_counts(x, y, fill=None):
+    """Pairing-free per-case counts: every X repeat against every Y repeat (n11 = x1*y1, n10 = x1*y0, ...).
+    X and Y are generated independently, so repeat index carries no matching; this U-statistic form makes
+    the case's cell proportions products of its two arm rates, invariant to how repeats are labelled, and
+    f10 - f01 = rate_X - rate_Y exactly. Missing outcomes are dropped per arm, or imputed with fill."""
+    if fill is not None:
+        x = [fill[0] if a is None else a for a in x]
+        y = [fill[1] if b is None else b for b in y]
+    x = [a for a in x if a is not None]
+    y = [b for b in y if b is not None]
+    if any(a not in (0, 1) for a in x + y):
+        raise ValueError("outcomes must be 0, 1 or None")
+    x1, y1 = sum(x), sum(y)
+    x0, y0 = len(x) - x1, len(y) - y1
+    return (x1 * y1, x1 * y0, x0 * y1, x0 * y0)
+
+
 def summarize(cells):
     """Equal-case sufficient statistics from per-case (n11, n10, n01, n00)."""
     K = dropped = 0
