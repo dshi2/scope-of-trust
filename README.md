@@ -1,37 +1,29 @@
-# The Scope of Trust (P2): verification-scope spillover in animal-welfare assurance
+# The Scope of Trust (P2)
 
-**Question.** Holding the facts fixed, does truthfully verifying one welfare claim (e.g. a housing practice) make an AI agent say a different, unchecked claim (e.g. improved welfare outcomes) was verified? Does stating the audit's coverage reduce this without suppressing correct acceptance?
+Does verifying a welfare practice make an agent attribute verification to an unchecked outcome claim? Can stating audit coverage reduce that error while preserving correct acceptance?
 
-## Status (2026-11-16)
-| Item | Status |
-|---|---|
-| Specification and offline implementation | **Proceeding.** Revision 3 work on branch `p2-revision-3` |
-| Novelty and practical relevance | Under evaluation. The use case needs confirming by a welfare expert |
-| Diagnostic pilot | Not yet. Needs revision 3 implemented, independent review, and models + spending ceiling set |
-| Confirmatory study | **Not approved** |
-| Public dataset release | Not approved (after validation, permission checks and the PI's approval) |
-| Authorized paid runs | **None** |
+## Current development
 
-## Contents
-- `archive/codex-baseline-2026-11-16/`: the Codex offline harness and reviews, preserved unchanged, with `SHA256SUMS`. **Historical diagnostic baseline (revision 2), not a confirmatory freeze.** The harness is shared with P1. Do not edit it in place.
-- `docs/`: governing documents.
+Work is on `p2-revision-3`. The [revision-3 specification](rev3/REVISION_3_SPEC.md) describes the current design. Development cases, renderers, scoring and tests exist. Independent welfare validation, statistical precision/coverage validation and execution readiness remain required. Confirmatory experiments, paid runs and public release are not authorized.
 
-## Component ownership
-The baseline is one combined P1+P2 codebase. Under revision 3, P2-specific code (`p2.py`, the P2 parts of the runner, scoring) moves here. Shared infrastructure (budget ledger, model adapter, analysis utilities) is owned by `verification-under-pressure/common/` and copied in with its source commit hash recorded.
+- [Specification](rev3/REVISION_3_SPEC.md), [contrast ledger](rev3/CONTRAST_LEDGER.csv) and [scoring specification](rev3/SCORING_SPEC.md)
+- [Source and development cases](rev3/p2v3/) and [tests](rev3/tests/)
+- [Rendered review packets](rev3/rendered/) and [exact stimulus messages](rev3/stimuli_dev.jsonl)
+- [Expert review rubric](rev3/CLAIM_EVIDENCE_RUBRIC.md) and [human-owned verdicts](rev3/EXPERT_VERDICTS.csv)
+- [Commit-specific reviews](reviews/)
 
-## Known blockers (found in the baseline; fixes go in revision 3)
-- The stimuli give away the answer: a scope rule appears in the shared probability model and system prompt; C/C′ include "Q support: not established"; E states a verdict.
-- D1 is not matched to B in issuer, template or seriousness.
-- Outcome levels are not separated (measurement verified / improvement verified / causal / belief). Attribution and belief must be asked in separate fresh contexts.
-- Scope clarification needs supported cases with and without the clarification, to show it preserves correct acceptance.
+From `rev3/`:
 
-## Governing documents (`docs/`)
-- `PROTOCOLS_v1.md`: revision 2 plus revision 3 / 3b amendment notes. A consolidated revision 3 specification is in progress; until then, revision 2 + the amendment notes apply.
-- `NOVELTY_GATE_FINAL.md`: §2.2 novelty and contribution gate (round 2).
-- `MASTER_CHECKLIST_ADDENDUM.md`: amendments to the 10-gate Research Quality Protocol (Master Checklist v3). **The v3 checklist text itself still needs adding.**
-- `EXECUTION_CHECKLIST.md`: superseded; kept for history.
-- `NOVELTY_CHECK*.md`, `HANDOFF_TO_CODEX.md`: history.
-- `SHA256SUMS`: hashes of these documents as first committed.
+```sh
+python3 generate.py
+python3 -m unittest discover -s tests -t . -q
+```
+
+Edit source cases and renderers, then regenerate derived artifacts. Do not hand-edit generated stimuli. `EXPERT_VERDICTS.csv` is human-owned and is never regenerated; a blank verdict is not approval.
+
+## Historical material
+
+`archive/codex-baseline-2026-11-16/` preserves the original combined P1/P2 diagnostic harness and its hashes. Do not edit it in place or use it as the current runner. `docs/` contains earlier protocols, checklists and handoffs; consult their revision status before applying them.
 
 ## Rules
 - **Handoffs:** every handoff and review names repository · branch · commit · changes · checks performed · open issues. A review applies only to the commit it inspected.
