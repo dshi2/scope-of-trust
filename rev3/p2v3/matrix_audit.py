@@ -39,6 +39,9 @@ def audit_planned(rows, expected_cells=DECLARED_CELLS, expected_models=None, exp
     This checks matrix structure, not scientific validity or live-run readiness.
     """
     issues = []
+    report = {"ok": False, "issues": issues, "n_items": len(expected_items or ()),
+              "n_cells": len(expected_cells or ()), "n_models": len(expected_models or ()),
+              "n_repeats": len(expected_repeats or ())}
     for name, values in (("items", expected_items), ("models", expected_models),
                          ("repeats", expected_repeats), ("cells", expected_cells)):
         if not values:
@@ -47,7 +50,7 @@ def audit_planned(rows, expected_cells=DECLARED_CELLS, expected_models=None, exp
     if any(any(k not in r or r[k] in (None, "") for k in required) for r in rows):
         issues.append("planned row missing required values")
     if issues:
-        return {"ok": False, "issues": issues}
+        return report
     keys = Counter(map(_key, rows))
     dup = [k for k, n in keys.items() if n > 1]
     if dup:
@@ -70,8 +73,8 @@ def audit_planned(rows, expected_cells=DECLARED_CELLS, expected_models=None, exp
         hashes[(r["item_id"],) + tuple(r[c] for c in CELL)].add(r["stimulus_sha256"])
     if any(len(v) > 1 for v in hashes.values()):
         issues.append("one cell maps to more than one stimulus hash")
-    return {"ok": not issues, "issues": issues, "n_items": len(items), "n_cells": len(expected_cells),
-            "n_models": len(models), "n_repeats": len(repeats)}
+    report["ok"] = not issues
+    return report
 
 
 def _attempt_count(value):
@@ -83,8 +86,9 @@ def _attempt_count(value):
     return None
 
 
-def reconcile(planned, observed, max_attempts, *, terminal_statuses):
-    """observed rows: KEY fields + terminal status + attempts + stimulus_sha256.
+def reconcile(planned, observed, max_attempts, *, terminal_statuses,
+              nonterminal_statuses=("running",)):
+    """observed rows: KEY fields + declared status + attempts + stimulus_sha256.
 
     valid_log: nothing outside the matrix, no duplicate records, attempts well formed and within the
     limit, stimuli as planned. fully_observed: every scheduled trial has a declared terminal record.
@@ -92,12 +96,22 @@ def reconcile(planned, observed, max_attempts, *, terminal_statuses):
 
     The caller supplies the frozen execution-status vocabulary (not grader parse statuses), and
     must separately pass audit_planned. This does not validate model settings or manifest identity.
+    Known nonterminal records are valid but incomplete; unknown statuses are log errors.
+    There is one latest record per trial, not an append-only stream of lifecycle events.
     """
     if type(max_attempts) is not int or max_attempts < 1:
         raise ValueError("max_attempts must be a positive integer")
     if (not terminal_statuses or isinstance(terminal_statuses, str)
             or any(not isinstance(s, str) or not s.strip() for s in terminal_statuses)):
         raise ValueError("terminal_statuses must be a nonempty collection of status names")
+    if (nonterminal_statuses is None or isinstance(nonterminal_statuses, str)
+            or any(not isinstance(s, str) or not s.strip() for s in nonterminal_statuses)):
+        raise ValueError("nonterminal_statuses must be a collection of status names")
+    terminal_statuses = frozenset(terminal_statuses)
+    nonterminal_statuses = frozenset(nonterminal_statuses)
+    if terminal_statuses & nonterminal_statuses:
+        raise ValueError("terminal and nonterminal statuses must be disjoint")
+    known_statuses = terminal_statuses | nonterminal_statuses
     if not planned or any(any(k not in r or r[k] in (None, "")
                              for k in KEY + ("stimulus_sha256",)) for r in planned):
         raise ValueError("planned matrix must be nonempty and contain trial keys and hashes")
@@ -129,14 +143,17 @@ def reconcile(planned, observed, max_attempts, *, terminal_statuses):
         r["stimulus_sha256"] != plan[k]["stimulus_sha256"] for r in v)]
     if drift:
         log_issues.append(f"{len(drift)} trials ran a stimulus other than the planned one")
-    nonterminal = [k for k, v in obs.items() if any(r["status"] not in terminal_statuses for r in v)]
-    if nonterminal:
-        log_issues.append(f"{len(nonterminal)} trials with undeclared or nonterminal statuses")
-    missing = [k for k in plan if k not in obs or k in nonterminal]
+    unknown = [k for k, v in obs.items() if any(not isinstance(r["status"], str)
+               or r["status"] not in known_statuses for r in v)]
+    if unknown:
+        log_issues.append(f"{len(unknown)} trials with undeclared statuses")
+    unfinished = [k for k, v in obs.items() if k not in unknown and any(
+        r["status"] in nonterminal_statuses for r in v)]
+    missing = [k for k in plan if k not in obs or k in unfinished or k in unknown]
     by_cell = defaultdict(Counter)
     retries = defaultdict(int)
     for k, v in obs.items():
-        if k in plan and k not in bad and k not in nonterminal:
+        if k in plan and k not in bad and k not in unknown:
             cell = (plan[k]["model"],) + tuple(plan[k][c] for c in CELL)
             for r in v:
                 by_cell[cell][r["status"]] += 1
