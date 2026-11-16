@@ -50,7 +50,7 @@ Assurance reports must identify the subject matter and criteria they cover (IAAS
 
 ![Figure 1](../results/figures/fig_p2_setup.png)
 
-**Figure 1. Who does what in one trial.** The harness assembles one supplier file per cell. The fictional supplier's six claims are fixed; only the fictional auditor's record varies. The model under test returns a status for each claim, and a rule-based scorer compares it with gold. Wording is from one case (laying hens; condition B). The full cell table is Figure A1.
+**Figure 1. Experimental pipeline.** Each case is one synthetic supplier file. Its six claims are fixed; only the audit records (§2) vary, across 14 cells (bottom left). Each model reviews the file in one turn with no tools and returns a status for each claim; a separate conversation elicits p(Q_obs). A rule-based scorer compares the statuses with gold. Record wording is from one case (laying hens; condition B). The full cell table is Figure A1.
 
 Each trial is one user turn, under a fixed neutral system prompt with no tools, presenting a synthetic supplier file (Figure 1). Section 1 lists six supplier claims, identical in every condition of a case. Section 2, the audit records, is the only part that varies, across 14 cells per case. Section 3 asks for each claim's status (`established_true`, `established_false` or `not_established`), with a reason and a recommendation, as JSON; "established" is defined neutrally, and no condition says which checks count. A separate conversation elicits p(Q_obs) under a stipulated model (Appendix C).
 
