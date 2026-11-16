@@ -5,13 +5,13 @@ Independent
 
 **With** Apart Research
 
-_Research conducted at the AI × Epistemics Research Sprint, November 2026._
+_Research conducted at the AI × Epistemics Research Sprint, November 2026. Code and data: https://github.com/dshi2/scope-of-trust_
 
 ---
 
 ## Abstract
 
-A truthful audit can be over-read: a certifier may correctly confirm a housing practice without establishing that an animal-welfare outcome improved. We test whether language models reviewing a synthetic supplier file let a truthful practice audit license an unchecked claim about a recorded outcome. Supplier statements are held fixed, and only the audit section varies: no audit, a practice audit, a same-template audit of an unrelated property, the practice audit with a coverage statement, and audited outcome records. Four open-weight models answered 36 builder-written cases five times per cell, 20,160 calls in all. No model marked the unchecked outcome claim established in any audit or control cell, in any of four batches, so every primary contrast was 0.000. With zero events in 36 cases, the exact one-sided 95% upper bound on the share of cases ever showing the error is 8.0% per model and cell: a bounded null, not a precise one. Correct acceptance of audited outcomes was 100% with and without the coverage statement. In an exploratory cell with an unscoped "Verified ✓" stamp, Qwen3-235B marked the outcome claim established in 96 of 180 responses. All cases are builder-written and not expert-reviewed. Code and data: https://github.com/dshi2/scope-of-trust
+A truthful audit can be over-read: a certifier may correctly confirm a housing practice without establishing that an animal-welfare outcome improved. We test whether language models reviewing a synthetic supplier file let a truthful practice audit license an unchecked claim about a recorded outcome. Supplier statements are held fixed, and only the audit section varies: no audit, a practice audit, a same-template audit of an unrelated property, the practice audit with a coverage statement, and audited outcome records. Four open-weight models answered 36 builder-written cases five times per cell, 20,160 calls in all. No model marked the unchecked outcome claim established in any audit or control cell, in any of four batches, so every primary contrast was 0.000. With zero events in 36 cases, the exact one-sided 95% upper bound on the share of cases ever showing the error is 8.0% per model and cell: a bounded null, not a precise one. Correct acceptance of audited outcomes was 100% with and without the coverage statement. In an exploratory cell with an unscoped "Verified ✓" stamp, Qwen3-235B marked the outcome claim established in 96 of 180 responses. All cases are builder-written and not expert-reviewed.
 
 ---
 
@@ -304,7 +304,7 @@ We evaluated four open-weight, text-only models, each confirmed text-only from i
 | `Qwen/Qwen3-235B-A22B-Instruct-2507` | DeepInfra | fp8 |
 | `moonshotai/Kimi-K2-Instruct-0905` | Novita | fp8 |
 
-We used the pinned serving providers' default sampling configurations. Reasoning was enabled for gpt-oss-120b (its default) and for DeepSeek-V3.2 (an explicit override). All request parameters and the available inference metadata were recorded. No sampling parameter is sent; the API does not report the values a provider applies, and `max_tokens` = 8192 throughout. Each model answered every stimulus 5 times. Results are reported per model and never pooled across models.
+We used the pinned serving providers' default sampling configurations. Reasoning was enabled for gpt-oss-120b (its default) and for DeepSeek-V3.2 (an explicit override). All request parameters and the available inference metadata were recorded. Sampling parameters were left at each provider's defaults, which the API does not expose; `max_tokens` = 8192 throughout. Each model answered every stimulus 5 times. Results are reported per model and never pooled across models.
 
 
 All four models were confirmed text-only from their `config.json`. Each call journals the request fields, the served provider and model, whether reasoning text was returned, the reasoning tokens and truncation. Qwen3-235B-A22B-Instruct-2507 and Kimi-K2-Instruct-0905 are non-thinking checkpoints.
