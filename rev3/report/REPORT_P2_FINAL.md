@@ -304,7 +304,7 @@ We evaluated four open-weight, text-only models, each confirmed text-only from i
 | `Qwen/Qwen3-235B-A22B-Instruct-2507` | DeepInfra | fp8 |
 | `moonshotai/Kimi-K2-Instruct-0905` | Novita | fp8 |
 
-We used the pinned serving providers' default sampling configurations. Reasoning was enabled for gpt-oss-120b (its default) and for DeepSeek-V3.2 (an explicit override). All request parameters and the available inference metadata were recorded. Sampling parameters were left at each provider's defaults, which the API does not expose; `max_tokens` = 8192 throughout. Each model answered every stimulus 5 times. Results are reported per model and never pooled across models.
+We used the pinned serving providers' default sampling configurations. Reasoning was enabled for gpt-oss-120b (its default) and for DeepSeek-V3.2 (an explicit override). All request parameters and the available inference metadata were recorded. Each model answered every stimulus 5 times. Results are reported per model and never pooled across models.
 
 
 All four models were confirmed text-only from their `config.json`. Each call journals the request fields, the served provider and model, whether reasoning text was returned, the reasoning tokens and truncation. Qwen3-235B-A22B-Instruct-2507 and Kimi-K2-Instruct-0905 are non-thinking checkpoints.
