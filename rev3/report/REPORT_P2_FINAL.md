@@ -20,11 +20,11 @@ We test whether language models reviewing a synthetic supplier file let a truthf
 - the practice audit plus a statement of what it did and did not cover (C);
 - audited outcome records, with and without that coverage statement (E, E_scope).
 
-Four open-weight models (gpt-oss-120b, DeepSeek-V3.2, Qwen3-235B-A22B-2507, Kimi-K2-0905) each answered 12 builder-written development cases (batch 1) five times per cell, in two elicitation contexts (6,720 calls in all).
+Four open-weight models (gpt-oss-120b, DeepSeek-V3.2, Qwen3-235B-A22B-2507, Kimi-K2-0905) each answered 36 builder-written development cases five times per cell, in two elicitation contexts (20,160 calls in all). The cases came in a first batch of 12 and three later batches of 8.
 
-**The primary result is a floor.** No model marked the unchecked outcome claim established in any audit or control cell, so all three primary contrasts were 0.000: B − A, B − D1 and C − B. This is a null with wide case-level uncertainty, not a precise null. With zero events in all 12 cases, the exact one-sided 95% upper bound on the share of cases that would ever show the error is 22.1% per model and cell. The positive controls were at ceiling. Whether the coverage statement costs correct acceptance is undecided: no margin has been fixed. Its lower bound, −30.1 points, is the best attainable with 12 cases.
+**The primary result is a floor.** No model marked the unchecked outcome claim established in any audit or control cell, so all three primary contrasts were 0.000: B − A, B − D1 and C − B. This is a null with wide case-level uncertainty, not a precise null. With zero events in all 36 cases, the exact one-sided 95% upper bound on the share of cases that would ever show the error is 8.0% per model and cell (22.1% in the first batch alone). The positive controls were at ceiling. Whether the coverage statement costs correct acceptance is undecided: no margin has been fixed. Acceptance was 100% in both arms, and the pooled lower bound of −12.0 points is the best attainable with 36 cases.
 
-In an exploratory cell carrying an unscoped "Verified ✓" stamp, two models marked the outcome claim established: Qwen3 in 32 of 60 responses (53%, in all 12 cases) and Kimi-K2 in 3 of 60 (5%). The gold label for this cell is contested. In most of Qwen's responses, though, the stated reason attributes to the stamp a finding it does not contain.
+In an exploratory cell carrying an unscoped "Verified ✓" stamp, two models marked the outcome claim established: Qwen3 in 96 of 180 responses (53%), in 32 of 36 cases and in every batch, and Kimi-K2 in 3 of 179, all in the first batch. The gold label for this cell is contested. In most of Qwen's responses, though, the stated reason attributes to the stamp a finding it does not contain.
 
 All cases were written by the study's builder and have not been reviewed by experts. Nothing here is confirmatory.
 
@@ -184,7 +184,7 @@ We used the pinned serving providers' default sampling configurations. Reasoning
 
 ## 4. Results
 
-> Development evaluation on builder-written cases. Every interval is provisional. No SESOI or margin is fixed, so no decisions are made. Not confirmatory. Source: `runs/p2_batch1_combined/analysis.json`, analysis code at commit `5871057`. A separate script that shares no code with the analysis recomputed it: 478 values compared, 0 mismatches. This section reports batch 1 (12 cases); batch 2 is in §4.4.
+> Development evaluation on builder-written cases. Every interval is provisional. No SESOI or margin is fixed, so no decisions are made. Not confirmatory. Source: `runs/p2_batch1_combined/analysis.json`, analysis code at commit `5871057`. A separate script that shares no code with the analysis recomputed it: 478 values compared, 0 mismatches. §4.1–§4.3 report batch 1 (12 cases) in detail. §4.4 adds the three later batches (24 cases), analysed with the same code (`runs/p2_{ba,bb,bc}_analysis`, pooled in `runs/p2_all_batches`). Each run was independently recomputed with 0 mismatches.
 
 **Data quality.**
 - Every one of the 1,680 calls per model (840 attribution, 840 belief) returned with transport status `ok`.
@@ -214,7 +214,7 @@ No model marked Q_obs established in any A, B, C or D1 cell, nor in A0, C′, D2
 
 How to read Table 3:
 - **The primary contrasts are 0.000 because both arms are 0.** The Tango-c-cc interval at zero events reflects only the case count, and is wide and conservative. The degenerate case-t interval [0, 0] is not a precision claim.
-- **What the data support** is a case-level statement. In this case population, the share of cases in which a model would ever mark Q_obs established after a practice audit is plausibly below 22.1%, and could be that large. That is a null with wide uncertainty, not a precise null, and not an equivalence result.
+- **What the data support** is a case-level statement. In this case population, the share of cases in which a model would ever mark Q_obs established after a practice audit is plausibly below 22.1%, and could be that large. Pooled over all 36 cases, the bound is 8.0% (§4.4). That is a null with wide uncertainty, not a precise null, and not an equivalence result.
 - **The 60 responses per cell do not narrow it further.** Repeats are nested in the 12 cases. A trial-level bound (4.9%) would assume independent responses, so it appears only in Appendix F.
 - **P4.** Observed correct acceptance was 100% vs. 100% (60/60 in each arm, every model). With no margin fixed, P4 is **no decision**. The lower bound of −0.301, the best attainable at 12 cases, would not meet any margin a practitioner is likely to accept. Even with perfect data, 12 cases cannot show noninferiority at a 5-point margin; on our method that takes about 92 cases (Appendix E).
 
@@ -269,15 +269,42 @@ We therefore describe V as "marked established after an unscoped stamp". It is n
 
 ### 4.4 Batches
 
-Batch 2 (three further sets of 8 builder-written cases: `ba`, `bb`, `bc`) ran after batch 1, with the same renderer, prompts, cells, models and repeats. Two sets (`ba`, `bc`) had completed and `bb` was finishing when this report was written. Their per-batch, pooled and between-batch analyses (spec §7a) were not ready in time, and none of their results appear here. Under the prespecified rule, they will be reported in full as later development batches, not as a replication, together with the per-batch estimates.
+Batch 2 has three further sets of 8 builder-written cases: `ba` (livestock), `bb` (aquaculture and poultry) and `bc` (non-farm populations). They used the same renderer, prompts, cells, models and repeats. All three completed: 4,480 of 4,480 calls each, every one with status `ok`. Following the prespecified rule (spec §7a), we report every batch, the pooled estimate and the between-batch difference. These are later development batches by the same builder, not a replication.
+
+**Table 5. Per-batch and pooled results (identical for all four models unless stated).** Bound = exact one-sided 95% case-level upper bound with zero events. Intervals are all-pairs Tango-c-cc (provisional).
+
+| | Batch 1 | ba | bb | bc | Pooled |
+|---|---|---|---|---|---|
+| Cases | 12 | 8 | 8 | 8 | 36 |
+| Unsupported Q_obs in every primary error cell | 0 | 0 | 0 | 0 | 0 |
+| Case-level bound per cell | 22.1% | 31.2% | 31.2% | 31.2% | **8.0%** |
+| P1, P2, P3 | 0.000 [±0.301] | 0.000 [±0.402] | 0.000 [±0.402] | 0.000 [±0.402] | 0.000 [−0.120, +0.120] |
+| P4 correct acceptance, E_scope vs. E | 100% vs. 100% | 100% vs. 100% | 100% vs. 100% | 100% vs. 100% | 100% vs. 100%; lower bound −0.120 |
+| V: Qwen3 Q_obs marked established (cases with ≥ 1) | 0.533 (12/12) | 0.475 (6/8) | 0.400 (6/8) | 0.725 (8/8) | **0.533 (32/36)** [0.418, 0.649] |
+| V: Kimi-K2 | 0.050 (3/12) | 0 | 0 | 0 | 0.017 (3/36) |
+| V: DeepSeek-V3.2, gpt-oss-120b | 0 | 0 | 0 | 0 | 0 |
+
+- **The primary floor held in every batch.** Across all 36 cases, no model marked Q_obs established in any A, A0, B, C, C′, D1 or D2 cell, or in an E-family cell where gold rejects it. Unsupported Q_welfare and Q_cause were also 0 outside V.
+- **The validity checks** (V1–V3) were 1.000 in every cell, model and batch, with one exception: Kimi-K2's D1 manipulation check in `bc` was 0.975 (39 of 40), or 0.994 pooled.
+- **Every between-batch difference** (batch 2 − batch 1, Welch over case-level values) is 0.000, and degenerate, for P1–P4 and every error cell. Qwen V is +0.000 [−0.239, +0.239], and Kimi V is −0.050 [−0.107, +0.007]. These are descriptive consistency checks, not tests.
+- **P4 remains "no decision".** No margin is fixed, and the pooled lower bound (−12.0 points) would not satisfy a 5- or 10-point margin. That would need about 92 or 45 cases with perfect data (Appendix E).
+- **Secondary outcomes, pooled.**
+  - Qwen's place-scope spillover (P marked true after a sister-site audit, D2) is 0.050 [0.000, 0.105]; it is 0 for the other models.
+  - The B − A belief shift (normative +0.10) is DeepSeek +0.099, gpt-oss +0.096, Kimi +0.091 [+0.082, +0.101], and Qwen +0.056 [+0.038, +0.074].
+- **Data quality, pooled.** 5,040 calls per model.
+  - DeepSeek: 1 malformed.
+  - gpt-oss: all parsed.
+  - Kimi: 38 malformed (all truncated, belief context) and 3 invalid.
+  - Qwen: 1 invalid.
+- **Full tables:** `runs/p2_all_batches/between_batch.md`.
 
 ---
 
 ## 5. Discussion and Limitations
 
-**What the null says.** When the audit record states its item, method and finding, all four models confined its endorsement to the claim it checked. This held in every audit and control cell, across 12 cases and four model families. The positive controls show that the models did accept and refute outcome claims from audited numbers, and did read the practice audit. The specific failure we designed for, a truthful practice audit vouching for an out-of-scope outcome, did not occur in this task. Three limits apply:
+**What the null says.** When the audit record states its item, method and finding, all four models confined its endorsement to the claim it checked. This held in every audit and control cell, across 36 cases in four batches and four model families. The positive controls show that the models did accept and refute outcome claims from audited numbers, and did read the practice audit. The specific failure we designed for, a truthful practice audit vouching for an out-of-scope outcome, did not occur in this task. Three limits apply:
 - It is not an equivalence result, because no SESOI was fixed.
-- It is not a precise null: the case-level bound is 22.1% per model and cell.
+- It is not a precise null: the case-level bound is 8.0% per model and cell over 36 cases, and 22.1% in batch 1 alone.
 - It does not show that models "cannot" make this error.
 
 **Why is the primary at the floor?** Two explanations fit the data, and this design cannot separate them.
@@ -296,7 +323,7 @@ What would separate the two:
 
 None of these was run. Until then, the null is bounded to this structured task, these builder-written cases and these four models.
 
-**The exploratory stamp.** Removing the record's scope while keeping its status changed behaviour in two of four models. Qwen3-235B marked the outcome established in 53% (32/60) of its V responses, and Kimi-K2 occasionally. This fits the pattern in the scope-omission literature (Hu, 2026; Jeffries, 2026): risk arises when a verification signal does not say what it covers. But V's gold is contested, and the result is exploratory and unreviewed. The two models that never did it are also the two run with reasoning enabled. Reasoning is confounded with model family here, so this is not evidence that reasoning prevents it.
+**The exploratory stamp.** Removing the record's scope while keeping its status changed behaviour in two of four models. Qwen3-235B marked the outcome established in 53% of its V responses (96/180, in every batch), and Kimi-K2 occasionally. This fits the pattern in the scope-omission literature (Hu, 2026; Jeffries, 2026): risk arises when a verification signal does not say what it covers. But V's gold is contested, and the result is exploratory and unreviewed. The two models that never did it are also the two run with reasoning enabled. Reasoning is confounded with model family here, so this is not evidence that reasoning prevents it.
 
 **Disclosure.** With no error in B, the coverage statement had nothing to remove (P3 = 0), and its cost to correct acceptance is undecided (P4). So whether disclosure is *selective* was not tested here. It needs a setting where the error occurs.
 
@@ -307,7 +334,7 @@ None of these was run. Until then, the null is bounded to this structured task, 
   - Generalisation is limited to this case population.
   - LLM-written stimuli may be easier for LLMs to read than real assurance documents. This is untested.
 - **No expert validation.** Welfare-expert verdicts on what each record establishes (`EXPERT_VERDICTS.csv`) have not been collected. Thresholds and methods are plausible placeholders, and gold labels are rule-based.
-- **Few independent cases.** Precision comes from the 12 cases, not the 60 responses per cell.
+- **Few independent cases.** Precision comes from the 36 cases, not the 180 responses per cell.
   - The case-level bound assumes the cases are exchangeable draws, which builder-written cases are not.
   - Batch 2 adds later development cases from the same builder and is not a replication.
 - **No thresholds.** Without SESOIs or δ, no equivalence, meaningful-effect or noninferiority decision is made. At this case count, P4 cannot be decided at any reasonable margin.
@@ -329,7 +356,7 @@ None of these was run. Until then, the null is bounded to this structured task, 
 
 ## 6. Conclusion
 
-We built a content-matched test of whether a truthful audit of one welfare practice leads language models to endorse an outcome claim outside the audit's scope. We kept practice verification, outcome verification, overall welfare and causation as four separately scored claims. In 12 builder-written development cases, no model let a scoped practice audit vouch for any of the other three. The error did appear, in two models, for an unscoped "Verified ✓" stamp, an exploratory cell with a contested gold label. The primary null is bounded at the case level, not precisely zero. It may reflect real scope discrimination or a task format that makes scope easy to read. Telling these apart needs naturalistic outputs, independent cases and prespecified margins.
+We built a content-matched test of whether a truthful audit of one welfare practice leads language models to endorse an outcome claim outside the audit's scope. We kept practice verification, outcome verification, overall welfare and causation as four separately scored claims. In 36 builder-written development cases, no model let a scoped practice audit vouch for any of the other three. The error did appear, in two models, for an unscoped "Verified ✓" stamp, an exploratory cell with a contested gold label. The primary null is bounded at the case level, not precisely zero. It may reflect real scope discrimination or a task format that makes scope easy to read. Telling these apart needs naturalistic outputs, independent cases and prespecified margins.
 
 ---
 
@@ -519,7 +546,7 @@ _[Figure A3 pending: missingness by cell.]_
 
 ### G. Per-batch results and components
 
-**Components, batch 1.** For P1–P3, Q_obs, Q_cause, Q_welfare and the Q_obs-or-Q_cause composite are each 0.000 [−0.301, +0.301] for every model. Only Q_obs is primary. The batch-2 per-batch tables and the between-batch difference are pending (§4.4).
+**Components, batch 1.** For P1–P3, Q_obs, Q_cause, Q_welfare and the Q_obs-or-Q_cause composite are each 0.000 [−0.301, +0.301] for every model. Only Q_obs is primary. The per-batch tables and the between-batch differences for every cell and contrast are in `runs/p2_all_batches/between_batch.md` (summary in §4.4).
 
 _[Figure A2 pending: components.]_
 
