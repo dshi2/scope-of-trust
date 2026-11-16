@@ -364,7 +364,8 @@ def belief_s5(mr):
     if shift:
         s = summarise_cases(shift, clip=None)
         out["shift_B_minus_A"] = {"mean": s["mean"], "normative": 0.10, "cases": s["cases"],
-                                  "ci95_case_t": s["ci95_case_t"]}
+                                  "ci95_case_t": s["ci95_case_t"], "degenerate": s["degenerate"],
+                                  "deviation_from_normative": s["mean"] - 0.10}
     return out
 
 
@@ -664,7 +665,7 @@ def secondary_markdown(m, r):
     if "shift_B_minus_A" in b:
         sh = b["shift_B_minus_A"]
         out += ["", f"Belief shift B − A = {sh['mean']:+.3f} (normative +0.10), case t CI "
-                    f"{ci_str(sh['ci95_case_t'], True)}, {sh['cases']} cases."]
+                    f"{ci_str(sh['ci95_case_t'], True, sh.get('degenerate', False))}, {sh['cases']} cases."]
     rec = sec["recommendation"]
     out += ["", rec["label"], "", "| cell | approve [CI] | request_more_evidence [CI] | reject [CI] | cases | unparsed |",
             "|---|---|---|---|---|---|"]
@@ -793,7 +794,29 @@ def main():
         json.dump(res, f, indent=1, sort_keys=True)
     with open(os.path.join(out_dir, "analysis.md"), "w") as f:
         f.write(markdown(res))
+    with open(os.path.join(out_dir, "v_cell_reasons.md"), "w") as f:
+        f.write(v_reasons_markdown(res))
     print(markdown(res))
+
+
+def v_reasons_markdown(res):
+    """Every V-cell response where Q_obs was marked established, with its Q_obs reason (verbatim), for the
+    qualitative check. Exploratory; the V stamp states issuer, reference, site, date and 'Status: Verified' only."""
+    out = ["# V cell: Q_obs marked established after an unscoped stamp (EXPLORATORY; gold contested, spec §8.6)", "",
+           "The V record states issuer, audit reference, site, date and 'Status: Verified ✓'; it names no item "
+           "checked, method or finding. Reasons are verbatim model output.", ""]
+    for m, r in res["models"].items():
+        rs = r["V_cell_exploratory"]["reasons_when_marked_established"]
+        out += [f"## {m}: {len(rs)} responses", "", "| case | repeat | P | R | Q_welfare | Q_cause | Q_obs reason |",
+                "|---|---|---|---|---|---|---|"]
+        ab = {"established_true": "T", "established_false": "F", "not_established": "NE", None: "–"}
+        for x in rs:
+            s = x["statuses"]
+            reason = (x["Q_obs_reason"] or "").replace("|", "\\|").replace("\n", " ")
+            out.append(f"| {x['case']} | {x['repeat']} | {ab.get(s['P'], s['P'])} | {ab.get(s['R'], s['R'])} | "
+                       f"{ab.get(s['Q_welfare'], s['Q_welfare'])} | {ab.get(s['Q_cause'], s['Q_cause'])} | {reason} |")
+        out.append("")
+    return "\n".join(out)
 
 
 if __name__ == "__main__":
