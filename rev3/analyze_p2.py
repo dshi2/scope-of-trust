@@ -51,6 +51,7 @@ import argparse
 import json
 import math
 import os
+import re
 from collections import defaultdict
 from statistics import NormalDist
 
@@ -369,6 +370,43 @@ def belief_s5(mr):
     return out
 
 
+LENIENT_REC = re.compile(r'"recommendation"\s*:\s*"(approve|request_more_evidence|reject)"')
+LENIENT_LABEL = ("POST-HOC SENSITIVITY, not the frozen scorer (SCORING_SPEC: no lenient mapping). Rule: when the "
+                 "strict scorer finds no valid recommendation in the first JSON object of a scored attribution "
+                 "response, take the last '\"recommendation\": \"<approve|request_more_evidence|reject>\"' in the "
+                 "full response text (recovers a recommendation placed after a stray closing brace). Claims are "
+                 "never re-scored.")
+
+
+def lenient_recommendation(mr):
+    """Per cell: strict-missing recommendations, how many the lenient rule recovers (and to what), and equal-case
+    shares under strict-or-lenient. Labelled post-hoc; the strict S6 shares remain the reported analysis."""
+    out = {"label": LENIENT_LABEL, "per_cell": {}}
+    for c, d in all_cells():
+        recs, missing, recovered = defaultdict(list), 0, defaultdict(int)
+        for r in mr:
+            if r["context"] != "attribution" or (r["condition"], r["direction"]) != (c, d) or not r["metrics"]:
+                continue
+            rec = r["metrics"].get("recommendation")
+            if rec is None:
+                missing += 1
+                found = LENIENT_REC.findall(r["text"] or "")
+                if found:
+                    rec = found[-1]
+                    recovered[rec] += 1
+            if rec is not None:
+                recs[r["item_id"]].append(rec)
+        if not recs and not missing:
+            continue
+        cell = {"strict_missing": missing, "recovered": dict(recovered),
+                "still_missing": missing - sum(recovered.values())}
+        for opt in RECOMMENDATIONS:
+            s = summarise_cases([v.count(opt) / len(v) for v in recs.values()])
+            cell[opt] = {"rate": s["mean"], "ci95_case_t": s["ci95_case_t"], "degenerate": s["degenerate"]}
+        out["per_cell"][f"{c}/{d}"] = cell
+    return out
+
+
 def recommendation_s6(mr):
     """Equal-case recommendation shares per cell (denominator: the case's trials with a valid recommendation;
     unparsed recommendations counted separately), and a case-level descriptive association with Q_obs."""
@@ -409,6 +447,7 @@ def recommendation_s6(mr):
         u, ap = int(bool(met["unsupported_q_obs"])), int(met["recommendation"] == "approve")
         by_case[r["item_id"]][u].append(ap)
         table["unsupported" if u else "supported_or_not_marked"][1 - ap] += 1
+    out["posthoc_lenient_recommendation"] = lenient_recommendation(mr)
     diffs = [sum(v[1]) / len(v[1]) - sum(v[0]) / len(v[0]) for v in by_case.values() if v[0] and v[1]]
     s = summarise_cases(diffs, clip=(-1.0, 1.0))
     out["association_unsupported_q_obs_approve"] = {
@@ -638,6 +677,10 @@ def analyse(rows, s1_sesoi=None, planned=None, planned_all=None):
             q["reasoning_tokens"]["none_reported" if rt is None else ("0" if rt == 0 else ">0")] += 1
             q["request_params"][json.dumps({k: v for k, v in (r.get("request_params") or {}).items()
                                             if k not in ("model", "usage", "provider")}, sort_keys=True)] += 1
+            if r["context"] == "attribution" and r["metrics"] and r["metrics"].get("recommendation") is None:
+                # parse 'ok' covers the claims only: these responses have no usable recommendation (S6 missing)
+                q["attribution_recommendation_missing_by_parse"][r["parse"]] += 1
+                q["attribution_recommendation_missing_by_cell"][f"{r['condition']}/{r['direction']}"] += 1
         rates = defaultdict(list)
         belief = defaultdict(list)
         for r in mr:
