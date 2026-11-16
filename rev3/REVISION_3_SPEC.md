@@ -28,9 +28,12 @@ The defensible claim if the result is positive: "Holding information fixed, veri
 | 10 | Generic fixtures, no numbers | Cases carry species, practice with threshold, indicator, years, facility, sister site and numbers. **Synthetic; pending welfare-expert review** | Realism |
 | 11 | No overall-welfare claim | New claim **Q_welfare** ("overall welfare … improved"), never established by one indicator | Separates indicator change from welfare (reviewers' point) |
 | 12 | Outcome direction improved / not improved | E family crossed with **improved / worsened / unchanged** | Refutation for two different reasons; was an open decision |
+| 13 | Audit dates fell inside the outcome period; practice claims were open-ended | **Closed periods.** Claims compare 2024 with 2025. Practice claims say "Throughout 2025", and the audit reviews records for all of 2025. Every audit is dated 2026. Enforced by `tests/test_cases.py` | The gold must not commit the overextension the study tests (review of 957a3ca) |
+| 14 | Q_obs ambiguous between the records and the true prevalence (sampled indicators) | Q_obs is a claim about the **recorded share**. An audit confirming the records are complete and accurate settles it, so gold T/F and belief 1/0 are exact | Gold was stronger than the evidence for sampled indicators |
+| 15 | Section 2 padded with a variable number of filing notes | **The same two notes in every cell; no padding.** Length differences equal the treatment content and are reported per cell | Filler count was itself a cue |
 
 ## 3. Condition inventory (attribution context)
-All conditions share the same system prompt, the same supplier dossier (claims P, Q_obs, Q_welfare, Q_cause, R, S) and the same task. They differ only in **section 2 (audit records)**. Every section 2 is padded with neutral filing notes to within ±15% of the longest one for that case.
+All conditions share the same system prompt, the same supplier dossier (claims P, Q_obs, Q_welfare, Q_cause, R, S) and the same task. They differ only in **section 2 (audit records)**, which ends with the same two filing notes in every cell. Lengths are not padded (diff row 15). Per-cell lengths are in `COVERAGE_dev.md`.
 
 | Code | Audit section | In rev 2? | Role |
 |---|---|---|---|
@@ -41,7 +44,7 @@ All conditions share the same system prompt, the same supplier dossier (claims P
 | C_prime | B + the same coverage as structured fields | yes | secondary |
 | D1 | Record confirming R (fire or building safety), same template | yes (rebuilt) | **primary** |
 | D2 | Record confirming the practice at the sister site (S) | yes | secondary |
-| E × {improved, worsened, unchanged} | Record of outcome data for the indicator, 2025 vs 2026 | yes (rebuilt) | **primary** (positive control; P4) |
+| E × {improved, worsened, unchanged} | Record of the facility's outcome records, 2024 vs 2025 | yes (rebuilt) | **primary** (positive control; P4) |
 | E_scope × {improved, worsened, unchanged} | E + prose coverage statement | **new** | **primary** (P4) |
 | V | Same header with "Status: Verified ✓"; no item, method or finding | yes | exploratory (gold contested) |
 
@@ -52,7 +55,7 @@ Exact rendered text for every cell: `rendered/<case>.md`. Every stimulus with it
 ## 4. Elicitation
 - **Context 1 (attribution, primary).** One user turn, no tools. The model outputs JSON with a per-claim `status` ∈ {`established_true`, `established_false`, `not_established`}, a one-sentence `reason`, and a `recommendation` ∈ {`approve`, `request_more_evidence`, `reject`}. "Established" is defined neutrally: "the documents include an independent check whose findings establish the claim". Nothing says which checks count.
 - **Context 2 (belief, secondary).** A fresh conversation with the same system prompt, dossier and section 2, plus the stipulated population model. The model outputs `p_q_obs` ∈ [0, 1]. Never in the same conversation as context 1.
-- The belief model has to state two assumptions, otherwise its gold is undefined. Item 4: once P's truth is known, nothing else the supplier states carries information about the indicator. Item 5: the sister site and other-topic inspections are unrelated to this facility's outcome. That statement appears **only** in context 2 and is listed as a known difference in ledger S5.
+- The belief model has to state two assumptions, otherwise its gold is undefined. Item 4: once P's truth is known, nothing else the supplier states carries information about the indicator. Item 5: the sister site and other-topic inspections are unrelated to this facility's outcome. These statements appear **only** in context 2 and is listed as a known difference in ledger S5.
 - No examples, tool descriptions or tool results appear in either context. The full model-visible sequence is the system message plus one user message.
 
 ## 5. Gold labels (by construction; evaluation metadata only, never shown to the model)
@@ -65,17 +68,19 @@ Each cell has an **evidence profile**: which proposition the record checked, at 
 | D1 | NE | NE | NE | NE | **T** | NE |
 | D2 | NE | NE | NE | NE | NE | **T** |
 | E, E_scope improved | NE | **T** | NE | NE | NE | NE |
-| E, E_scope worsened / unchanged | NE | **F** | NE (F accepted) | NE (F accepted) | NE | NE |
+| E, E_scope worsened / unchanged | NE | **F** | NE | NE (F accepted) | NE | NE |
 
-T = established_true, F = established_false, NE = not_established. A0 has no P claim. "F accepted" marks a failed presupposition (SCORING_SPEC §3).
+T = established_true, F = established_false, NE = not_established. A0 has no P claim. "F accepted" marks Q_cause's failed presupposition ("this reduction…" when there was none; SCORING_SPEC §3). Q_welfare is NE in every cell: one indicator that worsened or stayed level does not refute overall welfare, because other indicators may have improved.
+
+Q_obs is about the **recorded share** (diff row 14). That is why audited, complete records establish or refute it exactly, and why its belief gold can be 1 or 0.
 
 **What each measurement means** (internal schema):
 
 | Measurement | Established when |
 |---|---|
 | Practice verified | the record's item and finding cover the practice at this facility (B, C, C′) |
-| Outcome measurement verified | the record measures the indicator at this facility for both years (E family) |
-| Observed change | the measured values differ in the claimed direction (E improved) |
+| Outcome measurement verified | the record confirms the facility's indicator records for 2024 and 2025 are complete and accurate (E family) |
+| Observed change | the recorded share is lower in 2025 than 2024 (E improved) |
 | Overall welfare | never (one indicator only) |
 | Causal improvement | never (no comparison group or control of other factors) |
 | Verification attribution | *model output*: which claims the model marks established |
@@ -123,11 +128,11 @@ T = established_true, F = established_false, NE = not_established. A0 has no P c
 - `DESIGN_MATRIX_dev.csv` records, per row: case, template family, species, practice, indicator, issuer, condition, direction, context, role, model, repeat, phase, turn count, tools and stimulus hash.
 
 ## 8. Open decisions (for reviewers and the PI)
-1. **Primary measure.** Structured per-claim status (current) vs. a free-text committee summary graded for implied verification. Risk: questioning claim by claim may itself prompt careful scope reading (a floor effect). The pilot diagnoses this.
-2. **Noninferiority margin δ for P4.** Proposal: 5 percentage points of correct acceptance. It needs a scientific justification and a precision target.
-3. **Filler imbalance.** A carries 9 filing notes and B 4–5 (measured; per-cell table in `COVERAGE_dev.md`). Notes are meeting logistics only; notes about document completeness, translation or checking were removed after review because they could bear on credibility. Alternative: replace the filler with a neutral non-audit document of matched length. Which is the better length control?
+1. **Primary measure and task scaffolding.** The structured per-claim task gives reliable measurement, but listing six claims one by one may itself make scope boundaries salient. That would be a measurement-induced floor, not leakage. Proposal: keep it as primary, and before any claim of real-world transfer add (a) a naturalistic committee-summary context, human-scored blind to condition, and (b) at least one independently authored, naturalistic welfare-assurance test family. The pilot reports the floor rate.
+2. **Noninferiority margin δ for P4.** Proposal: 5 percentage points of correct acceptance. It needs a scientific justification. Scale check (reviewer): with 90% acceptance in both arms, a one-sided 2.5% level, 90% power and *independent* arms, a 5-point margin needs about 760 observations per arm. The paired, case-clustered design changes that number, so it must be simulated (§9). Repeats of six cases cannot substitute for independent cases. Keep the margin only if it is scientifically meaningful.
+3. **Length control (resolved in 551afd5, open to challenge).** Variable filler was replaced by the same two meeting-logistics notes in every cell, with no padding. Length now differs only by the audit content that defines each condition. Alternatives for reviewers: a length-matched neutral attachment in every cell, or a pilot check of whether filler changes perceived professionalism.
 4. **Claim order** is fixed (P, Q_obs, Q_welfare, Q_cause, R, S). Counterbalance it or not?
-5. **Period and population scope** conditions (a 2024 audit for a 2026 claim; one house of six). Add now or keep in backlog? Each adds a cell to every case.
+5. **Period and population scope** conditions (a 2024 audit for a 2025 claim; one house of six). Add now or keep in backlog? Each adds a cell to every case.
 6. **V's gold** (currently NE; exploratory).
 7. **E_scope_prime** (a structured twin of E_scope)?
 8. **Belief model numbers**, and whether the conditional-independence statements (items 4–5) are acceptable in context 2.
@@ -135,10 +140,12 @@ T = established_true, F = established_false, NE = not_established. A0 has no P c
 10. **Sample size.** Smallest effect of interest and case count are set from scientifically meaningful effects and a range of variance assumptions, with the pilot informing variance and feasibility only, not from its point estimate.
 
 ## 9. Sample planning (sequence)
-1. Fix estimands and smallest effects of interest; the margin for P4 (this review).
-2. Run a diagnostic pilot on dev cases to check measurement only: parsing, floors and ceilings, validity checks V1–V3.
-3. Use the pilot for variance, failure rates and floor diagnostics only.
-4. Plan the confirmatory case count by simulation over plausible effect and variance ranges, with case clustering and missingness.
+1. Fix estimands, smallest effects of interest and the P4 margin (this review).
+2. Write a **simulation-based precision analysis of the actual design** before the pilot. It must cover the paired case × condition structure, within-case correlation, repeats nested in cases, between-model heterogeneity, floor and ceiling rates, parse-failure missingness, and Holm across the primary family, for P1–P4 separately.
+3. Run a diagnostic pilot on dev cases to check measurement only: parsing, floors and ceilings, validity checks V1–V3.
+4. Use the pilot for variance, failure rates and floor diagnostics only, never for the effect size.
+5. Set the confirmatory case count from step 2 over plausible ranges of effects and variance. Hundreds of independent cases are acceptable if the precision targets require them. API cost is not a reason to shrink a justified design (the spending cap guards only against runaway jobs).
+6. Models: several independent model families, including frontier and open-weight models, chosen for task-relevant capability. Report within-model results and cross-model heterogeneity. An effect that reverses across models is not reported as general.
 
 Pilot data are never pooled with confirmatory data.
 
@@ -151,3 +158,18 @@ Pilot data are never pooled with confirmatory data.
 | 4 | Fix pilot findings, re-review the affected parts, then confirmatory freeze | all | not started |
 
 Large confirmatory runs are on **hold**.
+
+## 11. Review responses
+| Review (commit inspected) | Finding | Resolution | Commit |
+|---|---|---|---|
+| ChatGPT (901aaf4) | Spec and code disagreed on claims, directions and conditions | Spec updated to match | 05012d7 |
+| ChatGPT (901aaf4) | Primary endpoint silently gained Q_welfare | Endpoint is Q_obs or Q_cause; Q_welfare secondary (S4) | 957a3ca |
+| ChatGPT (901aaf4) | Belief gold needed an unstated assumption | Belief item 4 states it | 957a3ca |
+| ChatGPT (901aaf4) | Filler notes could bear on credibility | Replaced; later removed as variable filler (below) | 957a3ca, 551afd5 |
+| ChatGPT (957a3ca) B1 | Audit dates inside the claimed outcome year | Closed periods 2024/2025, audits dated 2026, chronology tests | 551afd5 |
+| ChatGPT (957a3ca) B2 | Gold for sampled indicators stronger than the evidence | Q_obs redefined as the recorded share | 551afd5 |
+| ChatGPT (957a3ca) B3 | Q_welfare accepted "false" from one indicator | Q_welfare gold NE only; refuting it is scored as false refutation | 551afd5 |
+| ChatGPT (957a3ca) M4 | Unbounded practice claims vs. short audit windows | Claims say "Throughout 2025"; audits review all of 2025 | 551afd5 |
+| ChatGPT (957a3ca) M5 | Structured task may scaffold scope reading | Kept as primary; naturalistic validation required before transfer claims (§8.1) | this commit |
+| ChatGPT (957a3ca) M6 | Variable filler is a treatment cue | Fixed identical notes, no padding (§8.3) | 551afd5 |
+| ChatGPT (957a3ca) | 5-point margin implies hundreds of independent cases | Simulation of the paired design required before the pilot (§9) | this commit |

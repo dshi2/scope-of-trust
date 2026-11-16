@@ -24,9 +24,9 @@ Status: **draft for specification review**. Nothing is frozen.
 - No status synonyms are mapped. A lenient mapping would be a scoring degree of freedom.
 
 ## 3. Gold sets
-Every gold entry is a **set** of accepted statuses (see `GOLD_LABELS.md` for each one's reason). Two-member sets {NE, F} appear only where the claim's presupposition fails:
-- **Q_cause in E/E_scope, worsened or unchanged.** "This fall … was caused by …" presupposes a fall that the audited data show did not happen.
-- **Q_welfare in the same cells.** One indicator that rose or stayed level does not establish that overall welfare did not improve, but answering "false" is defensible.
+Every gold entry is a **set** of accepted statuses (see `GOLD_LABELS.md` for each one's reason). The only two-member set is {NE, F} for **Q_cause in E/E_scope, worsened or unchanged**: "This reduction … was caused by …" presupposes a reduction that the audited records show did not happen.
+
+**Q_welfare is NE only, in every cell.** One indicator that rose or stayed level does not refute overall welfare, because other indicators may have improved. Answering "false" is scored as a false refutation (changed after review of 957a3ca).
 
 Q_welfare and Q_cause never accept established_true: no record measures more than one indicator, and none has a design that could support causation.
 
@@ -57,7 +57,8 @@ In E improved, Q_cause = T counts toward `unsupported_attribution` and `causal_o
 | E improved, Q_cause = T | correct acceptance and causal overreach together | `test_causal_overreach_in_e` |
 | E improved, Q_welfare = T | welfare over-generalisation; not causal overreach; not in the primary endpoint | `test_welfare_overgeneralisation_in_e` |
 | E worsened, Q_obs = T | fails refutation; unsupported attribution | `test_wrong_direction_in_e` |
-| E worsened, Q_cause = F, Q_welfare = F | all correct (failed presupposition) | `test_failed_presupposition_accepts_false` |
+| E worsened, Q_cause = F | all correct (failed presupposition) | `test_failed_presupposition_accepts_false_for_q_cause` |
+| E worsened/unchanged, Q_welfare = F | false refutation (one indicator cannot refute overall welfare) | `test_refuting_overall_welfare_from_one_indicator_is_wrong` |
 | Prose, empty, `None`, list, broken JSON | malformed, no metrics | `test_malformed_gets_no_metrics` |
 | `"true"` status; missing claim | invalid, no metrics | `test_invalid_status_and_missing_claim` |
 | Fenced or prose-wrapped JSON; braces in reasons | ok | `test_fenced_and_prose_wrapped_json`, `test_braces_inside_reason_strings` |

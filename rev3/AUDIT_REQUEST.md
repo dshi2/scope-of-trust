@@ -7,7 +7,7 @@
 ## Reproduce
 ```bash
 cd rev3
-python3 -m unittest discover -s tests -t .     # expect 36 tests, OK
+python3 -m unittest discover -s tests -t .     # expect 45 tests, OK
 python3 generate.py && git diff --exit-code    # derived files must be unchanged
 ```
 Python 3.9+ standard library only. No network, no model calls.
@@ -25,11 +25,12 @@ Python 3.9+ standard library only. No network, no model calls.
 
 ## Specific risks the builder is unsure about
 1. The coverage statement in C names "the cause of any change", which may be a lexical cue for Q_cause (ledger P3).
-2. Filler imbalance: A has 9 filing notes, B 4–5 (`COVERAGE_dev.md`). Is a long run of notes with no record itself a cue?
+2. Length is no longer matched. Every cell ends with the same two filing notes, so A is much shorter than B or C (`COVERAGE_dev.md`). Is unmatched length a better control than variable filler?
 3. Belief-context item 5 (independence) is scope-like, but it is needed to define the gold.
 4. Q_cause wording ("the lower stocking density") names the practice in every condition, including A0.
 5. The task's definition of "established" ("an independent check whose findings establish…") could be read as coaching.
 6. Synthetic cases: are the thresholds, indicators and methods realistic? A welfare expert is still needed.
+7. Q_obs is now defined on the *recorded* share (spec diff row 14). Does that make the positive control too easy, or is it the right target?
 
 ## Report format
 For each finding: **severity** (blocker / major / minor), **file:line or rendered cell**, **evidence** (quote), and **proposed fix**. End with a go/no-go verdict on milestone 1 only.
