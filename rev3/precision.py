@@ -23,15 +23,15 @@ from p2v3 import stats
 from p2v3.simulate import _Q, _rate, cells, intercept, rng_for, simulate
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SEED = 20261116
+SEED = 2026111602  # fresh seed after tango_cc was added on the evidence of a first grid run (seed 20261116)
 DELTAS = {"5pp": 0.05, "1.1pp": 1 / 90}  # 1/90 = (pi_u/pi_s) B / r with .1/.9, B = .1, r = 1 (spec §8.2)
 ACCEPT = (0.80, 0.90, 0.95, 0.99, 1.00)
 SDS = (0.0, 0.5, 1.5)
 REPS = (1, 3, 5)
 NS = (30, 60, 120, 240)
 MISS = {"none": ("mcar", 0.0), "mcar": ("mcar", 0.05), "arm": ("arm", 0.05)}
-CANDIDATES = ("wald", "tango", "tango_c", "bayes")
-PREFERENCE = ("tango", "tango_c", "bayes")  # most efficient first; wald is the known-failing baseline
+CANDIDATES = ("wald", "tango", "tango_cc", "tango_c", "tango_c_cc", "bayes")
+PREFERENCE = ("tango", "tango_cc", "tango_c", "tango_c_cc", "bayes")  # most efficient first; wald is the known-failing baseline
 LIMIT = 0.03  # §6: one-sided 97.5% non-coverage <= 3% at every grid point
 MC_TOL_SE = 3  # type I at -delta <= 2.5% + 3 Monte Carlo SE (about 400 such points are checked)
 z = NormalDist().inv_cdf
@@ -87,26 +87,24 @@ def coverage(workers, r1, r2, r1_bayes):
     with Pool(workers) as pool:
         for point, _, res in pool.imap_unordered(_grid_task, [(p, caps, 1) for p in pts], chunksize=4):
             acc[point] = res
-        bad = {k for k in CANDIDATES if any(_clear_fail(acc[p][k], k == "bayes") for p in pts)}
+        bad_lo = {k for k in CANDIDATES if any(_clear_fail(acc[p][k][1], acc[p][k][0]) for p in pts)}
+        bad_hi = {k for k in CANDIDATES if k == "bayes" or any(_clear_fail(acc[p][k][2], acc[p][k][0]) for p in pts)}
         todo = []
         for p in pts:
-            need = {k: r2 for k in CANDIDATES if k not in bad and _near(acc[p][k], k == "bayes")}
+            v = acc[p]
+            need = {k: r2 for k in CANDIDATES if (k not in bad_lo and v[k][1] > 0.025 * v[k][0])
+                    or (k not in bad_hi and v[k][2] > 0.025 * v[k][0])}
             if need:
                 todo.append((p, need, 2))
+        bad = {"lower": sorted(bad_lo), "upper": sorted(bad_hi)}
         for point, _, res in pool.imap_unordered(_grid_task, todo, chunksize=2):
             for k, v in res.items():
                 acc[point][k] = [a + b for a, b in zip(acc[point][k], v)]
     return acc, bad, len(todo)
 
 
-def _clear_fail(v, lower_only):
-    R = v[0]
-    worst = max(v[1], 0 if lower_only else v[2]) / R
-    return worst - 3 * math.sqrt(LIMIT * (1 - LIMIT) / R) > LIMIT
-
-
-def _near(v, lower_only):
-    return max(v[1], 0 if lower_only else v[2]) / v[0] > 0.025
+def _clear_fail(misses, R):
+    return misses / R - 3 * math.sqrt(LIMIT * (1 - LIMIT) / R) > LIMIT
 
 
 def qualify(acc, method, delta, two_sided):
@@ -176,6 +174,18 @@ def _sim_reps(n, r, arms, budget=4e7, R=400):
     return rr if rr >= 100 else None
 
 
+def floor_cases(method, delta, alpha):
+    """Fewest cases for which the bound clears -delta when every pair agrees (the best possible data)."""
+    ok = lambda n: stats.METHODS[method](stats.Summary(n, 0, 0, n, 0, 1.0, 0), alpha)[0] > -delta
+    lo, hi = 2, 2
+    while not ok(hi):
+        lo, hi = hi, hi * 2
+    while hi - lo > 1:
+        mid = (lo + hi) // 2
+        lo, hi = (lo, mid) if ok(mid) else (mid, hi)
+    return hi
+
+
 def p4_decidable(pool, method, target=0.9):
     """Smallest n with P(lower bound > -delta | true difference 0) >= target; analytic start, simulated check."""
     rows = []
@@ -183,11 +193,11 @@ def p4_decidable(pool, method, target=0.9):
     for dname, delta in DELTAS.items():
         for alpha in (0.025, 0.025 / 4):
             zz = z(1 - alpha)
-            n_floor = math.floor(zz * zz * (1 - delta) / delta) + 1  # all pairs agree -> bound just clears -delta
+            n_floor = floor_cases(method, delta, alpha)
             for pe in (0.90, 0.95, 0.99, 1.00):
                 for sd in SDS:
                     for r in REPS:
-                        v = case_variance(pe, pe, sd, 1 if method == "tango_c" else r)  # tango_c: case is the unit
+                        v = case_variance(pe, pe, sd, 1 if method.startswith("tango_c") else r)  # case is the unit
                         n_an = max(n_floor, math.ceil(v * (zz + z(target)) ** 2 / delta ** 2))
                         jobs.append((dname, delta, alpha, pe, sd, r, n_an, n_floor))
     results = {}
@@ -228,7 +238,7 @@ def p13_equivalence(pool, method, target=0.9):
             for p in (0.02, 0.10, 0.30):
                 for sd in (0.5, 1.5):
                     for r in (1, 3):
-                        v = case_variance(p, p, sd, 1 if method == "tango_c" else r)
+                        v = case_variance(p, p, sd, 1 if method.startswith("tango_c") else r)
                         n_an = math.ceil(v * (zz + z((1 + target) / 2)) ** 2 / sesoi ** 2)
                         jobs.append((sesoi, alpha, label, p, sd, r, max(n_an, 30)))
     pending = {j: j[6] for j in jobs}
@@ -286,6 +296,59 @@ def _joint_task(args):
         out["joint_equiv"] += all(-sesoi < lo and hi < sesoi for lo, hi in ivs)
         out["simul_cover"] += all(lo <= t <= hi for (lo, hi), t in zip(ivs, true))
     return out
+
+
+def _stress_task(args):
+    pe, d, sd, r, n, mode, delta, R, method = args
+    rng = rng_for(SEED, "stress", pe, d, sd, r, n, mode, delta)
+    out = {"cp_miss": 0, "cp_ni": 0, "wc_miss": 0, "wc_ni": 0, "dropped": 0, "R": R}
+    f = stats.METHODS[method]
+    for _ in range(R):
+        data = simulate(rng, n, r, [(pe + d, pe)], sd, 0.05, mode)
+        s = _safe_summary(cells(data))
+        lo = f(s)[0] if s else -1.0
+        out["dropped"] += s.dropped if s else n
+        w = f(stats.summarize(cells(data, fill=(0, 1))))[0]  # scheduled denominators, missing = adverse
+        out["cp_miss"] += lo > d + 1e-12; out["cp_ni"] += lo > -delta
+        out["wc_miss"] += w > d + 1e-12; out["wc_ni"] += w > -delta
+    return {"accept": pe, "d": d, "sd": sd, "reps": r, "n": n, "mode": mode, "delta": delta, **out}
+
+
+def missing_stress(pool, method, R=2000):
+    """P4 at the -delta boundary and at 0 under four missingness mechanisms (5% of responses):
+    complete pairs vs the scheduled-denominator worst case (missing E_scope = 0, missing E = 1)."""
+    jobs = [(pe, -k * delta, sd, r, n, mode, delta, R, method)
+            for delta in DELTAS.values() for pe in (0.95, 0.99, 1.00) for k in (0, 1) for sd in (0.5, 1.5)
+            for r in (1, 3) for n in (120, 480) for mode in ("mcar", "arm", "case", "mnar")]
+    return pool.map(_stress_task, jobs, chunksize=4)
+
+
+def _models_task(args):
+    label, rates, sd, r, n, delta, R, method = args
+    rng = rng_for(SEED, "models", label, sd, r, n, delta)
+    true = sum(px - py for px, py in rates) / len(rates)
+    miss = ni = 0
+    for _ in range(R):
+        lo = stats.METHODS[method](stats.summarize(cells(simulate(rng, n, r, rates, sd))))[0]
+        miss += lo > true + 1e-12
+        ni += lo > -delta
+    return {"label": label, "sd": sd, "reps": r, "n": n, "delta": delta, "true": true,
+            "noncov": miss / R, "ni": ni / R, "R": R}
+
+
+def model_heterogeneity(pool, method, R=4000):
+    """Three models on the same cases, pooled with the case as the unit (each case's repeats from all
+    models averaged). The pooled estimand is the mean of the per-model differences, here exactly -delta."""
+    jobs = []
+    for delta in DELTAS.values():
+        scen = {"levels differ, same difference": [(1 - delta, 1.0), (0.95 - delta, 0.95), (0.9 - delta, 0.9)],
+                "differences 0, -delta, -2 delta": [(0.99, 0.99), (0.97 - delta, 0.97), (0.95 - 2 * delta, 0.95)]}
+        for label, rates in scen.items():
+            for sd in (0.5, 1.5):
+                for r in (1, 3):
+                    for n in (60, 240):
+                        jobs.append((label, rates, sd, r, n, delta, R, method))
+    return pool.map(_models_task, jobs)
 
 
 # ---- independent comparator -------------------------------------------------------------------
@@ -395,7 +458,7 @@ def main():
     ap.add_argument("--grid-cache", help="JSON file: reuse coverage-grid counts if present, else save them")
     a = ap.parse_args()
     t0 = time.time()
-    r1, r2, rb = (40, 40, 10) if a.quick else (2000, 18000, 500)
+    r1, r2, rb = (40, 40, 10) if a.quick else (2000, 18000, 300)
     if a.quick:
         global NS, ACCEPT, SDS, REPS, MISS
         NS, ACCEPT, SDS, REPS = (30,), (0.95, 1.00), (0.0, 1.5), (1, 3)
@@ -404,24 +467,26 @@ def main():
         with open(a.grid_cache) as fh:
             c = json.load(fh)
         acc = {tuple(p): res for p, res in c["acc"]}
-        bad, n_refined = set(c["bad"]), c["n_refined"]
+        bad, n_refined = c["bad"], c["n_refined"]
     else:
         acc, bad, n_refined = coverage(a.workers, r1, r2, rb)
         if a.grid_cache:
             with open(a.grid_cache, "w") as fh:
-                json.dump({"acc": [[list(p), res] for p, res in acc.items()], "bad": sorted(bad),
+                json.dump({"acc": [[list(p), res] for p, res in acc.items()], "bad": bad,
                            "n_refined": n_refined}, fh)
     q = {k: {dn: qualify(acc, k, dv, two_sided=(k != "bayes")) for dn, dv in DELTAS.items()} for k in CANDIDATES}
     q4 = {k: {dn: qualify(acc, k, dv, two_sided=False) for dn, dv in DELTAS.items()} for k in CANDIDATES}
     chosen4 = next((k for k in PREFERENCE if all(x["ok"] for x in q4[k].values())), None)
     chosen13 = next((k for k in PREFERENCE if k != "bayes" and all(x["ok"] for x in q[k].values())), None)
     if a.quick:
-        chosen4 = chosen4 or "tango"
-        chosen13 = chosen13 or "tango"
+        chosen4 = chosen4 or "tango_cc"
+        chosen13 = chosen13 or "tango_cc"
     refs = [load_reference(s) for s in a.reference]
     with Pool(a.workers) as pool:
         p4 = p4_decidable(pool, chosen4) if not a.quick else []
         p13 = p13_equivalence(pool, chosen13) if not a.quick else []
+        stress = missing_stress(pool, chosen4, 100 if a.quick else 2000)
+        models = model_heterogeneity(pool, chosen4, 100 if a.quick else 4000)
         joint = []
         plan = {"sd": 0.5, "reps": 3, "p": 0.10, "sesoi": 0.10, "accept": 0.95}
         if not a.quick:
@@ -446,7 +511,7 @@ def main():
     agree_rows = all_agree_bounds(refs, chosen4)
     write_grid_csv(acc, os.path.join(os.path.dirname(a.out), "PRECISION_GRID.csv"))
     report = render(acc, bad, n_refined, q, q4, chosen4, chosen13, p4, p13, joint, plan, refs, cmp_rows,
-                    agree_rows, (r1, r2, rb), a.quick, time.time() - t0)
+                    agree_rows, (r1, r2, rb), a.quick, time.time() - t0, stress, models)
     with open(a.out, "w") as fh:
         fh.write(report)
     print(f"wrote {a.out} in {time.time() - t0:.0f}s; P4 method: {chosen4}; P1-P3 method: {chosen13}")
@@ -465,12 +530,14 @@ def _sha(name):
 
 
 NAMES = {"wald": "Obuchowski cluster-robust Wald", "tango": "Tango score + estimated Obuchowski deff",
+         "tango_cc": "Tango score + estimated Obuchowski deff, continuity correction 0.5",
          "tango_c": "Tango score, case as unit (deff = cluster size)",
+         "tango_c_cc": "Tango score, case as unit, continuity correction 0.5",
          "bayes": "Jeffreys-Dirichlet posterior, counts / estimated deff"}
 
 
 def render(acc, bad, n_refined, q, q4, chosen4, chosen13, p4, p13, joint, plan, refs, cmp_rows, agree_rows,
-           reps, quick, secs):
+           reps, quick, secs, stress, models):
     r1, r2, rb = reps
     L = ["# P2 revision 3: precision report (generated)", "",
          "Generated by `precision.py` (seed %d) from `p2v3/stats.py` and `p2v3/simulate.py`. **Do not edit by hand.** "
@@ -510,8 +577,11 @@ def render(acc, bad, n_refined, q, q4, chosen4, chosen13, p4, p13, joint, plan, 
           "Analysis: repeats of the two arms are paired by repeat index within case; pairs with a missing outcome "
           "are dropped (complete pairs; unbiased under MCAR and arm-dependent missingness). Scheduled-denominator "
           "bounds (missing = worst / best case) are `pair_counts(..., fill=(0, 1))` and `fill=(1, 0)`. The "
-          "estimand is the difference in marginal rates; P1-P3 are rate differences on `unsupported_q_obs`, P4 is "
-          "E_scope minus E in correct acceptance (improved).", "",
+          "**estimand** is the mean over independent cases of the within-case difference in rates: cases are "
+          "weighted equally and repeats are averaged within case (SCORING_SPEC §7), so a case with one complete "
+          "pair counts as much as a case with five. A case with no complete pair cannot enter the complete-pair "
+          "estimate; it is counted (`Summary.dropped`) and enters the scheduled-denominator bounds. P1-P3 are "
+          "differences in `unsupported_q_obs`, P4 is E_scope minus E in correct acceptance (improved).", "",
           "## 3. Method qualification (§6 grid)", "",
           "Grid: true E acceptance %s; difference 0, -delta/2, -delta for delta = 5 pp and 1/90 (about 1.1 pp); "
           "case-effect SD %s; repeats %s; cases %s; missingness none / 5%% MCAR / 5%% arm-dependent. %d points. "
@@ -520,6 +590,11 @@ def render(acc, bad, n_refined, q, q4, chosen4, chosen13, p4, p13, joint, plan, 
           "exceeds 3%% by 3 Monte Carlo SE anywhere."
           % (", ".join(map(str, ACCEPT)), ", ".join(map(str, SDS)), ", ".join(map(str, REPS)),
              ", ".join(map(str, NS)), len(acc), r1, rb, r2, n_refined), "",
+          "History: a first full run (seed 20261116) had only `wald`, `tango`, `tango_c` and `bayes`. Both "
+          "uncorrected Tango variants exceeded 3%%: the upper bound at one repeat near the ceiling (about 4.8%%) and, "
+          "with an estimated design effect, the lower bound when discordant pairs were few and clustered (about "
+          "4%%). The continuity-corrected variants were then added and the whole grid rerun with a fresh seed, so "
+          "the variants were not validated on the data that suggested them.", "",
           "Rule (§6): one-sided 97.5%% non-coverage <= 3%% at every point, and type I error at difference -delta "
           "<= 2.5%% + %d Monte Carlo SE (about 400 type I points are checked, so a 1.96 SE allowance would fail an "
           "exact test by chance). The P4 rule uses the lower bound; P1-P3 need both bounds, because the floor case "
@@ -549,8 +624,8 @@ def render(acc, bad, n_refined, q, q4, chosen4, chosen13, p4, p13, joint, plan, 
         L += ["## 4. P4: case counts at which noninferiority is decidable", "",
               "Smallest number of independent cases with probability >= 0.90 that the chosen method's one-sided "
               "lower bound exceeds -delta when the true difference is 0 (no missingness, one model). `n floor` is the "
-              "count at which the bound clears -delta when every pair agrees (the best possible data): "
-              "n > z^2 (1 - delta) / delta. Start: normal approximation from the exact case-level variance; then n "
+              "fewest cases for which the bound clears -delta when every pair agrees (the best possible data; "
+              "z^2 (1 - delta) / delta without the continuity correction). Start: normal approximation from the exact case-level variance; then n "
               "is raised by 10% until the simulated probability (up to 400 datasets) reaches 0.90. alpha = 0.025 is "
               "P4 alone; alpha = 0.00625 is the Holm worst case (P4 tested last among four).", ""]
         rows = [[x["delta"], x["alpha"], x["accept"], x["sd"], x["reps"], x["n_floor"], x["n"],
@@ -596,6 +671,39 @@ def render(acc, bad, n_refined, q, q4, chosen4, chosen13, p4, p13, joint, plan, 
                          pct(x["simul_cover"] / R), pct(x["joint_equiv"] / R), R])
         L += [table(["delta", "cases", "scenario", "Holm rejects P1 / P2 / P3 / P4", "unadjusted",
                      "simultaneous coverage", "joint equivalence", "datasets"], rows), ""]
+    if stress:
+        L += ["## 6a. Missingness at the -delta boundary (P4)", "",
+              "5%% of scheduled responses missing under four mechanisms: `mcar` (both arms), `arm` (E_scope only, 10%%), "
+              "`case` (both arms, rate 2 x 5%% x Phi(-u_i / SD): harder cases lose more, and whole cases can be "
+              "lost), `mnar` (E_scope failures only, 10%%: outcome-dependent). The estimand is always the full "
+              "scheduled population of cases. `complete pairs` is the primary analysis; `worst case` imputes missing "
+              "E_scope = 0 and missing E = 1, so every scheduled case and response stays in the denominator "
+              "(SCORING_SPEC §2). Cells: largest false-noninferiority rate at difference -delta, over SD 0.5/1.5, "
+              "repeats 1/3, cases 120/480 (each %d datasets), then mean P(declare noninferiority) at difference 0, "
+              "then mean cases with no complete pair per dataset." % stress[0]["R"], ""]
+        groups = {}
+        for x in stress:
+            groups.setdefault((x["delta"], x["mode"], x["accept"]), []).append(x)
+        rows = []
+        for (dl, mode, pe), xs in sorted(groups.items(), key=lambda kv: (-kv[0][0], kv[0][1], kv[0][2])):
+            at = [x for x in xs if x["d"] < 0]
+            zero = [x for x in xs if x["d"] == 0]
+            mx = lambda k: max(x[k] / x["R"] for x in at)
+            mn = lambda k: sum(x[k] / x["R"] for x in zero) / len(zero)
+            rows.append([f"{dl:.4f}", mode, pe, pct(mx("cp_miss")), pct(mx("wc_miss")), pct(mn("cp_ni")),
+                         pct(mn("wc_ni")), f"{sum(x['dropped'] / x['R'] for x in xs) / len(xs):.2f}"])
+        L += [table(["delta", "missingness", "acceptance", "false NI: complete pairs", "false NI: worst case",
+                     "P(NI) at 0: complete pairs", "P(NI) at 0: worst case", "cases lost per dataset"], rows), ""]
+        L += ["Report both analyses for P4. Noninferiority is claimed only if the worst-case bound also clears -delta, "
+              "or the missingness is shown not to depend on outcome or case difficulty.", ""]
+    if models:
+        L += ["## 6b. Model heterogeneity (pooled over three models)", "",
+              "Three models with different rates answer the same cases; each case's repeats from all models are "
+              "averaged (the case stays the unit) and the pooled estimand is the mean of the per-model differences, "
+              "set to exactly -delta. The primary results are per model (spec §9.6); this checks that a pooled summary "
+              "is still valid. %d datasets per row." % models[0]["R"], ""]
+        rows = [[f"{x['delta']:.4f}", x["label"], x["sd"], x["reps"], x["n"], pct(x["noncov"])] for x in models]
+        L += [table(["delta", "models", "SD", "repeats", "cases", "lower non-coverage = false NI"], rows), ""]
     L += ["## 7. Comparison with the independent reference bounds", ""]
     if not refs:
         L += ["Not run. Hook: `python3 precision.py --reference NAME=GITREF:PATH`. The module is loaded from the "

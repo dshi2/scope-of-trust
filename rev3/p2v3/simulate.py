@@ -7,7 +7,8 @@ Generative model for one contrast (arms X and Y, e.g. E_scope and E), per model 
   the true Delta = mean over models of (p_jX - p_jY) at every sd. Rates 0 and 1 are exact floors/ceilings.
   Missing (parse failure) per scheduled response: "mcar" at rate m in both arms; "arm" at rate 2m in
   arm X only (same overall rate, arm-dependent); "mnar" at rate 2m for arm-X failures only (stress test,
-  not part of the §6 grid: complete-case analysis is biased under it).
+  not part of the §6 grid: complete-case analysis is biased under it); "case" at rate 2m * Phi(-u_i / sd)
+  in both arms, so harder cases (low u) lose more responses, and whole cases can be lost (stress test).
 Model heterogeneity: several models with different rates per arm; analysed per model or pooled with the
 case as the cluster.
 """
@@ -19,6 +20,7 @@ from statistics import NormalDist
 from .stats import pair_counts
 
 _Q = [NormalDist().inv_cdf((k + 0.5) / 2000) for k in range(2000)]
+_PHI = NormalDist().cdf
 
 
 def expit(x):
@@ -61,11 +63,13 @@ def simulate(rng, n, reps, rates, sd, miss=0.0, mode="mcar"):
     mus = [tuple(intercept(p, sd) for p in model) for model in rates]
     k = len(rates[0])
     m0 = 2 * miss if mode in ("arm", "mnar") else miss
-    mo = miss if mode == "mcar" else 0.0
+    mo = miss if mode == "mcar" else 0.0  # "case" sets both per case below
     out = []
     rnd = rng.random
     for _ in range(n):
         u = rng.gauss(0.0, sd) if sd else 0.0
+        if mode == "case":
+            m0 = mo = 2 * miss * (_PHI(-u / sd) if sd else 0.5)
         arms = [[] for _ in range(k)]
         for model in mus:
             ps = [_rate(mu, u) for mu in model]

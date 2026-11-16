@@ -3,16 +3,26 @@
 Data: for each independent case, the repeats of the two compared arms are paired by repeat index
 (arm X = the first-named cell, e.g. E_scope in P4 or B in P1; arm Y = the comparison cell). A pair
 with either outcome missing is dropped (complete pairs). Per case the counts are
-(n11, n10, n01, n00), where n10 = X 1 and Y 0. The estimand is the difference of marginal rates
-Delta = p_X - p_Y, estimated by the ratio estimator D = (b - c) / N over all complete pairs.
+(n11, n10, n01, n00), where n10 = X 1 and Y 0.
+
+Estimand: Delta = mean over independent cases of (case rate in X - case rate in Y). Cases are weighted
+equally; repeats are averaged within case (SCORING_SPEC §7). Each case therefore contributes its four
+cell *proportions* f_i = counts / m_i (m_i = its complete pairs), and D = sum_i (f10_i - f01_i) / K.
+A case with no complete pair cannot enter D; `Summary.dropped` counts such cases so they stay visible,
+and the scheduled-denominator bounds (`pair_counts(..., fill=...)`) keep them in.
+(Revision of 63e4789, which pooled pairs and so weighted cases by their complete-pair count.)
 
 Methods (each returns a one-sided 1 - alpha lower and upper bound; a two-sided 1 - 2*alpha interval):
   wald     Obuchowski (1998) cluster-robust variance, Wald interval. Collapses to zero width when every
            pair agrees; kept only as the failing baseline the spec warns about.
   tango    Tango (1998) score interval for paired proportions, with its null variance multiplied by the
-           Obuchowski design effect deff = var_cluster / var_multinomial, clamped to [1, sum m_i^2 / N].
-           When no pair is discordant the design effect is set to its maximum (the case is the unit).
-  tango_c  As tango with deff fixed at its maximum: the case is always the unit (conservative).
+           Obuchowski-type design effect deff = var_cluster(D) / var_multinomial(D), where the multinomial
+           variance treats each case as one pair. deff is clamped to [mean(1 / m_i), 1]: 1 means repeats add
+           nothing, mean(1 / m_i) means repeats are independent. With no discordant pair, deff = 1.
+  tango_c  As tango with deff fixed at 1: repeats never narrow the interval (conservative).
+  tango_cc, tango_c_cc  As tango / tango_c with a continuity correction of 0.5 on the effective-count
+           scale (|b - c - N d0| / deff reduced by 0.5). Added after the first grid run showed both
+           uncorrected variants exceed 3% non-coverage near the ceiling (PRECISION_REPORT.md §3).
   bayes    Jeffreys-Dirichlet posterior for the four pair cells, counts divided by deff (as tango);
            bounds are posterior quantiles of p10 - p01, by quadrature.
 """
@@ -21,8 +31,7 @@ from collections import namedtuple
 from statistics import NormalDist
 
 _N = NormalDist()
-Summary = namedtuple("Summary", "K N b c n11 sdd sdm smm")
-
+Summary = namedtuple("Summary", "K b c n11 sdd inv_m dropped")
 
 def pair_counts(x, y, fill=None):
     """Per-case (n11, n10, n01, n00) from two equal-length outcome lists (0, 1 or None = missing).
@@ -44,50 +53,54 @@ def pair_counts(x, y, fill=None):
 
 
 def summarize(cells):
-    """Sufficient statistics from per-case (n11, n10, n01, n00); cases with no complete pair drop out."""
-    K = N = b = c = n11 = sdd = sdm = smm = 0
+    """Equal-case sufficient statistics from per-case (n11, n10, n01, n00)."""
+    K = dropped = 0
+    b = c = n11 = sdd = inv_m = 0.0
     for a11, a10, a01, a00 in cells:
         m = a11 + a10 + a01 + a00
         if m == 0:
+            dropped += 1
             continue
-        d = a10 - a01
-        K += 1; N += m; b += a10; c += a01; n11 += a11
-        sdd += d * d; sdm += d * m; smm += m * m
+        K += 1
+        b += a10 / m; c += a01 / m; n11 += a11 / m
+        sdd += ((a10 - a01) / m) ** 2
+        inv_m += 1 / m
     if K < 2:
         raise ValueError("need at least two cases with a complete pair")
-    return Summary(K, N, b, c, n11, sdd, sdm, smm)
+    return Summary(K, b, c, n11, sdd, inv_m / K, dropped)
 
 
 def estimate(s):
-    return (s.b - s.c) / s.N
+    return (s.b - s.c) / s.K
 
 
 def var_cluster(s):
-    """Obuchowski ratio-estimator variance of D, with the K/(K-1) small-sample factor."""
+    """Variance of D from the spread of case-level differences (cases independent)."""
     d = estimate(s)
-    ss = s.sdd - 2 * d * s.sdm + d * d * s.smm
-    return max(ss, 0.0) * s.K / (s.K - 1) / s.N ** 2
+    return max(s.sdd - s.K * d * d, 0.0) / (s.K - 1) / s.K
 
 
 def design_effect(s, conservative=False):
-    mmax = s.smm / s.N  # = mean cluster size when sizes are equal; deff under perfect within-case correlation
     if conservative:
-        return mmax
+        return 1.0
     d = estimate(s)
-    vnv = ((s.b + s.c) / s.N - d * d) / s.N
+    vnv = ((s.b + s.c) / s.K - d * d) / s.K
     if vnv <= 0:
-        return mmax
-    return min(max(var_cluster(s) / vnv, 1.0), mmax)
+        return 1.0
+    return min(max(var_cluster(s) / vnv, s.inv_m), 1.0)
 
 
-def _tango_z(b, c, n, d0, deff):
-    """Tango's score statistic for H0: Delta = d0 (restricted MLE of the p01 cell), variance times deff."""
+def _tango_z(b, c, n, d0, deff, cc=0.0):
+    """Tango's score statistic for H0: Delta = d0 (restricted MLE of the p01 cell), variance times deff.
+    cc: continuity correction, in effective-count units (b - c is divided by deff first)."""
     A = 2 * n
     B = -b - c + (2 * n - b + c) * d0
     C = -c * d0 * (1 - d0)
     p01 = (-B + math.sqrt(max(B * B - 4 * A * C, 0.0))) / (2 * A)
     v = n * (2 * p01 + d0 - d0 * d0) * deff
     num = b - c - n * d0
+    if cc:
+        num = math.copysign(max(abs(num) / deff - cc, 0.0) * deff, num)
     if v <= 0:
         return math.copysign(math.inf, num) if num else 0.0
     return num / math.sqrt(v)
@@ -106,23 +119,19 @@ def _solve(f, lo, hi, target, tol=1e-10):
     return (lo + hi) / 2
 
 
-def tango_z(s, d0, conservative=False):
-    return _tango_z(s.b, s.c, s.N, d0, design_effect(s, conservative))
+def tango_z(s, d0, conservative=False, cc=0.0):
+    return _tango_z(s.b, s.c, s.K, d0, design_effect(s, conservative), cc)
 
 
-def tango(s, alpha=0.025, conservative=False):
+def tango(s, alpha=0.025, conservative=False, cc=0.0):
     z = _N.inv_cdf(1 - alpha)
     deff = design_effect(s, conservative)
-    f = lambda d0: _tango_z(s.b, s.c, s.N, d0, deff)
+    f = lambda d0: _tango_z(s.b, s.c, s.K, d0, deff, cc)
     d = estimate(s)
     e = 1e-12
     lo = -1.0 if f(-1 + e) <= z else _solve(f, -1 + e, d, z)
     hi = 1.0 if f(1 - e) >= -z else _solve(f, d, 1 - e, -z)
     return lo, hi
-
-
-def tango_c(s, alpha=0.025):
-    return tango(s, alpha, conservative=True)
 
 
 def wald(s, alpha=0.025):
@@ -131,14 +140,18 @@ def wald(s, alpha=0.025):
     return max(-1.0, d - z * se), min(1.0, d + z * se)
 
 
-def p_noninferiority(s, margin, method="tango"):
-    """One-sided p-value for H0: Delta <= -margin (Tango score)."""
-    return 1 - _N.cdf(tango_z(s, -margin, method == "tango_c"))
+TANGO = {"tango": {}, "tango_cc": {"cc": 0.5}, "tango_c": {"conservative": True},
+         "tango_c_cc": {"conservative": True, "cc": 0.5}}
 
 
-def p_two_sided(s, method="tango"):
-    """Two-sided p-value for H0: Delta = 0 (Tango score; McNemar-type when deff = 1)."""
-    return 2 * (1 - _N.cdf(abs(tango_z(s, 0.0, method == "tango_c"))))
+def p_noninferiority(s, margin, method="tango_cc"):
+    """One-sided p-value for H0: Delta <= -margin (Tango score variant `method`)."""
+    return 1 - _N.cdf(tango_z(s, -margin, **TANGO[method]))
+
+
+def p_two_sided(s, method="tango_cc"):
+    """Two-sided p-value for H0: Delta = 0 (Tango score variant; McNemar-type when deff = 1)."""
+    return 2 * (1 - _N.cdf(abs(tango_z(s, 0.0, **TANGO[method]))))
 
 
 # ---- Bayesian Jeffreys-Dirichlet alternative -------------------------------------------------
@@ -237,7 +250,7 @@ def bayes_lower(s, alpha=0.025, start=None):
     """Lower 100*alpha% posterior quantile of p10 - p01 (Jeffreys prior, counts / deff)."""
     f = design_effect(s)
     a1, a2 = s.b / f + 0.5, s.c / f + 0.5
-    a0 = (s.N - s.b - s.c) / f + 1.0
+    a0 = (s.K - s.b - s.c) / f + 1.0
     mean = (a1 - a2) / (a1 + a2 + a0)
     hi = min(mean, -1e-12)
     if _post_cdf_neg(hi, a1, a2, a0) <= alpha:
@@ -265,4 +278,5 @@ def bayes(s, alpha=0.025):
     return bayes_lower(s, alpha, start=tango(s, alpha)[0]), math.nan
 
 
-METHODS = {"wald": wald, "tango": tango, "tango_c": tango_c, "bayes": bayes}
+METHODS = {"wald": wald, "bayes": bayes,
+           **{k: (lambda kw: lambda s, alpha=0.025: tango(s, alpha, **kw))(kw) for k, kw in TANGO.items()}}
