@@ -3,7 +3,12 @@ import re
 import unittest
 from datetime import date
 
-from p2v3.cases import AUDIT_YEAR, CASES, PERIOD_YEARS
+from p2v3.cases import AUDIT_YEAR, PERIOD_YEARS
+from p2v3.cases import CASES as BASE_CASES
+from p2v3.cases_ext import CASES_EXT
+
+# Every check runs over the base set and the extension set; uniqueness is checked across all 12.
+CASES = BASE_CASES + CASES_EXT
 
 MONTHS = {m: i for i, m in enumerate(["January", "February", "March", "April", "May", "June", "July",
                                        "August", "September", "October", "November", "December"], 1)}

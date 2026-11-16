@@ -19,3 +19,8 @@ PRACTICE_NOTES = {
     "dev-pig-enrichment": ("every pen, at every daily check in 2025", "complete daily check sheets plus delivery records",
                            "Claim narrowed to what daily checks show; does not establish continuous access between checks."),
 }
+
+# Extension set (p2v3/cases_ext.py): notes live with the cases; merged here so rubric_rows covers all 12.
+from .cases_ext import PRACTICE_NOTES_EXT  # noqa: E402
+
+PRACTICE_NOTES.update(PRACTICE_NOTES_EXT)

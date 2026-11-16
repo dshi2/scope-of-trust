@@ -4,7 +4,11 @@ import re
 import unittest
 
 from p2v3 import render as r
-from p2v3.cases import CASES
+from p2v3.cases import CASES as BASE_CASES
+from p2v3.cases_ext import CASES_EXT
+
+# Every invariant runs over the base set and the extension set; cross-case leaks are checked across all 12.
+CASES = BASE_CASES + CASES_EXT
 
 SECTION_SPLIT = "\n\nSECTION "
 

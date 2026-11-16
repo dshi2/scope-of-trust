@@ -15,6 +15,8 @@ Start with `REVISION_3_SPEC.md`, then `AUDIT_REQUEST.md`.
 | `COVERAGE_dev.md` | Case-coverage report and known gaps |
 | `DESIGN_MATRIX_dev.csv` | One row per case × cell × context (models and repeats TBD) |
 | `stimuli_dev.jsonl` | Every stimulus with its SHA-256 |
+| `p2v3/cases_ext.py`, `generate_ext.py` | Extension set: 6 further synthetic cases in new audit families (dairy cows, salmon, turkeys, ducks, rabbits, calves), rendered with the same code |
+| `stimuli_ext.jsonl`, `DESIGN_MATRIX_ext.csv`, `COVERAGE_ext.md`, `CLAIM_EVIDENCE_RUBRIC_ext.md` | Extension-set artifacts (`python3 generate_ext.py`). Run separately from the base set; reported with the base only if the extension run completes (pre-declared) |
 | `BACKLOG.md` | Ideas deliberately kept out of the matrix |
 | `p2v3/` | Reference renderer, gold rules, scorer (stdlib only) |
 | `tests/` | Leakage, gold, scorer and freshness tests |
