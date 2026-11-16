@@ -28,6 +28,8 @@ All cases are synthetic and pending expert review. No model has been run.
 the case registry supplies item IDs and model/repeat are explicitly `TBD`.
 Confirmatory callers must use the frozen eligibility list, pinned models and repeats.
 An empty matrix or a wholly missing item, model or repeat must fail.
+The report always includes `ok`, `issues`, and all four `n_*` count fields,
+even on early validation failure; undeclared dimensions have count zero.
 
 `reconcile` requires `terminal_statuses` from the frozen execution specification,
 a positive integer `max_attempts`, and a stimulus hash on every observed record.
@@ -35,6 +37,11 @@ Attempts accept positive integers or canonical decimal CSV strings. Provider err
 can be terminal records; they are not successful model responses. Grader parse
 statuses are a separate field. `fully_observed` means all planned trials have a
 declared terminal record; `valid_log` also checks duplicates, attempts and hashes.
+Known nonterminal statuses (`running` by default, configurable with
+`nonterminal_statuses`) are valid but incomplete. Unknown statuses are log errors.
+Terminal and nonterminal vocabularies must be disjoint. Supply a snapshot with
+one latest record per trial; lifecycle event streams must be reduced before this
+check. A running record still needs a valid hash and positive attempt count.
 Neither flag alone establishes that the data are suitable for primary analysis.
 
 Both audits must pass their applicable gates. These helpers do not enforce dispatch,
