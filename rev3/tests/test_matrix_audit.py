@@ -54,6 +54,15 @@ class TestPlanned(unittest.TestCase):
                 with self.subTest(name=name, value=value):
                     self.assertFalse(audit_dev(self.rows, **{name: value})["ok"])
 
+    def test_report_schema_stable_on_early_failure(self):
+        expected_keys = set(audit_dev(self.rows))
+        for report in (audit_planned(self.rows), audit_dev(self.rows, expected_items=set()),
+                       audit_dev([{}])):
+            self.assertEqual(set(report), expected_keys)
+            self.assertFalse(report["ok"])
+            for field in ("n_items", "n_cells", "n_models", "n_repeats"):
+                self.assertIsInstance(report[field], int)
+
     def test_planned_fields_required(self):
         for field in ("item_id", "stimulus_sha256", "tools"):
             rows = [dict(x) for x in self.rows]
@@ -126,14 +135,39 @@ class TestReconcile(unittest.TestCase):
         obs = [dict(o, attempts="1") for o in self.obs]
         self.assertTrue(reconcile_dev(self.plan, obs, 3)["ok"])
 
-    def test_unknown_or_nonterminal_status_not_completion(self):
-        for status in ("running", "", "new_unknown_status", None):
+    def test_unknown_status_invalid_and_incomplete(self):
+        for status in ("runing", "", "new_unknown_status", None, []):
             obs = [dict(o) for o in self.obs]
             obs[0]["status"] = status
             rep = reconcile_dev(self.plan, obs, 3)
             self.assertFalse(rep["valid_log"])
             self.assertFalse(rep["fully_observed"])
             self.assertEqual(rep["missing"], 1)
+
+    def test_running_is_valid_but_incomplete(self):
+        obs = [dict(o) for o in self.obs]
+        obs[0]["status"] = "running"
+        rep = reconcile_dev(self.plan, obs, 3)
+        self.assertTrue(rep["valid_log"], rep["issues"])
+        self.assertFalse(rep["fully_observed"])
+        self.assertFalse(rep["ok"])
+        self.assertEqual(rep["missing"], 1)
+        self.assertIn("running", str(rep["status_by_model_cell"]))
+
+    def test_custom_nonterminal_status_requires_declaration(self):
+        obs = [dict(o) for o in self.obs]
+        obs[0]["status"] = "pending"
+        self.assertFalse(reconcile_dev(self.plan, obs, 3)["valid_log"])
+        rep = reconcile_dev(self.plan, obs, 3, nonterminal_statuses={"pending"})
+        self.assertTrue(rep["valid_log"], rep["issues"])
+        self.assertFalse(rep["ok"])
+        self.assertFalse(rep["fully_observed"])
+
+    def test_running_still_requires_valid_hash_and_attempts(self):
+        for patch in ({"stimulus_sha256": None}, {"attempts": 1.5}):
+            obs = [dict(o) for o in self.obs]
+            obs[0].update(status="running", **patch)
+            self.assertFalse(reconcile_dev(self.plan, obs, 3)["valid_log"])
 
     def test_hash_required(self):
         for value in (None, "", "missing"):
@@ -155,6 +189,9 @@ class TestReconcile(unittest.TestCase):
         for statuses in (None, set(), "ok", {""}, {None}):
             with self.assertRaises(ValueError):
                 reconcile(self.plan, self.obs, 3, terminal_statuses=statuses)
+        for statuses in (None, "running", {""}, {None}, {"ok"}):
+            with self.assertRaises(ValueError):
+                reconcile_dev(self.plan, self.obs, 3, nonterminal_statuses=statuses)
 
     def test_duplicate_observation_refused(self):
         self.assertFalse(reconcile_dev(self.plan, self.obs + self.obs[:1], 3)["valid_log"])
