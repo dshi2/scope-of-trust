@@ -59,6 +59,7 @@ def export(run_dir, models, stimuli, repeats):
                             "truncated": (r or {}).get("truncated"), "served_provider": (r or {}).get("served_provider"),
                             "served_model": (r or {}).get("served_model"), "cost_usd": (r or {}).get("cost_usd"),
                             "reasoning_returned": (r or {}).get("reasoning_returned"),
+                            "reasoning_tokens": (r or {}).get("reasoning_tokens"),
                             "request_params": (r or {}).get("request_params")})
     with open(os.path.join(run_dir, "responses.jsonl"), "w") as f:
         f.writelines(json.dumps(x, sort_keys=True) + "\n" for x in out)

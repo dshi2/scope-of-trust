@@ -78,6 +78,8 @@ def analyse(rows):
             q["served_provider"][str(r.get("served_provider"))] += 1
             q["served_model"][str(r.get("served_model"))] += 1
             q["reasoning_returned"][str(r.get("reasoning_returned"))] += 1
+            rt = r.get("reasoning_tokens")
+            q["reasoning_tokens"]["none_reported" if rt is None else ("0" if rt == 0 else ">0")] += 1
             q["request_params"][json.dumps({k: v for k, v in (r.get("request_params") or {}).items()
                                             if k not in ("model", "usage", "provider")}, sort_keys=True)] += 1
         rates = defaultdict(list)
