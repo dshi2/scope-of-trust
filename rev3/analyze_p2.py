@@ -494,7 +494,8 @@ def v_cell(mr, planned=None):
 
 
 CELL_SUMMARY_METHOD = (
-    "attribution context, unsupported_q_obs (in E/E_scope improved, Q_obs = T is correct: `correct_here` true). "
+    "attribution context, unsupported_q_obs; in E/E_scope improved, where Q_obs = T is correct (`correct_here` "
+    "true), the cell instead carries correct_acceptance (`metric` says which) and no zero-event bound. "
     "equal_case_mean = mean over cases of the case's mean over scored repeats; ci95_case_t = t interval over case "
     "means (df = cases - 1), clipped to [0, 1], descriptive and anti-conservative near 0/1; degenerate = every case "
     "has the same mean (zero width is not precision). zero_event_upper_case = exact one-sided 95% Clopper-Pearson "
@@ -510,7 +511,8 @@ def cell_case_summary(mr, planned=None, metric="unsupported_q_obs"):
         sched_cases[(c, d)].add(item)
     out = {}
     for c, d in all_cells():
-        per = per_case(mr, c, d, metric)
+        here = "correct_acceptance" if (c, d) in NOT_REPORTED_PRIMARY else metric  # Q_obs = T is correct there
+        per = per_case(mr, c, d, here)
         rates = {k: sum(v) / len(v) for k, v in per.items()}
         s = summarise_cases(list(rates.values()))
         ev = int(sum(map(sum, per.values())))
@@ -520,8 +522,9 @@ def cell_case_summary(mr, planned=None, metric="unsupported_q_obs"):
             "events": ev, "cases_with_event": sum(1 for v in per.values() if any(v)),
             "scored": sum(map(len, per.values())), "scheduled": sched[(c, d)] if planned else None,
             "ci95_case_t": s["ci95_case_t"], "degenerate": s["degenerate"],
-            "zero_event_upper_case": cp_upper(0, s["cases"]) if (s["cases"] and ev == 0) else None,
-            "correct_here": (c, d) in NOT_REPORTED_PRIMARY, "case_values": dict(sorted(rates.items()))}
+            "zero_event_upper_case": (cp_upper(0, s["cases"]) if (s["cases"] and ev == 0 and here == metric)
+                                      else None),
+            "metric": here, "correct_here": (c, d) in NOT_REPORTED_PRIMARY, "case_values": dict(sorted(rates.items()))}
     return out
 
 
