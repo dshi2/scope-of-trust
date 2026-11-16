@@ -1,11 +1,11 @@
-"""llmrun: resume without duplicate calls, dependent-stage replay, pinning, backoff, budget pre-flight."""
+"""llmrun: resume without duplicate calls, same-experiment resume, pause, status, pinning, backoff, budget."""
 import json
 import os
 import tempfile
 import threading
 import unittest
 
-from llmrun import Halt, Runner, dry_transport_for, validate_config
+from llmrun import Halt, Runner, dry_transport_for, status, validate_config
 
 
 def cfg(**kw):
@@ -19,7 +19,7 @@ def cfg(**kw):
 
 
 class Fake:
-    """Counts calls; behaviour(n, body) -> (status, resp) or raises."""
+    """Counts calls; behaviour(n, body) -> (status, resp) or None for a normal answer."""
     def __init__(self, behaviour=None):
         self.n, self.lock, self.bodies = 0, threading.Lock(), []
         self.behaviour = behaviour
@@ -52,6 +52,10 @@ def plan(keys):
     return [(f"{k}|{s}", "A", [{"role": "user", "content": "x" * 40}]) for k in keys for s in ("t1", "t2")]
 
 
+def man(keys):
+    return {"experiment": "test", "planned_keys": sorted(k for k, _, _ in plan(keys))}
+
+
 def results(d):
     with open(os.path.join(d, "journal.jsonl")) as f:
         return [json.loads(x) for x in f if '"type": "result"' in x]
@@ -60,54 +64,100 @@ def results(d):
 class TestRunner(unittest.TestCase):
     def setUp(self):
         Runner.backoff = 0.0
+        Runner.progress_every = 0
         self.d = tempfile.mkdtemp()
         self.keys = [f"k{i}" for i in range(20)]
 
-    def test_resume_no_duplicates_and_dependent_replay(self):
+    def go(self, transport, resume=False, keys=None, c=None, d=None):
+        keys = keys or self.keys
+        r = Runner(d or self.d, c or cfg(), man(keys), transport, resume=resume)
+        return r, r.run([two_stage(k) for k in keys], plan(keys))
+
+    def test_resume_no_duplicates_dependent_replay_and_same_structure(self):
         holder = {}
 
         def stop_after_15(n, body):
             if n == 15:
                 holder["r"].stop.set()
         t1 = Fake(stop_after_15)
-        r = Runner(self.d, cfg(), t1)
+        r = Runner(self.d, cfg(), man(self.keys), t1)
         holder["r"] = r
-        s1 = r.run([two_stage(k) for k in self.keys], plan(self.keys))
-        self.assertFalse(s1["complete"])
+        self.assertFalse(r.run([two_stage(k) for k in self.keys], plan(self.keys))["complete"])
         t2 = Fake()
-        s2 = Runner(self.d, cfg(), t2).run([two_stage(k) for k in self.keys], plan(self.keys))
+        _, s2 = self.go(t2, resume=True)
         self.assertTrue(s2["complete"])
+        self.assertEqual(s2["calls_pending"], 0)
         res = results(self.d)
-        self.assertEqual(len(res), 40)
-        self.assertEqual(len({x["key"] for x in res}), 40)  # every stage journaled exactly once
+        self.assertEqual(len({x["key"] for x in res}), len(res))  # every stage journaled exactly once
         self.assertEqual(t1.n + t2.n, 40)  # no stage ever sent twice
         for x in res:
             if x["key"].endswith("|t2"):
                 self.assertEqual(x["text"], "ans:ans:" + x["key"].split("|")[0])  # t2 built on journaled t1
+        clean = tempfile.mkdtemp()  # an uninterrupted run gives the identical key/status/text structure
+        self.go(Fake(), d=clean)
+        shape = lambda d: sorted((x["key"], x["status"], x["text"]) for x in results(d))
+        self.assertEqual(shape(self.d), shape(clean))
+        self.assertEqual([s["event"] for s in status(self.d)["sessions"]], ["start", "end", "resume", "end"])
 
-    def test_config_change_refused(self):
-        Runner(self.d, cfg(), Fake()).run([two_stage("a")], plan(["a"]))
+    def test_new_run_refuses_existing_dir_and_resume_needs_existing(self):
         with self.assertRaises(Halt):
-            Runner(self.d, cfg(seed=2), Fake())
+            Runner(self.d, cfg(), man(self.keys), Fake(), resume=True)
+        self.go(Fake())
+        with self.assertRaises(Halt):
+            Runner(self.d, cfg(), man(self.keys), Fake())
+
+    def test_resume_refuses_changed_config_or_matrix(self):
+        self.go(Fake(), keys=["a", "b"])
+        with self.assertRaises(Halt):
+            Runner(self.d, cfg(seed=2), man(["a", "b"]), Fake(), resume=True)
+        with self.assertRaises(Halt):
+            Runner(self.d, cfg(), man(["a", "b", "c"]), Fake(), resume=True)
+
+    def test_planned_calls_must_match_manifest(self):
+        r = Runner(self.d, cfg(), man(["a"]), Fake())
+        with self.assertRaises(Halt):
+            r.run([two_stage("a"), two_stage("b")], plan(["a", "b"]))
+
+    def test_pause_file_then_resume_completes(self):
+        holder = {}
+
+        def pause_at_10(n, body):
+            if n == 10:
+                open(os.path.join(self.d, "PAUSE"), "w").close()
+        t1 = Fake(pause_at_10)
+        r = Runner(self.d, cfg(), man(self.keys), t1)
+        holder["r"] = r
+        s1 = r.run([two_stage(k) for k in self.keys], plan(self.keys))
+        self.assertTrue(s1["paused"])
+        self.assertFalse(s1["complete"])
+        st = status(self.d)
+        self.assertTrue(st["paused"])
+        self.assertEqual(st["calls_done"] + st["calls_pending"], 40)
+        t2 = Fake()
+        _, s2 = self.go(t2, resume=True)
+        self.assertTrue(s2["complete"])
+        self.assertFalse(os.path.exists(os.path.join(self.d, "PAUSE")))
+        self.assertEqual(t1.n + t2.n, 40)
 
     def test_second_runner_on_same_dir_refused(self):
-        r = Runner(self.d, cfg(), Fake())
+        self.go(Fake(), keys=["a"])
+        r = Runner(self.d, cfg(), man(["a"]), Fake(), resume=True)
         with self.assertRaises(Halt):
-            Runner(self.d, cfg(), Fake())
+            Runner(self.d, cfg(), man(["a"]), Fake(), resume=True)
         r.close()
 
     def test_429_backs_off_then_completes(self):
         t = Fake(lambda n, b: (429, {"error": "rate"}) if n <= 3 else None)
         # max_retries > number of 429s, so no task can exhaust its attempts whatever the interleaving
-        r = Runner(self.d, cfg(max_retries=4, models={"A": dict(cfg()["models"]["A"], concurrency_start=4)}), t)
-        s = r.run([two_stage(k) for k in self.keys[:5]], plan(self.keys[:5]))
+        c = cfg(max_retries=4, models={"A": dict(cfg()["models"]["A"], concurrency_start=4)})
+        _, s = self.go(t, keys=self.keys[:5], c=c)
         self.assertTrue(s["complete"])
         self.assertEqual(s["spent_usd"], round(10 * 0.001, 6))  # voided 429 intents are not charged
 
     def test_provider_mismatch_is_terminal_and_not_retried(self):
         t = Fake(lambda n, b: (200, {"provider": "Other", "model": b["model"], "usage": {"cost": 0},
                                      "choices": [{"message": {"content": "x"}}]}))
-        s = Runner(self.d, cfg(halt_error_rate=1.0), t).run([two_stage("a")], plan(["a"]))
+        _, s = self.go(t, keys=["a"], c=cfg(halt_error_rate=1.0))
         res = {x["key"]: x for x in results(self.d)}
         self.assertEqual(res["a|t1"]["status"], "failed")
         self.assertEqual(res["a|t2"]["status"], "skipped")
@@ -115,29 +165,36 @@ class TestRunner(unittest.TestCase):
         self.assertTrue(s["complete"])
 
     def test_refuses_to_start_when_cap_cannot_cover_full_design(self):
-        r = Runner(self.d, cfg(spend_cap_usd=0.0005), Fake())
+        r = Runner(self.d, cfg(spend_cap_usd=0.0005), man(self.keys), Fake())
         with self.assertRaises(Halt):
             r.run([two_stage(k) for k in self.keys], plan(self.keys))
         self.assertEqual(results(self.d), [])  # nothing sent: never a partial design
 
     def test_outage_aborts_without_journaling_then_resume_completes(self):
-        down = Fake(lambda n, b: (503, {"error": "down"}))
-        s = Runner(self.d, cfg(), down).run([two_stage(k) for k in self.keys], plan(self.keys))
+        _, s = self.go(Fake(lambda n, b: (503, {"error": "down"})))
         self.assertTrue(s["halted"])
         self.assertEqual(results(self.d), [])
-        s2 = Runner(self.d, cfg(), Fake()).run([two_stage(k) for k in self.keys], plan(self.keys))
+        _, s2 = self.go(Fake(), resume=True)
         self.assertTrue(s2["complete"])
         self.assertEqual(len(results(self.d)), 40)
 
     def test_unsettled_intent_counts_as_spent_on_resume(self):
-        r = Runner(self.d, cfg(), Fake())
-        r._write({"type": "intent", "iid": "z#0#1", "key": "z|t1", "reserve_usd": 0.25})
+        r = Runner(self.d, cfg(), man(["a"]), Fake())
+        r._write({"type": "intent", "iid": "z#0#1", "key": "a|t1", "reserve_usd": 0.25})
         r.close()
-        self.assertAlmostEqual(Runner(self.d, cfg(), Fake()).spent, 0.25)
+        self.assertAlmostEqual(Runner(self.d, cfg(), man(["a"]), Fake(), resume=True).spent, 0.25)
+        self.assertAlmostEqual(status(self.d)["spent_usd"], 0.25)
+
+    def test_request_pins_route_and_denies_data_collection(self):
+        t = Fake()
+        self.go(t, keys=["a"])
+        self.assertEqual(t.bodies[0]["provider"], {"order": ["host/fp8"], "allow_fallbacks": False,
+                                                   "require_parameters": True, "quantizations": ["fp8"],
+                                                   "data_collection": "deny"})
 
     def test_live_needs_flag_and_config_is_strict(self):
         with self.assertRaises(Halt):
-            Runner(self.d, cfg())
+            Runner(self.d, cfg(), man(["a"]))
         with self.assertRaises(ValueError):
             validate_config(dict(cfg(), extra=1))
         bad = cfg()
@@ -145,16 +202,9 @@ class TestRunner(unittest.TestCase):
         with self.assertRaises(ValueError):
             validate_config(bad)
 
-    def test_request_pins_route_and_denies_data_collection(self):
-        t = Fake()
-        Runner(self.d, cfg(), t).run([two_stage("a")], plan(["a"]))
-        prov = t.bodies[0]["provider"]
-        self.assertEqual(prov, {"order": ["host/fp8"], "allow_fallbacks": False, "require_parameters": True,
-                                "quantizations": ["fp8"], "data_collection": "deny"})
-
     def test_dry_transport_matches_pin(self):
         c = cfg()
-        s = Runner(self.d, c, dry_transport_for(c)).run([two_stage("a")], plan(["a"]))
+        _, s = self.go(dry_transport_for(c), keys=["a"], c=c)
         self.assertTrue(s["complete"])
         self.assertTrue(all(x["status"] == "ok" for x in results(self.d)))
 

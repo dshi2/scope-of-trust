@@ -26,13 +26,20 @@ Contract
   against provider_name and slug; a mismatch is a terminal failure. A provider outage halts the run;
   switching provider means a new config, hence a new run directory, never a silent substitution.
 - The API key comes only from OPENROUTER_API_KEY and is never written anywhere.
-- Ctrl-C stops scheduling, cancels queued tasks, lets in-flight calls finish and be journaled.
-  Rerun the same command to resume.
+- Resume / pause / status. A run is (config, manifest); the manifest lists every planned call key and the
+  design metadata, is written to manifest.json at creation, and its hash sits in the journal header.
+  A new run needs an empty directory; resume=True (--resume) needs an existing run with identical config
+  and manifest hashes, and run() checks the planned calls equal the manifest: resume continues the same
+  experiment, never a new one. Any design or settings change is a separately versioned run.
+  Pause: `touch <run_dir>/PAUSE` (or Ctrl-C) stops scheduling; in-flight calls finish and are journaled.
+  An explicit resume removes PAUSE. Every start / resume / end is a journaled session record.
+  status(run_dir) is a read-only report: per-model counts, calls pending, spend, sessions.
 """
 import hashlib
 import json
 import os
 import random
+import sys
 import threading
 import time
 import urllib.error
@@ -122,10 +129,19 @@ class Limiter:
 
 class Runner:
     backoff = 1.0  # seconds scale for retry waits (tests set 0)
+    progress_every = 10.0  # seconds between progress lines on stderr; 0 disables
 
-    def __init__(self, run_dir, cfg, transport=None):
-        self.cfg, self.dir = cfg, run_dir
+    def __init__(self, run_dir, cfg, manifest, transport=None, resume=False):
+        """manifest: {"planned_keys": [...], ...design metadata}. A new run needs an empty run_dir; resume=True
+        needs an existing run whose config AND manifest hashes match exactly (same experiment, never a new one)."""
+        self.cfg, self.dir, self.manifest = cfg, run_dir, manifest
         self.hash = validate_config(cfg)
+        self.mhash = hashlib.sha256(json.dumps(manifest, sort_keys=True).encode()).hexdigest()
+        exists = os.path.exists(os.path.join(run_dir, "journal.jsonl"))
+        if resume and not exists:
+            raise Halt(f"--resume: no run in {run_dir}")
+        if not resume and exists:
+            raise Halt(f"{run_dir} already holds a run: pass resume=True (--resume) to continue it")
         if transport is None:
             if not cfg["allow_live"]:
                 raise Halt("allow_live is false: pass dry_transport_for(cfg) for an offline run")
@@ -134,11 +150,17 @@ class Runner:
         self.lock = threading.Lock()
         self.stop = threading.Event()
         self.done, self.spent, self.reserved, self.aborts, self.recent = {}, 0.0, 0.0, 0, []
+        self.paused, self.planned = False, []
         self.limiters = {n: Limiter(m["concurrency_start"], m["concurrency_max"]) for n, m in cfg["models"].items()}
         os.makedirs(run_dir, exist_ok=True)
         self._lock_dir()
         self.path = os.path.join(run_dir, "journal.jsonl")
+        self.pausefile = os.path.join(run_dir, "PAUSE")
         self._open()
+        if resume and os.path.exists(self.pausefile):
+            os.remove(self.pausefile)  # an explicit resume lifts an intentional pause
+        self._write({"type": "session", "event": "resume" if resume else "start", "pid": os.getpid(),
+                     "done": len(self.done), "spent_usd": self.spent, "t": time.time()})
 
     def _lock_dir(self):
         self.lockfile = os.path.join(self.dir, "run.lock")
@@ -168,9 +190,11 @@ class Runner:
         if not fresh:
             with open(self.path) as f:
                 lines = [json.loads(x) for x in f if x.strip()]
-            if lines[0].get("type") != "header" or lines[0]["config_sha256"] != self.hash:
+            h = lines[0]
+            if h.get("type") != "header" or h["config_sha256"] != self.hash or h.get("manifest_sha256") != self.mhash:
                 self.close()
-                raise Halt("run directory belongs to a different config; use a new run directory")
+                raise Halt("run directory belongs to a different config or run matrix; a changed design is a "
+                           "new, separately versioned run in a new directory")
             for r in lines[1:]:
                 if r["type"] == "intent":
                     intents[r["iid"]] = r["reserve_usd"]
@@ -182,7 +206,10 @@ class Runner:
             self.spent += sum(intents.values())  # possibly billed, never settled: count conservatively
         self.f = open(self.path, "a")
         if fresh:
-            self._write({"type": "header", "config_sha256": self.hash, "config": self.cfg, "t": time.time()})
+            with open(os.path.join(self.dir, "manifest.json"), "w") as mf:
+                json.dump(self.manifest, mf, indent=1, sort_keys=True)
+            self._write({"type": "header", "config_sha256": self.hash, "config": self.cfg,
+                         "manifest_sha256": self.mhash, "t": time.time()})
 
     def _write(self, rec):
         self.f.write(json.dumps(rec, sort_keys=True) + "\n")
@@ -219,6 +246,9 @@ class Runner:
     def call(self, key, model, messages, tools=None):
         if key in self.done:
             return self.done[key]
+        if os.path.exists(self.pausefile):
+            self.paused = True
+            self.stop.set()
         if self.stop.is_set():
             raise Halt("stopping")
         body = self._body(model, messages, tools)
@@ -289,6 +319,10 @@ class Runner:
         Budget never truncates a design: the run refuses to START unless spend_cap_usd covers the money
         already spent plus the worst case of everything remaining. The in-run cap check then only fires on
         a runaway fault (retry storm, price change), never as a planned stopping rule."""
+        if sorted(k for k, _, _ in planned) != sorted(self.manifest["planned_keys"]):
+            self.close()
+            raise Halt("planned calls differ from the run's frozen manifest; a changed design is a new run")
+        self.planned, self.paused = planned, False
         need = self.spent + self.worst_case_usd(planned)
         if need > self.cfg["spend_cap_usd"]:
             self.close()
@@ -316,6 +350,21 @@ class Runner:
             except Halt:
                 pass
 
+        t0, total = time.time(), len(planned)
+        start_done = sum(k in self.done for k, _, _ in planned)
+        ticker_stop = threading.Event()
+
+        def ticker():  # one progress line every `progress_every` seconds, to stderr
+            while not ticker_stop.wait(self.progress_every):
+                d = sum(k in self.done for k, _, _ in planned)
+                rate = (d - start_done) / max(1e-9, time.time() - t0)
+                eta = (total - d) / rate if rate > 0 else float("inf")
+                conc = " ".join(f"{n}={lim.active}/{lim.limit}" for n, lim in self.limiters.items())
+                print(f"[{time.strftime('%H:%M:%S')}] {d}/{total} calls ({100 * d / total:.0f}%) | {rate:.1f}/s | "
+                      f"ETA {eta / 60:.1f} min | ${self.spent:.2f} | in flight {conc}"
+                      + (" | STOPPING" if self.stop.is_set() else ""), file=sys.stderr, flush=True)
+        if self.progress_every:
+            threading.Thread(target=ticker, daemon=True).start()
         ex = ThreadPoolExecutor(max_workers=sum(m["concurrency_max"] for m in self.cfg["models"].values()))
         try:
             futures = [ex.submit(one, t) for t in tasks]
@@ -327,6 +376,7 @@ class Runner:
             raise
         finally:
             ex.shutdown(wait=True)
+            ticker_stop.set()
             summary = self._summary(state, len(tasks))
             self.close()
         return summary
@@ -337,7 +387,40 @@ class Runner:
             by.setdefault(r["model"], {}).setdefault(r["status"], 0)
             by[r["model"]][r["status"]] += 1
         s = dict(state, tasks=n, not_run=n - state["finished"] - state["aborted"], halted=self.stop.is_set(),
-                 complete=state["finished"] == n, spent_usd=round(self.spent, 6), journal_by_model=by)
+                 paused=getattr(self, "paused", False), complete=state["finished"] == n,
+                 spent_usd=round(self.spent, 6), journal_by_model=by,
+                 calls_pending=sum(k not in self.done for k, _, _ in self.planned),
+                 remaining_worst_case_usd=round(self.worst_case_usd(self.planned), 6))
+        with self.lock:
+            self._write({"type": "session", "event": "end", "summary": s, "t": time.time()})
         with open(os.path.join(self.dir, "summary.json"), "w") as f:
             json.dump(s, f, indent=1, sort_keys=True)
         return s
+
+
+def status(run_dir):
+    """Read-only progress report (safe while a run is active): per-model journal counts, calls pending,
+    spend, and the session history (start / resume / end). Pause a run with: touch <run_dir>/PAUSE."""
+    with open(os.path.join(run_dir, "journal.jsonl")) as f:
+        lines = [json.loads(x) for x in f if x.strip()]
+    with open(os.path.join(run_dir, "manifest.json")) as f:
+        planned = json.load(f)["planned_keys"]
+    done, intents, spent, sessions = {}, {}, 0.0, []
+    for r in lines[1:]:
+        if r["type"] == "intent":
+            intents[r["iid"]] = r["reserve_usd"]
+        elif r["type"] in ("result", "void"):
+            intents.pop(r.get("iid"), None)
+            if r["type"] == "result":
+                done[r["key"]] = r
+                spent += r.get("cost_usd") or 0.0
+        elif r["type"] == "session":
+            sessions.append({k: r[k] for k in ("event", "t") if k in r})
+    by = {}
+    for r in done.values():
+        by.setdefault(r["model"], {}).setdefault(r["status"], 0)
+        by[r["model"]][r["status"]] += 1
+    pending = [k for k in planned if k not in done]
+    return {"calls_planned": len(planned), "calls_done": len(planned) - len(pending), "calls_pending": len(pending),
+            "by_model": by, "spent_usd": round(spent + sum(intents.values()), 6), "in_flight_or_unsettled": len(intents),
+            "paused": os.path.exists(os.path.join(run_dir, "PAUSE")), "sessions": sessions}

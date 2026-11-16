@@ -1,15 +1,21 @@
 """Run P2 stimuli through llmrun, then export responses for scoring (p2v3.score). No scoring here.
 
-  python3 run_p2.py --config configs/X.json --stimuli stimuli_dev.jsonl --repeats 3 --run-dir runs/X [--dry-run]
+  new run:  python3 run_p2.py --config C.json --stimuli S.jsonl --repeats 3 --run-dir runs/X [--dry-run]
+  resume:   same command + --resume        (refused unless config, stimuli, repeats and models are identical)
+  pause:    touch runs/X/PAUSE             (in-flight calls finish; resume with --resume)
+  status:   python3 run_p2.py --status --run-dir runs/X     (read-only; safe while running)
 
 Every model runs every stimulus x repeat (the full 14-cell x 2-context design per case). Each stimulus's
-hash is re-checked against its messages before anything is sent. Rerun the same command to resume.
+hash is re-checked against its messages before anything is sent. The manifest frozen with the run lists
+every planned call plus the stimuli file hash, repeats and models.
 """
 import argparse
 import json
 import os
 
-from llmrun import Halt, Runner, dry_transport_for
+import hashlib
+
+from llmrun import Halt, Runner, dry_transport_for, status
 from p2v3.render import stimulus_hash
 
 
@@ -59,18 +65,29 @@ def export(run_dir, models, stimuli, repeats):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--config", required=True)
-    ap.add_argument("--stimuli", required=True)
-    ap.add_argument("--repeats", type=int, required=True)
+    ap.add_argument("--config")
+    ap.add_argument("--stimuli")
+    ap.add_argument("--repeats", type=int)
     ap.add_argument("--run-dir", required=True)
     ap.add_argument("--dry-run", action="store_true", help="offline fake transport; no network, no cost")
+    ap.add_argument("--resume", action="store_true", help="continue the existing run in --run-dir")
+    ap.add_argument("--status", action="store_true", help="print progress and exit (read-only)")
     a = ap.parse_args()
+    if a.status:
+        print(json.dumps(status(a.run_dir), indent=1, sort_keys=True))
+        return
+    if not (a.config and a.stimuli and a.repeats):
+        ap.error("--config, --stimuli and --repeats are required to start or resume a run")
     with open(a.config) as f:
         cfg = json.load(f)
     stimuli = load_stimuli(a.stimuli)
     models = sorted(cfg["models"])
     tasks, planned = build(models, stimuli, a.repeats)
-    runner = Runner(a.run_dir, cfg, dry_transport_for(cfg) if a.dry_run else None)
+    with open(a.stimuli, "rb") as f:
+        stim_sha = hashlib.sha256(f.read()).hexdigest()
+    manifest = {"experiment": "P2 scope-of-trust", "stimuli_sha256": stim_sha, "repeats": a.repeats,
+                "models": models, "planned_keys": sorted(k for k, _, _ in planned)}
+    runner = Runner(a.run_dir, cfg, manifest, dry_transport_for(cfg) if a.dry_run else None, resume=a.resume)
     print(f"{len(tasks)} calls planned; worst case ${runner.worst_case_usd(planned):.2f}; cap ${cfg['spend_cap_usd']}")
     summary = runner.run(tasks, planned)
     n, missing = export(a.run_dir, models, stimuli, a.repeats)
